@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "xil_io.h"
+
+#include "sleep.h"
+#include "spi.h"
+
+
+
+//SPI IP has 3 main registers
+//register 0 control reg. bit-0 set, start spi, controller will auto clear it
+//register 1 (base address+4) transmit register
+//register 2 (base address +8) received data
+
+//spi data
+//bit23 - read/write (1 write 0 read)
+//bits22 - 20 : data transfer size (0 - 1 byte)
+//bits 19-18 : unused
+//bits 17-8 :address
+//bits 7:0 data (if writing)
+
+
+int main()
+{
+	initADRV();
+	adrvSoftReset();
+	Xil_Out32(XPAR_AD9361SPI_0_S00_AXI_BASEADDR+4,0x900);//0 000 00 00 0000 0010 00000000
+	Xil_Out32(XPAR_AD9361SPI_0_S00_AXI_BASEADDR,0x1); //start SPI
+	data = Xil_In32(XPAR_AD9361SPI_0_S00_AXI_BASEADDR);
+	while(data&0x1){
+		data = Xil_In32(XPAR_AD9361SPI_0_S00_AXI_BASEADDR);//wait until spi is done
+	}
+	data = Xil_In32(XPAR_AD9361SPI_0_S00_AXI_BASEADDR+4);
+
+	xil_printf("Data received %0x\n\r",data);
+}

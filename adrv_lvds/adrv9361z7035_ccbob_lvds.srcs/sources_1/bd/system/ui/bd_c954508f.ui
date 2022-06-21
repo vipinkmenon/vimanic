@@ -1,0 +1,43 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.428388",
+   "Default View_TopLeft":"-105,-58",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port ddr -pg 1 -lvl 5 -x 1300 -y 60 -defaultsOSRD
+preplace port fixed_io -pg 1 -lvl 5 -x 1300 -y 80 -defaultsOSRD
+preplace port port-id_spi_mosi -pg 1 -lvl 5 -x 1300 -y 370 -defaultsOSRD
+preplace port port-id_spi_csn -pg 1 -lvl 5 -x 1300 -y 390 -defaultsOSRD
+preplace port port-id_spi_clk -pg 1 -lvl 5 -x 1300 -y 610 -defaultsOSRD
+preplace port port-id_spi_miso -pg 1 -lvl 0 -x 0 -y 530 -defaultsOSRD
+preplace portBus gpio_resetb -pg 1 -lvl 5 -x 1300 -y 260 -defaultsOSRD
+preplace inst sys_ps7 -pg 1 -lvl 1 -x 230 -y 100 -defaultsOSRD
+preplace inst sys_ps7_axi_periph -pg 1 -lvl 2 -x 600 -y 220 -defaultsOSRD
+preplace inst rst_sys_ps7_50M -pg 1 -lvl 1 -x 230 -y 310 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 600 -y 450 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 920 -y 250 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 4 -x 1190 -y 500 -defaultsOSRD
+preplace inst ad9361SPI_0 -pg 1 -lvl 3 -x 920 -y 430 -defaultsOSRD
+preplace netloc ad9361SPI_0_o_mosi 1 3 2 1090 370 NJ
+preplace netloc ad9361SPI_0_o_spi_clk 1 3 2 1060 610 NJ
+preplace netloc ad9361SPI_0_o_ss_n 1 3 2 1100 390 NJ
+preplace netloc axi_gpio_0_gpio_io_o 1 3 2 1070 260 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 1 N 450
+preplace netloc i_miso_0_1 1 0 4 NJ 530 NJ 530 780 530 NJ
+preplace netloc rst_sys_ps7_50M_peripheral_aresetn 1 1 2 450 520 770
+preplace netloc sys_cpu_clk 1 0 4 20 200 440 510 750 330 1080J
+preplace netloc sys_ps7_FCLK_RESET0_N 1 0 2 30 210 430
+preplace netloc sys_ps7_DDR 1 1 4 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc sys_ps7_FIXED_IO 1 1 4 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc sys_ps7_M_AXI_GP0 1 1 1 450 100n
+preplace netloc sys_ps7_axi_periph_M00_AXI 1 2 1 760 210n
+preplace netloc sys_ps7_axi_periph_M01_AXI 1 2 1 N 230
+levelinfo -pg 1 0 230 600 920 1190 1300
+pagesize -pg 1 -db -bbox -sgen -110 0 1460 630
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_board_cnt":"1"
+}
