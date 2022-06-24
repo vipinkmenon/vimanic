@@ -21,10 +21,13 @@
 
 int main()
 {
-	u8 data;
+	//u8 data;
 	initADRV();
-	adrvSoftReset();//don't apply soft reset after board is configured from linux and want to read the register contents
-	//spiWrite(2,0xA5);//write 0xA5 to address 0x2
-	data = spiRead(2); //Read from address 2
-	xil_printf("Data received %0x\n\r",data);
+	//adrvSoftReset();//don't apply soft reset after board is configured from linux and want to read the register contents
+	//spiWrite(2,0x5A);//write 0xA5 to address 0x2
+//	data = spiRead(2); //Read from address 2
+//	xil_printf("Data received %0x\n\r",data);
+	//dumpAllReg();
+	findRegChange();
+	return 0;
 }
