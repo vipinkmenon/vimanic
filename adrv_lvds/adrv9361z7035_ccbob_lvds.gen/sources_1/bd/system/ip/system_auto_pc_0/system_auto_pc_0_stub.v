@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Fri Jun 17 13:49:21 2022
-// Host        : G0819 running 64-bit major release  (build 9200)
+// Date        : Fri Jun 17 16:10:37 2022
+// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top system_auto_pc_0 -prefix
 //               system_auto_pc_0_ system_auto_pc_0_stub.v
 // Design      : system_auto_pc_0

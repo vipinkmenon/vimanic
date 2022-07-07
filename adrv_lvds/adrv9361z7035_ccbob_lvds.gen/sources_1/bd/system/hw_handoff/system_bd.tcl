@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source system_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# toggle, toggle, toggle
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -159,9 +166,17 @@ proc create_root_design { parentCell } {
 
   set fixed_io [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 fixed_io ]
 
+  set rx_clk_in [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 rx_clk_in ]
+
 
   # Create ports
+  set adrvclk [ create_bd_port -dir I -type clk adrvclk ]
+  set clk_sel [ create_bd_port -dir O -from 0 -to 0 clk_sel ]
+  set enable [ create_bd_port -dir O -from 0 -to 0 enable ]
   set gpio_resetb [ create_bd_port -dir O -from 0 -to 0 gpio_resetb ]
+  set rx_data_in_n [ create_bd_port -dir I -from 5 -to 0 rx_data_in_n ]
+  set rx_data_in_p [ create_bd_port -dir I -from 5 -to 0 rx_data_in_p ]
+  set rx_frame [ create_bd_port -dir I -from 0 -to 0 rx_frame ]
   set spi_clk [ create_bd_port -dir O -type clk spi_clk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {10000000} \
@@ -177,6 +192,7 @@ proc create_root_design { parentCell } {
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
    CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_DOUT_DEFAULT {0x00000001} \
    CONFIG.C_GPIO_WIDTH {1} \
  ] $axi_gpio_0
 
@@ -195,6 +211,32 @@ proc create_root_design { parentCell } {
 
   # Create instance: rst_sys_ps7_50M, and set properties
   set rst_sys_ps7_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_sys_ps7_50M ]
+
+  # Create instance: rxClock, and set properties
+  set block_name toggle
+  set block_cell_name rxClock
+  if { [catch {set rxClock [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $rxClock eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: selectio_wiz_0, and set properties
+  set selectio_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:selectio_wiz:5.1 selectio_wiz_0 ]
+  set_property -dict [ list \
+   CONFIG.BUS_IO_STD {LVDS} \
+   CONFIG.BUS_SIG_TYPE {DIFF} \
+   CONFIG.CLK_FWD_IO_STD {LVDS} \
+   CONFIG.CLK_FWD_SIG_TYPE {DIFF} \
+   CONFIG.SELIO_ACTIVE_EDGE {DDR} \
+   CONFIG.SELIO_CLK_IO_STD {LVDS} \
+   CONFIG.SELIO_CLK_SIG_TYPE {DIFF} \
+   CONFIG.SELIO_INTERFACE_TYPE {NETWORKING} \
+   CONFIG.SERIALIZATION_FACTOR {4} \
+   CONFIG.SYSTEM_DATA_WIDTH {6} \
+ ] $selectio_wiz_0
 
   # Create instance: sys_ps7, and set properties
   set sys_ps7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 sys_ps7 ]
@@ -1012,6 +1054,17 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_MI {2} \
  ] $sys_ps7_axi_periph
 
+  # Create instance: system_clk50, and set properties
+  set block_name toggle
+  set block_cell_name system_clk50
+  if { [catch {set system_clk50 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $system_clk50 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
@@ -1022,7 +1075,40 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE0_TYPE {0} \
  ] $system_ila_0
 
+  # Create instance: system_ila_1, and set properties
+  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
+  set_property -dict [ list \
+   CONFIG.C_BRAM_CNT {1.5} \
+   CONFIG.C_DATA_DEPTH {8192} \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {5} \
+ ] $system_ila_1
+
+  # Create instance: toggle_0, and set properties
+  set block_name toggle
+  set block_cell_name toggle_0
+  if { [catch {set toggle_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $toggle_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+
   # Create interface connections
+  connect_bd_intf_net -intf_net diff_clk_in_0_1 [get_bd_intf_ports rx_clk_in] [get_bd_intf_pins selectio_wiz_0/diff_clk_in]
   connect_bd_intf_net -intf_net sys_ps7_DDR [get_bd_intf_ports ddr] [get_bd_intf_pins sys_ps7/DDR]
   connect_bd_intf_net -intf_net sys_ps7_FIXED_IO [get_bd_intf_ports fixed_io] [get_bd_intf_pins sys_ps7/FIXED_IO]
   connect_bd_intf_net -intf_net sys_ps7_M_AXI_GP0 [get_bd_intf_pins sys_ps7/M_AXI_GP0] [get_bd_intf_pins sys_ps7_axi_periph/S00_AXI]
@@ -1034,12 +1120,24 @@ proc create_root_design { parentCell } {
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets ad9361SPI_0_o_mosi]
   connect_bd_net -net ad9361SPI_0_o_spi_clk [get_bd_ports spi_clk] [get_bd_pins ad9361SPI_0/o_spi_clk] [get_bd_pins system_ila_0/probe2]
   connect_bd_net -net ad9361SPI_0_o_ss_n [get_bd_ports spi_csn] [get_bd_pins ad9361SPI_0/o_ss_n] [get_bd_pins system_ila_0/probe1]
+  connect_bd_net -net adrvclk [get_bd_pins system_ila_1/probe1] [get_bd_pins toggle_0/data]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports gpio_resetb] [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins system_ila_0/probe4]
+  connect_bd_net -net clk_0_1 [get_bd_ports adrvclk] [get_bd_pins toggle_0/clk]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins ad9361SPI_0/i_spi_ctrl_clock] [get_bd_pins clk_wiz_0/clk_out1]
+  connect_bd_net -net data_in_from_pins_n_0_1 [get_bd_ports rx_data_in_n] [get_bd_pins selectio_wiz_0/data_in_from_pins_n]
+  connect_bd_net -net data_in_from_pins_p_0_1 [get_bd_ports rx_data_in_p] [get_bd_pins selectio_wiz_0/data_in_from_pins_p]
   connect_bd_net -net i_miso_0_1 [get_bd_ports spi_miso] [get_bd_pins ad9361SPI_0/i_miso] [get_bd_pins system_ila_0/probe3]
+  connect_bd_net -net probe4_0_1 [get_bd_ports rx_frame] [get_bd_pins system_ila_1/probe4]
   connect_bd_net -net rst_sys_ps7_50M_peripheral_aresetn [get_bd_pins ad9361SPI_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_sys_ps7_50M/peripheral_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net rxClock_data [get_bd_pins rxClock/data] [get_bd_pins system_ila_1/probe2]
+  connect_bd_net -net selectio_wiz_0_clk_out [get_bd_pins rxClock/clk] [get_bd_pins selectio_wiz_0/clk_out]
+  connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins selectio_wiz_0/data_in_to_device] [get_bd_pins system_ila_1/probe3]
+  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_clk50/clk] [get_bd_pins system_ila_0/clk] [get_bd_pins system_ila_1/clk]
   connect_bd_net -net sys_ps7_FCLK_RESET0_N [get_bd_pins rst_sys_ps7_50M/ext_reset_in] [get_bd_pins sys_ps7/FCLK_RESET0_N]
+  connect_bd_net -net toggle_2_data [get_bd_pins system_clk50/data] [get_bd_pins system_ila_1/probe0]
+  connect_bd_net -net xlconstant_0_dout [get_bd_ports enable] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins selectio_wiz_0/io_reset] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_ports clk_sel] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces sys_ps7/Data] [get_bd_addr_segs ad9361SPI_0/S00_AXI/S00_AXI_reg] -force

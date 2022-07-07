@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF3D779F415263E27",
+      "boundary_crc": "0xC4B768B6D1A881DD",
       "device": "xc7z035ifbg676-2L",
       "gen_directory": "../../../../adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system",
       "name": "system",
@@ -24,7 +24,15 @@
       "clk_wiz_0": "",
       "axi_gpio_0": "",
       "system_ila_0": "",
-      "ad9361SPI_0": ""
+      "ad9361SPI_0": "",
+      "xlconstant_0": "",
+      "system_ila_1": "",
+      "toggle_0": "",
+      "xlconstant_2": "",
+      "system_clk50": "",
+      "selectio_wiz_0": "",
+      "xlconstant_1": "",
+      "rxClock": ""
     },
     "interface_ports": {
       "ddr": {
@@ -92,6 +100,21 @@
             "value_src": "default"
           }
         }
+      },
+      "rx_clk_in": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          }
+        }
       }
     },
     "ports": {
@@ -132,6 +155,57 @@
       "gpio_resetb": {
         "direction": "O",
         "left": "0",
+        "right": "0"
+      },
+      "enable": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "clk_sel": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "adrvclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rx_frame": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "rx_data_in_p": {
+        "direction": "I",
+        "left": "5",
+        "right": "0"
+      },
+      "rx_data_in_n": {
+        "direction": "I",
+        "left": "5",
         "right": "0"
       }
     },
@@ -1804,6 +1878,9 @@
           "C_ALL_OUTPUTS": {
             "value": "1"
           },
+          "C_DOUT_DEFAULT": {
+            "value": "0x00000001"
+          },
           "C_GPIO_WIDTH": {
             "value": "1"
           }
@@ -1834,9 +1911,179 @@
         "xci_name": "system_ad9361SPI_0_0",
         "xci_path": "ip\\system_ad9361SPI_0_0\\system_ad9361SPI_0_0.xci",
         "inst_hier_path": "ad9361SPI_0"
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "system_xlconstant_0_0",
+        "xci_path": "ip\\system_xlconstant_0_0\\system_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      },
+      "system_ila_1": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "system_system_ila_1_0",
+        "xci_path": "ip\\system_system_ila_1_0\\system_system_ila_1_0.xci",
+        "inst_hier_path": "system_ila_1",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "8192"
+          },
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "5"
+          }
+        }
+      },
+      "toggle_0": {
+        "vlnv": "xilinx.com:module_ref:toggle:1.0",
+        "xci_name": "system_toggle_0_0",
+        "xci_path": "ip\\system_toggle_0_0\\system_toggle_0_0.xci",
+        "inst_hier_path": "toggle_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "toggle",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "system_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_2": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "system_xlconstant_2_0",
+        "xci_path": "ip\\system_xlconstant_2_0\\system_xlconstant_2_0.xci",
+        "inst_hier_path": "xlconstant_2"
+      },
+      "system_clk50": {
+        "vlnv": "xilinx.com:module_ref:toggle:1.0",
+        "xci_name": "system_toggle_2_0",
+        "xci_path": "ip\\system_toggle_2_0\\system_toggle_2_0.xci",
+        "inst_hier_path": "system_clk50",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "toggle",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "system_sys_ps7_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data": {
+            "direction": "O"
+          }
+        }
+      },
+      "selectio_wiz_0": {
+        "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
+        "xci_name": "system_selectio_wiz_0_0",
+        "xci_path": "ip\\system_selectio_wiz_0_0\\system_selectio_wiz_0_0.xci",
+        "inst_hier_path": "selectio_wiz_0",
+        "parameters": {
+          "BUS_IO_STD": {
+            "value": "LVDS"
+          },
+          "BUS_SIG_TYPE": {
+            "value": "DIFF"
+          },
+          "CLK_FWD_IO_STD": {
+            "value": "LVDS"
+          },
+          "CLK_FWD_SIG_TYPE": {
+            "value": "DIFF"
+          },
+          "SELIO_ACTIVE_EDGE": {
+            "value": "DDR"
+          },
+          "SELIO_CLK_IO_STD": {
+            "value": "LVDS"
+          },
+          "SELIO_CLK_SIG_TYPE": {
+            "value": "DIFF"
+          },
+          "SELIO_INTERFACE_TYPE": {
+            "value": "NETWORKING"
+          },
+          "SERIALIZATION_FACTOR": {
+            "value": "4"
+          },
+          "SYSTEM_DATA_WIDTH": {
+            "value": "6"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "system_xlconstant_1_0",
+        "xci_path": "ip\\system_xlconstant_1_0\\system_xlconstant_1_0.xci",
+        "inst_hier_path": "xlconstant_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "rxClock": {
+        "vlnv": "xilinx.com:module_ref:toggle:1.0",
+        "xci_name": "system_toggle_1_1",
+        "xci_path": "ip\\system_toggle_1_1\\system_toggle_1_1.xci",
+        "inst_hier_path": "rxClock",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "toggle",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "system_selectio_wiz_0_0_clk_out",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
+      "diff_clk_in_0_1": {
+        "interface_ports": [
+          "rx_clk_in",
+          "selectio_wiz_0/diff_clk_in"
+        ]
+      },
       "sys_ps7_DDR": {
         "interface_ports": [
           "ddr",
@@ -1898,11 +2145,23 @@
           "system_ila_0/probe1"
         ]
       },
+      "adrvclk": {
+        "ports": [
+          "toggle_0/data",
+          "system_ila_1/probe1"
+        ]
+      },
       "axi_gpio_0_gpio_io_o": {
         "ports": [
           "axi_gpio_0/gpio_io_o",
           "gpio_resetb",
           "system_ila_0/probe4"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "adrvclk",
+          "toggle_0/clk"
         ]
       },
       "clk_wiz_0_clk_out1": {
@@ -1911,11 +2170,29 @@
           "ad9361SPI_0/i_spi_ctrl_clock"
         ]
       },
+      "data_in_from_pins_n_0_1": {
+        "ports": [
+          "rx_data_in_n",
+          "selectio_wiz_0/data_in_from_pins_n"
+        ]
+      },
+      "data_in_from_pins_p_0_1": {
+        "ports": [
+          "rx_data_in_p",
+          "selectio_wiz_0/data_in_from_pins_p"
+        ]
+      },
       "i_miso_0_1": {
         "ports": [
           "spi_miso",
           "system_ila_0/probe3",
           "ad9361SPI_0/i_miso"
+        ]
+      },
+      "probe4_0_1": {
+        "ports": [
+          "rx_frame",
+          "system_ila_1/probe4"
         ]
       },
       "rst_sys_ps7_50M_peripheral_aresetn": {
@@ -1927,6 +2204,24 @@
           "axi_gpio_0/s_axi_aresetn",
           "sys_ps7_axi_periph/M01_ARESETN",
           "ad9361SPI_0/s00_axi_aresetn"
+        ]
+      },
+      "rxClock_data": {
+        "ports": [
+          "rxClock/data",
+          "system_ila_1/probe2"
+        ]
+      },
+      "selectio_wiz_0_clk_out": {
+        "ports": [
+          "selectio_wiz_0/clk_out",
+          "rxClock/clk"
+        ]
+      },
+      "selectio_wiz_0_data_in_to_device": {
+        "ports": [
+          "selectio_wiz_0/data_in_to_device",
+          "system_ila_1/probe3"
         ]
       },
       "sys_cpu_clk": {
@@ -1941,13 +2236,39 @@
           "axi_gpio_0/s_axi_aclk",
           "sys_ps7_axi_periph/M01_ACLK",
           "system_ila_0/clk",
-          "ad9361SPI_0/s00_axi_aclk"
+          "ad9361SPI_0/s00_axi_aclk",
+          "system_ila_1/clk",
+          "system_clk50/clk"
         ]
       },
       "sys_ps7_FCLK_RESET0_N": {
         "ports": [
           "sys_ps7/FCLK_RESET0_N",
           "rst_sys_ps7_50M/ext_reset_in"
+        ]
+      },
+      "toggle_2_data": {
+        "ports": [
+          "system_clk50/data",
+          "system_ila_1/probe0"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "enable"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "selectio_wiz_0/io_reset"
+        ]
+      },
+      "xlconstant_2_dout": {
+        "ports": [
+          "xlconstant_2/dout",
+          "clk_sel"
         ]
       }
     },

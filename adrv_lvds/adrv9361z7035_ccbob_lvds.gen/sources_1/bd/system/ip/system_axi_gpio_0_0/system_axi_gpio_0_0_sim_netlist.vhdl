@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jun 17 13:49:01 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
+-- Date        : Fri Jun 17 16:10:34 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top system_axi_gpio_0_0 -prefix
 --               system_axi_gpio_0_0_ system_axi_gpio_0_0_sim_netlist.vhdl
 -- Design      : system_axi_gpio_0_0
@@ -67,16 +67,16 @@ begin
       Q => reg1(31),
       R => '0'
     );
-\Not_Dual.gpio_Data_Out_reg[0]\: unisim.vcomponents.FDRE
+\Not_Dual.gpio_Data_Out_reg[0]\: unisim.vcomponents.FDSE
     generic map(
-      INIT => '0'
+      INIT => '1'
     )
         port map (
       C => s_axi_aclk,
       CE => '1',
       D => \Not_Dual.gpio_Data_Out_reg[0]_0\,
       Q => \^gpio_io_o\(0),
-      R => rst
+      S => rst
     );
 gpio_xferAck_Reg_reg: unisim.vcomponents.FDRE
      port map (
@@ -1138,7 +1138,7 @@ entity system_axi_gpio_0_0_axi_gpio is
   attribute C_ALL_OUTPUTS_2 : integer;
   attribute C_ALL_OUTPUTS_2 of system_axi_gpio_0_0_axi_gpio : entity is 0;
   attribute C_DOUT_DEFAULT : integer;
-  attribute C_DOUT_DEFAULT of system_axi_gpio_0_0_axi_gpio : entity is 0;
+  attribute C_DOUT_DEFAULT of system_axi_gpio_0_0_axi_gpio : entity is 1;
   attribute C_DOUT_DEFAULT_2 : integer;
   attribute C_DOUT_DEFAULT_2 of system_axi_gpio_0_0_axi_gpio : entity is 0;
   attribute C_FAMILY : string;
@@ -1440,7 +1440,7 @@ architecture STRUCTURE of system_axi_gpio_0_0 is
   attribute C_ALL_OUTPUTS_2 : integer;
   attribute C_ALL_OUTPUTS_2 of U0 : label is 0;
   attribute C_DOUT_DEFAULT : integer;
-  attribute C_DOUT_DEFAULT of U0 : label is 0;
+  attribute C_DOUT_DEFAULT of U0 : label is 1;
   attribute C_DOUT_DEFAULT_2 : integer;
   attribute C_DOUT_DEFAULT_2 of U0 : label is 0;
   attribute C_FAMILY : string;

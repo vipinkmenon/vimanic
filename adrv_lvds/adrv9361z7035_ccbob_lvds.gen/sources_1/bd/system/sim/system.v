@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Jun 20 21:03:57 2022
-//Host        : G0819 running 64-bit major release  (build 9200)
+//Date        : Thu Jul  7 10:43:05 2022
+//Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -592,9 +592,11 @@ module s00_couplers_imp_19G6EX5
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
-   (ddr_addr,
+   (adrvclk,
+    clk_sel,
+    ddr_addr,
     ddr_ba,
     ddr_cas_n,
     ddr_ck_n,
@@ -609,6 +611,7 @@ module system
     ddr_ras_n,
     ddr_reset_n,
     ddr_we_n,
+    enable,
     fixed_io_ddr_vrn,
     fixed_io_ddr_vrp,
     fixed_io_mio,
@@ -616,10 +619,17 @@ module system
     fixed_io_ps_porb,
     fixed_io_ps_srstb,
     gpio_resetb,
+    rx_clk_in_clk_n,
+    rx_clk_in_clk_p,
+    rx_data_in_n,
+    rx_data_in_p,
+    rx_frame,
     spi_clk,
     spi_csn,
     spi_miso,
     spi_mosi);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.ADRVCLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.ADRVCLK, CLK_DOMAIN system_clk_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input adrvclk;
+  output [0:0]clk_sel;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ddr, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]ddr_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr BA" *) inout [2:0]ddr_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr CAS_N" *) inout ddr_cas_n;
@@ -635,6 +645,7 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr RAS_N" *) inout ddr_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr RESET_N" *) inout ddr_reset_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 ddr WE_N" *) inout ddr_we_n;
+  output [0:0]enable;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 fixed_io DDR_VRN" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME fixed_io, CAN_DEBUG false" *) inout fixed_io_ddr_vrn;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 fixed_io DDR_VRP" *) inout fixed_io_ddr_vrp;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 fixed_io MIO" *) inout [53:0]fixed_io_mio;
@@ -642,6 +653,11 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 fixed_io PS_PORB" *) inout fixed_io_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 fixed_io PS_SRSTB" *) inout fixed_io_ps_srstb;
   output [0:0]gpio_resetb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 rx_clk_in " *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rx_clk_in, CAN_DEBUG false, FREQ_HZ 100000000" *) input rx_clk_in_clk_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 rx_clk_in " *) input rx_clk_in_clk_p;
+  input [5:0]rx_data_in_n;
+  input [5:0]rx_data_in_p;
+  input [0:0]rx_frame;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SPI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SPI_CLK, CLK_DOMAIN system_ad9361SPI_0_0_o_spi_clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output spi_clk;
   output spi_csn;
   input spi_miso;
@@ -650,10 +666,20 @@ module system
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire ad9361SPI_0_o_mosi;
   wire ad9361SPI_0_o_spi_clk;
   wire ad9361SPI_0_o_ss_n;
+  wire \^adrvclk ;
   wire [0:0]axi_gpio_0_gpio_io_o;
+  wire clk_0_1;
   wire clk_wiz_0_clk_out1;
+  wire [5:0]data_in_from_pins_n_0_1;
+  wire [5:0]data_in_from_pins_p_0_1;
+  wire diff_clk_in_0_1_CLK_N;
+  wire diff_clk_in_0_1_CLK_P;
   wire i_miso_0_1;
+  wire [0:0]probe4_0_1;
   wire [0:0]rst_sys_ps7_50M_peripheral_aresetn;
+  wire rxClock_data;
+  wire selectio_wiz_0_clk_out;
+  wire [11:0]selectio_wiz_0_data_in_to_device;
   wire sys_cpu_clk;
   wire [14:0]sys_ps7_DDR_ADDR;
   wire [2:0]sys_ps7_DDR_BA;
@@ -751,9 +777,21 @@ module system
   wire sys_ps7_axi_periph_M01_AXI_WREADY;
   wire [3:0]sys_ps7_axi_periph_M01_AXI_WSTRB;
   wire sys_ps7_axi_periph_M01_AXI_WVALID;
+  wire toggle_2_data;
+  wire [0:0]xlconstant_0_dout;
+  wire [0:0]xlconstant_1_dout;
+  wire [0:0]xlconstant_2_dout;
 
+  assign clk_0_1 = adrvclk;
+  assign clk_sel[0] = xlconstant_2_dout;
+  assign data_in_from_pins_n_0_1 = rx_data_in_n[5:0];
+  assign data_in_from_pins_p_0_1 = rx_data_in_p[5:0];
+  assign diff_clk_in_0_1_CLK_N = rx_clk_in_clk_n;
+  assign diff_clk_in_0_1_CLK_P = rx_clk_in_clk_p;
+  assign enable[0] = xlconstant_0_dout;
   assign gpio_resetb[0] = axi_gpio_0_gpio_io_o;
   assign i_miso_0_1 = spi_miso;
+  assign probe4_0_1 = rx_frame[0];
   assign spi_clk = ad9361SPI_0_o_spi_clk;
   assign spi_csn = ad9361SPI_0_o_ss_n;
   assign spi_mosi = ad9361SPI_0_o_mosi;
@@ -815,6 +853,17 @@ module system
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_sys_ps7_50M_peripheral_aresetn),
         .slowest_sync_clk(sys_cpu_clk));
+  system_toggle_1_1 rxClock
+       (.clk(selectio_wiz_0_clk_out),
+        .data(rxClock_data));
+  system_selectio_wiz_0_0 selectio_wiz_0
+       (.clk_in_n(diff_clk_in_0_1_CLK_N),
+        .clk_in_p(diff_clk_in_0_1_CLK_P),
+        .clk_out(selectio_wiz_0_clk_out),
+        .data_in_from_pins_n(data_in_from_pins_n_0_1),
+        .data_in_from_pins_p(data_in_from_pins_p_0_1),
+        .data_in_to_device(selectio_wiz_0_data_in_to_device),
+        .io_reset(xlconstant_1_dout));
   system_sys_ps7_0 sys_ps7
        (.DDR_Addr(ddr_addr[14:0]),
         .DDR_BankAddr(ddr_ba[2:0]),
@@ -962,6 +1011,9 @@ module system
         .S00_AXI_wready(sys_ps7_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(sys_ps7_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(sys_ps7_M_AXI_GP0_WVALID));
+  system_toggle_2_0 system_clk50
+       (.clk(sys_cpu_clk),
+        .data(toggle_2_data));
   system_system_ila_0_0 system_ila_0
        (.clk(sys_cpu_clk),
         .probe0(ad9361SPI_0_o_mosi),
@@ -969,6 +1021,22 @@ module system
         .probe2(ad9361SPI_0_o_spi_clk),
         .probe3(i_miso_0_1),
         .probe4(axi_gpio_0_gpio_io_o));
+  system_system_ila_1_0 system_ila_1
+       (.clk(sys_cpu_clk),
+        .probe0(toggle_2_data),
+        .probe1(\^adrvclk ),
+        .probe2(rxClock_data),
+        .probe3(selectio_wiz_0_data_in_to_device),
+        .probe4(probe4_0_1));
+  system_toggle_0_0 toggle_0
+       (.clk(clk_0_1),
+        .data(\^adrvclk ));
+  system_xlconstant_0_0 xlconstant_0
+       (.dout(xlconstant_0_dout));
+  system_xlconstant_1_0 xlconstant_1
+       (.dout(xlconstant_1_dout));
+  system_xlconstant_2_0 xlconstant_2
+       (.dout(xlconstant_2_dout));
 endmodule
 
 module system_sys_ps7_axi_periph_0
