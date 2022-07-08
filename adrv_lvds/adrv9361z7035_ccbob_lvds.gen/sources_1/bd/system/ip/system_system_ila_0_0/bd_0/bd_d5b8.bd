@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xBE40664BDD3A5A0A",
+      "boundary_crc": "0xBE40664B07868AC1",
       "design_src": "SBD",
       "device": "xc7z035ifbg676-2L",
       "name": "bd_d5b8",
@@ -24,8 +24,8 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "50000000",
-            "value_src": "default_prop"
+            "value": "100000000",
+            "value_src": "default"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -93,7 +93,7 @@
             "value": "0"
           },
           "C_ILA_CLK_FREQ": {
-            "value": "50000000"
+            "value": "100000000"
           },
           "C_INPUT_PIPE_STAGES": {
             "value": "0"

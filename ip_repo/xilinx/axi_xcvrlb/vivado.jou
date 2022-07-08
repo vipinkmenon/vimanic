@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Jul  5 13:27:59 2022
+# Process ID: 32424
+# Current directory: D:/Consultancy/Vimanic/spiController/hdl-master/hdl-master/library/xilinx/axi_xcvrlb
+# Command line: vivado.exe -mode batch -source axi_xcvrlb_ip.tcl
+# Log file: D:/Consultancy/Vimanic/spiController/hdl-master/hdl-master/library/xilinx/axi_xcvrlb/vivado.log
+# Journal file: D:/Consultancy/Vimanic/spiController/hdl-master/hdl-master/library/xilinx/axi_xcvrlb\vivado.jou
+#-----------------------------------------------------------
+source axi_xcvrlb_ip.tcl

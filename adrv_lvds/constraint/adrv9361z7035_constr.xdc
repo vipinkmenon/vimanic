@@ -10,17 +10,15 @@ set_property  -dict {PACKAGE_PIN  C11  IOSTANDARD LVCMOS18  PULLTYPE PULLUP} [ge
 set_property  -dict {PACKAGE_PIN  B11  IOSTANDARD LVCMOS18} [get_ports spi_clk]                           ; ## IO_L23N_T3_35                U1,B11,IO_L23_35_SPI_CLK
 set_property  -dict {PACKAGE_PIN  A13  IOSTANDARD LVCMOS18} [get_ports spi_mosi]                          ; ## IO_L24P_T3_AD15P_35          U1,A13,IO_L24_35_SPI_DI
 set_property  -dict {PACKAGE_PIN  A12  IOSTANDARD LVCMOS18} [get_ports spi_miso]                          ; ## IO_L24N_T3_AD15N_35          U1,A12,IO_L24_35_SPI_DO
-create_clock -name rx_clk       -period  4 [get_ports rx_clk_p]
-set_property  -dict {PACKAGE_PIN  J14  IOSTANDARD LVCMOS18} [get_ports rx_clk_p]    
-set_property  -dict {PACKAGE_PIN  H14  IOSTANDARD LVCMOS18} [get_ports rx_clk_n]
+
+set_property  -dict {PACKAGE_PIN  J14  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_clk_in_p]    
+set_property  -dict {PACKAGE_PIN  H14  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_clk_in_n]
 set_property  -dict {PACKAGE_PIN  G14  IOSTANDARD LVCMOS18} [get_ports enable]
+#set_property  -dict {PACKAGE_PIN  K12  IOSTANDARD LVCMOS18} [get_ports adrvclk]
+set_property  -dict {PACKAGE_PIN  H13  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_frame_in_p]     ; ## IO_L7P_T1_AD2P_35            U1,H13,IO_L07_35_RX_FRAME_P
+set_property  -dict {PACKAGE_PIN  H12  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_frame_in_n]     ; ## IO_L7N_T1_AD2N_35            U1,H12,IO_L07_35_RX_FRAME_N
 
-set_property  -dict {PACKAGE_PIN  K12  IOSTANDARD LVCMOS18} [get_ports adrvclk]
-
-
-set_property  -dict {PACKAGE_PIN  H13  IOSTANDARD LVCMOS18} [get_ports rx_frame]
-
-
+create_clock -name rx_clk  -period  4 [get_ports rx_clk_in_p]
 
 
 set_property  -dict {PACKAGE_PIN  F12  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_data_in_p[0]] ; 
@@ -37,8 +35,6 @@ set_property  -dict {PACKAGE_PIN  F13  IOSTANDARD LVDS      DIFF_TERM TRUE} [get
 set_property  -dict {PACKAGE_PIN  E13  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_data_in_n[5]];
 
 
-set_property  -dict {PACKAGE_PIN  J14  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_clk_in_clk_p]       ; ## IO_L12P_T1_MRCC_35           U1,J14,IO_L12_MRCC_35_DATA_CLK_P
-set_property  -dict {PACKAGE_PIN  H14  IOSTANDARD LVDS      DIFF_TERM TRUE} [get_ports rx_clk_in_clk_n]       ; ## IO_L12N_T1_MRCC_35           U1,H14,IO_L12_MRCC_35_DATA_CLK_N
 
 
 

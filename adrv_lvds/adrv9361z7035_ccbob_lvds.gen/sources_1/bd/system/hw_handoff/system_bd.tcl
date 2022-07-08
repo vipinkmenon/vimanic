@@ -37,13 +37,6 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source system_script.tcl
 
-
-# The design that will be created by this Tcl script contains the following 
-# module references:
-# toggle, toggle, toggle
-
-# Please add the sources of those modules before sourcing this Tcl script.
-
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -166,17 +159,17 @@ proc create_root_design { parentCell } {
 
   set fixed_io [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 fixed_io ]
 
-  set rx_clk_in [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 rx_clk_in ]
-
 
   # Create ports
-  set adrvclk [ create_bd_port -dir I -type clk adrvclk ]
   set clk_sel [ create_bd_port -dir O -from 0 -to 0 clk_sel ]
   set enable [ create_bd_port -dir O -from 0 -to 0 enable ]
   set gpio_resetb [ create_bd_port -dir O -from 0 -to 0 gpio_resetb ]
+  set rx_clk_in_n [ create_bd_port -dir I rx_clk_in_n ]
+  set rx_clk_in_p [ create_bd_port -dir I rx_clk_in_p ]
   set rx_data_in_n [ create_bd_port -dir I -from 5 -to 0 rx_data_in_n ]
   set rx_data_in_p [ create_bd_port -dir I -from 5 -to 0 rx_data_in_p ]
-  set rx_frame [ create_bd_port -dir I -from 0 -to 0 rx_frame ]
+  set rx_frame_in_n [ create_bd_port -dir I rx_frame_in_n ]
+  set rx_frame_in_p [ create_bd_port -dir I rx_frame_in_p ]
   set spi_clk [ create_bd_port -dir O -type clk spi_clk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {10000000} \
@@ -187,6 +180,21 @@ proc create_root_design { parentCell } {
 
   # Create instance: ad9361SPI_0, and set properties
   set ad9361SPI_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:ad9361SPI:1.0 ad9361SPI_0 ]
+
+  # Create instance: axi_ad9361_0, and set properties
+  set axi_ad9361_0 [ create_bd_cell -type ip -vlnv analog.com:user:axi_ad9361:1.0 axi_ad9361_0 ]
+  set_property -dict [ list \
+   CONFIG.ADC_INIT_DELAY {29} \
+   CONFIG.DAC_IODELAY_ENABLE {1} \
+   CONFIG.DAC_USERPORTS_DISABLE {0} \
+   CONFIG.DEV_PACKAGE {4} \
+   CONFIG.FPGA_FAMILY {4} \
+   CONFIG.FPGA_TECHNOLOGY {1} \
+   CONFIG.MODE_1R1T {1} \
+   CONFIG.PPS_RECEIVER_ENABLE {0} \
+   CONFIG.SPEED_GRADE {21} \
+   CONFIG.TDD_DISABLE {1} \
+ ] $axi_ad9361_0
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
@@ -199,44 +207,22 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {285.743} \
-   CONFIG.CLKOUT1_PHASE_ERROR {164.985} \
+   CONFIG.CLKIN1_JITTER_PS {100.0} \
+   CONFIG.CLKOUT1_JITTER {290.478} \
+   CONFIG.CLKOUT1_PHASE_ERROR {133.882} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10.000} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {100.000} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {15.625} \
+   CONFIG.MMCM_CLKIN1_PERIOD {10.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
+   CONFIG.PRIM_IN_FREQ {100.000} \
    CONFIG.USE_LOCKED {false} \
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
 
   # Create instance: rst_sys_ps7_50M, and set properties
   set rst_sys_ps7_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_sys_ps7_50M ]
-
-  # Create instance: rxClock, and set properties
-  set block_name toggle
-  set block_cell_name rxClock
-  if { [catch {set rxClock [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $rxClock eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: selectio_wiz_0, and set properties
-  set selectio_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:selectio_wiz:5.1 selectio_wiz_0 ]
-  set_property -dict [ list \
-   CONFIG.BUS_IO_STD {LVDS} \
-   CONFIG.BUS_SIG_TYPE {DIFF} \
-   CONFIG.CLK_FWD_IO_STD {LVDS} \
-   CONFIG.CLK_FWD_SIG_TYPE {DIFF} \
-   CONFIG.SELIO_ACTIVE_EDGE {DDR} \
-   CONFIG.SELIO_CLK_IO_STD {LVDS} \
-   CONFIG.SELIO_CLK_SIG_TYPE {DIFF} \
-   CONFIG.SELIO_INTERFACE_TYPE {NETWORKING} \
-   CONFIG.SERIALIZATION_FACTOR {4} \
-   CONFIG.SYSTEM_DATA_WIDTH {6} \
- ] $selectio_wiz_0
 
   # Create instance: sys_ps7, and set properties
   set sys_ps7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 sys_ps7 ]
@@ -248,8 +234,8 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.158730} \
    CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {125.000000} \
-   CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {50.000000} \
-   CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
+   CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {200.000000} \
    CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_I2C_PERIPHERAL_FREQMHZ {50} \
@@ -290,8 +276,8 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
    CONFIG.PCW_CAN_PERIPHERAL_VALID {0} \
-   CONFIG.PCW_CLK0_FREQ {50000000} \
-   CONFIG.PCW_CLK1_FREQ {10000000} \
+   CONFIG.PCW_CLK0_FREQ {100000000} \
+   CONFIG.PCW_CLK1_FREQ {200000000} \
    CONFIG.PCW_CLK2_FREQ {10000000} \
    CONFIG.PCW_CLK3_FREQ {10000000} \
    CONFIG.PCW_CORE0_FIQ_INTR {0} \
@@ -354,7 +340,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_CAN0 {0} \
    CONFIG.PCW_EN_CAN1 {0} \
    CONFIG.PCW_EN_CLK0_PORT {1} \
-   CONFIG.PCW_EN_CLK1_PORT {0} \
+   CONFIG.PCW_EN_CLK1_PORT {1} \
    CONFIG.PCW_EN_CLK2_PORT {0} \
    CONFIG.PCW_EN_CLK3_PORT {0} \
    CONFIG.PCW_EN_CLKTRIG0_PORT {0} \
@@ -417,10 +403,10 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_WDT {0} \
    CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {6} \
-   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {6} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {3} \
    CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {3} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {3} \
    CONFIG.PCW_FCLK2_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
@@ -428,15 +414,15 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_FCLK_CLK0_BUF {TRUE} \
-   CONFIG.PCW_FCLK_CLK1_BUF {FALSE} \
+   CONFIG.PCW_FCLK_CLK1_BUF {TRUE} \
    CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
    CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
-   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50} \
+   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
    CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200.0} \
    CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200.0} \
    CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
    CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
-   CONFIG.PCW_FPGA_FCLK1_ENABLE {0} \
+   CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
    CONFIG.PCW_FPGA_FCLK2_ENABLE {0} \
    CONFIG.PCW_FPGA_FCLK3_ENABLE {0} \
    CONFIG.PCW_GP0_EN_MODIFIABLE_TXN {1} \
@@ -1051,20 +1037,9 @@ proc create_root_design { parentCell } {
   # Create instance: sys_ps7_axi_periph, and set properties
   set sys_ps7_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 sys_ps7_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
+   CONFIG.NUM_MI {3} \
  ] $sys_ps7_axi_periph
 
-  # Create instance: system_clk50, and set properties
-  set block_name toggle
-  set block_cell_name system_clk50
-  if { [catch {set system_clk50 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $system_clk50 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
@@ -1084,17 +1059,16 @@ proc create_root_design { parentCell } {
    CONFIG.C_NUM_OF_PROBES {5} \
  ] $system_ila_1
 
-  # Create instance: toggle_0, and set properties
-  set block_name toggle
-  set block_cell_name toggle_0
-  if { [catch {set toggle_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $toggle_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
+  # Create instance: system_ila_2, and set properties
+  set system_ila_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_2 ]
+  set_property -dict [ list \
+   CONFIG.C_BRAM_CNT {2} \
+   CONFIG.C_DATA_DEPTH {8192} \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {7} \
+   CONFIG.C_PROBE0_TYPE {0} \
+ ] $system_ila_2
+
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
@@ -1108,39 +1082,46 @@ proc create_root_design { parentCell } {
   set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
 
   # Create interface connections
-  connect_bd_intf_net -intf_net diff_clk_in_0_1 [get_bd_intf_ports rx_clk_in] [get_bd_intf_pins selectio_wiz_0/diff_clk_in]
   connect_bd_intf_net -intf_net sys_ps7_DDR [get_bd_intf_ports ddr] [get_bd_intf_pins sys_ps7/DDR]
   connect_bd_intf_net -intf_net sys_ps7_FIXED_IO [get_bd_intf_ports fixed_io] [get_bd_intf_pins sys_ps7/FIXED_IO]
   connect_bd_intf_net -intf_net sys_ps7_M_AXI_GP0 [get_bd_intf_pins sys_ps7/M_AXI_GP0] [get_bd_intf_pins sys_ps7_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net sys_ps7_axi_periph_M00_AXI [get_bd_intf_pins ad9361SPI_0/S00_AXI] [get_bd_intf_pins sys_ps7_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net sys_ps7_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins sys_ps7_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net sys_ps7_axi_periph_M02_AXI [get_bd_intf_pins axi_ad9361_0/s_axi] [get_bd_intf_pins sys_ps7_axi_periph/M02_AXI]
 
   # Create port connections
   connect_bd_net -net ad9361SPI_0_o_mosi [get_bd_ports spi_mosi] [get_bd_pins ad9361SPI_0/o_mosi] [get_bd_pins system_ila_0/probe0]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets ad9361SPI_0_o_mosi]
   connect_bd_net -net ad9361SPI_0_o_spi_clk [get_bd_ports spi_clk] [get_bd_pins ad9361SPI_0/o_spi_clk] [get_bd_pins system_ila_0/probe2]
   connect_bd_net -net ad9361SPI_0_o_ss_n [get_bd_ports spi_csn] [get_bd_pins ad9361SPI_0/o_ss_n] [get_bd_pins system_ila_0/probe1]
-  connect_bd_net -net adrvclk [get_bd_pins system_ila_1/probe1] [get_bd_pins toggle_0/data]
+  connect_bd_net -net axi_ad9361_0_adc_data_i0 [get_bd_pins axi_ad9361_0/adc_data_i0] [get_bd_pins system_ila_2/probe3]
+  connect_bd_net -net axi_ad9361_0_adc_data_q0 [get_bd_pins axi_ad9361_0/adc_data_q0] [get_bd_pins system_ila_2/probe6]
+  connect_bd_net -net axi_ad9361_0_adc_enable_i0 [get_bd_pins axi_ad9361_0/adc_enable_i0] [get_bd_pins system_ila_2/probe1]
+  connect_bd_net -net axi_ad9361_0_adc_enable_q0 [get_bd_pins axi_ad9361_0/adc_enable_q0] [get_bd_pins system_ila_2/probe4]
+  connect_bd_net -net axi_ad9361_0_adc_valid_i0 [get_bd_pins axi_ad9361_0/adc_valid_i0] [get_bd_pins system_ila_2/probe2]
+  connect_bd_net -net axi_ad9361_0_adc_valid_q0 [get_bd_pins axi_ad9361_0/adc_valid_q0] [get_bd_pins system_ila_2/probe5]
+  connect_bd_net -net axi_ad9361_0_l_clk [get_bd_pins axi_ad9361_0/clk] [get_bd_pins axi_ad9361_0/l_clk] [get_bd_pins system_ila_2/clk]
+  connect_bd_net -net axi_ad9361_0_rst [get_bd_pins axi_ad9361_0/rst] [get_bd_pins system_ila_2/probe0]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports gpio_resetb] [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins system_ila_0/probe4]
-  connect_bd_net -net clk_0_1 [get_bd_ports adrvclk] [get_bd_pins toggle_0/clk]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins ad9361SPI_0/i_spi_ctrl_clock] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net data_in_from_pins_n_0_1 [get_bd_ports rx_data_in_n] [get_bd_pins selectio_wiz_0/data_in_from_pins_n]
-  connect_bd_net -net data_in_from_pins_p_0_1 [get_bd_ports rx_data_in_p] [get_bd_pins selectio_wiz_0/data_in_from_pins_p]
   connect_bd_net -net i_miso_0_1 [get_bd_ports spi_miso] [get_bd_pins ad9361SPI_0/i_miso] [get_bd_pins system_ila_0/probe3]
-  connect_bd_net -net probe4_0_1 [get_bd_ports rx_frame] [get_bd_pins system_ila_1/probe4]
-  connect_bd_net -net rst_sys_ps7_50M_peripheral_aresetn [get_bd_pins ad9361SPI_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_sys_ps7_50M/peripheral_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN]
-  connect_bd_net -net rxClock_data [get_bd_pins rxClock/data] [get_bd_pins system_ila_1/probe2]
-  connect_bd_net -net selectio_wiz_0_clk_out [get_bd_pins rxClock/clk] [get_bd_pins selectio_wiz_0/clk_out]
-  connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins selectio_wiz_0/data_in_to_device] [get_bd_pins system_ila_1/probe3]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_clk50/clk] [get_bd_pins system_ila_0/clk] [get_bd_pins system_ila_1/clk]
+  connect_bd_net -net rst_sys_ps7_50M_peripheral_aresetn [get_bd_pins ad9361SPI_0/s00_axi_aresetn] [get_bd_pins axi_ad9361_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_sys_ps7_50M/peripheral_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/M02_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN]
+  connect_bd_net -net rx_clk_in_n_0_1 [get_bd_ports rx_clk_in_n] [get_bd_pins axi_ad9361_0/rx_clk_in_n]
+  connect_bd_net -net rx_clk_in_p_0_1 [get_bd_ports rx_clk_in_p] [get_bd_pins axi_ad9361_0/rx_clk_in_p]
+  connect_bd_net -net rx_data_in_n_0_1 [get_bd_ports rx_data_in_n] [get_bd_pins axi_ad9361_0/rx_data_in_n]
+  connect_bd_net -net rx_data_in_p_0_1 [get_bd_ports rx_data_in_p] [get_bd_pins axi_ad9361_0/rx_data_in_p]
+  connect_bd_net -net rx_frame_in_n_0_1 [get_bd_ports rx_frame_in_n] [get_bd_pins axi_ad9361_0/rx_frame_in_n]
+  connect_bd_net -net rx_frame_in_p_0_1 [get_bd_ports rx_frame_in_p] [get_bd_pins axi_ad9361_0/rx_frame_in_p]
+  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_ad9361_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/M02_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk] [get_bd_pins system_ila_1/clk]
+  connect_bd_net -net sys_ps7_FCLK_CLK1 [get_bd_pins axi_ad9361_0/delay_clk] [get_bd_pins sys_ps7/FCLK_CLK1]
   connect_bd_net -net sys_ps7_FCLK_RESET0_N [get_bd_pins rst_sys_ps7_50M/ext_reset_in] [get_bd_pins sys_ps7/FCLK_RESET0_N]
-  connect_bd_net -net toggle_2_data [get_bd_pins system_clk50/data] [get_bd_pins system_ila_1/probe0]
   connect_bd_net -net xlconstant_0_dout [get_bd_ports enable] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins selectio_wiz_0/io_reset] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins axi_ad9361_0/adc_dovf] [get_bd_pins axi_ad9361_0/dac_dunf] [get_bd_pins axi_ad9361_0/dac_sync_in] [get_bd_pins axi_ad9361_0/gps_pps] [get_bd_pins axi_ad9361_0/tdd_sync] [get_bd_pins axi_ad9361_0/up_enable] [get_bd_pins axi_ad9361_0/up_txnrx] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlconstant_2_dout [get_bd_ports clk_sel] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces sys_ps7/Data] [get_bd_addr_segs ad9361SPI_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces sys_ps7/Data] [get_bd_addr_segs axi_ad9361_0/s_axi/axi_lite] -force
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces sys_ps7/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
 
 

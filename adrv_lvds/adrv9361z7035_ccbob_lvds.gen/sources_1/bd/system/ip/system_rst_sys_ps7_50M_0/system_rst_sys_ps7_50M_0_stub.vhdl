@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jun 17 13:47:51 2022
+-- Date        : Tue Jul  5 13:34:07 2022
 -- Host        : G0819 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top system_rst_sys_ps7_50M_0 -prefix
---               system_rst_sys_ps7_50M_0_ system_rst_sys_ps7_50M_0_stub.vhdl
--- Design      : system_rst_sys_ps7_50M_0
+--               system_rst_sys_ps7_50M_0_ system_util_ad9361_divclk_reset_0_stub.vhdl
+-- Design      : system_util_ad9361_divclk_reset_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z035ifbg676-2L
 -- --------------------------------------------------------------------------------

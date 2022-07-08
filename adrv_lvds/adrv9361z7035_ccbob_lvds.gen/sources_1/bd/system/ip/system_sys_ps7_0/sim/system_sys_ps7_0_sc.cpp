@@ -113,7 +113,7 @@ system_sys_ps7_0_sc::system_sys_ps7_0_sc(const sc_core::sc_module_name& nm) : sc
     model_param_props.addString("C_IRQ_F2P_MODE", "REVERSE");
     model_param_props.addString("C_PS7_SI_REV", "PRODUCTION");
     model_param_props.addString("C_FCLK_CLK0_BUF", "TRUE");
-    model_param_props.addString("C_FCLK_CLK1_BUF", "FALSE");
+    model_param_props.addString("C_FCLK_CLK1_BUF", "TRUE");
     model_param_props.addString("C_FCLK_CLK2_BUF", "FALSE");
     model_param_props.addString("C_FCLK_CLK3_BUF", "FALSE");
     model_param_props.addString("C_PACKAGE_NAME", "fbg676");
