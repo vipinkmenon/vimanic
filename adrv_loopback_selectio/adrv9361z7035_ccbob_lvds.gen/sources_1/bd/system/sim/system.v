@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Wed Jul 20 16:59:09 2022
-//Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+//Date        : Wed Jul 20 21:16:18 2022
+//Host        : G0819 running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -592,7 +592,7 @@ module s00_couplers_imp_19G6EX5
         .s_axi_wvalid(s00_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=21,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (Dtx_frame_out_n,
     clock_sel,
@@ -678,21 +678,31 @@ module system
   wire [0:0]In0_1_1;
   wire [5:0]In1_0_1;
   wire [5:0]In1_1_1;
-  (* DEBUG = "true" *) (* MARK_DEBUG *) wire ad9361SPI_0_o_mosi;
+  wire ad9361SPI_0_o_mosi;
   wire ad9361SPI_0_o_spi_clk;
   wire ad9361SPI_0_o_ss_n;
   wire [0:0]axi_gpio_0_gpio_io_o;
   wire clk_in_n_0_1;
   wire clk_in_p_0_1;
   wire clk_wiz_0_clk_out1;
+  wire [11:0]dataBlaster_0_o_data;
+  wire dataBlaster_0_o_data_valid;
+  wire [11:0]dataBlaster_1_o_data;
+  wire [11:0]dataPackager_0_I_Value;
+  wire [11:0]dataPackager_0_Q_Value;
+  wire dataPackager_0_o_I_Valid;
+  wire dataPackager_0_o_Q_Valid;
   wire i_miso_0_1;
   wire [0:0]rst_sys_ps7_50M_peripheral_aresetn;
   wire [0:0]rx_frame_in_p;
+  wire selectio_wiz_0_clk_out;
   wire selectio_wiz_0_clk_to_pins_n;
   wire selectio_wiz_0_clk_to_pins_p;
-  wire [13:0]selectio_wiz_0_data_in_to_device;
+  (* DEBUG = "true" *) (* MARK_DEBUG *) wire [13:0]selectio_wiz_0_data_in_to_device;
   wire [6:0]selectio_wiz_0_data_out_to_pins_n;
   wire [6:0]selectio_wiz_0_data_out_to_pins_p;
+  wire [12:0]signalAdder_0_o_data;
+  wire signalAdder_0_o_data_valid;
   wire sys_cpu_clk;
   wire [14:0]sys_ps7_DDR_ADDR;
   wire [2:0]sys_ps7_DDR_BA;
@@ -868,6 +878,24 @@ module system
   system_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(sys_cpu_clk),
         .clk_out1(clk_wiz_0_clk_out1));
+  system_dataBlaster_0_0 dataBlaster_0
+       (.i_clk(selectio_wiz_0_clk_out),
+        .i_data(dataPackager_0_I_Value),
+        .i_data_valid(dataPackager_0_o_I_Valid),
+        .o_data(dataBlaster_0_o_data),
+        .o_data_valid(dataBlaster_0_o_data_valid));
+  system_dataBlaster_1_0 dataBlaster_1
+       (.i_clk(selectio_wiz_0_clk_out),
+        .i_data(dataPackager_0_Q_Value),
+        .i_data_valid(dataPackager_0_o_Q_Valid),
+        .o_data(dataBlaster_1_o_data));
+  system_dataPackager_0_0 dataPackager_0
+       (.I_Value(dataPackager_0_I_Value),
+        .Q_Value(dataPackager_0_Q_Value),
+        .i_clk(selectio_wiz_0_clk_out),
+        .i_data(selectio_wiz_0_data_in_to_device),
+        .o_I_Valid(dataPackager_0_o_I_Valid),
+        .o_Q_Valid(dataPackager_0_o_Q_Valid));
   system_rst_sys_ps7_50M_0 rst_sys_ps7_50M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -878,6 +906,7 @@ module system
   system_selectio_wiz_0_0 selectio_wiz_0
        (.clk_in_n(clk_in_n_0_1),
         .clk_in_p(clk_in_p_0_1),
+        .clk_out(selectio_wiz_0_clk_out),
         .clk_reset(xlconstant_0_dout),
         .clk_to_pins_n(selectio_wiz_0_clk_to_pins_n),
         .clk_to_pins_p(selectio_wiz_0_clk_to_pins_p),
@@ -888,6 +917,13 @@ module system
         .data_out_to_pins_n(selectio_wiz_0_data_out_to_pins_n),
         .data_out_to_pins_p(selectio_wiz_0_data_out_to_pins_p),
         .io_reset(xlconstant_0_dout));
+  system_signalAdder_0_0 signalAdder_0
+       (.i_clk(selectio_wiz_0_clk_out),
+        .i_data1(dataBlaster_0_o_data),
+        .i_data2(dataBlaster_1_o_data),
+        .i_data_valid(dataBlaster_0_o_data_valid),
+        .o_data(signalAdder_0_o_data),
+        .o_data_valid(signalAdder_0_o_data_valid));
   system_sys_ps7_0 sys_ps7
        (.DDR_Addr(ddr_addr[14:0]),
         .DDR_BankAddr(ddr_ba[2:0]),
@@ -1035,14 +1071,18 @@ module system
         .S00_AXI_wready(sys_ps7_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(sys_ps7_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(sys_ps7_M_AXI_GP0_WVALID));
-  system_system_ila_0_0 system_ila_0
-       (.clk(sys_cpu_clk),
-        .probe0(ad9361SPI_0_o_mosi),
-        .probe1(ad9361SPI_0_o_ss_n),
-        .probe2(ad9361SPI_0_o_spi_clk),
-        .probe3(i_miso_0_1),
-        .probe4(axi_gpio_0_gpio_io_o),
-        .probe5(selectio_wiz_0_data_in_to_device));
+  system_system_ila_1_0 system_ila_1
+       (.clk(selectio_wiz_0_clk_out),
+        .probe0(selectio_wiz_0_data_in_to_device),
+        .probe1(dataPackager_0_I_Value),
+        .probe2(dataPackager_0_Q_Value),
+        .probe3(dataPackager_0_o_I_Valid),
+        .probe4(dataPackager_0_o_Q_Valid),
+        .probe5(dataBlaster_0_o_data),
+        .probe6(dataBlaster_1_o_data),
+        .probe7(dataBlaster_0_o_data_valid),
+        .probe8(signalAdder_0_o_data),
+        .probe9(signalAdder_0_o_data_valid));
   system_xlconcat_0_0 xlconcat_0
        (.In0(rx_frame_in_p),
         .In1(In1_0_1),

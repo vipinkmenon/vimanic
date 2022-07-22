@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:ad9361SPI:1.0
-// IP Revision: 5
+// IP Revision: 7
 
 `timescale 1ns/1ps
 

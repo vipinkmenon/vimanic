@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 -- Date        : Wed Jul 20 15:43:36 2022
 -- Host        : G0819 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               d:/Consultancy/Vimanic/adrv_loopback_selectioBkup/adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_axi_gpio_0_0 -prefix
+--               system_axi_gpio_0_0_ system_axi_gpio_0_0_stub.vhdl
 -- Design      : system_axi_gpio_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z035ifbg676-2L

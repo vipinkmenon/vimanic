@@ -21,24 +21,6 @@
   <key attr.name="vert_type" attr.type="string" for="node" id="VT"/>
   <graph edgedefault="undirected" id="G" parse.edgeids="canonical" parse.nodeids="canonical" parse.order="nodesfirst">
     <node id="n0">
-      <data key="BA">0x43C00000</data>
-      <data key="BP">C_S00_AXI_BASEADDR</data>
-      <data key="HA">0x43C0FFFF</data>
-      <data key="HP">C_S00_AXI_HIGHADDR</data>
-      <data key="MA">Data</data>
-      <data key="MX">/sys_ps7</data>
-      <data key="MI">M_AXI_GP0</data>
-      <data key="MS">SEG_ad9361SPI_0_S00_AXI_reg</data>
-      <data key="MV">xilinx.com:ip:processing_system7:5.5</data>
-      <data key="TM">both</data>
-      <data key="SX">/ad9361SPI_0</data>
-      <data key="SI">S00_AXI</data>
-      <data key="SS">S00_AXI_reg</data>
-      <data key="SV">xilinx.com:user:ad9361SPI:1.0</data>
-      <data key="TU">register</data>
-      <data key="VT">AC</data>
-    </node>
-    <node id="n1">
       <data key="BA">0x41200000</data>
       <data key="BP">C_BASEADDR</data>
       <data key="HA">0x4120FFFF</data>
@@ -56,28 +38,46 @@
       <data key="TU">register</data>
       <data key="VT">AC</data>
     </node>
-    <node id="n2">
-      <data key="VM">system</data>
-      <data key="VT">BC</data>
+    <node id="n1">
+      <data key="BA">0x43C00000</data>
+      <data key="BP">C_S00_AXI_BASEADDR</data>
+      <data key="HA">0x43C0FFFF</data>
+      <data key="HP">C_S00_AXI_HIGHADDR</data>
+      <data key="MA">Data</data>
+      <data key="MX">/sys_ps7</data>
+      <data key="MI">M_AXI_GP0</data>
+      <data key="MS">SEG_ad9361SPI_0_S00_AXI_reg</data>
+      <data key="MV">xilinx.com:ip:processing_system7:5.5</data>
+      <data key="TM">both</data>
+      <data key="SX">/ad9361SPI_0</data>
+      <data key="SI">S00_AXI</data>
+      <data key="SS">S00_AXI_reg</data>
+      <data key="SV">xilinx.com:user:ad9361SPI:1.0</data>
+      <data key="TU">register</data>
+      <data key="VT">AC</data>
     </node>
-    <node id="n3">
+    <node id="n2">
       <data key="VH">2</data>
       <data key="VM">system</data>
       <data key="VT">VR</data>
     </node>
-    <node id="n4">
+    <node id="n3">
       <data key="TU">active</data>
       <data key="VH">2</data>
       <data key="VT">PM</data>
     </node>
-    <edge id="e0" source="n2" target="n3">
+    <node id="n4">
+      <data key="VM">system</data>
+      <data key="VT">BC</data>
+    </node>
+    <edge id="e0" source="n4" target="n2">
     </edge>
-    <edge id="e1" source="n3" target="n4">
+    <edge id="e1" source="n2" target="n3">
     </edge>
-    <edge id="e2" source="n1" target="n4">
+    <edge id="e2" source="n0" target="n3">
       <data key="EH">2</data>
     </edge>
-    <edge id="e3" source="n0" target="n4">
+    <edge id="e3" source="n1" target="n3">
       <data key="EH">2</data>
     </edge>
   </graph>

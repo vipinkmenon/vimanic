@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 20 16:59:12 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 20 21:16:19 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z035i" NAME="system" PACKAGE="fbg676" SPEEDGRADE="-2L"/>
 
@@ -21,7 +21,6 @@
     </PORT>
     <PORT DIR="I" NAME="spi_miso" SIGIS="undef" SIGNAME="External_Ports_spi_miso">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="system_ila_0" PORT="probe3"/>
         <CONNECTION INSTANCE="ad9361SPI_0" PORT="i_miso"/>
       </CONNECTIONS>
     </PORT>
@@ -255,7 +254,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="5" FULLNAME="/ad9361SPI_0" HWVERSION="1.0" INSTANCE="ad9361SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad9361SPI" VLNV="xilinx.com:user:ad9361SPI:1.0">
+    <MODULE COREREVISION="7" FULLNAME="/ad9361SPI_0" HWVERSION="1.0" INSTANCE="ad9361SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad9361SPI" VLNV="xilinx.com:user:ad9361SPI:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -387,19 +386,16 @@
         <PORT DIR="O" NAME="o_mosi" SIGIS="undef" SIGNAME="ad9361SPI_0_o_mosi">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_mosi"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="o_ss_n" SIGIS="undef" SIGNAME="ad9361SPI_0_o_ss_n">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_csn"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe1"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="10000000" DIR="O" NAME="o_spi_clk" SIGIS="clk" SIGNAME="ad9361SPI_0_o_spi_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_clk"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe2"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -755,7 +751,6 @@
         <PORT DIR="O" LEFT="0" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="gpio_resetb"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe4"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1412,6 +1407,119 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dataBlaster_0" HWVERSION="1.0" INSTANCE="dataBlaster_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dataBlaster" VLNV="xilinx.com:module_ref:dataBlaster:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="system_dataBlaster_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="i_data" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_I_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="I_Value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_data_valid" SIGIS="undef" SIGNAME="dataPackager_0_o_I_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="o_I_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe5"/>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="i_data1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_data_valid" SIGIS="undef" SIGNAME="dataBlaster_0_o_data_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe7"/>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="i_data_valid"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dataBlaster_1" HWVERSION="1.0" INSTANCE="dataBlaster_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dataBlaster" VLNV="xilinx.com:module_ref:dataBlaster:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="system_dataBlaster_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="i_data" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_Q_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="Q_Value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_data_valid" SIGIS="undef" SIGNAME="dataPackager_0_o_Q_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="o_Q_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_1_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe6"/>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="i_data2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_data_valid" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/dataPackager_0" HWVERSION="1.0" INSTANCE="dataPackager_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dataPackager" VLNV="xilinx.com:module_ref:dataPackager:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="system_dataPackager_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="13" NAME="i_data" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="I_Value" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_I_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="i_data"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="Q_Value" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_Q_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="i_data"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_I_Valid" SIGIS="undef" SIGNAME="dataPackager_0_o_I_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="i_data_valid"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_Q_Valid" SIGIS="undef" SIGNAME="dataPackager_0_o_Q_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="i_data_valid"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/rst_sys_ps7_50M" HWVERSION="5.0" INSTANCE="rst_sys_ps7_50M" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
@@ -1631,11 +1739,20 @@
             <CONNECTION INSTANCE="External_Ports" PORT="tx_clk_out_n"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="i_clk"/>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="i_clk"/>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="i_clk"/>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="i_clk"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="13" NAME="data_in_to_device" RIGHT="0" SIGIS="data" SIGNAME="selectio_wiz_0_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_out_from_device"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="probe5"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe0"/>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="i_data"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1657,6 +1774,46 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/signalAdder_0" HWVERSION="1.0" INSTANCE="signalAdder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="signalAdder" VLNV="xilinx.com:module_ref:signalAdder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="system_signalAdder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="i_data1" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="i_data2" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_1_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="o_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_data_valid" SIGIS="undef" SIGNAME="dataBlaster_0_o_data_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="12" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe8"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_data_valid" SIGIS="undef" SIGNAME="signalAdder_0_o_data_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="system_ila_1" PORT="probe9"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
     <MODULE CONFIGURABLE="TRUE" COREREVISION="6" FULLNAME="/sys_ps7" HWVERSION="5.5" INSTANCE="sys_ps7" IPTYPE="PERIPHERAL" IS_ENABLE="1" IS_PL="FALSE" MODTYPE="processing_system7" VLNV="xilinx.com:ip:processing_system7:5.5">
       <DOCUMENTS>
@@ -2806,7 +2963,6 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="sys_ps7_axi_periph" PORT="M01_ACLK"/>
-            <CONNECTION INSTANCE="system_ila_0" PORT="clk"/>
             <CONNECTION INSTANCE="ad9361SPI_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
@@ -3876,7 +4032,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE BD="system_system_ila_0_0" BDTYPE="SBD" COREREVISION="10" DRIVERMODE="MIXED" FULLNAME="/system_ila_0" HWVERSION="1.1" INSTANCE="system_ila_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="system_ila" SIM_BD="system_system_ila_0_0" VLNV="xilinx.com:ip:system_ila:1.1">
+    <MODULE BD="system_system_ila_1_0" BDTYPE="SBD" COREREVISION="10" DRIVERMODE="MIXED" FULLNAME="/system_ila_1" HWVERSION="1.1" INSTANCE="system_ila_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="system_ila" SIM_BD="system_system_ila_1_0" VLNV="xilinx.com:ip:system_ila:1.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=system_ila;v=v1_1;d=pg261-system-ila.pdf"/>
       </DOCUMENTS>
@@ -4124,7 +4280,7 @@
         <PARAMETER NAME="C_SLOT_15_APC_MAX_WLAST_TO_AWVALID_WAITS" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_15_APC_MAX_WRITE_TO_BVALID_WAITS" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_15_APC_MAX_CONTINUOUS_RTRANSFERS_WAITS" VALUE="0"/>
-        <PARAMETER NAME="C_BRAM_CNT" VALUE="5.5"/>
+        <PARAMETER NAME="C_BRAM_CNT" VALUE="4.5"/>
         <PARAMETER NAME="C_SLOT_0_AXI_AW_SEL_DATA" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_W_SEL_DATA" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_B_SEL_DATA" VALUE="1"/>
@@ -6444,10 +6600,10 @@
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="32768"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="6"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="16384"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="10"/>
         <PARAMETER NAME="C_XLNX_HW_PROBE_INFO" VALUE="DEFAULT"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_system_ila_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_system_ila_1_0"/>
         <PARAMETER NAME="C_PROBE70_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_TRIGOUT_EN" VALUE="false"/>
         <PARAMETER NAME="C_EN_STRG_QUAL" VALUE="0"/>
@@ -7713,39 +7869,59 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="sys_ps7_FCLK_CLK0">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="selectio_wiz_0" PORT="clk_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="ad9361SPI_0_o_mosi">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ad9361SPI_0" PORT="o_mosi"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="ad9361SPI_0_o_ss_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ad9361SPI_0" PORT="o_ss_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="ad9361SPI_0_o_spi_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ad9361SPI_0" PORT="o_spi_clk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_spi_miso">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi_miso"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="13" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
+        <PORT DIR="I" LEFT="13" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_to_device"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_I_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="I_Value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_Q_Value">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="Q_Value"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_o_I_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="o_I_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="dataPackager_0_o_Q_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="o_Q_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_1_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="o_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="o_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe9" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="o_data_valid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

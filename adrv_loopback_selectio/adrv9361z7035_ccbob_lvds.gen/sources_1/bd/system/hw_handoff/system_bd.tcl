@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source system_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# dataBlaster, dataBlaster, dataPackager, signalAdder
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -208,6 +215,39 @@ proc create_root_design { parentCell } {
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
 
+  # Create instance: dataBlaster_0, and set properties
+  set block_name dataBlaster
+  set block_cell_name dataBlaster_0
+  if { [catch {set dataBlaster_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $dataBlaster_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: dataBlaster_1, and set properties
+  set block_name dataBlaster
+  set block_cell_name dataBlaster_1
+  if { [catch {set dataBlaster_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $dataBlaster_1 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: dataPackager_0, and set properties
+  set block_name dataPackager
+  set block_cell_name dataPackager_0
+  if { [catch {set dataPackager_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $dataPackager_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: rst_sys_ps7_50M, and set properties
   set rst_sys_ps7_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_sys_ps7_50M ]
 
@@ -231,6 +271,17 @@ proc create_root_design { parentCell } {
    CONFIG.SYSTEM_DATA_WIDTH {7} \
  ] $selectio_wiz_0
 
+  # Create instance: signalAdder_0, and set properties
+  set block_name signalAdder
+  set block_cell_name signalAdder_0
+  if { [catch {set signalAdder_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $signalAdder_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: sys_ps7, and set properties
   set sys_ps7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 sys_ps7 ]
   set_property -dict [ list \
@@ -1047,15 +1098,15 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_MI {2} \
  ] $sys_ps7_axi_periph
 
-  # Create instance: system_ila_0, and set properties
-  set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
+  # Create instance: system_ila_1, and set properties
+  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {5.5} \
-   CONFIG.C_DATA_DEPTH {32768} \
+   CONFIG.C_BRAM_CNT {4.5} \
+   CONFIG.C_DATA_DEPTH {16384} \
    CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {6} \
+   CONFIG.C_NUM_OF_PROBES {10} \
    CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_0
+ ] $system_ila_1
 
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
@@ -1121,23 +1172,33 @@ proc create_root_design { parentCell } {
   connect_bd_net -net In0_1_1 [get_bd_ports rx_frame_in_n] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net In1_0_1 [get_bd_ports rx_data_in_p] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net In1_1_1 [get_bd_ports rx_data_in_n] [get_bd_pins xlconcat_1/In1]
-  connect_bd_net -net ad9361SPI_0_o_mosi [get_bd_ports spi_mosi] [get_bd_pins ad9361SPI_0/o_mosi] [get_bd_pins system_ila_0/probe0]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets ad9361SPI_0_o_mosi]
-  connect_bd_net -net ad9361SPI_0_o_spi_clk [get_bd_ports spi_clk] [get_bd_pins ad9361SPI_0/o_spi_clk] [get_bd_pins system_ila_0/probe2]
-  connect_bd_net -net ad9361SPI_0_o_ss_n [get_bd_ports spi_csn] [get_bd_pins ad9361SPI_0/o_ss_n] [get_bd_pins system_ila_0/probe1]
-  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports gpio_resetb] [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins system_ila_0/probe4]
+  connect_bd_net -net ad9361SPI_0_o_mosi [get_bd_ports spi_mosi] [get_bd_pins ad9361SPI_0/o_mosi]
+  connect_bd_net -net ad9361SPI_0_o_spi_clk [get_bd_ports spi_clk] [get_bd_pins ad9361SPI_0/o_spi_clk]
+  connect_bd_net -net ad9361SPI_0_o_ss_n [get_bd_ports spi_csn] [get_bd_pins ad9361SPI_0/o_ss_n]
+  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports gpio_resetb] [get_bd_pins axi_gpio_0/gpio_io_o]
   connect_bd_net -net clk_in_n_0_1 [get_bd_ports rx_clk_in_n] [get_bd_pins selectio_wiz_0/clk_in_n]
   connect_bd_net -net clk_in_p_0_1 [get_bd_ports rx_clk_in_p] [get_bd_pins selectio_wiz_0/clk_in_p]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins ad9361SPI_0/i_spi_ctrl_clock] [get_bd_pins clk_wiz_0/clk_out1]
-  connect_bd_net -net i_miso_0_1 [get_bd_ports spi_miso] [get_bd_pins ad9361SPI_0/i_miso] [get_bd_pins system_ila_0/probe3]
+  connect_bd_net -net dataBlaster_0_o_data [get_bd_pins dataBlaster_0/o_data] [get_bd_pins signalAdder_0/i_data1] [get_bd_pins system_ila_1/probe5]
+  connect_bd_net -net dataBlaster_0_o_data_valid [get_bd_pins dataBlaster_0/o_data_valid] [get_bd_pins signalAdder_0/i_data_valid] [get_bd_pins system_ila_1/probe7]
+  connect_bd_net -net dataBlaster_1_o_data [get_bd_pins dataBlaster_1/o_data] [get_bd_pins signalAdder_0/i_data2] [get_bd_pins system_ila_1/probe6]
+  connect_bd_net -net dataPackager_0_I_Value [get_bd_pins dataBlaster_0/i_data] [get_bd_pins dataPackager_0/I_Value] [get_bd_pins system_ila_1/probe1]
+  connect_bd_net -net dataPackager_0_Q_Value [get_bd_pins dataBlaster_1/i_data] [get_bd_pins dataPackager_0/Q_Value] [get_bd_pins system_ila_1/probe2]
+  connect_bd_net -net dataPackager_0_o_I_Valid [get_bd_pins dataBlaster_0/i_data_valid] [get_bd_pins dataPackager_0/o_I_Valid] [get_bd_pins system_ila_1/probe3]
+  connect_bd_net -net dataPackager_0_o_Q_Valid [get_bd_pins dataBlaster_1/i_data_valid] [get_bd_pins dataPackager_0/o_Q_Valid] [get_bd_pins system_ila_1/probe4]
+  connect_bd_net -net i_miso_0_1 [get_bd_ports spi_miso] [get_bd_pins ad9361SPI_0/i_miso]
   connect_bd_net -net rst_sys_ps7_50M_peripheral_aresetn [get_bd_pins ad9361SPI_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_sys_ps7_50M/peripheral_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN]
   connect_bd_net -net rx_frame_in_p [get_bd_ports rx_frame_in_p] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net selectio_wiz_0_clk_out [get_bd_pins dataBlaster_0/i_clk] [get_bd_pins dataBlaster_1/i_clk] [get_bd_pins dataPackager_0/i_clk] [get_bd_pins selectio_wiz_0/clk_out] [get_bd_pins signalAdder_0/i_clk] [get_bd_pins system_ila_1/clk]
   connect_bd_net -net selectio_wiz_0_clk_to_pins_n [get_bd_ports tx_clk_out_n] [get_bd_pins selectio_wiz_0/clk_to_pins_n]
   connect_bd_net -net selectio_wiz_0_clk_to_pins_p [get_bd_ports tx_clk_out_p] [get_bd_pins selectio_wiz_0/clk_to_pins_p]
-  connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins selectio_wiz_0/data_in_to_device] [get_bd_pins selectio_wiz_0/data_out_from_device] [get_bd_pins system_ila_0/probe5]
+  connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins dataPackager_0/i_data] [get_bd_pins selectio_wiz_0/data_in_to_device] [get_bd_pins selectio_wiz_0/data_out_from_device] [get_bd_pins system_ila_1/probe0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets selectio_wiz_0_data_in_to_device]
   connect_bd_net -net selectio_wiz_0_data_out_to_pins_n [get_bd_pins selectio_wiz_0/data_out_to_pins_n] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din]
   connect_bd_net -net selectio_wiz_0_data_out_to_pins_p [get_bd_pins selectio_wiz_0/data_out_to_pins_p] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net signalAdder_0_o_data [get_bd_pins signalAdder_0/o_data] [get_bd_pins system_ila_1/probe8]
+  connect_bd_net -net signalAdder_0_o_data_valid [get_bd_pins signalAdder_0/o_data_valid] [get_bd_pins system_ila_1/probe9]
+  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK]
   connect_bd_net -net sys_ps7_FCLK_RESET0_N [get_bd_pins rst_sys_ps7_50M/ext_reset_in] [get_bd_pins sys_ps7/FCLK_RESET0_N]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins selectio_wiz_0/data_in_from_pins_p] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins selectio_wiz_0/data_in_from_pins_n] [get_bd_pins xlconcat_1/dout]

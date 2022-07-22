@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
 // Date        : Wed Jul 20 15:43:35 2022
 // Host        : G0819 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               d:/Consultancy/Vimanic/adrv_loopback_selectioBkup/adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top system_selectio_wiz_0_0 -prefix
+//               system_selectio_wiz_0_0_ system_selectio_wiz_0_0_sim_netlist.v
 // Design      : system_selectio_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -58,7 +58,7 @@ module system_selectio_wiz_0_0
 
   (* DEV_W = "14" *) 
   (* SYS_W = "7" *) 
-  system_selectio_wiz_0_0_selectio_wiz inst
+  system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz inst
        (.clk_in_n(clk_in_n),
         .clk_in_p(clk_in_p),
         .clk_out(clk_out),
@@ -75,7 +75,7 @@ module system_selectio_wiz_0_0
 endmodule
 
 (* DEV_W = "14" *) (* SYS_W = "7" *) 
-module system_selectio_wiz_0_0_selectio_wiz
+module system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz
    (data_in_from_pins_p,
     data_in_from_pins_n,
     data_in_to_device,
