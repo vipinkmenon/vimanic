@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Wed Jul 20 21:16:18 2022
+//Date        : Sat Jul 23 10:38:28 2022
 //Host        : G0819 running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -685,9 +685,9 @@ module system
   wire clk_in_n_0_1;
   wire clk_in_p_0_1;
   wire clk_wiz_0_clk_out1;
-  wire [11:0]dataBlaster_0_o_data;
+  wire [15:0]dataBlaster_0_o_data;
   wire dataBlaster_0_o_data_valid;
-  wire [11:0]dataBlaster_1_o_data;
+  wire [15:0]dataBlaster_1_o_data;
   wire [11:0]dataPackager_0_I_Value;
   wire [11:0]dataPackager_0_Q_Value;
   wire dataPackager_0_o_I_Valid;
@@ -880,22 +880,24 @@ module system
         .clk_out1(clk_wiz_0_clk_out1));
   system_dataBlaster_0_0 dataBlaster_0
        (.i_clk(selectio_wiz_0_clk_out),
+        .i_clk_100(sys_cpu_clk),
         .i_data(dataPackager_0_I_Value),
         .i_data_valid(dataPackager_0_o_I_Valid),
         .o_data(dataBlaster_0_o_data),
         .o_data_valid(dataBlaster_0_o_data_valid));
   system_dataBlaster_1_0 dataBlaster_1
        (.i_clk(selectio_wiz_0_clk_out),
+        .i_clk_100(sys_cpu_clk),
         .i_data(dataPackager_0_Q_Value),
         .i_data_valid(dataPackager_0_o_Q_Valid),
         .o_data(dataBlaster_1_o_data));
   system_dataPackager_0_0 dataPackager_0
-       (.I_Value(dataPackager_0_I_Value),
-        .Q_Value(dataPackager_0_Q_Value),
+       (.Channel_1_I_Valid(dataPackager_0_o_Q_Valid),
+        .Channel_1_I_Value(dataPackager_0_Q_Value),
+        .Channel_1_Q_Valid(dataPackager_0_o_I_Valid),
+        .Channel_1_Q_Value(dataPackager_0_I_Value),
         .i_clk(selectio_wiz_0_clk_out),
-        .i_data(selectio_wiz_0_data_in_to_device),
-        .o_I_Valid(dataPackager_0_o_I_Valid),
-        .o_Q_Valid(dataPackager_0_o_Q_Valid));
+        .i_data(selectio_wiz_0_data_in_to_device));
   system_rst_sys_ps7_50M_0 rst_sys_ps7_50M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -918,9 +920,9 @@ module system
         .data_out_to_pins_p(selectio_wiz_0_data_out_to_pins_p),
         .io_reset(xlconstant_0_dout));
   system_signalAdder_0_0 signalAdder_0
-       (.i_clk(selectio_wiz_0_clk_out),
-        .i_data1(dataBlaster_0_o_data),
-        .i_data2(dataBlaster_1_o_data),
+       (.i_clk(sys_cpu_clk),
+        .i_data1(dataBlaster_0_o_data[11:0]),
+        .i_data2(dataBlaster_1_o_data[11:0]),
         .i_data_valid(dataBlaster_0_o_data_valid),
         .o_data(signalAdder_0_o_data),
         .o_data_valid(signalAdder_0_o_data_valid));
@@ -1072,7 +1074,7 @@ module system
         .S00_AXI_wstrb(sys_ps7_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(sys_ps7_M_AXI_GP0_WVALID));
   system_system_ila_1_0 system_ila_1
-       (.clk(selectio_wiz_0_clk_out),
+       (.clk(sys_cpu_clk),
         .probe0(selectio_wiz_0_data_in_to_device),
         .probe1(dataPackager_0_I_Value),
         .probe2(dataPackager_0_Q_Value),

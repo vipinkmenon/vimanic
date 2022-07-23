@@ -58,27 +58,39 @@
 module system_dataPackager_0_0 (
   i_clk,
   i_data,
-  I_Value,
-  Q_Value,
-  o_I_Valid,
-  o_Q_Valid
+  Channel_1_I_Value,
+  Channel_1_Q_Value,
+  Channel_2_I_Value,
+  Channel_2_Q_Value,
+  Channel_1_I_Valid,
+  Channel_1_Q_Valid,
+  Channel_2_I_Valid,
+  Channel_2_Q_Valid
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *)
 input wire i_clk;
 input wire [13 : 0] i_data;
-output wire [11 : 0] I_Value;
-output wire [11 : 0] Q_Value;
-output wire o_I_Valid;
-output wire o_Q_Valid;
+output wire [11 : 0] Channel_1_I_Value;
+output wire [11 : 0] Channel_1_Q_Value;
+output wire [11 : 0] Channel_2_I_Value;
+output wire [11 : 0] Channel_2_Q_Value;
+output wire Channel_1_I_Valid;
+output wire Channel_1_Q_Valid;
+output wire Channel_2_I_Valid;
+output wire Channel_2_Q_Valid;
 
   dataPackager inst (
     .i_clk(i_clk),
     .i_data(i_data),
-    .I_Value(I_Value),
-    .Q_Value(Q_Value),
-    .o_I_Valid(o_I_Valid),
-    .o_Q_Valid(o_Q_Valid)
+    .Channel_1_I_Value(Channel_1_I_Value),
+    .Channel_1_Q_Value(Channel_1_Q_Value),
+    .Channel_2_I_Value(Channel_2_I_Value),
+    .Channel_2_Q_Value(Channel_2_Q_Value),
+    .Channel_1_I_Valid(Channel_1_I_Valid),
+    .Channel_1_Q_Valid(Channel_1_Q_Valid),
+    .Channel_2_I_Valid(Channel_2_I_Valid),
+    .Channel_2_Q_Valid(Channel_2_Q_Valid)
   );
 endmodule

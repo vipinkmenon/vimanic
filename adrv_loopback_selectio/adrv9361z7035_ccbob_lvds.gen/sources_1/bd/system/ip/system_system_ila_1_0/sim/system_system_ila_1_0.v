@@ -67,7 +67,7 @@ module system_system_ila_1_0 (
   probe9
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *)
 input wire clk;
 input wire [13 : 0] probe0;
@@ -75,8 +75,8 @@ input wire [11 : 0] probe1;
 input wire [11 : 0] probe2;
 input wire [0 : 0] probe3;
 input wire [0 : 0] probe4;
-input wire [11 : 0] probe5;
-input wire [11 : 0] probe6;
+input wire [15 : 0] probe5;
+input wire [15 : 0] probe6;
 input wire [0 : 0] probe7;
 input wire [12 : 0] probe8;
 input wire [0 : 0] probe9;

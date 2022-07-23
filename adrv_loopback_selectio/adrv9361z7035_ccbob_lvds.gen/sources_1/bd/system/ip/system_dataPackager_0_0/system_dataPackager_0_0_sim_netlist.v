@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Sun Jul 10 17:23:41 2022
+// Date        : Fri Jul 22 22:36:06 2022
 // Host        : G0819 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top system_dataPackager_0_0 -prefix
 //               system_dataPackager_0_0_ system_dataPackager_0_0_sim_netlist.v
@@ -13,284 +13,273 @@
 `timescale 1 ps / 1 ps
 
 module system_dataPackager_0_0_dataPackager
-   (I_Value,
-    Q_Value,
-    o_I_Valid,
-    o_Q_Valid,
+   (Channel_1_I_Value,
+    Channel_2_Q_Value,
+    Channel_2_Q_Valid,
+    Channel_2_I_Value,
+    Channel_1_I_Valid,
+    Channel_1_Q_Valid,
+    Channel_2_I_Valid,
     i_data,
     i_clk);
-  output [11:0]I_Value;
-  output [11:0]Q_Value;
-  output o_I_Valid;
-  output o_Q_Valid;
+  output [11:0]Channel_1_I_Value;
+  output [11:0]Channel_2_Q_Value;
+  output Channel_2_Q_Valid;
+  output [5:0]Channel_2_I_Value;
+  output Channel_1_I_Valid;
+  output Channel_1_Q_Valid;
+  output Channel_2_I_Valid;
   input [13:0]i_data;
   input i_clk;
 
-  wire I_Valid_p;
-  wire [11:0]I_Value;
-  wire \I_Value_p[5]_i_1_n_0 ;
-  wire \I_Value_p_reg_n_0_[0] ;
-  wire \I_Value_p_reg_n_0_[10] ;
-  wire \I_Value_p_reg_n_0_[11] ;
-  wire \I_Value_p_reg_n_0_[1] ;
-  wire \I_Value_p_reg_n_0_[2] ;
-  wire \I_Value_p_reg_n_0_[3] ;
-  wire \I_Value_p_reg_n_0_[4] ;
-  wire \I_Value_p_reg_n_0_[5] ;
-  wire \I_Value_p_reg_n_0_[6] ;
-  wire \I_Value_p_reg_n_0_[7] ;
-  wire \I_Value_p_reg_n_0_[8] ;
-  wire \I_Value_p_reg_n_0_[9] ;
-  wire [11:0]Q_Value;
-  wire \Q_Value[5]_i_1_n_0 ;
+  wire Channel_1_I_Valid;
+  wire [11:0]Channel_1_I_Value;
+  wire \Channel_1_I_Value[11]_i_1_n_0 ;
+  wire \Channel_1_I_Value[5]_i_1_n_0 ;
+  wire Channel_1_Q_Valid;
+  wire Channel_2_I_Valid;
+  wire Channel_2_I_Valid_i_1_n_0;
+  wire [5:0]Channel_2_I_Value;
+  wire \Channel_2_I_Value[5]_i_1_n_0 ;
+  wire Channel_2_Q_Valid;
+  wire [11:0]Channel_2_Q_Value;
   wire i_clk;
   wire [13:0]i_data;
-  wire o_I_Valid;
-  wire o_Q_Valid;
+  wire [5:5]p_0_in;
 
-  FDRE I_Valid_p_reg
+  FDRE Channel_1_I_Valid_reg
        (.C(i_clk),
         .CE(1'b1),
-        .D(i_data[7]),
-        .Q(I_Valid_p),
+        .D(\Channel_1_I_Value[5]_i_1_n_0 ),
+        .Q(Channel_1_I_Valid),
         .R(1'b0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \I_Value_p[5]_i_1 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \Channel_1_I_Value[11]_i_1 
        (.I0(i_data[7]),
-        .O(\I_Value_p[5]_i_1_n_0 ));
-  FDRE \I_Value_p_reg[0] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[8]),
-        .Q(\I_Value_p_reg_n_0_[0] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[10] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[12]),
-        .Q(\I_Value_p_reg_n_0_[10] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[11] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[13]),
-        .Q(\I_Value_p_reg_n_0_[11] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[1] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[9]),
-        .Q(\I_Value_p_reg_n_0_[1] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[2] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[10]),
-        .Q(\I_Value_p_reg_n_0_[2] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[3] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[11]),
-        .Q(\I_Value_p_reg_n_0_[3] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[4] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[12]),
-        .Q(\I_Value_p_reg_n_0_[4] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[5] 
-       (.C(i_clk),
-        .CE(\I_Value_p[5]_i_1_n_0 ),
-        .D(i_data[13]),
-        .Q(\I_Value_p_reg_n_0_[5] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[6] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[8]),
-        .Q(\I_Value_p_reg_n_0_[6] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[7] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[9]),
-        .Q(\I_Value_p_reg_n_0_[7] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[8] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[10]),
-        .Q(\I_Value_p_reg_n_0_[8] ),
-        .R(1'b0));
-  FDRE \I_Value_p_reg[9] 
-       (.C(i_clk),
-        .CE(i_data[7]),
-        .D(i_data[11]),
-        .Q(\I_Value_p_reg_n_0_[9] ),
-        .R(1'b0));
-  FDRE \I_Value_reg[0] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[0] ),
-        .Q(I_Value[0]),
-        .R(1'b0));
-  FDRE \I_Value_reg[10] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[10] ),
-        .Q(I_Value[10]),
-        .R(1'b0));
-  FDRE \I_Value_reg[11] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[11] ),
-        .Q(I_Value[11]),
-        .R(1'b0));
-  FDRE \I_Value_reg[1] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[1] ),
-        .Q(I_Value[1]),
-        .R(1'b0));
-  FDRE \I_Value_reg[2] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[2] ),
-        .Q(I_Value[2]),
-        .R(1'b0));
-  FDRE \I_Value_reg[3] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[3] ),
-        .Q(I_Value[3]),
-        .R(1'b0));
-  FDRE \I_Value_reg[4] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[4] ),
-        .Q(I_Value[4]),
-        .R(1'b0));
-  FDRE \I_Value_reg[5] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[5] ),
-        .Q(I_Value[5]),
-        .R(1'b0));
-  FDRE \I_Value_reg[6] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[6] ),
-        .Q(I_Value[6]),
-        .R(1'b0));
-  FDRE \I_Value_reg[7] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[7] ),
-        .Q(I_Value[7]),
-        .R(1'b0));
-  FDRE \I_Value_reg[8] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[8] ),
-        .Q(I_Value[8]),
-        .R(1'b0));
-  FDRE \I_Value_reg[9] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(\I_Value_p_reg_n_0_[9] ),
-        .Q(I_Value[9]),
-        .R(1'b0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \Q_Value[5]_i_1 
+        .I1(i_data[0]),
+        .O(\Channel_1_I_Value[11]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Channel_1_I_Value[5]_i_1 
        (.I0(i_data[0]),
-        .O(\Q_Value[5]_i_1_n_0 ));
-  FDRE \Q_Value_reg[0] 
+        .I1(i_data[7]),
+        .O(\Channel_1_I_Value[5]_i_1_n_0 ));
+  FDRE \Channel_1_I_Value_reg[0] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[1]),
-        .Q(Q_Value[0]),
+        .Q(Channel_1_I_Value[0]),
         .R(1'b0));
-  FDRE \Q_Value_reg[10] 
+  FDRE \Channel_1_I_Value_reg[10] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[5]),
-        .Q(Q_Value[10]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[12]),
+        .Q(Channel_1_I_Value[10]),
         .R(1'b0));
-  FDRE \Q_Value_reg[11] 
+  FDRE \Channel_1_I_Value_reg[11] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[6]),
-        .Q(Q_Value[11]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[13]),
+        .Q(Channel_1_I_Value[11]),
         .R(1'b0));
-  FDRE \Q_Value_reg[1] 
+  FDRE \Channel_1_I_Value_reg[1] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[2]),
-        .Q(Q_Value[1]),
+        .Q(Channel_1_I_Value[1]),
         .R(1'b0));
-  FDRE \Q_Value_reg[2] 
+  FDRE \Channel_1_I_Value_reg[2] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[3]),
-        .Q(Q_Value[2]),
+        .Q(Channel_1_I_Value[2]),
         .R(1'b0));
-  FDRE \Q_Value_reg[3] 
+  FDRE \Channel_1_I_Value_reg[3] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[4]),
-        .Q(Q_Value[3]),
+        .Q(Channel_1_I_Value[3]),
         .R(1'b0));
-  FDRE \Q_Value_reg[4] 
+  FDRE \Channel_1_I_Value_reg[4] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[5]),
-        .Q(Q_Value[4]),
+        .Q(Channel_1_I_Value[4]),
         .R(1'b0));
-  FDRE \Q_Value_reg[5] 
+  FDRE \Channel_1_I_Value_reg[5] 
        (.C(i_clk),
-        .CE(\Q_Value[5]_i_1_n_0 ),
+        .CE(\Channel_1_I_Value[5]_i_1_n_0 ),
         .D(i_data[6]),
-        .Q(Q_Value[5]),
+        .Q(Channel_1_I_Value[5]),
         .R(1'b0));
-  FDRE \Q_Value_reg[6] 
+  FDRE \Channel_1_I_Value_reg[6] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[1]),
-        .Q(Q_Value[6]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[8]),
+        .Q(Channel_1_I_Value[6]),
         .R(1'b0));
-  FDRE \Q_Value_reg[7] 
+  FDRE \Channel_1_I_Value_reg[7] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[2]),
-        .Q(Q_Value[7]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[9]),
+        .Q(Channel_1_I_Value[7]),
         .R(1'b0));
-  FDRE \Q_Value_reg[8] 
+  FDRE \Channel_1_I_Value_reg[8] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[3]),
-        .Q(Q_Value[8]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[10]),
+        .Q(Channel_1_I_Value[8]),
         .R(1'b0));
-  FDRE \Q_Value_reg[9] 
+  FDRE \Channel_1_I_Value_reg[9] 
        (.C(i_clk),
-        .CE(i_data[0]),
-        .D(i_data[4]),
-        .Q(Q_Value[9]),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[11]),
+        .Q(Channel_1_I_Value[9]),
         .R(1'b0));
-  FDRE o_I_Valid_reg
+  FDRE Channel_1_Q_Valid_reg
        (.C(i_clk),
         .CE(1'b1),
-        .D(I_Valid_p),
-        .Q(o_I_Valid),
+        .D(p_0_in),
+        .Q(Channel_1_Q_Valid),
         .R(1'b0));
-  FDRE o_Q_Valid_reg
+  LUT2 #(
+    .INIT(4'h2)) 
+    \Channel_1_Q_Value[5]_i_1 
+       (.I0(i_data[0]),
+        .I1(i_data[7]),
+        .O(p_0_in));
+  FDRE \Channel_1_Q_Value_reg[0] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[1]),
+        .Q(Channel_2_I_Value[0]),
+        .R(1'b0));
+  FDRE \Channel_1_Q_Value_reg[1] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[2]),
+        .Q(Channel_2_I_Value[1]),
+        .R(1'b0));
+  FDRE \Channel_1_Q_Value_reg[2] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[3]),
+        .Q(Channel_2_I_Value[2]),
+        .R(1'b0));
+  FDRE \Channel_1_Q_Value_reg[3] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[4]),
+        .Q(Channel_2_I_Value[3]),
+        .R(1'b0));
+  FDRE \Channel_1_Q_Value_reg[4] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[5]),
+        .Q(Channel_2_I_Value[4]),
+        .R(1'b0));
+  FDRE \Channel_1_Q_Value_reg[5] 
+       (.C(i_clk),
+        .CE(p_0_in),
+        .D(i_data[6]),
+        .Q(Channel_2_I_Value[5]),
+        .R(1'b0));
+  LUT2 #(
+    .INIT(4'h1)) 
+    Channel_2_I_Valid_i_1
+       (.I0(i_data[7]),
+        .I1(i_data[0]),
+        .O(Channel_2_I_Valid_i_1_n_0));
+  FDRE Channel_2_I_Valid_reg
        (.C(i_clk),
         .CE(1'b1),
-        .D(i_data[0]),
-        .Q(o_Q_Valid),
+        .D(Channel_2_I_Valid_i_1_n_0),
+        .Q(Channel_2_I_Valid),
+        .R(1'b0));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \Channel_2_I_Value[5]_i_1 
+       (.I0(i_data[0]),
+        .I1(i_data[7]),
+        .O(\Channel_2_I_Value[5]_i_1_n_0 ));
+  FDRE \Channel_2_I_Value_reg[0] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[1]),
+        .Q(Channel_2_Q_Value[6]),
+        .R(1'b0));
+  FDRE \Channel_2_I_Value_reg[1] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[2]),
+        .Q(Channel_2_Q_Value[7]),
+        .R(1'b0));
+  FDRE \Channel_2_I_Value_reg[2] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[3]),
+        .Q(Channel_2_Q_Value[8]),
+        .R(1'b0));
+  FDRE \Channel_2_I_Value_reg[3] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[4]),
+        .Q(Channel_2_Q_Value[9]),
+        .R(1'b0));
+  FDRE \Channel_2_I_Value_reg[4] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[5]),
+        .Q(Channel_2_Q_Value[10]),
+        .R(1'b0));
+  FDRE \Channel_2_I_Value_reg[5] 
+       (.C(i_clk),
+        .CE(\Channel_2_I_Value[5]_i_1_n_0 ),
+        .D(i_data[6]),
+        .Q(Channel_2_Q_Value[11]),
+        .R(1'b0));
+  FDRE Channel_2_Q_Valid_reg
+       (.C(i_clk),
+        .CE(1'b1),
+        .D(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .Q(Channel_2_Q_Valid),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[0] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[1]),
+        .Q(Channel_2_Q_Value[0]),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[1] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[2]),
+        .Q(Channel_2_Q_Value[1]),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[2] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[3]),
+        .Q(Channel_2_Q_Value[2]),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[3] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[4]),
+        .Q(Channel_2_Q_Value[3]),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[4] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[5]),
+        .Q(Channel_2_Q_Value[4]),
+        .R(1'b0));
+  FDRE \Channel_2_Q_Value_reg[5] 
+       (.C(i_clk),
+        .CE(\Channel_1_I_Value[11]_i_1_n_0 ),
+        .D(i_data[6]),
+        .Q(Channel_2_Q_Value[5]),
         .R(1'b0));
 endmodule
 
@@ -300,31 +289,52 @@ endmodule
 module system_dataPackager_0_0
    (i_clk,
     i_data,
-    I_Value,
-    Q_Value,
-    o_I_Valid,
-    o_Q_Valid);
+    Channel_1_I_Value,
+    Channel_1_Q_Value,
+    Channel_2_I_Value,
+    Channel_2_Q_Value,
+    Channel_1_I_Valid,
+    Channel_1_Q_Valid,
+    Channel_2_I_Valid,
+    Channel_2_Q_Valid);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *) input i_clk;
   input [13:0]i_data;
-  output [11:0]I_Value;
-  output [11:0]Q_Value;
-  output o_I_Valid;
-  output o_Q_Valid;
+  output [11:0]Channel_1_I_Value;
+  output [11:0]Channel_1_Q_Value;
+  output [11:0]Channel_2_I_Value;
+  output [11:0]Channel_2_Q_Value;
+  output Channel_1_I_Valid;
+  output Channel_1_Q_Valid;
+  output Channel_2_I_Valid;
+  output Channel_2_Q_Valid;
 
-  wire [11:0]I_Value;
-  wire [11:0]Q_Value;
+  wire Channel_1_I_Valid;
+  wire [11:6]\^Channel_1_I_Value ;
+  wire Channel_1_Q_Valid;
+  wire [11:6]\^Channel_1_Q_Value ;
+  wire Channel_2_I_Valid;
+  wire [11:6]\^Channel_2_I_Value ;
+  wire Channel_2_Q_Valid;
+  wire [11:0]Channel_2_Q_Value;
   wire i_clk;
   wire [13:0]i_data;
-  wire o_I_Valid;
-  wire o_Q_Valid;
 
+  assign Channel_1_I_Value[11:6] = \^Channel_1_I_Value [11:6];
+  assign Channel_1_I_Value[5:0] = \^Channel_1_Q_Value [11:6];
+  assign Channel_1_Q_Value[11:6] = \^Channel_1_Q_Value [11:6];
+  assign Channel_1_Q_Value[5:0] = \^Channel_2_I_Value [11:6];
+  assign Channel_2_I_Value[11:6] = \^Channel_2_I_Value [11:6];
+  assign Channel_2_I_Value[5:0] = Channel_2_Q_Value[11:6];
   system_dataPackager_0_0_dataPackager inst
-       (.I_Value(I_Value),
-        .Q_Value(Q_Value),
+       (.Channel_1_I_Valid(Channel_1_I_Valid),
+        .Channel_1_I_Value({\^Channel_1_I_Value ,\^Channel_1_Q_Value }),
+        .Channel_1_Q_Valid(Channel_1_Q_Valid),
+        .Channel_2_I_Valid(Channel_2_I_Valid),
+        .Channel_2_I_Value(\^Channel_2_I_Value ),
+        .Channel_2_Q_Valid(Channel_2_Q_Valid),
+        .Channel_2_Q_Value(Channel_2_Q_Value),
         .i_clk(i_clk),
-        .i_data(i_data),
-        .o_I_Valid(o_I_Valid),
-        .o_Q_Valid(o_Q_Valid));
+        .i_data(i_data));
 endmodule
 `ifndef GLBL
 `define GLBL

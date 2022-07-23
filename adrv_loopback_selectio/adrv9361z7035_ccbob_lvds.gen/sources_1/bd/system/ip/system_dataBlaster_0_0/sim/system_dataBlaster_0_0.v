@@ -58,6 +58,7 @@ module system_dataBlaster_0_0 (
   i_clk,
   i_data,
   i_data_valid,
+  i_clk_100,
   o_data,
   o_data_valid
 );
@@ -67,13 +68,17 @@ module system_dataBlaster_0_0 (
 input wire i_clk;
 input wire [11 : 0] i_data;
 input wire i_data_valid;
-output wire [11 : 0] o_data;
+input wire i_clk_100;
+output wire [15 : 0] o_data;
 output wire o_data_valid;
 
-  dataBlaster inst (
+  dataBlaster #(
+    .numSamples(16384)
+  ) inst (
     .i_clk(i_clk),
     .i_data(i_data),
     .i_data_valid(i_data_valid),
+    .i_clk_100(i_clk_100),
     .o_data(o_data),
     .o_data_valid(o_data_valid)
   );

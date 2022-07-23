@@ -19,14 +19,14 @@ module bd_15e9
     probe7,
     probe8,
     probe9);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   input [13:0]probe0;
   input [11:0]probe1;
   input [11:0]probe2;
   input [0:0]probe3;
   input [0:0]probe4;
-  input [11:0]probe5;
-  input [11:0]probe6;
+  input [15:0]probe5;
+  input [15:0]probe6;
   input [0:0]probe7;
   input [12:0]probe8;
   input [0:0]probe9;
@@ -37,8 +37,8 @@ module bd_15e9
   wire [11:0]probe2_1;
   wire [0:0]probe3_1;
   wire [0:0]probe4_1;
-  wire [11:0]probe5_1;
-  wire [11:0]probe6_1;
+  wire [15:0]probe5_1;
+  wire [15:0]probe6_1;
   wire [0:0]probe7_1;
   wire [12:0]probe8_1;
   wire [0:0]probe9_1;
@@ -49,8 +49,8 @@ module bd_15e9
   assign probe2_1 = probe2[11:0];
   assign probe3_1 = probe3[0];
   assign probe4_1 = probe4[0];
-  assign probe5_1 = probe5[11:0];
-  assign probe6_1 = probe6[11:0];
+  assign probe5_1 = probe5[15:0];
+  assign probe6_1 = probe6[15:0];
   assign probe7_1 = probe7[0];
   assign probe8_1 = probe8[12:0];
   assign probe9_1 = probe9[0];

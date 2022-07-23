@@ -205,12 +205,15 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {285.743} \
-   CONFIG.CLKOUT1_PHASE_ERROR {164.985} \
+   CONFIG.CLKIN1_JITTER_PS {100.0} \
+   CONFIG.CLKOUT1_JITTER {290.478} \
+   CONFIG.CLKOUT1_PHASE_ERROR {133.882} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10.000} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {100.000} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {15.625} \
+   CONFIG.MMCM_CLKIN1_PERIOD {10.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
    CONFIG.USE_LOCKED {false} \
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
@@ -292,7 +295,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.158730} \
    CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {125.000000} \
-   CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {50.000000} \
+   CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
    CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
@@ -334,7 +337,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
    CONFIG.PCW_CAN_PERIPHERAL_VALID {0} \
-   CONFIG.PCW_CLK0_FREQ {50000000} \
+   CONFIG.PCW_CLK0_FREQ {100000000} \
    CONFIG.PCW_CLK1_FREQ {10000000} \
    CONFIG.PCW_CLK2_FREQ {10000000} \
    CONFIG.PCW_CLK3_FREQ {10000000} \
@@ -461,7 +464,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_WDT {0} \
    CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {6} \
-   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {6} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {3} \
    CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
@@ -475,7 +478,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_FCLK_CLK1_BUF {FALSE} \
    CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
    CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
-   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50} \
+   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
    CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200.0} \
    CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200.0} \
    CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
@@ -1182,14 +1185,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net dataBlaster_0_o_data [get_bd_pins dataBlaster_0/o_data] [get_bd_pins signalAdder_0/i_data1] [get_bd_pins system_ila_1/probe5]
   connect_bd_net -net dataBlaster_0_o_data_valid [get_bd_pins dataBlaster_0/o_data_valid] [get_bd_pins signalAdder_0/i_data_valid] [get_bd_pins system_ila_1/probe7]
   connect_bd_net -net dataBlaster_1_o_data [get_bd_pins dataBlaster_1/o_data] [get_bd_pins signalAdder_0/i_data2] [get_bd_pins system_ila_1/probe6]
-  connect_bd_net -net dataPackager_0_I_Value [get_bd_pins dataBlaster_0/i_data] [get_bd_pins dataPackager_0/I_Value] [get_bd_pins system_ila_1/probe1]
-  connect_bd_net -net dataPackager_0_Q_Value [get_bd_pins dataBlaster_1/i_data] [get_bd_pins dataPackager_0/Q_Value] [get_bd_pins system_ila_1/probe2]
-  connect_bd_net -net dataPackager_0_o_I_Valid [get_bd_pins dataBlaster_0/i_data_valid] [get_bd_pins dataPackager_0/o_I_Valid] [get_bd_pins system_ila_1/probe3]
-  connect_bd_net -net dataPackager_0_o_Q_Valid [get_bd_pins dataBlaster_1/i_data_valid] [get_bd_pins dataPackager_0/o_Q_Valid] [get_bd_pins system_ila_1/probe4]
+  connect_bd_net -net dataPackager_0_I_Value [get_bd_pins dataBlaster_0/i_data] [get_bd_pins dataPackager_0/Channel_1_Q_Value] [get_bd_pins system_ila_1/probe1]
+  connect_bd_net -net dataPackager_0_Q_Value [get_bd_pins dataBlaster_1/i_data] [get_bd_pins dataPackager_0/Channel_1_I_Value] [get_bd_pins system_ila_1/probe2]
+  connect_bd_net -net dataPackager_0_o_I_Valid [get_bd_pins dataBlaster_0/i_data_valid] [get_bd_pins dataPackager_0/Channel_1_Q_Valid] [get_bd_pins system_ila_1/probe3]
+  connect_bd_net -net dataPackager_0_o_Q_Valid [get_bd_pins dataBlaster_1/i_data_valid] [get_bd_pins dataPackager_0/Channel_1_I_Valid] [get_bd_pins system_ila_1/probe4]
   connect_bd_net -net i_miso_0_1 [get_bd_ports spi_miso] [get_bd_pins ad9361SPI_0/i_miso]
   connect_bd_net -net rst_sys_ps7_50M_peripheral_aresetn [get_bd_pins ad9361SPI_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_sys_ps7_50M/peripheral_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN]
   connect_bd_net -net rx_frame_in_p [get_bd_ports rx_frame_in_p] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net selectio_wiz_0_clk_out [get_bd_pins dataBlaster_0/i_clk] [get_bd_pins dataBlaster_1/i_clk] [get_bd_pins dataPackager_0/i_clk] [get_bd_pins selectio_wiz_0/clk_out] [get_bd_pins signalAdder_0/i_clk] [get_bd_pins system_ila_1/clk]
+  connect_bd_net -net selectio_wiz_0_clk_out [get_bd_pins dataBlaster_0/i_clk] [get_bd_pins dataBlaster_1/i_clk] [get_bd_pins dataPackager_0/i_clk] [get_bd_pins selectio_wiz_0/clk_out]
   connect_bd_net -net selectio_wiz_0_clk_to_pins_n [get_bd_ports tx_clk_out_n] [get_bd_pins selectio_wiz_0/clk_to_pins_n]
   connect_bd_net -net selectio_wiz_0_clk_to_pins_p [get_bd_ports tx_clk_out_p] [get_bd_pins selectio_wiz_0/clk_to_pins_p]
   connect_bd_net -net selectio_wiz_0_data_in_to_device [get_bd_pins dataPackager_0/i_data] [get_bd_pins selectio_wiz_0/data_in_to_device] [get_bd_pins selectio_wiz_0/data_out_from_device] [get_bd_pins system_ila_1/probe0]
@@ -1198,7 +1201,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net selectio_wiz_0_data_out_to_pins_p [get_bd_pins selectio_wiz_0/data_out_to_pins_p] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
   connect_bd_net -net signalAdder_0_o_data [get_bd_pins signalAdder_0/o_data] [get_bd_pins system_ila_1/probe8]
   connect_bd_net -net signalAdder_0_o_data_valid [get_bd_pins signalAdder_0/o_data_valid] [get_bd_pins system_ila_1/probe9]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK]
+  connect_bd_net -net sys_cpu_clk [get_bd_pins ad9361SPI_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins dataBlaster_0/i_clk_100] [get_bd_pins dataBlaster_1/i_clk_100] [get_bd_pins rst_sys_ps7_50M/slowest_sync_clk] [get_bd_pins signalAdder_0/i_clk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins system_ila_1/clk]
   connect_bd_net -net sys_ps7_FCLK_RESET0_N [get_bd_pins rst_sys_ps7_50M/ext_reset_in] [get_bd_pins sys_ps7/FCLK_RESET0_N]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins selectio_wiz_0/data_in_from_pins_p] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins selectio_wiz_0/data_in_from_pins_n] [get_bd_pins xlconcat_1/dout]

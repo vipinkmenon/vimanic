@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jun 17 13:47:53 2022
+-- Date        : Tue Jul  5 19:22:12 2022
 -- Host        : G0819 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top system_clk_wiz_0_0 -prefix
 --               system_clk_wiz_0_0_ system_clk_wiz_0_0_stub.vhdl

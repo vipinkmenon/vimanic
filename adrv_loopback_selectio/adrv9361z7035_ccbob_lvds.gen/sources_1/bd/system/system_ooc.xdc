@@ -8,6 +8,6 @@
 ################################################################################
 create_clock -name rx_clk_in_n -period 10 [get_ports rx_clk_in_n]
 create_clock -name rx_clk_in_p -period 10 [get_ports rx_clk_in_p]
-create_clock -name sys_ps7_FCLK_CLK0 -period 20 [get_pins sys_ps7/FCLK_CLK0]
+create_clock -name sys_ps7_FCLK_CLK0 -period 10 [get_pins sys_ps7/FCLK_CLK0]
 
 ################################################################################

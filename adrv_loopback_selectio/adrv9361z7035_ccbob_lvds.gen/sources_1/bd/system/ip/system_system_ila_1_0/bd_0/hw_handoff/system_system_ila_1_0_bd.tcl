@@ -163,8 +163,8 @@ proc create_root_design { parentCell } {
   set probe2 [ create_bd_port -dir I -from 11 -to 0 probe2 ]
   set probe3 [ create_bd_port -dir I -from 0 -to 0 probe3 ]
   set probe4 [ create_bd_port -dir I -from 0 -to 0 probe4 ]
-  set probe5 [ create_bd_port -dir I -from 11 -to 0 probe5 ]
-  set probe6 [ create_bd_port -dir I -from 11 -to 0 probe6 ]
+  set probe5 [ create_bd_port -dir I -from 15 -to 0 probe5 ]
+  set probe6 [ create_bd_port -dir I -from 15 -to 0 probe6 ]
   set probe7 [ create_bd_port -dir I -from 0 -to 0 probe7 ]
   set probe8 [ create_bd_port -dir I -from 12 -to 0 probe8 ]
   set probe9 [ create_bd_port -dir I -from 0 -to 0 probe9 ]
@@ -199,10 +199,10 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE4_WIDTH {1} \
    CONFIG.C_PROBE5_MU_CNT {1} \
    CONFIG.C_PROBE5_TYPE {0} \
-   CONFIG.C_PROBE5_WIDTH {12} \
+   CONFIG.C_PROBE5_WIDTH {16} \
    CONFIG.C_PROBE6_MU_CNT {1} \
    CONFIG.C_PROBE6_TYPE {0} \
-   CONFIG.C_PROBE6_WIDTH {12} \
+   CONFIG.C_PROBE6_WIDTH {16} \
    CONFIG.C_PROBE7_MU_CNT {1} \
    CONFIG.C_PROBE7_TYPE {0} \
    CONFIG.C_PROBE7_WIDTH {1} \

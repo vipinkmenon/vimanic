@@ -22,6 +22,7 @@
 
 module angleLUT(
 input i_clk,
+input [1:0] ampScale,
 input  [5:0] stepSize,
 input  [7:0] phase,
 output [11:0] o_angle
@@ -31,7 +32,7 @@ output [11:0] o_angle
 reg[11:0] mem [0:1023];
 reg [9:0] rdAddr;
 
-assign o_angle = mem[rdAddr];
+assign o_angle = $signed($signed(mem[rdAddr])/$signed(ampScale));
 
 
 always @(posedge i_clk)
@@ -42,7 +43,10 @@ begin
         rdAddr <= rdAddr + stepSize;
 end
 
-   
+//LUT memory contains sine values in fixed
+//point representation format.
+//2 bit integer, 10 bit frac in 2's complement format 
+//1024 samples for 2*pi radians  
 initial
 begin  
 rdAddr = (1024*phase)/360;  
