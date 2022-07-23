@@ -1,51 +1,51 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.228082",
-   "Default View_TopLeft":"-180,-197",
+   "Default View_ScaleFactor":"0.806165",
+   "Default View_TopLeft":"789,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port ddr -pg 1 -lvl 7 -x 2130 -y 700 -defaultsOSRD
-preplace port fixed_io -pg 1 -lvl 7 -x 2130 -y 720 -defaultsOSRD
-preplace port port-id_spi_mosi -pg 1 -lvl 7 -x 2130 -y 800 -defaultsOSRD
-preplace port port-id_spi_csn -pg 1 -lvl 7 -x 2130 -y 820 -defaultsOSRD
-preplace port port-id_spi_clk -pg 1 -lvl 7 -x 2130 -y 840 -defaultsOSRD
-preplace port port-id_spi_miso -pg 1 -lvl 0 -x 0 -y 910 -defaultsOSRD
-preplace port port-id_rx_clk_in_n -pg 1 -lvl 0 -x 0 -y 770 -defaultsOSRD
-preplace port port-id_rx_clk_in_p -pg 1 -lvl 0 -x 0 -y 930 -defaultsOSRD
-preplace port port-id_tx_clk_out_p -pg 1 -lvl 7 -x 2130 -y 940 -defaultsOSRD
-preplace port port-id_tx_clk_out_n -pg 1 -lvl 7 -x 2130 -y 920 -defaultsOSRD
-preplace portBus gpio_resetb -pg 1 -lvl 7 -x 2130 -y 590 -defaultsOSRD
-preplace portBus rx_frame_in_p -pg 1 -lvl 0 -x 0 -y 830 -defaultsOSRD
-preplace portBus rx_data_in_p -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
-preplace portBus rx_frame_in_n -pg 1 -lvl 0 -x 0 -y 990 -defaultsOSRD
-preplace portBus rx_data_in_n -pg 1 -lvl 0 -x 0 -y 1010 -defaultsOSRD
-preplace portBus tx_data_out_p -pg 1 -lvl 7 -x 2130 -y 1000 -defaultsOSRD
-preplace portBus tx_frame_out_p -pg 1 -lvl 7 -x 2130 -y 1200 -defaultsOSRD
-preplace portBus Dtx_frame_out_n -pg 1 -lvl 7 -x 2130 -y 1100 -defaultsOSRD
-preplace portBus tx_data_out_n -pg 1 -lvl 7 -x 2130 -y 1300 -defaultsOSRD
-preplace portBus enable -pg 1 -lvl 7 -x 2130 -y 1400 -defaultsOSRD
-preplace portBus clock_sel -pg 1 -lvl 7 -x 2130 -y 1380 -defaultsOSRD
-preplace inst sys_ps7 -pg 1 -lvl 4 -x 1220 -y 740 -defaultsOSRD
-preplace inst sys_ps7_axi_periph -pg 1 -lvl 5 -x 1610 -y 550 -defaultsOSRD
-preplace inst rst_sys_ps7_50M -pg 1 -lvl 4 -x 1220 -y 560 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 1610 -y 800 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 1970 -y 580 -defaultsOSRD
-preplace inst selectio_wiz_0 -pg 1 -lvl 2 -x 410 -y 960 -defaultsOSRD
+preplace port ddr -pg 1 -lvl 7 -x 2170 -y 700 -defaultsOSRD
+preplace port fixed_io -pg 1 -lvl 7 -x 2170 -y 720 -defaultsOSRD
+preplace port port-id_spi_mosi -pg 1 -lvl 7 -x 2170 -y 800 -defaultsOSRD
+preplace port port-id_spi_csn -pg 1 -lvl 7 -x 2170 -y 820 -defaultsOSRD
+preplace port port-id_spi_clk -pg 1 -lvl 7 -x 2170 -y 840 -defaultsOSRD
+preplace port port-id_spi_miso -pg 1 -lvl 0 -x -10 -y 910 -defaultsOSRD
+preplace port port-id_rx_clk_in_n -pg 1 -lvl 0 -x -10 -y 770 -defaultsOSRD
+preplace port port-id_rx_clk_in_p -pg 1 -lvl 0 -x -10 -y 930 -defaultsOSRD
+preplace port port-id_tx_clk_out_p -pg 1 -lvl 7 -x 2170 -y 940 -defaultsOSRD
+preplace port port-id_tx_clk_out_n -pg 1 -lvl 7 -x 2170 -y 920 -defaultsOSRD
+preplace portBus gpio_resetb -pg 1 -lvl 7 -x 2170 -y 590 -defaultsOSRD
+preplace portBus rx_frame_in_p -pg 1 -lvl 0 -x -10 -y 830 -defaultsOSRD
+preplace portBus rx_data_in_p -pg 1 -lvl 0 -x -10 -y 850 -defaultsOSRD
+preplace portBus rx_frame_in_n -pg 1 -lvl 0 -x -10 -y 990 -defaultsOSRD
+preplace portBus rx_data_in_n -pg 1 -lvl 0 -x -10 -y 1010 -defaultsOSRD
+preplace portBus tx_data_out_p -pg 1 -lvl 7 -x 2170 -y 1000 -defaultsOSRD
+preplace portBus tx_frame_out_p -pg 1 -lvl 7 -x 2170 -y 1200 -defaultsOSRD
+preplace portBus Dtx_frame_out_n -pg 1 -lvl 7 -x 2170 -y 1100 -defaultsOSRD
+preplace portBus tx_data_out_n -pg 1 -lvl 7 -x 2170 -y 1300 -defaultsOSRD
+preplace portBus enable -pg 1 -lvl 7 -x 2170 -y 1400 -defaultsOSRD
+preplace portBus clock_sel -pg 1 -lvl 7 -x 2170 -y 1380 -defaultsOSRD
+preplace inst sys_ps7 -pg 1 -lvl 4 -x 1250 -y 740 -defaultsOSRD
+preplace inst sys_ps7_axi_periph -pg 1 -lvl 5 -x 1670 -y 550 -defaultsOSRD
+preplace inst rst_sys_ps7_50M -pg 1 -lvl 4 -x 1250 -y 560 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 1670 -y 800 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2010 -y 580 -defaultsOSRD
+preplace inst selectio_wiz_0 -pg 1 -lvl 2 -x 430 -y 960 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 1 -x 110 -y 840 -defaultsOSRD
 preplace inst xlconcat_1 -pg 1 -lvl 1 -x 110 -y 1000 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 1 -x 110 -y 1110 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 6 -x 1970 -y 1000 -defaultsOSRD
-preplace inst xlslice_1 -pg 1 -lvl 6 -x 1970 -y 1200 -defaultsOSRD
-preplace inst xlslice_2 -pg 1 -lvl 6 -x 1970 -y 1100 -defaultsOSRD
-preplace inst xlslice_3 -pg 1 -lvl 6 -x 1970 -y 1300 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 6 -x 1970 -y 1400 -defaultsOSRD
-preplace inst system_ila_1 -pg 1 -lvl 6 -x 1970 -y 220 -defaultsOSRD
-preplace inst signalAdder_0 -pg 1 -lvl 5 -x 1610 -y 340 -defaultsOSRD
-preplace inst ad9361SPI_0 -pg 1 -lvl 6 -x 1970 -y 820 -defaultsOSRD
-preplace inst dataPackager_0 -pg 1 -lvl 3 -x 790 -y 270 -defaultsOSRD
-preplace inst dataBlaster_0 -pg 1 -lvl 4 -x 1220 -y 90 -defaultsOSRD
-preplace inst dataBlaster_1 -pg 1 -lvl 4 -x 1220 -y 310 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 6 -x 2010 -y 1000 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 6 -x 2010 -y 1200 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 6 -x 2010 -y 1100 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 6 -x 2010 -y 1300 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 6 -x 2010 -y 1400 -defaultsOSRD
+preplace inst system_ila_1 -pg 1 -lvl 6 -x 2010 -y 220 -defaultsOSRD
+preplace inst ad9361SPI_0 -pg 1 -lvl 6 -x 2010 -y 820 -defaultsOSRD
+preplace inst dataBlaster_0 -pg 1 -lvl 4 -x 1250 -y 90 -defaultsOSRD
+preplace inst dataPackager_0 -pg 1 -lvl 3 -x 810 -y 270 -defaultsOSRD
+preplace inst dataBlaster_1 -pg 1 -lvl 4 -x 1250 -y 310 -defaultsOSRD
+preplace inst signalAdder_0 -pg 1 -lvl 5 -x 1670 -y 340 -defaultsOSRD
 preplace netloc In0_1_1 1 0 1 NJ 990
 preplace netloc In1_0_1 1 0 1 NJ 850
 preplace netloc In1_1_1 1 0 1 NJ 1010
@@ -53,44 +53,44 @@ preplace netloc ad9361SPI_0_o_mosi 1 6 1 NJ 800
 preplace netloc ad9361SPI_0_o_spi_clk 1 6 1 NJ 840
 preplace netloc ad9361SPI_0_o_ss_n 1 6 1 NJ 820
 preplace netloc axi_gpio_0_gpio_io_o 1 6 1 NJ 590
-preplace netloc clk_in_n_0_1 1 0 2 NJ 770 220J
+preplace netloc clk_in_n_0_1 1 0 2 NJ 770 210J
 preplace netloc clk_in_p_0_1 1 0 2 NJ 930 NJ
-preplace netloc clk_wiz_0_clk_out1 1 5 1 1760 800n
-preplace netloc dataBlaster_0_o_data 1 4 2 1450 230 1830J
-preplace netloc dataBlaster_0_o_data_valid 1 4 2 1420 250 1790J
-preplace netloc dataBlaster_1_o_data 1 4 2 1460 240 1820J
-preplace netloc dataPackager_0_I_Value 1 3 3 960 180 NJ 180 1760
-preplace netloc dataPackager_0_Q_Value 1 3 3 970 190 NJ 190 1770J
-preplace netloc dataPackager_0_o_I_Valid 1 3 3 980 200 NJ 200 NJ
-preplace netloc dataPackager_0_o_Q_Valid 1 3 3 990 220 NJ 220 NJ
-preplace netloc i_miso_0_1 1 0 6 NJ 910 200J 830 NJ 830 1000J 840 1440J 860 NJ
-preplace netloc rst_sys_ps7_50M_peripheral_aresetn 1 4 2 1450 690 1830
+preplace netloc clk_wiz_0_clk_out1 1 3 3 1030 200 1480 190 1850
+preplace netloc dataBlaster_0_o_data 1 4 2 1500 240 NJ
+preplace netloc dataBlaster_0_o_data_valid 1 4 2 1470 230 1870J
+preplace netloc dataBlaster_1_o_data 1 4 2 1510 250 1860J
+preplace netloc dataPackager_0_I_Value 1 3 3 980 190 1460J 180 1830
+preplace netloc dataPackager_0_Q_Value 1 3 3 1000 210 NJ 210 1840J
+preplace netloc dataPackager_0_o_I_Valid 1 3 3 990 400 1490J 200 NJ
+preplace netloc dataPackager_0_o_Q_Valid 1 3 3 1010 220 NJ 220 NJ
+preplace netloc i_miso_0_1 1 0 6 10J 760 NJ 760 NJ 760 1000J 860 NJ 860 NJ
+preplace netloc rst_sys_ps7_50M_peripheral_aresetn 1 4 2 1510 690 1870
 preplace netloc rx_frame_in_p 1 0 1 NJ 830
-preplace netloc selectio_wiz_0_clk_out 1 2 2 610 140 1000
+preplace netloc selectio_wiz_0_clk_out 1 2 2 620 130 1020
 preplace netloc selectio_wiz_0_clk_to_pins_n 1 2 5 NJ 920 NJ 920 NJ 920 NJ 920 NJ
 preplace netloc selectio_wiz_0_clk_to_pins_p 1 2 5 NJ 940 NJ 940 NJ 940 NJ 940 NJ
-preplace netloc selectio_wiz_0_data_in_to_device 1 1 5 210 1090 620 990 NJ 990 NJ 990 1780
-preplace netloc selectio_wiz_0_data_out_to_pins_n 1 2 4 NJ 980 NJ 980 NJ 980 1760
-preplace netloc selectio_wiz_0_data_out_to_pins_p 1 2 4 NJ 960 NJ 960 NJ 960 1770
-preplace netloc signalAdder_0_o_data 1 5 1 1790 300n
-preplace netloc signalAdder_0_o_data_valid 1 5 1 1800 320n
-preplace netloc sys_cpu_clk 1 3 3 1010 420 1440 740 1810
-preplace netloc sys_ps7_FCLK_RESET0_N 1 3 2 1020 460 1420
-preplace netloc xlconcat_0_dout 1 1 1 210 840n
-preplace netloc xlconcat_1_dout 1 1 1 200 970n
-preplace netloc xlconstant_0_dout 1 1 1 200 1010n
-preplace netloc xlconstant_1_dout 1 6 1 2110J 1380n
+preplace netloc selectio_wiz_0_data_in_to_device 1 1 5 220 830 630 140 1000J 180 1450J 170 1820
+preplace netloc selectio_wiz_0_data_out_to_pins_n 1 2 4 NJ 980 NJ 980 NJ 980 1830
+preplace netloc selectio_wiz_0_data_out_to_pins_p 1 2 4 NJ 960 NJ 960 NJ 960 1860
+preplace netloc signalAdder_0_o_data 1 5 1 1860 300n
+preplace netloc signalAdder_0_o_data_valid 1 5 1 1870 320n
+preplace netloc sys_cpu_clk 1 3 3 990 460 1480 710 1860
+preplace netloc sys_ps7_FCLK_RESET0_N 1 3 2 1030 840 1450
+preplace netloc xlconcat_0_dout 1 1 1 200 840n
+preplace netloc xlconcat_1_dout 1 1 1 210 970n
+preplace netloc xlconstant_0_dout 1 1 1 210 1010n
+preplace netloc xlconstant_1_dout 1 6 1 2150J 1380n
 preplace netloc xlslice_0_Dout 1 6 1 NJ 1000
 preplace netloc xlslice_1_Dout 1 6 1 NJ 1200
 preplace netloc xlslice_2_Dout 1 6 1 NJ 1100
 preplace netloc xlslice_3_Dout 1 6 1 NJ 1300
 preplace netloc sys_ps7_DDR 1 4 3 NJ 700 NJ 700 NJ
 preplace netloc sys_ps7_FIXED_IO 1 4 3 NJ 720 NJ 720 NJ
-preplace netloc sys_ps7_M_AXI_GP0 1 4 1 1430 470n
-preplace netloc sys_ps7_axi_periph_M00_AXI 1 5 1 1800 540n
+preplace netloc sys_ps7_M_AXI_GP0 1 4 1 1500 470n
+preplace netloc sys_ps7_axi_periph_M00_AXI 1 5 1 1830 540n
 preplace netloc sys_ps7_axi_periph_M01_AXI 1 5 1 N 560
-levelinfo -pg 1 0 110 410 790 1220 1610 1970 2130
-pagesize -pg 1 -db -bbox -sgen -170 0 2320 1460
+levelinfo -pg 1 -10 110 430 810 1250 1670 2010 2170
+pagesize -pg 1 -db -bbox -sgen -180 0 2360 1460
 "
 }
 {

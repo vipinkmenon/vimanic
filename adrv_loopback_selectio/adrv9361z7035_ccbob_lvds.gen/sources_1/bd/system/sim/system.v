@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Sat Jul 23 10:38:28 2022
-//Host        : G0819 running 64-bit major release  (build 9200)
+//Date        : Sat Jul 23 07:04:37 2022
+//Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -701,7 +701,7 @@ module system
   (* DEBUG = "true" *) (* MARK_DEBUG *) wire [13:0]selectio_wiz_0_data_in_to_device;
   wire [6:0]selectio_wiz_0_data_out_to_pins_n;
   wire [6:0]selectio_wiz_0_data_out_to_pins_p;
-  wire [12:0]signalAdder_0_o_data;
+  wire [11:0]signalAdder_0_o_data;
   wire signalAdder_0_o_data_valid;
   wire sys_cpu_clk;
   wire [14:0]sys_ps7_DDR_ADDR;
@@ -880,14 +880,14 @@ module system
         .clk_out1(clk_wiz_0_clk_out1));
   system_dataBlaster_0_0 dataBlaster_0
        (.i_clk(selectio_wiz_0_clk_out),
-        .i_clk_100(sys_cpu_clk),
+        .i_clk_100(clk_wiz_0_clk_out1),
         .i_data(dataPackager_0_I_Value),
         .i_data_valid(dataPackager_0_o_I_Valid),
         .o_data(dataBlaster_0_o_data),
         .o_data_valid(dataBlaster_0_o_data_valid));
   system_dataBlaster_1_0 dataBlaster_1
        (.i_clk(selectio_wiz_0_clk_out),
-        .i_clk_100(sys_cpu_clk),
+        .i_clk_100(clk_wiz_0_clk_out1),
         .i_data(dataPackager_0_Q_Value),
         .i_data_valid(dataPackager_0_o_Q_Valid),
         .o_data(dataBlaster_1_o_data));
@@ -920,7 +920,7 @@ module system
         .data_out_to_pins_p(selectio_wiz_0_data_out_to_pins_p),
         .io_reset(xlconstant_0_dout));
   system_signalAdder_0_0 signalAdder_0
-       (.i_clk(sys_cpu_clk),
+       (.i_clk(clk_wiz_0_clk_out1),
         .i_data1(dataBlaster_0_o_data[11:0]),
         .i_data2(dataBlaster_1_o_data[11:0]),
         .i_data_valid(dataBlaster_0_o_data_valid),
@@ -1074,7 +1074,7 @@ module system
         .S00_AXI_wstrb(sys_ps7_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(sys_ps7_M_AXI_GP0_WVALID));
   system_system_ila_1_0 system_ila_1
-       (.clk(sys_cpu_clk),
+       (.clk(clk_wiz_0_clk_out1),
         .probe0(selectio_wiz_0_data_in_to_device),
         .probe1(dataPackager_0_I_Value),
         .probe2(dataPackager_0_Q_Value),

@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Tue Jul  5 19:22:12 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
+-- Date        : Sat Jul 23 07:03:03 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top system_clk_wiz_0_0 -prefix
 --               system_clk_wiz_0_0_ system_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : system_clk_wiz_0_0

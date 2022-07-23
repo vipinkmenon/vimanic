@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Wed Jul 20 15:43:35 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top system_selectio_wiz_0_0 -prefix
---               system_selectio_wiz_0_0_ system_selectio_wiz_0_0_sim_netlist.vhdl
+-- Date        : Sat Jul 23 07:06:29 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               e:/Projects/adrvSoM/vimanic/adrv_loopback_selectio/adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0_sim_netlist.vhdl
 -- Design      : system_selectio_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz is
+entity system_selectio_wiz_0_0_selectio_wiz is
   port (
     data_in_from_pins_p : in STD_LOGIC_VECTOR ( 6 downto 0 );
     data_in_from_pins_n : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -31,12 +31,12 @@ entity system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz is
     io_reset : in STD_LOGIC
   );
   attribute DEV_W : integer;
-  attribute DEV_W of system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz : entity is 14;
+  attribute DEV_W of system_selectio_wiz_0_0_selectio_wiz : entity is 14;
   attribute SYS_W : integer;
-  attribute SYS_W of system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz : entity is 7;
-end system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz;
+  attribute SYS_W of system_selectio_wiz_0_0_selectio_wiz : entity is 7;
+end system_selectio_wiz_0_0_selectio_wiz;
 
-architecture STRUCTURE of system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz is
+architecture STRUCTURE of system_selectio_wiz_0_0_selectio_wiz is
   signal clk_fwd_out : STD_LOGIC;
   signal clk_in_int : STD_LOGIC;
   signal \^clk_out\ : STD_LOGIC;
@@ -555,7 +555,7 @@ architecture STRUCTURE of system_selectio_wiz_0_0 is
   attribute DEV_W of inst : label is 14;
   attribute SYS_W of inst : label is 7;
 begin
-inst: entity work.system_selectio_wiz_0_0_system_selectio_wiz_0_0_selectio_wiz
+inst: entity work.system_selectio_wiz_0_0_selectio_wiz
      port map (
       clk_in_n => clk_in_n,
       clk_in_p => clk_in_p,

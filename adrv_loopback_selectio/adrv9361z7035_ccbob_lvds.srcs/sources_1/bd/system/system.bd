@@ -33,11 +33,11 @@
       "xlslice_3": "",
       "xlconstant_1": "",
       "system_ila_1": "",
-      "signalAdder_0": "",
       "ad9361SPI_0": "",
-      "dataPackager_0": "",
       "dataBlaster_0": "",
-      "dataBlaster_1": ""
+      "dataPackager_0": "",
+      "dataBlaster_1": "",
+      "signalAdder_0": ""
     },
     "interface_ports": {
       "ddr": {
@@ -2172,14 +2172,20 @@
           }
         }
       },
-      "signalAdder_0": {
-        "vlnv": "xilinx.com:module_ref:signalAdder:1.0",
-        "xci_name": "system_signalAdder_0_0",
-        "xci_path": "ip\\system_signalAdder_0_0\\system_signalAdder_0_0.xci",
-        "inst_hier_path": "signalAdder_0",
+      "ad9361SPI_0": {
+        "vlnv": "xilinx.com:user:ad9361SPI:1.0",
+        "xci_name": "system_ad9361SPI_0_0",
+        "xci_path": "ip\\system_ad9361SPI_0_0\\system_ad9361SPI_0_0.xci",
+        "inst_hier_path": "ad9361SPI_0"
+      },
+      "dataBlaster_0": {
+        "vlnv": "xilinx.com:module_ref:dataBlaster:1.0",
+        "xci_name": "system_dataBlaster_0_0",
+        "xci_path": "ip\\system_dataBlaster_0_0\\system_dataBlaster_0_0.xci",
+        "inst_hier_path": "dataBlaster_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "signalAdder",
+          "ref_name": "dataBlaster",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -2189,20 +2195,15 @@
             "parameters": {
               "FREQ_HZ": {
                 "value": "100000000",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "system_sys_ps7_0_FCLK_CLK0",
+                "value": "system_selectio_wiz_0_0_clk_out",
                 "value_src": "default_prop"
               }
             }
           },
-          "i_data1": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "i_data2": {
+          "i_data": {
             "direction": "I",
             "left": "11",
             "right": "0"
@@ -2210,21 +2211,32 @@
           "i_data_valid": {
             "direction": "I"
           },
+          "i_clk_100": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "10000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
           "o_data": {
             "direction": "O",
-            "left": "12",
+            "left": "15",
             "right": "0"
           },
           "o_data_valid": {
             "direction": "O"
           }
         }
-      },
-      "ad9361SPI_0": {
-        "vlnv": "xilinx.com:user:ad9361SPI:1.0",
-        "xci_name": "system_ad9361SPI_0_0",
-        "xci_path": "ip\\system_ad9361SPI_0_0\\system_ad9361SPI_0_0.xci",
-        "inst_hier_path": "ad9361SPI_0"
       },
       "dataPackager_0": {
         "vlnv": "xilinx.com:module_ref:dataPackager:1.0",
@@ -2296,66 +2308,6 @@
           }
         }
       },
-      "dataBlaster_0": {
-        "vlnv": "xilinx.com:module_ref:dataBlaster:1.0",
-        "xci_name": "system_dataBlaster_0_0",
-        "xci_path": "ip\\system_dataBlaster_0_0\\system_dataBlaster_0_0.xci",
-        "inst_hier_path": "dataBlaster_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "dataBlaster",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "system_selectio_wiz_0_0_clk_out",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "i_data": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "i_data_valid": {
-            "direction": "I"
-          },
-          "i_clk_100": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "system_sys_ps7_0_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "o_data": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "o_data_valid": {
-            "direction": "O"
-          }
-        }
-      },
       "dataBlaster_1": {
         "vlnv": "xilinx.com:module_ref:dataBlaster:1.0",
         "xci_name": "system_dataBlaster_1_0",
@@ -2393,22 +2345,74 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
+                "value": "10000000",
+                "value_src": "ip_prop"
               },
               "PHASE": {
                 "value": "0.0",
-                "value_src": "default_prop"
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "system_sys_ps7_0_FCLK_CLK0",
-                "value_src": "default_prop"
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
           "o_data": {
             "direction": "O",
             "left": "15",
+            "right": "0"
+          },
+          "o_data_valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "signalAdder_0": {
+        "vlnv": "xilinx.com:module_ref:signalAdder:1.0",
+        "xci_name": "system_signalAdder_0_0",
+        "xci_path": "ip\\system_signalAdder_0_0\\system_signalAdder_0_0.xci",
+        "inst_hier_path": "signalAdder_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "signalAdder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "10000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "i_data1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "i_data2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "i_data_valid": {
+            "direction": "I"
+          },
+          "o_data": {
+            "direction": "O",
+            "left": "11",
             "right": "0"
           },
           "o_data_valid": {
@@ -2507,7 +2511,11 @@
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
-          "ad9361SPI_0/i_spi_ctrl_clock"
+          "ad9361SPI_0/i_spi_ctrl_clock",
+          "dataBlaster_0/i_clk_100",
+          "dataBlaster_1/i_clk_100",
+          "system_ila_1/clk",
+          "signalAdder_0/i_clk"
         ]
       },
       "dataBlaster_0_o_data": {
@@ -2585,8 +2593,8 @@
       "selectio_wiz_0_clk_out": {
         "ports": [
           "selectio_wiz_0/clk_out",
-          "dataPackager_0/i_clk",
           "dataBlaster_0/i_clk",
+          "dataPackager_0/i_clk",
           "dataBlaster_1/i_clk"
         ]
       },
@@ -2655,11 +2663,7 @@
           "clk_wiz_0/clk_in1",
           "axi_gpio_0/s_axi_aclk",
           "sys_ps7_axi_periph/M01_ACLK",
-          "ad9361SPI_0/s00_axi_aclk",
-          "system_ila_1/clk",
-          "signalAdder_0/i_clk",
-          "dataBlaster_0/i_clk_100",
-          "dataBlaster_1/i_clk_100"
+          "ad9361SPI_0/s00_axi_aclk"
         ]
       },
       "sys_ps7_FCLK_RESET0_N": {

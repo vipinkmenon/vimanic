@@ -25,14 +25,14 @@ input        i_clk,
 input [11:0] i_data1,
 input [11:0] i_data2,
 input        i_data_valid,
-output reg [12:0] o_data,
+output reg [11:0] o_data,
 output  reg  o_data_valid
     );
     
 always @(posedge i_clk)
 begin
     o_data_valid <= i_data_valid;
-    o_data <= i_data1 + i_data2;
+    o_data <= $signed(i_data1) + $signed(i_data2);
 end    
     
 endmodule

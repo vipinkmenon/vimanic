@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Thu Jul 21 09:09:02 2022
-// Host        : G0819 running 64-bit major release  (build 9200)
+// Date        : Sat Jul 23 07:03:03 2022
+// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top system_signalAdder_0_0 -prefix
 //               system_signalAdder_0_0_ system_signalAdder_0_0_sim_netlist.v
 // Design      : system_signalAdder_0_0
@@ -19,7 +19,7 @@ module system_signalAdder_0_0_signalAdder
     i_data2,
     i_clk,
     i_data_valid);
-  output [12:0]o_data;
+  output [11:0]o_data;
   output o_data_valid;
   input [11:0]i_data1;
   input [11:0]i_data2;
@@ -30,7 +30,7 @@ module system_signalAdder_0_0_signalAdder
   wire [11:0]i_data1;
   wire [11:0]i_data2;
   wire i_data_valid;
-  wire [12:0]o_data;
+  wire [11:0]o_data;
   wire \o_data[11]_i_2_n_0 ;
   wire \o_data[11]_i_3_n_0 ;
   wire \o_data[11]_i_4_n_0 ;
@@ -43,7 +43,6 @@ module system_signalAdder_0_0_signalAdder
   wire \o_data[7]_i_3_n_0 ;
   wire \o_data[7]_i_4_n_0 ;
   wire \o_data[7]_i_5_n_0 ;
-  wire \o_data_reg[11]_i_1_n_0 ;
   wire \o_data_reg[11]_i_1_n_1 ;
   wire \o_data_reg[11]_i_1_n_2 ;
   wire \o_data_reg[11]_i_1_n_3 ;
@@ -56,9 +55,8 @@ module system_signalAdder_0_0_signalAdder
   wire \o_data_reg[7]_i_1_n_2 ;
   wire \o_data_reg[7]_i_1_n_3 ;
   wire o_data_valid;
-  wire [12:0]p_0_in;
-  wire [3:1]\NLW_o_data_reg[12]_i_1_CO_UNCONNECTED ;
-  wire [3:0]\NLW_o_data_reg[12]_i_1_O_UNCONNECTED ;
+  wire [11:0]p_0_in;
+  wire [3:3]\NLW_o_data_reg[11]_i_1_CO_UNCONNECTED ;
 
   LUT2 #(
     .INIT(4'h6)) 
@@ -150,26 +148,14 @@ module system_signalAdder_0_0_signalAdder
         .D(p_0_in[11]),
         .Q(o_data[11]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[11]_i_1 
        (.CI(\o_data_reg[7]_i_1_n_0 ),
-        .CO({\o_data_reg[11]_i_1_n_0 ,\o_data_reg[11]_i_1_n_1 ,\o_data_reg[11]_i_1_n_2 ,\o_data_reg[11]_i_1_n_3 }),
+        .CO({\NLW_o_data_reg[11]_i_1_CO_UNCONNECTED [3],\o_data_reg[11]_i_1_n_1 ,\o_data_reg[11]_i_1_n_2 ,\o_data_reg[11]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(i_data1[11:8]),
+        .DI({1'b0,i_data1[10:8]}),
         .O(p_0_in[11:8]),
         .S({\o_data[11]_i_2_n_0 ,\o_data[11]_i_3_n_0 ,\o_data[11]_i_4_n_0 ,\o_data[11]_i_5_n_0 }));
-  FDRE \o_data_reg[12] 
-       (.C(i_clk),
-        .CE(1'b1),
-        .D(p_0_in[12]),
-        .Q(o_data[12]),
-        .R(1'b0));
-  CARRY4 \o_data_reg[12]_i_1 
-       (.CI(\o_data_reg[11]_i_1_n_0 ),
-        .CO({\NLW_o_data_reg[12]_i_1_CO_UNCONNECTED [3:1],p_0_in[12]}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(\NLW_o_data_reg[12]_i_1_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,1'b0,1'b1}));
   FDRE \o_data_reg[1] 
        (.C(i_clk),
         .CE(1'b1),
@@ -188,6 +174,7 @@ module system_signalAdder_0_0_signalAdder
         .D(p_0_in[3]),
         .Q(o_data[3]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[3]_i_1 
        (.CI(1'b0),
         .CO({\o_data_reg[3]_i_1_n_0 ,\o_data_reg[3]_i_1_n_1 ,\o_data_reg[3]_i_1_n_2 ,\o_data_reg[3]_i_1_n_3 }),
@@ -219,6 +206,7 @@ module system_signalAdder_0_0_signalAdder
         .D(p_0_in[7]),
         .Q(o_data[7]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[7]_i_1 
        (.CI(\o_data_reg[3]_i_1_n_0 ),
         .CO({\o_data_reg[7]_i_1_n_0 ,\o_data_reg[7]_i_1_n_1 ,\o_data_reg[7]_i_1_n_2 ,\o_data_reg[7]_i_1_n_3 }),
@@ -256,18 +244,18 @@ module system_signalAdder_0_0
     i_data_valid,
     o_data,
     o_data_valid);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *) input i_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input i_clk;
   input [11:0]i_data1;
   input [11:0]i_data2;
   input i_data_valid;
-  output [12:0]o_data;
+  output [11:0]o_data;
   output o_data_valid;
 
   wire i_clk;
   wire [11:0]i_data1;
   wire [11:0]i_data2;
   wire i_data_valid;
-  wire [12:0]o_data;
+  wire [11:0]o_data;
   wire o_data_valid;
 
   system_signalAdder_0_0_signalAdder inst

@@ -27,7 +27,7 @@ module bd_15e9_wrapper
   input [15:0]probe5;
   input [15:0]probe6;
   input [0:0]probe7;
-  input [12:0]probe8;
+  input [11:0]probe8;
   input [0:0]probe9;
 
   wire clk;
@@ -39,7 +39,7 @@ module bd_15e9_wrapper
   wire [15:0]probe5;
   wire [15:0]probe6;
   wire [0:0]probe7;
-  wire [12:0]probe8;
+  wire [11:0]probe8;
   wire [0:0]probe9;
 
   bd_15e9 bd_15e9_i

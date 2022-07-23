@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul 23 10:39:45 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul 23 07:05:01 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z035i" NAME="bd_15e9" PACKAGE="fbg676" SPEEDGRADE="-2L"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+    <PORT CLKFREQUENCY="10000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="clk"/>
       </CONNECTIONS>
@@ -49,7 +49,7 @@
         <CONNECTION INSTANCE="ila_lib" PORT="probe7"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="12" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe8">
+    <PORT DIR="I" LEFT="11" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe8">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="probe8"/>
       </CONNECTIONS>
@@ -101,7 +101,7 @@
         <PARAMETER NAME="C_TRIGIN_EN" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_0_AXIS_TUSER_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_SLOT_0_AXIS_TDEST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="13"/>
+        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="12"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ARUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_RUSER_WIDTH" VALUE="1"/>
@@ -116,7 +116,7 @@
         <PARAMETER NAME="C_PROBE5_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_PROBE6_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_PROBE7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="13"/>
+        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="12"/>
         <PARAMETER NAME="C_PROBE9_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE10_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE11_WIDTH" VALUE="1"/>
@@ -3204,7 +3204,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+        <PORT CLKFREQUENCY="10000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
@@ -3249,7 +3249,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="probe7"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="12" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe8">
+        <PORT DIR="I" LEFT="11" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe8">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="probe8"/>
           </CONNECTIONS>

@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jul 22 16:16:00 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {d:/Consultancy/Vimanic/git/vimanic/adrv_loopback_selectio -
---               Copy/adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system/ip/system_ad9361SPI_0_0/system_ad9361SPI_0_0_stub.vhdl}
+-- Date        : Fri Jul  8 09:58:00 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_ad9361SPI_0_0 -prefix
+--               system_ad9361SPI_0_0_ system_ad9361SPI_0_0_stub.vhdl
 -- Design      : system_ad9361SPI_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z035ifbg676-2L

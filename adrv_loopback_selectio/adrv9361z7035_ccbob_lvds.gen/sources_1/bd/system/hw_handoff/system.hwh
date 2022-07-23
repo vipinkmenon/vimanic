@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul 23 10:39:48 2022" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul 23 07:05:02 2022" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z035i" NAME="system" PACKAGE="fbg676" SPEEDGRADE="-2L"/>
 
@@ -254,7 +254,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="7" FULLNAME="/ad9361SPI_0" HWVERSION="1.0" INSTANCE="ad9361SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad9361SPI" VLNV="xilinx.com:user:ad9361SPI:1.0">
+    <MODULE COREREVISION="5" FULLNAME="/ad9361SPI_0" HWVERSION="1.0" INSTANCE="ad9361SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad9361SPI" VLNV="xilinx.com:user:ad9361SPI:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -1402,6 +1402,10 @@
         <PORT CLKFREQUENCY="10000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ad9361SPI_0" PORT="i_spi_ctrl_clock"/>
+            <CONNECTION INSTANCE="dataBlaster_0" PORT="i_clk_100"/>
+            <CONNECTION INSTANCE="dataBlaster_1" PORT="i_clk_100"/>
+            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
+            <CONNECTION INSTANCE="signalAdder_0" PORT="i_clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1430,9 +1434,9 @@
             <CONNECTION INSTANCE="dataPackager_0" PORT="Channel_1_Q_Valid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="i_clk_100" SIGIS="undef" SIGNAME="sys_ps7_FCLK_CLK0">
+        <PORT DIR="I" NAME="i_clk_100" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data">
@@ -1473,9 +1477,9 @@
             <CONNECTION INSTANCE="dataPackager_0" PORT="Channel_1_I_Valid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="i_clk_100" SIGIS="undef" SIGNAME="sys_ps7_FCLK_CLK0">
+        <PORT DIR="I" NAME="i_clk_100" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_1_o_data">
@@ -1757,8 +1761,8 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out" SIGIS="clk" SIGNAME="selectio_wiz_0_clk_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dataPackager_0" PORT="i_clk"/>
             <CONNECTION INSTANCE="dataBlaster_0" PORT="i_clk"/>
+            <CONNECTION INSTANCE="dataPackager_0" PORT="i_clk"/>
             <CONNECTION INSTANCE="dataBlaster_1" PORT="i_clk"/>
           </CONNECTIONS>
         </PORT>
@@ -1796,9 +1800,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="sys_ps7_FCLK_CLK0">
+        <PORT CLKFREQUENCY="10000000" DIR="I" NAME="i_clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="i_data1" RIGHT="0" SIGIS="undef" SIGNAME="dataBlaster_0_o_data">
@@ -1816,7 +1820,7 @@
             <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data_valid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="12" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
+        <PORT DIR="O" LEFT="11" NAME="o_data" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
           <CONNECTIONS>
             <CONNECTION INSTANCE="system_ila_1" PORT="probe8"/>
           </CONNECTIONS>
@@ -2978,10 +2982,6 @@
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="sys_ps7_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="ad9361SPI_0" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="system_ila_1" PORT="clk"/>
-            <CONNECTION INSTANCE="signalAdder_0" PORT="i_clk"/>
-            <CONNECTION INSTANCE="dataBlaster_0" PORT="i_clk_100"/>
-            <CONNECTION INSTANCE="dataBlaster_1" PORT="i_clk_100"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="sys_ps7_FCLK_RESET0_N">
@@ -7887,9 +7887,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="sys_ps7_FCLK_CLK0">
+        <PORT CLKFREQUENCY="10000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="13" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
@@ -7932,7 +7932,7 @@
             <CONNECTION INSTANCE="dataBlaster_0" PORT="o_data_valid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="12" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
+        <PORT DIR="I" LEFT="11" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="signalAdder_0_o_data">
           <CONNECTIONS>
             <CONNECTION INSTANCE="signalAdder_0" PORT="o_data"/>
           </CONNECTIONS>

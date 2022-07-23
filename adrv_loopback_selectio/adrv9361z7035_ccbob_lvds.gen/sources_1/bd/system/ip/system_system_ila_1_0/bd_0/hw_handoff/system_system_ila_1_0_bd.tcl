@@ -166,7 +166,7 @@ proc create_root_design { parentCell } {
   set probe5 [ create_bd_port -dir I -from 15 -to 0 probe5 ]
   set probe6 [ create_bd_port -dir I -from 15 -to 0 probe6 ]
   set probe7 [ create_bd_port -dir I -from 0 -to 0 probe7 ]
-  set probe8 [ create_bd_port -dir I -from 12 -to 0 probe8 ]
+  set probe8 [ create_bd_port -dir I -from 11 -to 0 probe8 ]
   set probe9 [ create_bd_port -dir I -from 0 -to 0 probe9 ]
 
   # Create instance: ila_lib, and set properties
@@ -178,7 +178,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_DATA_DEPTH {16384} \
    CONFIG.C_EN_STRG_QUAL {0} \
    CONFIG.C_EN_TIME_TAG {0} \
-   CONFIG.C_ILA_CLK_FREQ {100000000} \
+   CONFIG.C_ILA_CLK_FREQ {10000000} \
    CONFIG.C_INPUT_PIPE_STAGES {0} \
    CONFIG.C_MONITOR_TYPE {Native} \
    CONFIG.C_NUM_OF_PROBES {10} \
@@ -208,7 +208,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE7_WIDTH {1} \
    CONFIG.C_PROBE8_MU_CNT {1} \
    CONFIG.C_PROBE8_TYPE {0} \
-   CONFIG.C_PROBE8_WIDTH {13} \
+   CONFIG.C_PROBE8_WIDTH {12} \
    CONFIG.C_PROBE9_MU_CNT {1} \
    CONFIG.C_PROBE9_TYPE {0} \
    CONFIG.C_PROBE9_WIDTH {1} \

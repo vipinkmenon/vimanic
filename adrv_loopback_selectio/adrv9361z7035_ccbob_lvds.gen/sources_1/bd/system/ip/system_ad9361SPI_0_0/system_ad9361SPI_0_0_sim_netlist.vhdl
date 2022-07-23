@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Jul 22 16:16:00 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {d:/Consultancy/Vimanic/git/vimanic/adrv_loopback_selectio -
---               Copy/adrv9361z7035_ccbob_lvds.gen/sources_1/bd/system/ip/system_ad9361SPI_0_0/system_ad9361SPI_0_0_sim_netlist.vhdl}
+-- Date        : Fri Jul  8 09:58:00 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_ad9361SPI_0_0 -prefix
+--               system_ad9361SPI_0_0_ system_ad9361SPI_0_0_sim_netlist.vhdl
 -- Design      : system_ad9361SPI_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -31,8 +31,6 @@ entity system_ad9361SPI_0_0_spiCore is
     \axi_rdata_reg[7]_1\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     i_miso : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ad9361SPI_0_0_spiCore : entity is "spiCore";
 end system_ad9361SPI_0_0_spiCore;
 
 architecture STRUCTURE of system_ad9361SPI_0_0_spiCore is
@@ -1958,8 +1956,6 @@ entity system_ad9361SPI_0_0_ad9361SPI_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ad9361SPI_0_0_ad9361SPI_v1_0_S00_AXI : entity is "ad9361SPI_v1_0_S00_AXI";
 end system_ad9361SPI_0_0_ad9361SPI_v1_0_S00_AXI;
 
 architecture STRUCTURE of system_ad9361SPI_0_0_ad9361SPI_v1_0_S00_AXI is
@@ -3914,8 +3910,6 @@ entity system_ad9361SPI_0_0_ad9361SPI_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ad9361SPI_0_0_ad9361SPI_v1_0 : entity is "ad9361SPI_v1_0";
 end system_ad9361SPI_0_0_ad9361SPI_v1_0;
 
 architecture STRUCTURE of system_ad9361SPI_0_0_ad9361SPI_v1_0 is

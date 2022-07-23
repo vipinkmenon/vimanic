@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Thu Jul 21 09:09:02 2022
--- Host        : G0819 running 64-bit major release  (build 9200)
+-- Date        : Sat Jul 23 07:03:03 2022
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top system_signalAdder_0_0 -prefix
 --               system_signalAdder_0_0_ system_signalAdder_0_0_sim_netlist.vhdl
 -- Design      : system_signalAdder_0_0
@@ -16,7 +16,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity system_signalAdder_0_0_signalAdder is
   port (
-    o_data : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    o_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     o_data_valid : out STD_LOGIC;
     i_data1 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     i_data2 : in STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -38,7 +38,6 @@ architecture STRUCTURE of system_signalAdder_0_0_signalAdder is
   signal \o_data[7]_i_3_n_0\ : STD_LOGIC;
   signal \o_data[7]_i_4_n_0\ : STD_LOGIC;
   signal \o_data[7]_i_5_n_0\ : STD_LOGIC;
-  signal \o_data_reg[11]_i_1_n_0\ : STD_LOGIC;
   signal \o_data_reg[11]_i_1_n_1\ : STD_LOGIC;
   signal \o_data_reg[11]_i_1_n_2\ : STD_LOGIC;
   signal \o_data_reg[11]_i_1_n_3\ : STD_LOGIC;
@@ -50,9 +49,12 @@ architecture STRUCTURE of system_signalAdder_0_0_signalAdder is
   signal \o_data_reg[7]_i_1_n_1\ : STD_LOGIC;
   signal \o_data_reg[7]_i_1_n_2\ : STD_LOGIC;
   signal \o_data_reg[7]_i_1_n_3\ : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal \NLW_o_data_reg[12]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_o_data_reg[12]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal \NLW_o_data_reg[11]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of \o_data_reg[11]_i_1\ : label is 35;
+  attribute ADDER_THRESHOLD of \o_data_reg[3]_i_1\ : label is 35;
+  attribute ADDER_THRESHOLD of \o_data_reg[7]_i_1\ : label is 35;
 begin
 \o_data[11]_i_2\: unisim.vcomponents.LUT2
     generic map(
@@ -189,35 +191,18 @@ begin
 \o_data_reg[11]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => \o_data_reg[7]_i_1_n_0\,
-      CO(3) => \o_data_reg[11]_i_1_n_0\,
+      CO(3) => \NLW_o_data_reg[11]_i_1_CO_UNCONNECTED\(3),
       CO(2) => \o_data_reg[11]_i_1_n_1\,
       CO(1) => \o_data_reg[11]_i_1_n_2\,
       CO(0) => \o_data_reg[11]_i_1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => i_data1(11 downto 8),
+      DI(3) => '0',
+      DI(2 downto 0) => i_data1(10 downto 8),
       O(3 downto 0) => p_0_in(11 downto 8),
       S(3) => \o_data[11]_i_2_n_0\,
       S(2) => \o_data[11]_i_3_n_0\,
       S(1) => \o_data[11]_i_4_n_0\,
       S(0) => \o_data[11]_i_5_n_0\
-    );
-\o_data_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => i_clk,
-      CE => '1',
-      D => p_0_in(12),
-      Q => o_data(12),
-      R => '0'
-    );
-\o_data_reg[12]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \o_data_reg[11]_i_1_n_0\,
-      CO(3 downto 1) => \NLW_o_data_reg[12]_i_1_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => p_0_in(12),
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_o_data_reg[12]_i_1_O_UNCONNECTED\(3 downto 0),
-      S(3 downto 0) => B"0001"
     );
 \o_data_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -340,7 +325,7 @@ entity system_signalAdder_0_0 is
     i_data1 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     i_data2 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     i_data_valid : in STD_LOGIC;
-    o_data : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    o_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     o_data_valid : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -359,7 +344,7 @@ architecture STRUCTURE of system_signalAdder_0_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of i_clk : signal is "xilinx.com:signal:clock:1.0 i_clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of i_clk : signal is "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of i_clk : signal is "XIL_INTERFACENAME i_clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
 begin
 inst: entity work.system_signalAdder_0_0_signalAdder
      port map (
@@ -367,7 +352,7 @@ inst: entity work.system_signalAdder_0_0_signalAdder
       i_data1(11 downto 0) => i_data1(11 downto 0),
       i_data2(11 downto 0) => i_data2(11 downto 0),
       i_data_valid => i_data_valid,
-      o_data(12 downto 0) => o_data(12 downto 0),
+      o_data(11 downto 0) => o_data(11 downto 0),
       o_data_valid => o_data_valid
     );
 end STRUCTURE;

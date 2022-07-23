@@ -64,13 +64,13 @@ module system_signalAdder_0_0 (
   o_data_valid
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *)
 input wire i_clk;
 input wire [11 : 0] i_data1;
 input wire [11 : 0] i_data2;
 input wire i_data_valid;
-output wire [12 : 0] o_data;
+output wire [11 : 0] o_data;
 output wire o_data_valid;
 
   signalAdder inst (
