@@ -75,7 +75,7 @@
 		.S_AXI_RRESP(s00_axi_rresp),
 		.S_AXI_RVALID(s00_axi_rvalid),
 		.S_AXI_RREADY(s00_axi_rready),
-		.i_spi_ctrl_clock,
+		.i_spi_ctrl_clock(i_spi_ctrl_clock),
 		.i_miso(i_miso),
 		.o_mosi(o_mosi),
 		.o_ss_n(o_ss_n),
