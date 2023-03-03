@@ -22,7 +22,7 @@
 
 module dataBlaster #(parameter numSamples=16384)(
 input   i_clk,
-input [11:0] i_data,
+input [15:0] i_data,
 input   i_data_valid,
 input   i_clk_100,
 output reg [15:0] o_data,
@@ -61,7 +61,7 @@ axis_data_fifo_0 buffer (
   .s_axis_aclk(i_clk),                // input wire s_axis_aclk
   .s_axis_tvalid(i_data_valid),            // input wire s_axis_tvalid
   .s_axis_tready(),            // output wire s_axis_tready
-  .s_axis_tdata({i_data[11],i_data[11],i_data[11],i_data[11],i_data}),              // input wire [15 : 0] s_axis_tdata
+  .s_axis_tdata(i_data),              // input wire [15 : 0] s_axis_tdata
   .m_axis_aclk(i_clk_100),                // input wire m_axis_aclk
   .m_axis_tvalid(),            // output wire m_axis_tvalid
   .m_axis_tready(o_data_valid),            // input wire m_axis_tready

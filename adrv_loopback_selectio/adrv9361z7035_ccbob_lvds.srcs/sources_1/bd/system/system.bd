@@ -32,12 +32,12 @@
       "xlslice_2": "",
       "xlslice_3": "",
       "xlconstant_1": "",
-      "system_ila_1": "",
       "ad9361SPI_0": "",
-      "dataBlaster_0": "",
       "dataPackager_0": "",
-      "dataBlaster_1": "",
-      "signalAdder_0": ""
+      "fir_compiler_0": "",
+      "axis_data_fifo_0": "",
+      "dataBlaster_0": "",
+      "ila_0": ""
     },
     "interface_ports": {
       "ddr": {
@@ -2152,91 +2152,11 @@
         "xci_path": "ip\\system_xlconstant_1_0\\system_xlconstant_1_0.xci",
         "inst_hier_path": "xlconstant_1"
       },
-      "system_ila_1": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "system_system_ila_1_0",
-        "xci_path": "ip\\system_system_ila_1_0\\system_system_ila_1_0.xci",
-        "inst_hier_path": "system_ila_1",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "16384"
-          },
-          "C_MON_TYPE": {
-            "value": "NATIVE"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "10"
-          },
-          "C_PROBE0_TYPE": {
-            "value": "0"
-          }
-        }
-      },
       "ad9361SPI_0": {
         "vlnv": "xilinx.com:user:ad9361SPI:1.0",
         "xci_name": "system_ad9361SPI_0_0",
         "xci_path": "ip\\system_ad9361SPI_0_0\\system_ad9361SPI_0_0.xci",
         "inst_hier_path": "ad9361SPI_0"
-      },
-      "dataBlaster_0": {
-        "vlnv": "xilinx.com:module_ref:dataBlaster:1.0",
-        "xci_name": "system_dataBlaster_0_0",
-        "xci_path": "ip\\system_dataBlaster_0_0\\system_dataBlaster_0_0.xci",
-        "inst_hier_path": "dataBlaster_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "dataBlaster",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "system_selectio_wiz_0_0_clk_out",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "i_data": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "i_data_valid": {
-            "direction": "I"
-          },
-          "i_clk_100": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "10000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "o_data": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "o_data_valid": {
-            "direction": "O"
-          }
-        }
       },
       "dataPackager_0": {
         "vlnv": "xilinx.com:module_ref:dataPackager:1.0",
@@ -2308,11 +2228,105 @@
           }
         }
       },
-      "dataBlaster_1": {
+      "fir_compiler_0": {
+        "vlnv": "xilinx.com:ip:fir_compiler:7.2",
+        "xci_name": "system_fir_compiler_0_0",
+        "xci_path": "ip\\system_fir_compiler_0_0\\system_fir_compiler_0_0.xci",
+        "inst_hier_path": "fir_compiler_0",
+        "parameters": {
+          "BestPrecision": {
+            "value": "false"
+          },
+          "Clock_Frequency": {
+            "value": "10"
+          },
+          "CoefficientVector": {
+            "value": "-9.84925826310081e-05,-0.00110868863542213,-0.00360880865416567,-0.00738997179946688,-0.0105821355373124,-0.0104770713158961,-0.00576969500974908,0.00146429798420476,0.00643664485734270,0.00533981936990165,-0.000819920483685010,-0.00628361278568368,-0.00546718426875868,0.00134326282720413,0.00746917261520295,0.00607762211423573,-0.00236982350206959,-0.00946259607779683,-0.00694148672694505,0.00395630902383487,0.0122354284456056,0.00792249159172272,-0.00634207600108948,-0.0159719042373950,-0.00891354338210485,0.00997947924793755,0.0211410628800746,0.00983603012199917,-0.0157534148009865,-0.0288344572866765,-0.0106367968557134,0.0257925713549861,0.0420529150204102,0.0112543877848733,-0.0473372555721501,-0.0729943026596861,-0.0116281947059571,0.131135621874419,0.281121067168514,0.345106159081915,0.281121067168514,0.131135621874419,-0.0116281947059571,-0.0729943026596861,-0.0473372555721501,0.0112543877848733,0.0420529150204102,0.0257925713549861,-0.0106367968557134,-0.0288344572866765,-0.0157534148009865,0.00983603012199917,0.0211410628800746,0.00997947924793755,-0.00891354338210485,-0.0159719042373950,-0.00634207600108948,0.00792249159172272,0.0122354284456056,0.00395630902383487,-0.00694148672694505,-0.00946259607779683,-0.00236982350206959,0.00607762211423573,0.00746917261520295,0.00134326282720413,-0.00546718426875868,-0.00628361278568368,-0.000819920483685010,0.00533981936990165,0.00643664485734270,0.00146429798420476,-0.00576969500974908,-0.0104770713158961,-0.0105821355373124,-0.00738997179946688,-0.00360880865416567,-0.00110868863542213,-9.84925826310081e-05"
+          },
+          "Coefficient_Fractional_Bits": {
+            "value": "49"
+          },
+          "Coefficient_Sets": {
+            "value": "1"
+          },
+          "Coefficient_Sign": {
+            "value": "Signed"
+          },
+          "Coefficient_Structure": {
+            "value": "Inferred"
+          },
+          "Coefficient_Width": {
+            "value": "49"
+          },
+          "ColumnConfig": {
+            "value": "2"
+          },
+          "Data_Fractional_Bits": {
+            "value": "10"
+          },
+          "Data_Sign": {
+            "value": "Signed"
+          },
+          "Data_Width": {
+            "value": "12"
+          },
+          "Decimation_Rate": {
+            "value": "2"
+          },
+          "Filter_Architecture": {
+            "value": "Systolic_Multiply_Accumulate"
+          },
+          "Filter_Type": {
+            "value": "Decimation"
+          },
+          "Interpolation_Rate": {
+            "value": "1"
+          },
+          "Number_Channels": {
+            "value": "1"
+          },
+          "Output_Rounding_Mode": {
+            "value": "Truncate_LSBs"
+          },
+          "Output_Width": {
+            "value": "16"
+          },
+          "Quantization": {
+            "value": "Quantize_Only"
+          },
+          "RateSpecification": {
+            "value": "Frequency_Specification"
+          },
+          "Sample_Frequency": {
+            "value": "0.768"
+          },
+          "Zero_Pack_Factor": {
+            "value": "1"
+          }
+        }
+      },
+      "axis_data_fifo_0": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "system_axis_data_fifo_0_0",
+        "xci_path": "ip\\system_axis_data_fifo_0_0\\system_axis_data_fifo_0_0.xci",
+        "inst_hier_path": "axis_data_fifo_0",
+        "parameters": {
+          "FIFO_DEPTH": {
+            "value": "256"
+          },
+          "IS_ACLK_ASYNC": {
+            "value": "1"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "2"
+          }
+        }
+      },
+      "dataBlaster_0": {
         "vlnv": "xilinx.com:module_ref:dataBlaster:1.0",
-        "xci_name": "system_dataBlaster_1_0",
-        "xci_path": "ip\\system_dataBlaster_1_0\\system_dataBlaster_1_0.xci",
-        "inst_hier_path": "dataBlaster_1",
+        "xci_name": "system_dataBlaster_0_1",
+        "xci_path": "ip\\system_dataBlaster_0_1\\system_dataBlaster_0_1.xci",
+        "inst_hier_path": "dataBlaster_0",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "dataBlaster",
@@ -2324,18 +2338,22 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "100000000",
+                "value": "10000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
                 "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "system_selectio_wiz_0_0_clk_out",
-                "value_src": "default_prop"
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
           "i_data": {
             "direction": "I",
-            "left": "11",
+            "left": "15",
             "right": "0"
           },
           "i_data_valid": {
@@ -2368,55 +2386,23 @@
           }
         }
       },
-      "signalAdder_0": {
-        "vlnv": "xilinx.com:module_ref:signalAdder:1.0",
-        "xci_name": "system_signalAdder_0_0",
-        "xci_path": "ip\\system_signalAdder_0_0\\system_signalAdder_0_0.xci",
-        "inst_hier_path": "signalAdder_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "signalAdder",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "10000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "system_ila_0_0",
+        "xci_path": "ip\\system_ila_0_0\\system_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "4096"
           },
-          "i_data1": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
           },
-          "i_data2": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
+          "C_MONITOR_TYPE": {
+            "value": "Native"
           },
-          "i_data_valid": {
-            "direction": "I"
-          },
-          "o_data": {
-            "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
-          "o_data_valid": {
-            "direction": "O"
+          "C_NUM_OF_PROBES": {
+            "value": "2"
           }
         }
       }
@@ -2472,6 +2458,12 @@
           "xlconcat_1/In1"
         ]
       },
+      "Net": {
+        "ports": [
+          "fir_compiler_0/s_axis_data_tready",
+          "axis_data_fifo_0/m_axis_tready"
+        ]
+      },
       "ad9361SPI_0_o_mosi": {
         "ports": [
           "ad9361SPI_0/o_mosi",
@@ -2496,6 +2488,18 @@
           "gpio_resetb"
         ]
       },
+      "axis_data_fifo_0_m_axis_tdata": {
+        "ports": [
+          "axis_data_fifo_0/m_axis_tdata",
+          "fir_compiler_0/s_axis_data_tdata"
+        ]
+      },
+      "axis_data_fifo_0_m_axis_tvalid": {
+        "ports": [
+          "axis_data_fifo_0/m_axis_tvalid",
+          "fir_compiler_0/s_axis_data_tvalid"
+        ]
+      },
       "clk_in_n_0_1": {
         "ports": [
           "rx_clk_in_n",
@@ -2512,59 +2516,37 @@
         "ports": [
           "clk_wiz_0/clk_out1",
           "ad9361SPI_0/i_spi_ctrl_clock",
+          "axis_data_fifo_0/m_axis_aclk",
+          "fir_compiler_0/aclk",
+          "dataBlaster_0/i_clk",
           "dataBlaster_0/i_clk_100",
-          "dataBlaster_1/i_clk_100",
-          "system_ila_1/clk",
-          "signalAdder_0/i_clk"
-        ]
-      },
-      "dataBlaster_0_o_data": {
-        "ports": [
-          "dataBlaster_0/o_data",
-          "system_ila_1/probe5",
-          "signalAdder_0/i_data1"
-        ]
-      },
-      "dataBlaster_0_o_data_valid": {
-        "ports": [
-          "dataBlaster_0/o_data_valid",
-          "system_ila_1/probe7",
-          "signalAdder_0/i_data_valid"
-        ]
-      },
-      "dataBlaster_1_o_data": {
-        "ports": [
-          "dataBlaster_1/o_data",
-          "system_ila_1/probe6",
-          "signalAdder_0/i_data2"
-        ]
-      },
-      "dataPackager_0_I_Value": {
-        "ports": [
-          "dataPackager_0/Channel_1_Q_Value",
-          "system_ila_1/probe1",
-          "dataBlaster_0/i_data"
+          "ila_0/clk"
         ]
       },
       "dataPackager_0_Q_Value": {
         "ports": [
           "dataPackager_0/Channel_1_I_Value",
-          "system_ila_1/probe2",
-          "dataBlaster_1/i_data"
-        ]
-      },
-      "dataPackager_0_o_I_Valid": {
-        "ports": [
-          "dataPackager_0/Channel_1_Q_Valid",
-          "system_ila_1/probe3",
-          "dataBlaster_0/i_data_valid"
+          "axis_data_fifo_0/s_axis_tdata",
+          "ila_0/probe0"
         ]
       },
       "dataPackager_0_o_Q_Valid": {
         "ports": [
           "dataPackager_0/Channel_1_I_Valid",
-          "system_ila_1/probe4",
-          "dataBlaster_1/i_data_valid"
+          "axis_data_fifo_0/s_axis_tvalid",
+          "ila_0/probe1"
+        ]
+      },
+      "fir_compiler_0_m_axis_data_tdata": {
+        "ports": [
+          "fir_compiler_0/m_axis_data_tdata",
+          "dataBlaster_0/i_data"
+        ]
+      },
+      "fir_compiler_0_m_axis_data_tvalid": {
+        "ports": [
+          "fir_compiler_0/m_axis_data_tvalid",
+          "dataBlaster_0/i_data_valid"
         ]
       },
       "i_miso_0_1": {
@@ -2581,7 +2563,8 @@
           "sys_ps7_axi_periph/ARESETN",
           "axi_gpio_0/s_axi_aresetn",
           "sys_ps7_axi_periph/M01_ARESETN",
-          "ad9361SPI_0/s00_axi_aresetn"
+          "ad9361SPI_0/s00_axi_aresetn",
+          "axis_data_fifo_0/s_axis_aresetn"
         ]
       },
       "rx_frame_in_p": {
@@ -2593,9 +2576,8 @@
       "selectio_wiz_0_clk_out": {
         "ports": [
           "selectio_wiz_0/clk_out",
-          "dataBlaster_0/i_clk",
           "dataPackager_0/i_clk",
-          "dataBlaster_1/i_clk"
+          "axis_data_fifo_0/s_axis_aclk"
         ]
       },
       "selectio_wiz_0_clk_to_pins_n": {
@@ -2614,17 +2596,8 @@
         "ports": [
           "selectio_wiz_0/data_in_to_device",
           "selectio_wiz_0/data_out_from_device",
-          "system_ila_1/probe0",
           "dataPackager_0/i_data"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+        ]
       },
       "selectio_wiz_0_data_out_to_pins_n": {
         "ports": [
@@ -2638,18 +2611,6 @@
           "selectio_wiz_0/data_out_to_pins_p",
           "xlslice_0/Din",
           "xlslice_1/Din"
-        ]
-      },
-      "signalAdder_0_o_data": {
-        "ports": [
-          "signalAdder_0/o_data",
-          "system_ila_1/probe8"
-        ]
-      },
-      "signalAdder_0_o_data_valid": {
-        "ports": [
-          "signalAdder_0/o_data_valid",
-          "system_ila_1/probe9"
         ]
       },
       "sys_cpu_clk": {
