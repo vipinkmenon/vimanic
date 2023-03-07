@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Mar  3 17:04:26 2023
--- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Date        : Mon Mar  6 08:49:58 2023
+-- Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_envelopDetector_0_0/system_envelopDetector_0_0_sim_netlist.vhdl
+--               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_envelopDetector_0_0/system_envelopDetector_0_0_sim_netlist.vhdl
 -- Design      : system_envelopDetector_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,7 +29,7 @@ end system_envelopDetector_0_0_envelopDetector;
 architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal \^q\ : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal o_data0 : STD_LOGIC_VECTOR ( 11 downto 1 );
-  signal o_data00_in : STD_LOGIC_VECTOR ( 11 downto 2 );
+  signal o_data00_in : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal \o_data2_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \o_data2_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \o_data2_carry__0_i_3_n_0\ : STD_LOGIC;
@@ -81,7 +81,10 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal o_data3_carry_n_2 : STD_LOGIC;
   signal o_data3_carry_n_3 : STD_LOGIC;
   signal o_data3_carry_n_4 : STD_LOGIC;
+  signal o_data3_carry_n_5 : STD_LOGIC;
+  signal o_data3_carry_n_6 : STD_LOGIC;
   signal \o_data[0]_i_1_n_0\ : STD_LOGIC;
+  signal \o_data[0]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[10]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[10]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[11]_i_12_n_0\ : STD_LOGIC;
@@ -101,6 +104,7 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal \o_data[2]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[3]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[3]_i_2_n_0\ : STD_LOGIC;
+  signal \o_data[3]_i_4_n_0\ : STD_LOGIC;
   signal \o_data[4]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[4]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[4]_i_4_n_0\ : STD_LOGIC;
@@ -109,12 +113,12 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal \o_data[4]_i_7_n_0\ : STD_LOGIC;
   signal \o_data[5]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[5]_i_2_n_0\ : STD_LOGIC;
-  signal \o_data[5]_i_4_n_0\ : STD_LOGIC;
-  signal \o_data[5]_i_5_n_0\ : STD_LOGIC;
   signal \o_data[6]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[6]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[7]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[7]_i_2_n_0\ : STD_LOGIC;
+  signal \o_data[7]_i_4_n_0\ : STD_LOGIC;
+  signal \o_data[7]_i_5_n_0\ : STD_LOGIC;
   signal \o_data[8]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[8]_i_2_n_0\ : STD_LOGIC;
   signal \o_data[8]_i_4_n_0\ : STD_LOGIC;
@@ -123,30 +127,28 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal \o_data[8]_i_7_n_0\ : STD_LOGIC;
   signal \o_data[9]_i_1_n_0\ : STD_LOGIC;
   signal \o_data[9]_i_2_n_0\ : STD_LOGIC;
-  signal \o_data[9]_i_4_n_0\ : STD_LOGIC;
-  signal \o_data[9]_i_5_n_0\ : STD_LOGIC;
-  signal \o_data[9]_i_6_n_0\ : STD_LOGIC;
-  signal \o_data[9]_i_7_n_0\ : STD_LOGIC;
+  signal \o_data_reg[11]_i_10_n_1\ : STD_LOGIC;
+  signal \o_data_reg[11]_i_10_n_2\ : STD_LOGIC;
   signal \o_data_reg[11]_i_10_n_3\ : STD_LOGIC;
   signal \o_data_reg[11]_i_11_n_2\ : STD_LOGIC;
   signal \o_data_reg[11]_i_11_n_3\ : STD_LOGIC;
   signal \o_data_reg[11]_i_9_n_3\ : STD_LOGIC;
+  signal \o_data_reg[3]_i_3_n_0\ : STD_LOGIC;
+  signal \o_data_reg[3]_i_3_n_1\ : STD_LOGIC;
+  signal \o_data_reg[3]_i_3_n_2\ : STD_LOGIC;
+  signal \o_data_reg[3]_i_3_n_3\ : STD_LOGIC;
   signal \o_data_reg[4]_i_3_n_0\ : STD_LOGIC;
   signal \o_data_reg[4]_i_3_n_1\ : STD_LOGIC;
   signal \o_data_reg[4]_i_3_n_2\ : STD_LOGIC;
   signal \o_data_reg[4]_i_3_n_3\ : STD_LOGIC;
-  signal \o_data_reg[5]_i_3_n_0\ : STD_LOGIC;
-  signal \o_data_reg[5]_i_3_n_1\ : STD_LOGIC;
-  signal \o_data_reg[5]_i_3_n_2\ : STD_LOGIC;
-  signal \o_data_reg[5]_i_3_n_3\ : STD_LOGIC;
+  signal \o_data_reg[7]_i_3_n_0\ : STD_LOGIC;
+  signal \o_data_reg[7]_i_3_n_1\ : STD_LOGIC;
+  signal \o_data_reg[7]_i_3_n_2\ : STD_LOGIC;
+  signal \o_data_reg[7]_i_3_n_3\ : STD_LOGIC;
   signal \o_data_reg[8]_i_3_n_0\ : STD_LOGIC;
   signal \o_data_reg[8]_i_3_n_1\ : STD_LOGIC;
   signal \o_data_reg[8]_i_3_n_2\ : STD_LOGIC;
   signal \o_data_reg[8]_i_3_n_3\ : STD_LOGIC;
-  signal \o_data_reg[9]_i_3_n_0\ : STD_LOGIC;
-  signal \o_data_reg[9]_i_3_n_1\ : STD_LOGIC;
-  signal \o_data_reg[9]_i_3_n_2\ : STD_LOGIC;
-  signal \o_data_reg[9]_i_3_n_3\ : STD_LOGIC;
   signal rectData : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal rectData0_n_100 : STD_LOGIC;
   signal rectData0_n_101 : STD_LOGIC;
@@ -188,9 +190,8 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   signal NLW_o_data2_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_o_data2_carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_o_data2_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_o_data3_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \NLW_o_data_reg[11]_i_10_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_o_data_reg[11]_i_10_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal NLW_o_data3_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \NLW_o_data_reg[11]_i_10_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_o_data_reg[11]_i_11_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_o_data_reg[11]_i_11_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_o_data_reg[11]_i_9_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
@@ -210,37 +211,39 @@ architecture STRUCTURE of system_envelopDetector_0_0_envelopDetector is
   attribute COMPARATOR_THRESHOLD of o_data2_carry : label is 11;
   attribute COMPARATOR_THRESHOLD of \o_data2_carry__0\ : label is 11;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \o_data[10]_i_2\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \o_data[11]_i_8\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \o_data[2]_i_2\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \o_data[3]_i_2\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \o_data[4]_i_2\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \o_data[5]_i_2\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \o_data[6]_i_2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \o_data[7]_i_2\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \o_data[8]_i_2\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \o_data[9]_i_2\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \o_data[0]_i_2\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \o_data[10]_i_2\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \o_data[11]_i_3\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \o_data[11]_i_8\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \o_data[2]_i_2\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \o_data[3]_i_2\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \o_data[4]_i_2\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \o_data[5]_i_2\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \o_data[6]_i_2\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \o_data[7]_i_2\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \o_data[8]_i_2\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \o_data[9]_i_2\ : label is "soft_lutpair8";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \o_data_reg[11]_i_10\ : label is 35;
   attribute ADDER_THRESHOLD of \o_data_reg[11]_i_11\ : label is 35;
+  attribute ADDER_THRESHOLD of \o_data_reg[3]_i_3\ : label is 35;
   attribute ADDER_THRESHOLD of \o_data_reg[4]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \o_data_reg[5]_i_3\ : label is 35;
+  attribute ADDER_THRESHOLD of \o_data_reg[7]_i_3\ : label is 35;
   attribute ADDER_THRESHOLD of \o_data_reg[8]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \o_data_reg[9]_i_3\ : label is 35;
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of rectData0 : label is "{SYNTH-13 {cell *THIS*}}";
-  attribute SOFT_HLUTNM of \rectData[0]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \rectData[10]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \rectData[11]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \rectData[1]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \rectData[2]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \rectData[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \rectData[4]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \rectData[5]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \rectData[6]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \rectData[7]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \rectData[8]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \rectData[9]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \rectData[0]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \rectData[10]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \rectData[11]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \rectData[1]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \rectData[2]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \rectData[3]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \rectData[4]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \rectData[5]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \rectData[6]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \rectData[7]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \rectData[8]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \rectData[9]_i_1\ : label is "soft_lutpair5";
 begin
   Q(11 downto 0) <= \^q\(11 downto 0);
 o_data2_carry: unisim.vcomponents.CARRY4
@@ -418,7 +421,9 @@ o_data3_carry: unisim.vcomponents.CARRY4
       CYINIT => '1',
       DI(3 downto 0) => rectData(3 downto 0),
       O(3) => o_data3_carry_n_4,
-      O(2 downto 0) => NLW_o_data3_carry_O_UNCONNECTED(2 downto 0),
+      O(2) => o_data3_carry_n_5,
+      O(1) => o_data3_carry_n_6,
+      O(0) => NLW_o_data3_carry_O_UNCONNECTED(0),
       S(3) => o_data3_carry_i_1_n_0,
       S(2) => o_data3_carry_i_2_n_0,
       S(1) => o_data3_carry_i_3_n_0,
@@ -568,22 +573,31 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       I1 => \^q\(0),
       O => o_data3_carry_i_4_n_0
     );
-\o_data[0]_i_1\: unisim.vcomponents.LUT6
+\o_data[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A800A8FFAB"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(0),
       I1 => \o_data[11]_i_5_n_0\,
       I2 => \o_data[11]_i_6_n_0\,
       I3 => \o_data[11]_i_7_n_0\,
-      I4 => \^q\(0),
-      I5 => \o_data2_carry__0_n_2\,
+      I4 => \o_data[0]_i_2_n_0\,
       O => \o_data[0]_i_1_n_0\
+    );
+\o_data[0]_i_2\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"8B"
+    )
+        port map (
+      I0 => o_data00_in(0),
+      I1 => \o_data2_carry__0_n_2\,
+      I2 => \^q\(0),
+      O => \o_data[0]_i_2_n_0\
     );
 \o_data[10]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(10),
@@ -609,9 +623,9 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => rectDataValid,
-      I1 => \^q\(6),
-      I2 => \^q\(10),
-      I3 => \^q\(5),
+      I1 => \^q\(3),
+      I2 => \^q\(6),
+      I3 => \^q\(4),
       I4 => \o_data[11]_i_3_n_0\,
       I5 => \o_data[11]_i_4_n_0\,
       O => \o_data[11]_i_1_n_0\
@@ -642,7 +656,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[11]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(11),
@@ -657,10 +671,10 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"FFFE"
     )
         port map (
-      I0 => \^q\(7),
-      I1 => \^q\(4),
-      I2 => \^q\(11),
-      I3 => \^q\(1),
+      I0 => \^q\(11),
+      I1 => \^q\(0),
+      I2 => \o_data2_carry__0_n_2\,
+      I3 => \^q\(10),
       O => \o_data[11]_i_3_n_0\
     );
 \o_data[11]_i_4\: unisim.vcomponents.LUT6
@@ -668,44 +682,46 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"0000000000000001"
     )
         port map (
-      I0 => \o_data2_carry__0_n_2\,
-      I1 => \^q\(0),
-      I2 => \^q\(2),
-      I3 => \^q\(8),
-      I4 => \^q\(3),
-      I5 => \^q\(9),
+      I0 => \^q\(2),
+      I1 => \^q\(1),
+      I2 => \^q\(5),
+      I3 => \^q\(9),
+      I4 => \^q\(7),
+      I5 => \^q\(8),
       O => \o_data[11]_i_4_n_0\
     );
-\o_data[11]_i_5\: unisim.vcomponents.LUT3
+\o_data[11]_i_5\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"57"
+      INIT => X"7777777F"
     )
         port map (
-      I0 => \o_data3_carry__1_n_7\,
-      I1 => \o_data3_carry__0_n_7\,
-      I2 => o_data3_carry_n_4,
+      I0 => \o_data3_carry__0_n_7\,
+      I1 => \o_data3_carry__0_n_6\,
+      I2 => o_data3_carry_n_6,
+      I3 => o_data3_carry_n_4,
+      I4 => o_data3_carry_n_5,
       O => \o_data[11]_i_5_n_0\
     );
 \o_data[11]_i_6\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7FFF"
+      INIT => X"FFFD"
     )
         port map (
-      I0 => \o_data3_carry__0_n_6\,
-      I1 => \o_data3_carry__0_n_5\,
-      I2 => \o_data3_carry__0_n_4\,
-      I3 => \o_data3_carry__1_n_6\,
+      I0 => \o_data2_carry__0_n_2\,
+      I1 => \o_data3_carry__0_n_4\,
+      I2 => \o_data3_carry__0_n_5\,
+      I3 => \o_data3_carry__1_n_7\,
       O => \o_data[11]_i_6_n_0\
     );
 \o_data[11]_i_7\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"EFFF"
+      INIT => X"FFFD"
     )
         port map (
-      I0 => \o_data3_carry__1_n_5\,
+      I0 => \o_data_reg[11]_i_9_n_3\,
       I1 => \o_data3_carry__1_n_4\,
-      I2 => \o_data2_carry__0_n_2\,
-      I3 => \o_data_reg[11]_i_9_n_3\,
+      I2 => \o_data3_carry__1_n_6\,
+      I3 => \o_data3_carry__1_n_5\,
       O => \o_data[11]_i_7_n_0\
     );
 \o_data[11]_i_8\: unisim.vcomponents.LUT3
@@ -720,7 +736,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[1]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(1),
@@ -735,14 +751,14 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"B8"
     )
         port map (
-      I0 => \^q\(1),
+      I0 => o_data00_in(1),
       I1 => \o_data2_carry__0_n_2\,
       I2 => o_data0(1),
       O => \o_data[1]_i_2_n_0\
     );
 \o_data[2]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(2),
@@ -764,7 +780,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(3),
@@ -784,9 +800,17 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       I2 => o_data0(3),
       O => \o_data[3]_i_2_n_0\
     );
+\o_data[3]_i_4\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^q\(1),
+      O => \o_data[3]_i_4_n_0\
+    );
 \o_data[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(4),
@@ -840,7 +864,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[5]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(5),
@@ -860,25 +884,9 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       I2 => o_data0(5),
       O => \o_data[5]_i_2_n_0\
     );
-\o_data[5]_i_4\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(5),
-      O => \o_data[5]_i_4_n_0\
-    );
-\o_data[5]_i_5\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(3),
-      O => \o_data[5]_i_5_n_0\
-    );
 \o_data[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(6),
@@ -900,7 +908,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[7]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(7),
@@ -920,9 +928,25 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       I2 => o_data0(7),
       O => \o_data[7]_i_2_n_0\
     );
+\o_data[7]_i_4\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^q\(5),
+      O => \o_data[7]_i_4_n_0\
+    );
+\o_data[7]_i_5\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^q\(4),
+      O => \o_data[7]_i_5_n_0\
+    );
 \o_data[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(8),
@@ -976,7 +1000,7 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFAB00A8"
+      INIT => X"FFFB0008"
     )
         port map (
       I0 => rectData(9),
@@ -995,38 +1019,6 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       I1 => \o_data2_carry__0_n_2\,
       I2 => o_data0(9),
       O => \o_data[9]_i_2_n_0\
-    );
-\o_data[9]_i_4\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(9),
-      O => \o_data[9]_i_4_n_0\
-    );
-\o_data[9]_i_5\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(8),
-      O => \o_data[9]_i_5_n_0\
-    );
-\o_data[9]_i_6\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(7),
-      O => \o_data[9]_i_6_n_0\
-    );
-\o_data[9]_i_7\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \^q\(6),
-      O => \o_data[9]_i_7_n_0\
     );
 \o_data_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -1063,15 +1055,15 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
     );
 \o_data_reg[11]_i_10\: unisim.vcomponents.CARRY4
      port map (
-      CI => \o_data_reg[9]_i_3_n_0\,
-      CO(3 downto 1) => \NLW_o_data_reg[11]_i_10_CO_UNCONNECTED\(3 downto 1),
+      CI => \o_data_reg[7]_i_3_n_0\,
+      CO(3) => \NLW_o_data_reg[11]_i_10_CO_UNCONNECTED\(3),
+      CO(2) => \o_data_reg[11]_i_10_n_1\,
+      CO(1) => \o_data_reg[11]_i_10_n_2\,
       CO(0) => \o_data_reg[11]_i_10_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 2) => \NLW_o_data_reg[11]_i_10_O_UNCONNECTED\(3 downto 2),
-      O(1 downto 0) => o_data00_in(11 downto 10),
-      S(3 downto 2) => B"00",
-      S(1 downto 0) => \^q\(11 downto 10)
+      O(3 downto 0) => o_data00_in(11 downto 8),
+      S(3 downto 0) => \^q\(11 downto 8)
     );
 \o_data_reg[11]_i_11\: unisim.vcomponents.CARRY4
      port map (
@@ -1132,6 +1124,22 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       Q => \^q\(3),
       R => '0'
     );
+\o_data_reg[3]_i_3\: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => \o_data_reg[3]_i_3_n_0\,
+      CO(2) => \o_data_reg[3]_i_3_n_1\,
+      CO(1) => \o_data_reg[3]_i_3_n_2\,
+      CO(0) => \o_data_reg[3]_i_3_n_3\,
+      CYINIT => '0',
+      DI(3 downto 2) => B"00",
+      DI(1) => \^q\(1),
+      DI(0) => '0',
+      O(3 downto 0) => o_data00_in(3 downto 0),
+      S(3 downto 2) => \^q\(3 downto 2),
+      S(1) => \o_data[3]_i_4_n_0\,
+      S(0) => \^q\(0)
+    );
 \o_data_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -1169,24 +1177,6 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       Q => \^q\(5),
       R => '0'
     );
-\o_data_reg[5]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \o_data_reg[5]_i_3_n_0\,
-      CO(2) => \o_data_reg[5]_i_3_n_1\,
-      CO(1) => \o_data_reg[5]_i_3_n_2\,
-      CO(0) => \o_data_reg[5]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3) => \^q\(5),
-      DI(2) => '0',
-      DI(1) => \^q\(3),
-      DI(0) => '0',
-      O(3 downto 0) => o_data00_in(5 downto 2),
-      S(3) => \o_data[5]_i_4_n_0\,
-      S(2) => \^q\(4),
-      S(1) => \o_data[5]_i_5_n_0\,
-      S(0) => \^q\(2)
-    );
 \o_data_reg[6]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -1208,6 +1198,21 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       D => \o_data[7]_i_1_n_0\,
       Q => \^q\(7),
       R => '0'
+    );
+\o_data_reg[7]_i_3\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \o_data_reg[3]_i_3_n_0\,
+      CO(3) => \o_data_reg[7]_i_3_n_0\,
+      CO(2) => \o_data_reg[7]_i_3_n_1\,
+      CO(1) => \o_data_reg[7]_i_3_n_2\,
+      CO(0) => \o_data_reg[7]_i_3_n_3\,
+      CYINIT => '0',
+      DI(3 downto 2) => B"00",
+      DI(1 downto 0) => \^q\(5 downto 4),
+      O(3 downto 0) => o_data00_in(7 downto 4),
+      S(3 downto 2) => \^q\(7 downto 6),
+      S(1) => \o_data[7]_i_4_n_0\,
+      S(0) => \o_data[7]_i_5_n_0\
     );
 \o_data_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -1245,21 +1250,6 @@ o_data3_carry_i_4: unisim.vcomponents.LUT2
       D => \o_data[9]_i_1_n_0\,
       Q => \^q\(9),
       R => '0'
-    );
-\o_data_reg[9]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \o_data_reg[5]_i_3_n_0\,
-      CO(3) => \o_data_reg[9]_i_3_n_0\,
-      CO(2) => \o_data_reg[9]_i_3_n_1\,
-      CO(1) => \o_data_reg[9]_i_3_n_2\,
-      CO(0) => \o_data_reg[9]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => \^q\(9 downto 6),
-      O(3 downto 0) => o_data00_in(9 downto 6),
-      S(3) => \o_data[9]_i_4_n_0\,
-      S(2) => \o_data[9]_i_5_n_0\,
-      S(1) => \o_data[9]_i_6_n_0\,
-      S(0) => \o_data[9]_i_7_n_0\
     );
 o_data_valid_reg: unisim.vcomponents.FDRE
      port map (

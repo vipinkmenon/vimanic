@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# decimation, envelopDetector, amModulator, angleLUT, angleLUT, i2sController, levelShift, dataPackager
+# average, envelopDetector, average, subtractor, amModulator, angleLUT, angleLUT, i2sController, levelShift, dataPackager
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -128,152 +128,6 @@ if { $nRet != 0 } {
 ##################################################################
 
 
-# Hierarchical cell: Pulse_pair
-proc create_hier_cell_Pulse_pair { parentCell nameHier } {
-
-  variable script_folder
-
-  if { $parentCell eq "" || $nameHier eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_Pulse_pair() - Empty argument(s)!"}
-     return
-  }
-
-  # Get object for parentCell
-  set parentObj [get_bd_cells $parentCell]
-  if { $parentObj == "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
-     return
-  }
-
-  # Make sure parentObj is hier blk
-  set parentType [get_property TYPE $parentObj]
-  if { $parentType ne "hier" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
-     return
-  }
-
-  # Save current instance; Restore later
-  set oldCurInst [current_bd_instance .]
-
-  # Set parent object as current
-  current_bd_instance $parentObj
-
-  # Create cell and set as current instance
-  set hier_obj [create_bd_cell -type hier $nameHier]
-  current_bd_instance $hier_obj
-
-  # Create interface pins
-
-  # Create pins
-  create_bd_pin -dir O -from 15 -to 0 douta
-  create_bd_pin -dir I -type clk sys_cpu_clk_out
-
-  # Create instance: Full_counter_0, and set properties
-  set Full_counter_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Full_counter:1.0 Full_counter_0 ]
-
-  # Create instance: Full_counter_1, and set properties
-  set Full_counter_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:Full_counter:1.0 Full_counter_1 ]
-
-  # Create instance: Not_Gate_0, and set properties
-  set Not_Gate_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Not_Gate:1.0 Not_Gate_0 ]
-
-  # Create instance: Not_Gate_1, and set properties
-  set Not_Gate_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:Not_Gate:1.0 Not_Gate_1 ]
-
-  # Create instance: blk_mem_gen_0, and set properties
-  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
-  set_property -dict [ list \
-   CONFIG.Byte_Size {9} \
-   CONFIG.Coe_File {../../../../../../../../../../Zak/DME_Pulse_pair_cos/Co-eff\
-files/test4_cosine1909kg.coe}\
-   CONFIG.EN_SAFETY_CKT {false} \
-   CONFIG.Enable_32bit_Address {false} \
-   CONFIG.Enable_A {Always_Enabled} \
-   CONFIG.Load_Init_File {true} \
-   CONFIG.Memory_Type {Single_Port_ROM} \
-   CONFIG.Port_A_Write_Rate {0} \
-   CONFIG.Read_Width_A {16} \
-   CONFIG.Read_Width_B {16} \
-   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
-   CONFIG.Use_Byte_Write_Enable {false} \
-   CONFIG.Use_RSTA_Pin {false} \
-   CONFIG.Write_Width_A {16} \
-   CONFIG.Write_Width_B {16} \
-   CONFIG.use_bram_block {Stand_Alone} \
- ] $blk_mem_gen_0
-
-  # Create instance: count_assist_0, and set properties
-  set count_assist_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:count_assist:1.0 count_assist_0 ]
-  set_property -dict [ list \
-   CONFIG.target {1199} \
- ] $count_assist_0
-
-  # Create instance: count_assist_1, and set properties
-  set count_assist_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:count_assist:1.0 count_assist_1 ]
-  set_property -dict [ list \
-   CONFIG.target {700} \
- ] $count_assist_1
-
-  # Create instance: count_assist_2, and set properties
-  set count_assist_2 [ create_bd_cell -type ip -vlnv xilinx.com:user:count_assist:1.0 count_assist_2 ]
-  set_property -dict [ list \
-   CONFIG.target {8399} \
- ] $count_assist_2
-
-  # Create instance: count_assist_3, and set properties
-  set count_assist_3 [ create_bd_cell -type ip -vlnv xilinx.com:user:count_assist:1.0 count_assist_3 ]
-  set_property -dict [ list \
-   CONFIG.target {1900} \
- ] $count_assist_3
-
-  # Create instance: count_woen_0, and set properties
-  set count_woen_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:count_woen:1.0 count_woen_0 ]
-
-  # Create instance: util_vector_logic_0, and set properties
-  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
-  set_property -dict [ list \
-   CONFIG.C_SIZE {1} \
- ] $util_vector_logic_0
-
-  # Create instance: util_vector_logic_1, and set properties
-  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
-  set_property -dict [ list \
-   CONFIG.C_SIZE {1} \
- ] $util_vector_logic_1
-
-  # Create instance: util_vector_logic_2, and set properties
-  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
-  set_property -dict [ list \
-   CONFIG.C_SIZE {1} \
- ] $util_vector_logic_2
-
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-  set_property -dict [ list \
-   CONFIG.CONST_VAL {0} \
- ] $xlconstant_0
-
-  # Create port connections
-  connect_bd_net -net Full_counter_0_counts [get_bd_pins Full_counter_0/counts] [get_bd_pins count_assist_0/a] [get_bd_pins count_assist_1/a]
-  connect_bd_net -net Full_counter_0_counts1 [get_bd_pins Full_counter_1/counts] [get_bd_pins count_assist_2/a] [get_bd_pins count_assist_3/a]
-  connect_bd_net -net Not_Gate_0_y [get_bd_pins Full_counter_0/rst] [get_bd_pins Not_Gate_0/y]
-  connect_bd_net -net Not_Gate_0_y1 [get_bd_pins Full_counter_1/rst] [get_bd_pins Not_Gate_1/y]
-  connect_bd_net -net count_assist_0_rstensw [get_bd_pins Full_counter_0/en] [get_bd_pins Not_Gate_0/a] [get_bd_pins count_assist_0/rstensw] [get_bd_pins util_vector_logic_0/Op2]
-  connect_bd_net -net count_assist_0_rstensw1 [get_bd_pins Full_counter_1/en] [get_bd_pins Not_Gate_1/a] [get_bd_pins count_assist_2/rstensw] [get_bd_pins util_vector_logic_2/Op2]
-  connect_bd_net -net count_assist_1_rstensw [get_bd_pins count_assist_1/rstensw] [get_bd_pins util_vector_logic_0/Op1]
-  connect_bd_net -net count_assist_1_rstensw1 [get_bd_pins count_assist_3/rstensw] [get_bd_pins util_vector_logic_2/Op1]
-  connect_bd_net -net count_woen_0_counts [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins count_woen_0/counts]
-  connect_bd_net -net i_Channel_1_I_Value_1 [get_bd_pins douta] [get_bd_pins blk_mem_gen_0/douta]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins sys_cpu_clk_out] [get_bd_pins Full_counter_0/clk] [get_bd_pins Full_counter_1/clk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins count_woen_0/clk]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins count_woen_0/en] [get_bd_pins util_vector_logic_1/Res]
-  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_1/Op2] [get_bd_pins util_vector_logic_2/Res]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins count_woen_0/rst] [get_bd_pins xlconstant_0/dout]
-
-  # Restore current instance
-  current_bd_instance $oldCurInst
-}
-
 # Hierarchical cell: ProcessorSystem
 proc create_hier_cell_ProcessorSystem { parentCell nameHier } {
 
@@ -312,6 +166,8 @@ proc create_hier_cell_ProcessorSystem { parentCell nameHier } {
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M01_AXI
+
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M03_AXI
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 ddr
 
@@ -1167,7 +1023,7 @@ Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO
   # Create instance: sys_ps7_axi_periph, and set properties
   set sys_ps7_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 sys_ps7_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {3} \
+   CONFIG.NUM_MI {4} \
  ] $sys_ps7_axi_periph
 
   # Create instance: sys_rstgen, and set properties
@@ -1177,6 +1033,7 @@ Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO
  ] $sys_rstgen
 
   # Create interface connections
+  connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M03_AXI] [get_bd_intf_pins sys_ps7_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net sys_ps7_DDR [get_bd_intf_pins ddr] [get_bd_intf_pins sys_ps7/DDR]
   connect_bd_intf_net -intf_net sys_ps7_FIXED_IO [get_bd_intf_pins fixed_io] [get_bd_intf_pins sys_ps7/FIXED_IO]
   connect_bd_intf_net -intf_net sys_ps7_M_AXI_GP0 [get_bd_intf_pins sys_ps7/M_AXI_GP0] [get_bd_intf_pins sys_ps7_axi_periph/S00_AXI]
@@ -1195,8 +1052,8 @@ Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO
   connect_bd_net -net spi1_csn_i_1 [get_bd_pins spi1_csn_i] [get_bd_pins sys_ps7/SPI1_SS_I]
   connect_bd_net -net spi1_sdi_i_1 [get_bd_pins spi1_sdi_i] [get_bd_pins sys_ps7/SPI1_MISO_I]
   connect_bd_net -net spi1_sdo_i_1 [get_bd_pins spi1_sdo_i] [get_bd_pins sys_ps7/SPI1_MOSI_I]
-  connect_bd_net -net sys_cpu_clk [get_bd_pins sys_cpu_clk_out] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/M02_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins sys_rstgen/slowest_sync_clk]
-  connect_bd_net -net sys_cpu_resetn [get_bd_pins S00_ARESETN] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/M02_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN] [get_bd_pins sys_rstgen/peripheral_aresetn]
+  connect_bd_net -net sys_cpu_clk [get_bd_pins sys_cpu_clk_out] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins sys_ps7/FCLK_CLK0] [get_bd_pins sys_ps7/M_AXI_GP0_ACLK] [get_bd_pins sys_ps7_axi_periph/ACLK] [get_bd_pins sys_ps7_axi_periph/M00_ACLK] [get_bd_pins sys_ps7_axi_periph/M01_ACLK] [get_bd_pins sys_ps7_axi_periph/M02_ACLK] [get_bd_pins sys_ps7_axi_periph/M03_ACLK] [get_bd_pins sys_ps7_axi_periph/S00_ACLK] [get_bd_pins sys_rstgen/slowest_sync_clk]
+  connect_bd_net -net sys_cpu_resetn [get_bd_pins S00_ARESETN] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins sys_ps7_axi_periph/ARESETN] [get_bd_pins sys_ps7_axi_periph/M00_ARESETN] [get_bd_pins sys_ps7_axi_periph/M01_ARESETN] [get_bd_pins sys_ps7_axi_periph/M02_ARESETN] [get_bd_pins sys_ps7_axi_periph/M03_ARESETN] [get_bd_pins sys_ps7_axi_periph/S00_ARESETN] [get_bd_pins sys_rstgen/peripheral_aresetn]
   connect_bd_net -net sys_ps7_FCLK_RESET0_N [get_bd_pins sys_ps7/FCLK_RESET0_N] [get_bd_pins sys_rstgen/ext_reset_in]
   connect_bd_net -net sys_ps7_GPIO_O [get_bd_pins gpio_o] [get_bd_pins sys_ps7/GPIO_O]
   connect_bd_net -net sys_ps7_GPIO_T [get_bd_pins gpio_t] [get_bd_pins sys_ps7/GPIO_T]
@@ -1253,7 +1110,7 @@ proc create_hier_cell_LVDSIF { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir O -type clk clk_out
-  create_bd_pin -dir I -from 11 -to 0 i_Channel_1_I_Value
+  create_bd_pin -dir I -from 23 -to 0 i_Channel_1_I_Value
   create_bd_pin -dir O o_Channel_1_I_Valid
   create_bd_pin -dir O -from 11 -to 0 o_Channel_1_I_Value
   create_bd_pin -dir I -type clk rx_clk_in_n
@@ -1425,7 +1282,7 @@ proc create_hier_cell_I2SSystem { parentCell nameHier } {
   create_bd_pin -dir I i_mclk
   create_bd_pin -dir I i_reset_n
   create_bd_pin -dir I i_sda_0
-  create_bd_pin -dir I -from 31 -to 0 in_aud_data
+  create_bd_pin -dir I -from 11 -to 0 in_aud_data
   create_bd_pin -dir O -type clk o_bit_clk_0
   create_bd_pin -dir O -from 31 -to 0 o_data
   create_bd_pin -dir O o_lrc_0
@@ -1528,12 +1385,10 @@ proc create_hier_cell_AMModulate { parentCell nameHier } {
   # Create interface pins
 
   # Create pins
-  create_bd_pin -dir I -from 30 -to 0 Din
-  create_bd_pin -dir I enable
+  create_bd_pin -dir I -from 11 -to 0 i_baseband
   create_bd_pin -dir I -type clk i_clk
   create_bd_pin -dir I -type clk i_clk1
-  create_bd_pin -dir O -from 11 -to 0 o_amSignal
-  create_bd_pin -dir O -from 11 -to 0 o_angle
+  create_bd_pin -dir O -from 23 -to 0 o_amSignal
 
   # Create instance: amModulator_0, and set properties
   set block_name amModulator
@@ -1568,23 +1423,16 @@ proc create_hier_cell_AMModulate { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {30} \
-   CONFIG.DIN_TO {19} \
-   CONFIG.DIN_WIDTH {31} \
-   CONFIG.DOUT_WIDTH {12} \
- ] $xlslice_0
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
   # Create port connections
   connect_bd_net -net amModulator_0_o_amSignal [get_bd_pins o_amSignal] [get_bd_pins amModulator_0/o_amSignal]
-  connect_bd_net -net angleLUT_0_o_angle [get_bd_pins o_angle] [get_bd_pins amModulator_0/i_carrier] [get_bd_pins angleLUT_0/o_angle]
+  connect_bd_net -net angleLUT_0_o_angle [get_bd_pins amModulator_0/i_carrier] [get_bd_pins angleLUT_0/o_angle]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins i_clk] [get_bd_pins angleLUT_0/i_clk]
-  connect_bd_net -net enable_1 [get_bd_pins enable] [get_bd_pins amModulator_0/enable]
-  connect_bd_net -net i2sController_1_out_rght_chnl_data [get_bd_pins Din] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net i_baseband_1 [get_bd_pins i_baseband] [get_bd_pins amModulator_0/i_baseband]
   connect_bd_net -net i_clk1_1 [get_bd_pins i_clk1] [get_bd_pins baseBandLUT/i_clk]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins amModulator_0/i_baseband] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins amModulator_0/enable] [get_bd_pins xlconstant_0/dout]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1630,20 +1478,25 @@ proc create_hier_cell_AMDemodulate { parentCell nameHier } {
   create_bd_pin -dir I -type clk aclk
   create_bd_pin -dir I -from 11 -to 0 i_data
   create_bd_pin -dir I i_data_valid
-  create_bd_pin -dir O -from 31 -to 0 m_axis_data_tdata
   create_bd_pin -dir O -from 11 -to 0 o_data
+  create_bd_pin -dir O -from 11 -to 0 o_data1
+  create_bd_pin -dir O -from 11 -to 0 o_data2
+  create_bd_pin -dir O -from 11 -to 0 o_data3
 
-  # Create instance: decimation_0, and set properties
-  set block_name decimation
-  set block_cell_name decimation_0
-  if { [catch {set decimation_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: DCLevelDetector, and set properties
+  set block_name average
+  set block_cell_name DCLevelDetector
+  if { [catch {set DCLevelDetector [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $decimation_0 eq "" } {
+   } elseif { $DCLevelDetector eq "" } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.numSamples {32768} \
+ ] $DCLevelDetector
+
   # Create instance: envelopDetector_0, and set properties
   set block_name envelopDetector
   set block_cell_name envelopDetector_0
@@ -1655,42 +1508,38 @@ proc create_hier_cell_AMDemodulate { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: fir_compiler_0, and set properties
-  set fir_compiler_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fir_compiler:7.2 fir_compiler_0 ]
-  set_property -dict [ list \
-   CONFIG.BestPrecision {true} \
-   CONFIG.Clock_Frequency {122.88} \
-   CONFIG.CoefficientVector {0.000487710741391075,-0.000508816950674201,-0.00104822484168360,-0.00192567674621829,-0.00308323970114223,-0.00443010163862952,-0.00582447341555451,-0.00707649402825221,-0.00796555883241129,-0.00826954258707117,-0.00780125435344659,-0.00644951853980462,-0.00421300112942214,-0.00122591042538750,0.00223547606579511,0.00576862676704503,0.00888271032574615,0.0110594111974403,0.0118276605630954,0.0108448187271138,0.00797186782368044,0.00332940581420623,-0.00267449907766213,-0.00935498796127952,-0.0158012250426092,-0.0209654687235344,-0.0237830537530012,-0.0233074586014071,-0.0188447670348683,-0.0100693683690272,0.00289822965588207,0.0194612840081002,0.0385767175862738,0.0588407067818272,0.0786207273681262,0.0962306544355398,0.110104990377869,0.118979410862409,0.122032201280881,0.118979410862409,0.110104990377869,0.0962306544355398,0.0786207273681262,0.0588407067818272,0.0385767175862738,0.0194612840081002,0.00289822965588207,-0.0100693683690272,-0.0188447670348683,-0.0233074586014071,-0.0237830537530012,-0.0209654687235344,-0.0158012250426092,-0.00935498796127952,-0.00267449907766213,0.00332940581420623,0.00797186782368044,0.0108448187271138,0.0118276605630954,0.0110594111974403,0.00888271032574615,0.00576862676704503,0.00223547606579511,-0.00122591042538750,-0.00421300112942214,-0.00644951853980462,-0.00780125435344659,-0.00826954258707117,-0.00796555883241129,-0.00707649402825221,-0.00582447341555451,-0.00443010163862952,-0.00308323970114223,-0.00192567674621829,-0.00104822484168360,-0.000508816950674201,0.000487710741391075}\
-   CONFIG.Coefficient_Fractional_Bits {18} \
-   CONFIG.Coefficient_Sets {1} \
-   CONFIG.Coefficient_Sign {Signed} \
-   CONFIG.Coefficient_Structure {Inferred} \
-   CONFIG.Coefficient_Width {16} \
-   CONFIG.ColumnConfig {1} \
-   CONFIG.Data_Fractional_Bits {0} \
-   CONFIG.Data_Sign {Signed} \
-   CONFIG.Data_Width {12} \
-   CONFIG.Decimation_Rate {8} \
-   CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
-   CONFIG.Filter_Type {Decimation} \
-   CONFIG.Interpolation_Rate {1} \
-   CONFIG.Number_Channels {1} \
-   CONFIG.Output_Rounding_Mode {Full_Precision} \
-   CONFIG.Output_Width {31} \
-   CONFIG.Quantization {Quantize_Only} \
-   CONFIG.RateSpecification {Frequency_Specification} \
-   CONFIG.Sample_Frequency {0.384} \
-   CONFIG.Zero_Pack_Factor {1} \
- ] $fir_compiler_0
-
+  # Create instance: lowPassFilter, and set properties
+  set block_name average
+  set block_cell_name lowPassFilter
+  if { [catch {set lowPassFilter [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $lowPassFilter eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: subtractor_0, and set properties
+  set block_name subtractor
+  set block_cell_name subtractor_0
+  if { [catch {set subtractor_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $subtractor_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create port connections
-  connect_bd_net -net LVDSIF_clk_out [get_bd_pins aclk] [get_bd_pins decimation_0/i_clk] [get_bd_pins envelopDetector_0/i_clk] [get_bd_pins fir_compiler_0/aclk]
-  connect_bd_net -net envelopDetector_0_o_data [get_bd_pins o_data] [get_bd_pins envelopDetector_0/o_data] [get_bd_pins fir_compiler_0/s_axis_data_tdata]
-  connect_bd_net -net envelopDetector_0_o_data_valid [get_bd_pins envelopDetector_0/o_data_valid] [get_bd_pins fir_compiler_0/s_axis_data_tvalid]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets envelopDetector_0_o_data_valid]
-  connect_bd_net -net fir_compiler_0_m_axis_data_tdata [get_bd_pins m_axis_data_tdata] [get_bd_pins fir_compiler_0/m_axis_data_tdata]
+  connect_bd_net -net DCLevelDetector_o_data [get_bd_pins o_data2] [get_bd_pins DCLevelDetector/o_data] [get_bd_pins subtractor_0/i_data2]
+  connect_bd_net -net LVDSIF_clk_out [get_bd_pins aclk] [get_bd_pins DCLevelDetector/i_clk] [get_bd_pins envelopDetector_0/i_clk] [get_bd_pins lowPassFilter/i_clk] [get_bd_pins subtractor_0/i_clk]
+  connect_bd_net -net average_0_o_data [get_bd_pins o_data1] [get_bd_pins DCLevelDetector/i_data] [get_bd_pins lowPassFilter/o_data] [get_bd_pins subtractor_0/i_data1]
+  connect_bd_net -net envelopDetector_0_o_data [get_bd_pins o_data] [get_bd_pins envelopDetector_0/o_data] [get_bd_pins lowPassFilter/i_data]
+  connect_bd_net -net envelopDetector_0_o_data_valid [get_bd_pins envelopDetector_0/o_data_valid] [get_bd_pins lowPassFilter/i_data_valid]
   connect_bd_net -net i_data_1 [get_bd_pins i_data] [get_bd_pins envelopDetector_0/i_data]
   connect_bd_net -net i_data_valid_1 [get_bd_pins i_data_valid] [get_bd_pins envelopDetector_0/i_data_valid]
+  connect_bd_net -net lowPassFilter_o_data_valid [get_bd_pins DCLevelDetector/i_data_valid] [get_bd_pins lowPassFilter/o_data_valid]
+  connect_bd_net -net subtractor_0_o_data [get_bd_pins o_data3] [get_bd_pins subtractor_0/o_data]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1748,6 +1597,12 @@ proc create_root_design { parentCell } {
   set gt_ref_clk_1 [ create_bd_port -dir I gt_ref_clk_1 ]
   set i_sda [ create_bd_port -dir I i_sda ]
   set o_bit_clk [ create_bd_port -dir O -type clk o_bit_clk ]
+  set o_clk_attenuator [ create_bd_port -dir O -type clk o_clk_attenuator ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {5000000} \
+ ] $o_clk_attenuator
+  set o_data_attenuator [ create_bd_port -dir O o_data_attenuator ]
+  set o_le_attenuator [ create_bd_port -dir O o_le_attenuator ]
   set o_lrc [ create_bd_port -dir O o_lrc ]
   set o_mclk [ create_bd_port -dir O -type clk o_mclk ]
   set o_sda [ create_bd_port -dir O o_sda ]
@@ -1804,8 +1659,8 @@ proc create_root_design { parentCell } {
   # Create instance: ProcessorSystem
   create_hier_cell_ProcessorSystem [current_bd_instance .] ProcessorSystem
 
-  # Create instance: Pulse_pair
-  create_hier_cell_Pulse_pair [current_bd_instance .] Pulse_pair
+  # Create instance: attenuatorController_0, and set properties
+  set attenuatorController_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:attenuatorController:1.0 attenuatorController_0 ]
 
   # Create instance: axi_gpreg, and set properties
   set axi_gpreg [ create_bd_cell -type ip -vlnv analog.com:user:axi_gpreg:1.0 axi_gpreg ]
@@ -1844,43 +1699,31 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {5.5} \
+   CONFIG.C_BRAM_CNT {9} \
    CONFIG.C_DATA_DEPTH {65536} \
    CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {3} \
+   CONFIG.C_NUM_OF_PROBES {5} \
  ] $system_ila_0
 
-  # Create instance: vio_0, and set properties
-  set vio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_0 ]
-  set_property -dict [ list \
-   CONFIG.C_EN_PROBE_IN_ACTIVITY {0} \
-   CONFIG.C_NUM_PROBE_IN {0} \
-   CONFIG.C_NUM_PROBE_OUT {2} \
- ] $vio_0
-
-  # Create instance: xlslice_0, and set properties
-  set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {11} \
-   CONFIG.DIN_WIDTH {16} \
-   CONFIG.DOUT_WIDTH {12} \
- ] $xlslice_0
-
   # Create interface connections
+  connect_bd_intf_net -intf_net ProcessorSystem_M03_AXI [get_bd_intf_pins ProcessorSystem/M03_AXI] [get_bd_intf_pins attenuatorController_0/S00_AXI]
   connect_bd_intf_net -intf_net sys_ps7_DDR [get_bd_intf_ports ddr] [get_bd_intf_pins ProcessorSystem/ddr]
   connect_bd_intf_net -intf_net sys_ps7_FIXED_IO [get_bd_intf_ports fixed_io] [get_bd_intf_pins ProcessorSystem/fixed_io]
   connect_bd_intf_net -intf_net sys_ps7_axi_periph_M00_AXI [get_bd_intf_pins ProcessorSystem/M00_AXI] [get_bd_intf_pins axi_gpreg/s_axi]
   connect_bd_intf_net -intf_net sys_ps7_axi_periph_M01_AXI [get_bd_intf_pins I2SSystem/S_AXI] [get_bd_intf_pins ProcessorSystem/M01_AXI]
 
   # Create port connections
-  connect_bd_net -net AMDemodulate_o_data [get_bd_pins AMDemodulate/o_data] [get_bd_pins system_ila_0/probe2]
+  connect_bd_net -net AMDemodulate_o_data [get_bd_pins AMDemodulate/o_data] [get_bd_pins I2SSystem/in_aud_data] [get_bd_pins system_ila_0/probe2]
+  connect_bd_net -net AMDemodulate_o_data1 [get_bd_pins AMDemodulate/o_data1] [get_bd_pins system_ila_0/probe1]
+  connect_bd_net -net AMDemodulate_o_data2 [get_bd_pins AMDemodulate/o_data2] [get_bd_pins system_ila_0/probe3]
+  connect_bd_net -net AMDemodulate_o_data3 [get_bd_pins AMDemodulate/o_data3] [get_bd_pins AMModulate/i_baseband] [get_bd_pins system_ila_0/probe4]
+  connect_bd_net -net AMModulate_o_amSignal [get_bd_pins AMModulate/o_amSignal] [get_bd_pins LVDSIF/i_Channel_1_I_Value]
   connect_bd_net -net I2SSystem_scl_o_0 [get_bd_ports scl_o] [get_bd_pins I2SSystem/scl_o_0]
   connect_bd_net -net I2SSystem_scl_t_0 [get_bd_ports scl_t] [get_bd_pins I2SSystem/scl_t_0]
   connect_bd_net -net I2SSystem_sda_o_0 [get_bd_ports sda_o] [get_bd_pins I2SSystem/sda_o_0]
   connect_bd_net -net I2SSystem_sda_t_0 [get_bd_ports sda_t] [get_bd_pins I2SSystem/sda_t_0]
   connect_bd_net -net LVDSIF_clk_out [get_bd_pins AMDemodulate/aclk] [get_bd_pins LVDSIF/clk_out]
   connect_bd_net -net LVDSIF_o_Channel_1_I_Valid [get_bd_pins AMDemodulate/i_data_valid] [get_bd_pins LVDSIF/o_Channel_1_I_Valid]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets LVDSIF_o_Channel_1_I_Valid]
   connect_bd_net -net LVDSIF_o_Channel_1_I_Value [get_bd_pins AMDemodulate/i_data] [get_bd_pins LVDSIF/o_Channel_1_I_Value] [get_bd_pins system_ila_0/probe0]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets LVDSIF_o_Channel_1_I_Value]
   connect_bd_net -net LVDSIF_tx_data_out_n [get_bd_ports tx_data_out_n] [get_bd_pins LVDSIF/tx_data_out_n]
@@ -1888,7 +1731,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net LVDSIF_tx_frame_out_n [get_bd_ports tx_frame_out_n] [get_bd_pins LVDSIF/tx_frame_out_n]
   connect_bd_net -net LVDSIF_tx_frame_out_p [get_bd_ports tx_frame_out_p] [get_bd_pins LVDSIF/tx_frame_out_p]
   connect_bd_net -net ProcessorSystem_gpio_io_o [get_bd_pins I2SSystem/s_axi_aresetn1] [get_bd_pins ProcessorSystem/gpio_io_o]
-  connect_bd_net -net Pulse_pair_douta [get_bd_pins Pulse_pair/douta] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net attenuatorController_0_o_clk [get_bd_ports o_clk_attenuator] [get_bd_pins attenuatorController_0/o_clk]
+  connect_bd_net -net attenuatorController_0_o_data [get_bd_ports o_data_attenuator] [get_bd_pins attenuatorController_0/o_data]
+  connect_bd_net -net attenuatorController_0_o_le [get_bd_ports o_le_attenuator] [get_bd_pins attenuatorController_0/o_le]
   connect_bd_net -net axi_gpreg_up_gp_out_0 [get_bd_ports gp_out_0] [get_bd_pins axi_gpreg/up_gp_out_0]
   connect_bd_net -net axi_gpreg_up_gp_out_1 [get_bd_ports gp_out_1] [get_bd_pins axi_gpreg/up_gp_out_1]
   connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins axi_gpreg/d_clk_0]
@@ -1896,7 +1741,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports o_mclk] [get_bd_pins I2SSystem/i_mclk] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins AMModulate/i_clk] [get_bd_pins clk_wiz_0/clk_out2]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins AMModulate/i_clk1] [get_bd_pins clk_wiz_0/clk_out3]
-  connect_bd_net -net fir_compiler_0_m_axis_data_tdata [get_bd_pins AMDemodulate/m_axis_data_tdata] [get_bd_pins I2SSystem/in_aud_data] [get_bd_pins system_ila_0/probe1]
   connect_bd_net -net gp_in_0_1 [get_bd_ports gp_in_0] [get_bd_pins axi_gpreg/up_gp_in_0]
   connect_bd_net -net gp_in_1_1 [get_bd_ports gp_in_1] [get_bd_pins axi_gpreg/up_gp_in_1]
   connect_bd_net -net gpio_i_1 [get_bd_ports gpio_i] [get_bd_pins ProcessorSystem/gpio_i]
@@ -1904,7 +1748,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net i2sController_1_o_bit_clk [get_bd_ports o_bit_clk] [get_bd_pins I2SSystem/o_bit_clk_0]
   connect_bd_net -net i2sController_1_o_lrc [get_bd_ports o_lrc] [get_bd_pins I2SSystem/o_lrc_0]
   connect_bd_net -net i2sController_1_o_sda [get_bd_ports o_sda] [get_bd_pins I2SSystem/o_sda_0]
-  connect_bd_net -net i2sController_1_out_rght_chnl_data [get_bd_pins AMModulate/Din] [get_bd_pins I2SSystem/out_rght_chnl_data]
   connect_bd_net -net i_sda_0_1 [get_bd_ports i_sda] [get_bd_pins I2SSystem/i_sda_0]
   connect_bd_net -net rx_clk_in_n_1 [get_bd_ports rx_clk_in_n] [get_bd_pins LVDSIF/rx_clk_in_n]
   connect_bd_net -net rx_clk_in_p_1 [get_bd_ports rx_clk_in_p] [get_bd_pins LVDSIF/rx_clk_in_p]
@@ -1924,8 +1767,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net spi1_csn_i_1 [get_bd_ports spi1_csn_i] [get_bd_pins ProcessorSystem/spi1_csn_i]
   connect_bd_net -net spi1_sdi_i_1 [get_bd_ports spi1_sdi_i] [get_bd_pins ProcessorSystem/spi1_sdi_i]
   connect_bd_net -net spi1_sdo_i_1 [get_bd_ports spi1_sdo_i] [get_bd_pins ProcessorSystem/spi1_sdo_i]
-  connect_bd_net -net sys_cpu_clk [get_bd_ports sys_cpu_clk_out] [get_bd_pins I2SSystem/sys_cpu_clk_out] [get_bd_pins ProcessorSystem/sys_cpu_clk_out] [get_bd_pins Pulse_pair/sys_cpu_clk_out] [get_bd_pins axi_gpreg/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins system_ila_0/clk] [get_bd_pins vio_0/clk]
-  connect_bd_net -net sys_cpu_resetn [get_bd_pins I2SSystem/i_reset_n] [get_bd_pins ProcessorSystem/S00_ARESETN] [get_bd_pins axi_gpreg/s_axi_aresetn]
+  connect_bd_net -net sys_cpu_clk [get_bd_ports sys_cpu_clk_out] [get_bd_pins I2SSystem/sys_cpu_clk_out] [get_bd_pins ProcessorSystem/sys_cpu_clk_out] [get_bd_pins attenuatorController_0/s00_axi_aclk] [get_bd_pins axi_gpreg/s_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net sys_cpu_resetn [get_bd_pins I2SSystem/i_reset_n] [get_bd_pins ProcessorSystem/S00_ARESETN] [get_bd_pins attenuatorController_0/s00_axi_aresetn] [get_bd_pins axi_gpreg/s_axi_aresetn]
   connect_bd_net -net sys_ps7_GPIO_O [get_bd_ports gpio_o] [get_bd_pins ProcessorSystem/gpio_o]
   connect_bd_net -net sys_ps7_GPIO_T [get_bd_ports gpio_t] [get_bd_pins ProcessorSystem/gpio_t]
   connect_bd_net -net sys_ps7_SPI0_MOSI_O [get_bd_ports spi0_sdo_o] [get_bd_pins ProcessorSystem/spi0_sdo_o]
@@ -1938,10 +1781,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net sys_ps7_SPI1_SS1_O [get_bd_ports spi1_csn_1_o] [get_bd_pins ProcessorSystem/spi1_csn_1_o]
   connect_bd_net -net sys_ps7_SPI1_SS2_O [get_bd_ports spi1_csn_2_o] [get_bd_pins ProcessorSystem/spi1_csn_2_o]
   connect_bd_net -net sys_ps7_SPI1_SS_O [get_bd_ports spi1_csn_0_o] [get_bd_pins ProcessorSystem/spi1_csn_0_o]
-  connect_bd_net -net vio_0_probe_out1 [get_bd_pins AMModulate/enable] [get_bd_pins vio_0/probe_out1]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins LVDSIF/i_Channel_1_I_Value] [get_bd_pins xlslice_0/Dout]
 
   # Create address segments
+  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ProcessorSystem/sys_ps7/Data] [get_bd_addr_segs attenuatorController_0/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x41210000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ProcessorSystem/sys_ps7/Data] [get_bd_addr_segs ProcessorSystem/axi_gpio_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x41600000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ProcessorSystem/sys_ps7/Data] [get_bd_addr_segs I2SSystem/axi_iic_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ProcessorSystem/sys_ps7/Data] [get_bd_addr_segs axi_gpreg/s_axi/axi_lite] -force

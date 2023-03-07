@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Wed Mar  1 17:02:29 2023
-// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+// Date        : Mon Mar  6 08:51:46 2023
+// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_amModulator_0_0/system_amModulator_0_0_sim_netlist.v
+//               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_amModulator_0_0/system_amModulator_0_0_sim_netlist.v
 // Design      : system_amModulator_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,13 +22,13 @@ module system_amModulator_0_0
     enable);
   input [11:0]i_carrier;
   input [11:0]i_baseband;
-  output [11:0]o_amSignal;
+  output [23:0]o_amSignal;
   input enable;
 
   wire enable;
   wire [11:0]i_baseband;
   wire [11:0]i_carrier;
-  wire [11:0]o_amSignal;
+  wire [23:0]o_amSignal;
 
   system_amModulator_0_0_amModulator inst
        (.enable(enable),
@@ -40,29 +40,19 @@ endmodule
 (* ORIG_REF_NAME = "amModulator" *) 
 module system_amModulator_0_0_amModulator
    (o_amSignal,
+    enable,
     i_carrier,
-    i_baseband,
-    enable);
-  output [11:0]o_amSignal;
+    i_baseband);
+  output [23:0]o_amSignal;
+  input enable;
   input [11:0]i_carrier;
   input [11:0]i_baseband;
-  input enable;
 
   wire enable;
   wire [11:0]i_baseband;
   wire [11:0]i_carrier;
-  wire [11:0]o_amSignal;
-  wire [21:10]\^tmp3 ;
-  wire tmp3_n_100;
-  wire tmp3_n_101;
-  wire tmp3_n_102;
-  wire tmp3_n_103;
-  wire tmp3_n_104;
-  wire tmp3_n_105;
-  wire tmp3_n_96;
-  wire tmp3_n_97;
-  wire tmp3_n_98;
-  wire tmp3_n_99;
+  wire [23:0]o_amSignal;
+  wire [23:0]\^tmp3 ;
   wire NLW_tmp3_CARRYCASCOUT_UNCONNECTED;
   wire NLW_tmp3_MULTSIGNOUT_UNCONNECTED;
   wire NLW_tmp3_OVERFLOW_UNCONNECTED;
@@ -72,104 +62,188 @@ module system_amModulator_0_0_amModulator
   wire [29:0]NLW_tmp3_ACOUT_UNCONNECTED;
   wire [17:0]NLW_tmp3_BCOUT_UNCONNECTED;
   wire [3:0]NLW_tmp3_CARRYOUT_UNCONNECTED;
-  wire [47:22]NLW_tmp3_P_UNCONNECTED;
+  wire [47:24]NLW_tmp3_P_UNCONNECTED;
   wire [47:0]NLW_tmp3_PCOUT_UNCONNECTED;
 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[0]_INST_0 
-       (.I0(\^tmp3 [10]),
-        .I1(enable),
-        .I2(i_carrier[0]),
+       (.I0(\^tmp3 [0]),
+        .I1(i_carrier[0]),
+        .I2(enable),
         .O(o_amSignal[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[10]_INST_0 
-       (.I0(\^tmp3 [20]),
-        .I1(enable),
-        .I2(i_carrier[10]),
+       (.I0(\^tmp3 [10]),
+        .I1(i_carrier[10]),
+        .I2(enable),
         .O(o_amSignal[10]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[11]_INST_0 
-       (.I0(\^tmp3 [21]),
-        .I1(enable),
-        .I2(i_carrier[11]),
+       (.I0(\^tmp3 [11]),
+        .I1(i_carrier[11]),
+        .I2(enable),
         .O(o_amSignal[11]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[12]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [12]),
+        .O(o_amSignal[12]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[13]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [13]),
+        .O(o_amSignal[13]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[14]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [14]),
+        .O(o_amSignal[14]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[15]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [15]),
+        .O(o_amSignal[15]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[16]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [16]),
+        .O(o_amSignal[16]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[17]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [17]),
+        .O(o_amSignal[17]));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[18]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [18]),
+        .O(o_amSignal[18]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[19]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [19]),
+        .O(o_amSignal[19]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[1]_INST_0 
-       (.I0(\^tmp3 [11]),
-        .I1(enable),
-        .I2(i_carrier[1]),
+       (.I0(\^tmp3 [1]),
+        .I1(i_carrier[1]),
+        .I2(enable),
         .O(o_amSignal[1]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[20]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [20]),
+        .O(o_amSignal[20]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[21]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [21]),
+        .O(o_amSignal[21]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[22]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [22]),
+        .O(o_amSignal[22]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \o_amSignal[23]_INST_0 
+       (.I0(enable),
+        .I1(\^tmp3 [23]),
+        .O(o_amSignal[23]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[2]_INST_0 
-       (.I0(\^tmp3 [12]),
-        .I1(enable),
-        .I2(i_carrier[2]),
+       (.I0(\^tmp3 [2]),
+        .I1(i_carrier[2]),
+        .I2(enable),
         .O(o_amSignal[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[3]_INST_0 
-       (.I0(\^tmp3 [13]),
-        .I1(enable),
-        .I2(i_carrier[3]),
+       (.I0(\^tmp3 [3]),
+        .I1(i_carrier[3]),
+        .I2(enable),
         .O(o_amSignal[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[4]_INST_0 
-       (.I0(\^tmp3 [14]),
-        .I1(enable),
-        .I2(i_carrier[4]),
+       (.I0(\^tmp3 [4]),
+        .I1(i_carrier[4]),
+        .I2(enable),
         .O(o_amSignal[4]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[5]_INST_0 
-       (.I0(\^tmp3 [15]),
-        .I1(enable),
-        .I2(i_carrier[5]),
+       (.I0(\^tmp3 [5]),
+        .I1(i_carrier[5]),
+        .I2(enable),
         .O(o_amSignal[5]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[6]_INST_0 
-       (.I0(\^tmp3 [16]),
-        .I1(enable),
-        .I2(i_carrier[6]),
+       (.I0(\^tmp3 [6]),
+        .I1(i_carrier[6]),
+        .I2(enable),
         .O(o_amSignal[6]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[7]_INST_0 
-       (.I0(\^tmp3 [17]),
-        .I1(enable),
-        .I2(i_carrier[7]),
+       (.I0(\^tmp3 [7]),
+        .I1(i_carrier[7]),
+        .I2(enable),
         .O(o_amSignal[7]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[8]_INST_0 
-       (.I0(\^tmp3 [18]),
-        .I1(enable),
-        .I2(i_carrier[8]),
+       (.I0(\^tmp3 [8]),
+        .I1(i_carrier[8]),
+        .I2(enable),
         .O(o_amSignal[8]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(8'hAC)) 
     \o_amSignal[9]_INST_0 
-       (.I0(\^tmp3 [19]),
-        .I1(enable),
-        .I2(i_carrier[9]),
+       (.I0(\^tmp3 [9]),
+        .I1(i_carrier[9]),
+        .I2(enable),
         .O(o_amSignal[9]));
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-13 {cell *THIS*}}" *) 
   DSP48E1 #(
@@ -232,7 +306,7 @@ module system_amModulator_0_0_amModulator
         .MULTSIGNOUT(NLW_tmp3_MULTSIGNOUT_UNCONNECTED),
         .OPMODE({1'b0,1'b1,1'b1,1'b0,1'b1,1'b0,1'b1}),
         .OVERFLOW(NLW_tmp3_OVERFLOW_UNCONNECTED),
-        .P({NLW_tmp3_P_UNCONNECTED[47:22],\^tmp3 ,tmp3_n_96,tmp3_n_97,tmp3_n_98,tmp3_n_99,tmp3_n_100,tmp3_n_101,tmp3_n_102,tmp3_n_103,tmp3_n_104,tmp3_n_105}),
+        .P({NLW_tmp3_P_UNCONNECTED[47:24],\^tmp3 }),
         .PATTERNBDETECT(NLW_tmp3_PATTERNBDETECT_UNCONNECTED),
         .PATTERNDETECT(NLW_tmp3_PATTERNDETECT_UNCONNECTED),
         .PCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),

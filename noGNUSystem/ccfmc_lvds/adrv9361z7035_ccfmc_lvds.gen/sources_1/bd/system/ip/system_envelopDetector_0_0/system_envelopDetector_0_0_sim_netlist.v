@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Fri Mar  3 17:04:26 2023
-// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+// Date        : Mon Mar  6 08:49:58 2023
+// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_envelopDetector_0_0/system_envelopDetector_0_0_sim_netlist.v
+//               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_envelopDetector_0_0/system_envelopDetector_0_0_sim_netlist.v
 // Design      : system_envelopDetector_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -59,7 +59,7 @@ module system_envelopDetector_0_0_envelopDetector
   wire [11:0]i_data;
   wire i_data_valid;
   wire [11:1]o_data0;
-  wire [11:2]o_data00_in;
+  wire [11:0]o_data00_in;
   wire o_data2_carry__0_i_1_n_0;
   wire o_data2_carry__0_i_2_n_0;
   wire o_data2_carry__0_i_3_n_0;
@@ -111,7 +111,10 @@ module system_envelopDetector_0_0_envelopDetector
   wire o_data3_carry_n_2;
   wire o_data3_carry_n_3;
   wire o_data3_carry_n_4;
+  wire o_data3_carry_n_5;
+  wire o_data3_carry_n_6;
   wire \o_data[0]_i_1_n_0 ;
+  wire \o_data[0]_i_2_n_0 ;
   wire \o_data[10]_i_1_n_0 ;
   wire \o_data[10]_i_2_n_0 ;
   wire \o_data[11]_i_12_n_0 ;
@@ -131,6 +134,7 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[2]_i_2_n_0 ;
   wire \o_data[3]_i_1_n_0 ;
   wire \o_data[3]_i_2_n_0 ;
+  wire \o_data[3]_i_4_n_0 ;
   wire \o_data[4]_i_1_n_0 ;
   wire \o_data[4]_i_2_n_0 ;
   wire \o_data[4]_i_4_n_0 ;
@@ -139,12 +143,12 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[4]_i_7_n_0 ;
   wire \o_data[5]_i_1_n_0 ;
   wire \o_data[5]_i_2_n_0 ;
-  wire \o_data[5]_i_4_n_0 ;
-  wire \o_data[5]_i_5_n_0 ;
   wire \o_data[6]_i_1_n_0 ;
   wire \o_data[6]_i_2_n_0 ;
   wire \o_data[7]_i_1_n_0 ;
   wire \o_data[7]_i_2_n_0 ;
+  wire \o_data[7]_i_4_n_0 ;
+  wire \o_data[7]_i_5_n_0 ;
   wire \o_data[8]_i_1_n_0 ;
   wire \o_data[8]_i_2_n_0 ;
   wire \o_data[8]_i_4_n_0 ;
@@ -153,30 +157,28 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[8]_i_7_n_0 ;
   wire \o_data[9]_i_1_n_0 ;
   wire \o_data[9]_i_2_n_0 ;
-  wire \o_data[9]_i_4_n_0 ;
-  wire \o_data[9]_i_5_n_0 ;
-  wire \o_data[9]_i_6_n_0 ;
-  wire \o_data[9]_i_7_n_0 ;
+  wire \o_data_reg[11]_i_10_n_1 ;
+  wire \o_data_reg[11]_i_10_n_2 ;
   wire \o_data_reg[11]_i_10_n_3 ;
   wire \o_data_reg[11]_i_11_n_2 ;
   wire \o_data_reg[11]_i_11_n_3 ;
   wire \o_data_reg[11]_i_9_n_3 ;
+  wire \o_data_reg[3]_i_3_n_0 ;
+  wire \o_data_reg[3]_i_3_n_1 ;
+  wire \o_data_reg[3]_i_3_n_2 ;
+  wire \o_data_reg[3]_i_3_n_3 ;
   wire \o_data_reg[4]_i_3_n_0 ;
   wire \o_data_reg[4]_i_3_n_1 ;
   wire \o_data_reg[4]_i_3_n_2 ;
   wire \o_data_reg[4]_i_3_n_3 ;
-  wire \o_data_reg[5]_i_3_n_0 ;
-  wire \o_data_reg[5]_i_3_n_1 ;
-  wire \o_data_reg[5]_i_3_n_2 ;
-  wire \o_data_reg[5]_i_3_n_3 ;
+  wire \o_data_reg[7]_i_3_n_0 ;
+  wire \o_data_reg[7]_i_3_n_1 ;
+  wire \o_data_reg[7]_i_3_n_2 ;
+  wire \o_data_reg[7]_i_3_n_3 ;
   wire \o_data_reg[8]_i_3_n_0 ;
   wire \o_data_reg[8]_i_3_n_1 ;
   wire \o_data_reg[8]_i_3_n_2 ;
   wire \o_data_reg[8]_i_3_n_3 ;
-  wire \o_data_reg[9]_i_3_n_0 ;
-  wire \o_data_reg[9]_i_3_n_1 ;
-  wire \o_data_reg[9]_i_3_n_2 ;
-  wire \o_data_reg[9]_i_3_n_3 ;
   wire o_data_valid;
   wire [11:0]rectData;
   wire rectData0_n_100;
@@ -219,9 +221,8 @@ module system_envelopDetector_0_0_envelopDetector
   wire [3:0]NLW_o_data2_carry_O_UNCONNECTED;
   wire [3:2]NLW_o_data2_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_o_data2_carry__0_O_UNCONNECTED;
-  wire [2:0]NLW_o_data3_carry_O_UNCONNECTED;
-  wire [3:1]\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED ;
-  wire [3:2]\NLW_o_data_reg[11]_i_10_O_UNCONNECTED ;
+  wire [0:0]NLW_o_data3_carry_O_UNCONNECTED;
+  wire [3:3]\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED ;
   wire [3:2]\NLW_o_data_reg[11]_i_11_CO_UNCONNECTED ;
   wire [3:3]\NLW_o_data_reg[11]_i_11_O_UNCONNECTED ;
   wire [3:1]\NLW_o_data_reg[11]_i_9_CO_UNCONNECTED ;
@@ -355,7 +356,7 @@ module system_envelopDetector_0_0_envelopDetector
         .CO({o_data3_carry_n_0,o_data3_carry_n_1,o_data3_carry_n_2,o_data3_carry_n_3}),
         .CYINIT(1'b1),
         .DI(rectData[3:0]),
-        .O({o_data3_carry_n_4,NLW_o_data3_carry_O_UNCONNECTED[2:0]}),
+        .O({o_data3_carry_n_4,o_data3_carry_n_5,o_data3_carry_n_6,NLW_o_data3_carry_O_UNCONNECTED[0]}),
         .S({o_data3_carry_i_1_n_0,o_data3_carry_i_2_n_0,o_data3_carry_i_3_n_0,o_data3_carry_i_4_n_0}));
   CARRY4 o_data3_carry__0
        (.CI(o_data3_carry_n_0),
@@ -443,18 +444,25 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(rectData[0]),
         .I1(Q[0]),
         .O(o_data3_carry_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hFFAB00A800A8FFAB)) 
+  LUT5 #(
+    .INIT(32'hFFFB0008)) 
     \o_data[0]_i_1 
        (.I0(rectData[0]),
         .I1(\o_data[11]_i_5_n_0 ),
         .I2(\o_data[11]_i_6_n_0 ),
         .I3(\o_data[11]_i_7_n_0 ),
-        .I4(Q[0]),
-        .I5(o_data2_carry__0_n_2),
+        .I4(\o_data[0]_i_2_n_0 ),
         .O(\o_data[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h8B)) 
+    \o_data[0]_i_2 
+       (.I0(o_data00_in[0]),
+        .I1(o_data2_carry__0_n_2),
+        .I2(Q[0]),
+        .O(\o_data[0]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[10]_i_1 
        (.I0(rectData[10]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -462,7 +470,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[10]_i_2_n_0 ),
         .O(\o_data[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[10]_i_2 
@@ -474,9 +482,9 @@ module system_envelopDetector_0_0_envelopDetector
     .INIT(64'hAAAAAAA8AAAAAAAA)) 
     \o_data[11]_i_1 
        (.I0(rectDataValid),
-        .I1(Q[6]),
-        .I2(Q[10]),
-        .I3(Q[5]),
+        .I1(Q[3]),
+        .I2(Q[6]),
+        .I3(Q[4]),
         .I4(\o_data[11]_i_3_n_0 ),
         .I5(\o_data[11]_i_4_n_0 ),
         .O(\o_data[11]_i_1_n_0 ));
@@ -496,7 +504,7 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(Q[9]),
         .O(\o_data[11]_i_14_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[11]_i_2 
        (.I0(rectData[11]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -504,48 +512,51 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[11]_i_8_n_0 ),
         .O(\o_data[11]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \o_data[11]_i_3 
-       (.I0(Q[7]),
-        .I1(Q[4]),
-        .I2(Q[11]),
-        .I3(Q[1]),
+       (.I0(Q[11]),
+        .I1(Q[0]),
+        .I2(o_data2_carry__0_n_2),
+        .I3(Q[10]),
         .O(\o_data[11]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000001)) 
     \o_data[11]_i_4 
-       (.I0(o_data2_carry__0_n_2),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(Q[8]),
-        .I4(Q[3]),
-        .I5(Q[9]),
+       (.I0(Q[2]),
+        .I1(Q[1]),
+        .I2(Q[5]),
+        .I3(Q[9]),
+        .I4(Q[7]),
+        .I5(Q[8]),
         .O(\o_data[11]_i_4_n_0 ));
-  LUT3 #(
-    .INIT(8'h57)) 
+  LUT5 #(
+    .INIT(32'h7777777F)) 
     \o_data[11]_i_5 
-       (.I0(o_data3_carry__1_n_7),
-        .I1(o_data3_carry__0_n_7),
-        .I2(o_data3_carry_n_4),
+       (.I0(o_data3_carry__0_n_7),
+        .I1(o_data3_carry__0_n_6),
+        .I2(o_data3_carry_n_6),
+        .I3(o_data3_carry_n_4),
+        .I4(o_data3_carry_n_5),
         .O(\o_data[11]_i_5_n_0 ));
   LUT4 #(
-    .INIT(16'h7FFF)) 
+    .INIT(16'hFFFD)) 
     \o_data[11]_i_6 
-       (.I0(o_data3_carry__0_n_6),
-        .I1(o_data3_carry__0_n_5),
-        .I2(o_data3_carry__0_n_4),
-        .I3(o_data3_carry__1_n_6),
+       (.I0(o_data2_carry__0_n_2),
+        .I1(o_data3_carry__0_n_4),
+        .I2(o_data3_carry__0_n_5),
+        .I3(o_data3_carry__1_n_7),
         .O(\o_data[11]_i_6_n_0 ));
   LUT4 #(
-    .INIT(16'hEFFF)) 
+    .INIT(16'hFFFD)) 
     \o_data[11]_i_7 
-       (.I0(o_data3_carry__1_n_5),
+       (.I0(\o_data_reg[11]_i_9_n_3 ),
         .I1(o_data3_carry__1_n_4),
-        .I2(o_data2_carry__0_n_2),
-        .I3(\o_data_reg[11]_i_9_n_3 ),
+        .I2(o_data3_carry__1_n_6),
+        .I3(o_data3_carry__1_n_5),
         .O(\o_data[11]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[11]_i_8 
@@ -554,7 +565,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I2(o_data0[11]),
         .O(\o_data[11]_i_8_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[1]_i_1 
        (.I0(rectData[1]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -565,12 +576,12 @@ module system_envelopDetector_0_0_envelopDetector
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[1]_i_2 
-       (.I0(Q[1]),
+       (.I0(o_data00_in[1]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[1]),
         .O(\o_data[1]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[2]_i_1 
        (.I0(rectData[2]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -578,7 +589,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[2]_i_2_n_0 ),
         .O(\o_data[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[2]_i_2 
@@ -587,7 +598,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I2(o_data0[2]),
         .O(\o_data[2]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[3]_i_1 
        (.I0(rectData[3]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -595,7 +606,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[3]_i_2_n_0 ),
         .O(\o_data[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[3]_i_2 
@@ -603,8 +614,13 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[3]),
         .O(\o_data[3]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \o_data[3]_i_4 
+       (.I0(Q[1]),
+        .O(\o_data[3]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[4]_i_1 
        (.I0(rectData[4]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -612,7 +628,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[4]_i_2_n_0 ),
         .O(\o_data[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[4]_i_2 
@@ -641,7 +657,7 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(Q[1]),
         .O(\o_data[4]_i_7_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[5]_i_1 
        (.I0(rectData[5]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -649,7 +665,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[5]_i_2_n_0 ),
         .O(\o_data[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[5]_i_2 
@@ -657,18 +673,8 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[5]),
         .O(\o_data[5]_i_2_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[5]_i_4 
-       (.I0(Q[5]),
-        .O(\o_data[5]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[5]_i_5 
-       (.I0(Q[3]),
-        .O(\o_data[5]_i_5_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[6]_i_1 
        (.I0(rectData[6]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -676,7 +682,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[6]_i_2_n_0 ),
         .O(\o_data[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[6]_i_2 
@@ -685,7 +691,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I2(o_data0[6]),
         .O(\o_data[6]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[7]_i_1 
        (.I0(rectData[7]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -693,7 +699,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[7]_i_2_n_0 ),
         .O(\o_data[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[7]_i_2 
@@ -701,8 +707,18 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[7]),
         .O(\o_data[7]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \o_data[7]_i_4 
+       (.I0(Q[5]),
+        .O(\o_data[7]_i_4_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \o_data[7]_i_5 
+       (.I0(Q[4]),
+        .O(\o_data[7]_i_5_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[8]_i_1 
        (.I0(rectData[8]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -710,7 +726,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[8]_i_2_n_0 ),
         .O(\o_data[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[8]_i_2 
@@ -739,7 +755,7 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(Q[5]),
         .O(\o_data[8]_i_7_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[9]_i_1 
        (.I0(rectData[9]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -747,7 +763,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[9]_i_2_n_0 ),
         .O(\o_data[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \o_data[9]_i_2 
@@ -755,26 +771,6 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[9]),
         .O(\o_data[9]_i_2_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_4 
-       (.I0(Q[9]),
-        .O(\o_data[9]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_5 
-       (.I0(Q[8]),
-        .O(\o_data[9]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_6 
-       (.I0(Q[7]),
-        .O(\o_data[9]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_7 
-       (.I0(Q[6]),
-        .O(\o_data[9]_i_7_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[0] 
@@ -801,12 +797,12 @@ module system_envelopDetector_0_0_envelopDetector
         .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[11]_i_10 
-       (.CI(\o_data_reg[9]_i_3_n_0 ),
-        .CO({\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED [3:1],\o_data_reg[11]_i_10_n_3 }),
+       (.CI(\o_data_reg[7]_i_3_n_0 ),
+        .CO({\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED [3],\o_data_reg[11]_i_10_n_1 ,\o_data_reg[11]_i_10_n_2 ,\o_data_reg[11]_i_10_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_o_data_reg[11]_i_10_O_UNCONNECTED [3:2],o_data00_in[11:10]}),
-        .S({1'b0,1'b0,Q[11:10]}));
+        .O(o_data00_in[11:8]),
+        .S(Q[11:8]));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[11]_i_11 
        (.CI(\o_data_reg[8]_i_3_n_0 ),
@@ -846,6 +842,14 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[3]_i_1_n_0 ),
         .Q(Q[3]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \o_data_reg[3]_i_3 
+       (.CI(1'b0),
+        .CO({\o_data_reg[3]_i_3_n_0 ,\o_data_reg[3]_i_3_n_1 ,\o_data_reg[3]_i_3_n_2 ,\o_data_reg[3]_i_3_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,Q[1],1'b0}),
+        .O(o_data00_in[3:0]),
+        .S({Q[3:2],\o_data[3]_i_4_n_0 ,Q[0]}));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[4] 
@@ -870,14 +874,6 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[5]_i_1_n_0 ),
         .Q(Q[5]),
         .R(1'b0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[5]_i_3 
-       (.CI(1'b0),
-        .CO({\o_data_reg[5]_i_3_n_0 ,\o_data_reg[5]_i_3_n_1 ,\o_data_reg[5]_i_3_n_2 ,\o_data_reg[5]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({Q[5],1'b0,Q[3],1'b0}),
-        .O(o_data00_in[5:2]),
-        .S({\o_data[5]_i_4_n_0 ,Q[4],\o_data[5]_i_5_n_0 ,Q[2]}));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[6] 
@@ -894,6 +890,14 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[7]_i_1_n_0 ),
         .Q(Q[7]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \o_data_reg[7]_i_3 
+       (.CI(\o_data_reg[3]_i_3_n_0 ),
+        .CO({\o_data_reg[7]_i_3_n_0 ,\o_data_reg[7]_i_3_n_1 ,\o_data_reg[7]_i_3_n_2 ,\o_data_reg[7]_i_3_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,Q[5:4]}),
+        .O(o_data00_in[7:4]),
+        .S({Q[7:6],\o_data[7]_i_4_n_0 ,\o_data[7]_i_5_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[8] 
@@ -918,14 +922,6 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[9]_i_1_n_0 ),
         .Q(Q[9]),
         .R(1'b0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[9]_i_3 
-       (.CI(\o_data_reg[5]_i_3_n_0 ),
-        .CO({\o_data_reg[9]_i_3_n_0 ,\o_data_reg[9]_i_3_n_1 ,\o_data_reg[9]_i_3_n_2 ,\o_data_reg[9]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI(Q[9:6]),
-        .O(o_data00_in[9:6]),
-        .S({\o_data[9]_i_4_n_0 ,\o_data[9]_i_5_n_0 ,\o_data[9]_i_6_n_0 ,\o_data[9]_i_7_n_0 }));
   FDRE o_data_valid_reg
        (.C(i_clk),
         .CE(1'b1),
@@ -1017,7 +1013,7 @@ module system_envelopDetector_0_0_envelopDetector
         .D(i_data_valid),
         .Q(rectDataValid),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[0]_i_1 
@@ -1025,7 +1021,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[0]),
         .O(\rectData[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[10]_i_1 
@@ -1033,14 +1029,14 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[10]),
         .O(\rectData[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \rectData[11]_i_1 
        (.I0(i_data[11]),
         .I1(rectData0_n_94),
         .O(\rectData[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[1]_i_1 
@@ -1048,7 +1044,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[1]),
         .O(\rectData[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[2]_i_1 
@@ -1056,7 +1052,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[2]),
         .O(\rectData[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[3]_i_1 
@@ -1064,7 +1060,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[3]),
         .O(\rectData[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[4]_i_1 
@@ -1072,7 +1068,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[4]),
         .O(\rectData[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[5]_i_1 
@@ -1080,7 +1076,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[5]),
         .O(\rectData[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[6]_i_1 
@@ -1088,7 +1084,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[6]),
         .O(\rectData[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[7]_i_1 
@@ -1096,7 +1092,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[7]),
         .O(\rectData[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[8]_i_1 
@@ -1104,7 +1100,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(i_data[11]),
         .I2(i_data[8]),
         .O(\rectData[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \rectData[9]_i_1 

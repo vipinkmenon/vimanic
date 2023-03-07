@@ -63,7 +63,7 @@ module system_amModulator_0_0 (
 
 input wire [11 : 0] i_carrier;
 input wire [11 : 0] i_baseband;
-output wire [11 : 0] o_amSignal;
+output wire [23 : 0] o_amSignal;
 input wire enable;
 
   amModulator inst (

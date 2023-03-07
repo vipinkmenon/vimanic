@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Wed Mar  1 17:03:56 2023
-// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top system_sys_rstgen_0 -prefix
-//               system_sys_rstgen_0_ system_sys_rstgen_0_stub.v
+// Date        : Mon Mar  6 08:50:56 2023
+// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0_stub.v
 // Design      : system_sys_rstgen_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z030fbg484-2

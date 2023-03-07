@@ -24,7 +24,7 @@
 module amModulator(
 input [11:0] i_carrier,
 input [11:0] i_baseband,
-output [11:0] o_amSignal,
+output [23:0] o_amSignal,
 input enable
 );
 
@@ -36,6 +36,6 @@ assign tmp =  $signed(i_baseband)*$signed(i_carrier);//result has 4 bit int and 
 assign tmp2 = {{2{i_carrier[11]}},i_carrier,10'd0};//carrier has 2 bit integer and 10 bit frac. make that also 4 bit int;//carrier has 2 bit integer and 10 bit frac
 assign tmp3 = $signed(tmp)+$signed(tmp2);
 
-assign o_amSignal = enable ?  tmp3[21:10] : i_carrier;////max amp of modulated is fc+fm. So 2 bit int
+assign o_amSignal = enable ?  tmp3 : i_carrier;////max amp of modulated is fc+fm. So 2 bit int
 
 endmodule

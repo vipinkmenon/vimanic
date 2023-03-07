@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAA3AC7FA8424AC0C",
+      "boundary_crc": "0x643F81AFA3E5281F",
       "design_src": "SBD",
       "device": "xc7z030fbg484-2",
       "name": "bd_d5b8",
@@ -48,10 +48,20 @@
       },
       "probe1": {
         "direction": "I",
-        "left": "31",
+        "left": "11",
         "right": "0"
       },
       "probe2": {
+        "direction": "I",
+        "left": "11",
+        "right": "0"
+      },
+      "probe3": {
+        "direction": "I",
+        "left": "11",
+        "right": "0"
+      },
+      "probe4": {
         "direction": "I",
         "left": "11",
         "right": "0"
@@ -92,7 +102,7 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "3"
+            "value": "5"
           },
           "C_PROBE0_MU_CNT": {
             "value": "1"
@@ -110,7 +120,7 @@
             "value": "0"
           },
           "C_PROBE1_WIDTH": {
-            "value": "32"
+            "value": "12"
           },
           "C_PROBE2_MU_CNT": {
             "value": "1"
@@ -119,6 +129,24 @@
             "value": "0"
           },
           "C_PROBE2_WIDTH": {
+            "value": "12"
+          },
+          "C_PROBE3_MU_CNT": {
+            "value": "1"
+          },
+          "C_PROBE3_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "12"
+          },
+          "C_PROBE4_MU_CNT": {
+            "value": "1"
+          },
+          "C_PROBE4_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE4_WIDTH": {
             "value": "12"
           },
           "C_TIME_TAG_WIDTH": {
@@ -159,6 +187,18 @@
         "ports": [
           "probe2",
           "ila_lib/probe2"
+        ]
+      },
+      "probe3_1": {
+        "ports": [
+          "probe3",
+          "ila_lib/probe3"
+        ]
+      },
+      "probe4_1": {
+        "ports": [
+          "probe4",
+          "ila_lib/probe4"
         ]
       }
     }

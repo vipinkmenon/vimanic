@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Wed Mar  1 17:02:29 2023
--- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Date        : Mon Mar  6 08:51:46 2023
+-- Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_amModulator_0_0/system_amModulator_0_0_sim_netlist.vhdl
+--               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_amModulator_0_0/system_amModulator_0_0_sim_netlist.vhdl
 -- Design      : system_amModulator_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,27 +16,17 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity system_amModulator_0_0_amModulator is
   port (
-    o_amSignal : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    o_amSignal : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    enable : in STD_LOGIC;
     i_carrier : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    i_baseband : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    enable : in STD_LOGIC
+    i_baseband : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of system_amModulator_0_0_amModulator : entity is "amModulator";
 end system_amModulator_0_0_amModulator;
 
 architecture STRUCTURE of system_amModulator_0_0_amModulator is
-  signal \^tmp3\ : STD_LOGIC_VECTOR ( 21 downto 10 );
-  signal tmp3_n_100 : STD_LOGIC;
-  signal tmp3_n_101 : STD_LOGIC;
-  signal tmp3_n_102 : STD_LOGIC;
-  signal tmp3_n_103 : STD_LOGIC;
-  signal tmp3_n_104 : STD_LOGIC;
-  signal tmp3_n_105 : STD_LOGIC;
-  signal tmp3_n_96 : STD_LOGIC;
-  signal tmp3_n_97 : STD_LOGIC;
-  signal tmp3_n_98 : STD_LOGIC;
-  signal tmp3_n_99 : STD_LOGIC;
+  signal \^tmp3\ : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal NLW_tmp3_CARRYCASCOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_tmp3_MULTSIGNOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_tmp3_OVERFLOW_UNCONNECTED : STD_LOGIC;
@@ -46,142 +36,262 @@ architecture STRUCTURE of system_amModulator_0_0_amModulator is
   signal NLW_tmp3_ACOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 29 downto 0 );
   signal NLW_tmp3_BCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal NLW_tmp3_CARRYOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_tmp3_P_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 22 );
+  signal NLW_tmp3_P_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 24 );
   signal NLW_tmp3_PCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \o_amSignal[0]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \o_amSignal[10]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \o_amSignal[11]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \o_amSignal[1]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \o_amSignal[2]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \o_amSignal[3]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \o_amSignal[4]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \o_amSignal[5]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \o_amSignal[6]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \o_amSignal[7]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \o_amSignal[8]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \o_amSignal[9]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \o_amSignal[10]_INST_0\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \o_amSignal[11]_INST_0\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \o_amSignal[12]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \o_amSignal[13]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \o_amSignal[14]_INST_0\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \o_amSignal[15]_INST_0\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \o_amSignal[16]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \o_amSignal[17]_INST_0\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \o_amSignal[18]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \o_amSignal[19]_INST_0\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \o_amSignal[1]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \o_amSignal[20]_INST_0\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \o_amSignal[21]_INST_0\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \o_amSignal[22]_INST_0\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \o_amSignal[23]_INST_0\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \o_amSignal[2]_INST_0\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \o_amSignal[3]_INST_0\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \o_amSignal[4]_INST_0\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \o_amSignal[5]_INST_0\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \o_amSignal[6]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \o_amSignal[7]_INST_0\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \o_amSignal[8]_INST_0\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \o_amSignal[9]_INST_0\ : label is "soft_lutpair9";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of tmp3 : label is "{SYNTH-13 {cell *THIS*}}";
 begin
 \o_amSignal[0]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(10),
-      I1 => enable,
-      I2 => i_carrier(0),
+      I0 => \^tmp3\(0),
+      I1 => i_carrier(0),
+      I2 => enable,
       O => o_amSignal(0)
     );
 \o_amSignal[10]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(20),
-      I1 => enable,
-      I2 => i_carrier(10),
+      I0 => \^tmp3\(10),
+      I1 => i_carrier(10),
+      I2 => enable,
       O => o_amSignal(10)
     );
 \o_amSignal[11]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
-    )
-        port map (
-      I0 => \^tmp3\(21),
-      I1 => enable,
-      I2 => i_carrier(11),
-      O => o_amSignal(11)
-    );
-\o_amSignal[1]_INST_0\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
       I0 => \^tmp3\(11),
-      I1 => enable,
-      I2 => i_carrier(1),
+      I1 => i_carrier(11),
+      I2 => enable,
+      O => o_amSignal(11)
+    );
+\o_amSignal[12]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(12),
+      O => o_amSignal(12)
+    );
+\o_amSignal[13]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(13),
+      O => o_amSignal(13)
+    );
+\o_amSignal[14]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(14),
+      O => o_amSignal(14)
+    );
+\o_amSignal[15]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(15),
+      O => o_amSignal(15)
+    );
+\o_amSignal[16]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(16),
+      O => o_amSignal(16)
+    );
+\o_amSignal[17]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(17),
+      O => o_amSignal(17)
+    );
+\o_amSignal[18]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(18),
+      O => o_amSignal(18)
+    );
+\o_amSignal[19]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(19),
+      O => o_amSignal(19)
+    );
+\o_amSignal[1]_INST_0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"AC"
+    )
+        port map (
+      I0 => \^tmp3\(1),
+      I1 => i_carrier(1),
+      I2 => enable,
       O => o_amSignal(1)
+    );
+\o_amSignal[20]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(20),
+      O => o_amSignal(20)
+    );
+\o_amSignal[21]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(21),
+      O => o_amSignal(21)
+    );
+\o_amSignal[22]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(22),
+      O => o_amSignal(22)
+    );
+\o_amSignal[23]_INST_0\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => enable,
+      I1 => \^tmp3\(23),
+      O => o_amSignal(23)
     );
 \o_amSignal[2]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(12),
-      I1 => enable,
-      I2 => i_carrier(2),
+      I0 => \^tmp3\(2),
+      I1 => i_carrier(2),
+      I2 => enable,
       O => o_amSignal(2)
     );
 \o_amSignal[3]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(13),
-      I1 => enable,
-      I2 => i_carrier(3),
+      I0 => \^tmp3\(3),
+      I1 => i_carrier(3),
+      I2 => enable,
       O => o_amSignal(3)
     );
 \o_amSignal[4]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(14),
-      I1 => enable,
-      I2 => i_carrier(4),
+      I0 => \^tmp3\(4),
+      I1 => i_carrier(4),
+      I2 => enable,
       O => o_amSignal(4)
     );
 \o_amSignal[5]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(15),
-      I1 => enable,
-      I2 => i_carrier(5),
+      I0 => \^tmp3\(5),
+      I1 => i_carrier(5),
+      I2 => enable,
       O => o_amSignal(5)
     );
 \o_amSignal[6]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(16),
-      I1 => enable,
-      I2 => i_carrier(6),
+      I0 => \^tmp3\(6),
+      I1 => i_carrier(6),
+      I2 => enable,
       O => o_amSignal(6)
     );
 \o_amSignal[7]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(17),
-      I1 => enable,
-      I2 => i_carrier(7),
+      I0 => \^tmp3\(7),
+      I1 => i_carrier(7),
+      I2 => enable,
       O => o_amSignal(7)
     );
 \o_amSignal[8]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(18),
-      I1 => enable,
-      I2 => i_carrier(8),
+      I0 => \^tmp3\(8),
+      I1 => i_carrier(8),
+      I2 => enable,
       O => o_amSignal(8)
     );
 \o_amSignal[9]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8"
+      INIT => X"AC"
     )
         port map (
-      I0 => \^tmp3\(19),
-      I1 => enable,
-      I2 => i_carrier(9),
+      I0 => \^tmp3\(9),
+      I1 => i_carrier(9),
+      I2 => enable,
       O => o_amSignal(9)
     );
 tmp3: unisim.vcomponents.DSP48E1
@@ -297,18 +407,8 @@ tmp3: unisim.vcomponents.DSP48E1
       MULTSIGNOUT => NLW_tmp3_MULTSIGNOUT_UNCONNECTED,
       OPMODE(6 downto 0) => B"0110101",
       OVERFLOW => NLW_tmp3_OVERFLOW_UNCONNECTED,
-      P(47 downto 22) => NLW_tmp3_P_UNCONNECTED(47 downto 22),
-      P(21 downto 10) => \^tmp3\(21 downto 10),
-      P(9) => tmp3_n_96,
-      P(8) => tmp3_n_97,
-      P(7) => tmp3_n_98,
-      P(6) => tmp3_n_99,
-      P(5) => tmp3_n_100,
-      P(4) => tmp3_n_101,
-      P(3) => tmp3_n_102,
-      P(2) => tmp3_n_103,
-      P(1) => tmp3_n_104,
-      P(0) => tmp3_n_105,
+      P(47 downto 24) => NLW_tmp3_P_UNCONNECTED(47 downto 24),
+      P(23 downto 0) => \^tmp3\(23 downto 0),
       PATTERNBDETECT => NLW_tmp3_PATTERNBDETECT_UNCONNECTED,
       PATTERNDETECT => NLW_tmp3_PATTERNDETECT_UNCONNECTED,
       PCIN(47 downto 0) => B"000000000000000000000000000000000000000000000000",
@@ -334,7 +434,7 @@ entity system_amModulator_0_0 is
   port (
     i_carrier : in STD_LOGIC_VECTOR ( 11 downto 0 );
     i_baseband : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    o_amSignal : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    o_amSignal : out STD_LOGIC_VECTOR ( 23 downto 0 );
     enable : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -356,6 +456,6 @@ inst: entity work.system_amModulator_0_0_amModulator
       enable => enable,
       i_baseband(11 downto 0) => i_baseband(11 downto 0),
       i_carrier(11 downto 0) => i_carrier(11 downto 0),
-      o_amSignal(11 downto 0) => o_amSignal(11 downto 0)
+      o_amSignal(23 downto 0) => o_amSignal(23 downto 0)
     );
 end STRUCTURE;

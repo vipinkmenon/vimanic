@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x5EBD7E3DE861B978",
+      "boundary_crc": "0x60FD5171A1FB0883",
       "device": "xc7z030fbg484-2",
       "gen_directory": "../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system",
       "name": "system",
@@ -12,10 +12,10 @@
     },
     "design_tree": {
       "AMModulate": {
-        "amModulator_0": "",
         "angleLUT_0": "",
         "baseBandLUT": "",
-        "xlslice_0": ""
+        "xlconstant_0": "",
+        "amModulator_0": ""
       },
       "ProcessorSystem": {
         "axi_gpio_0": "",
@@ -27,12 +27,12 @@
           },
           "m00_couplers": {},
           "m01_couplers": {},
-          "m02_couplers": {}
+          "m02_couplers": {},
+          "m03_couplers": {}
         },
         "sys_rstgen": ""
       },
       "LVDSIF": {
-        "dataPackager_0": "",
         "selectio_wiz_0": "",
         "xlconcat_0": "",
         "xlconcat_1": "",
@@ -41,7 +41,8 @@
         "xlslice_1": "",
         "xlslice_2": "",
         "xlslice_3": "",
-        "xlslice_4": ""
+        "xlslice_4": "",
+        "dataPackager_0": ""
       },
       "I2SSystem": {
         "axi_iic_0": "",
@@ -49,31 +50,15 @@
         "levelShift_0": ""
       },
       "AMDemodulate": {
-        "decimation_0": "",
-        "fir_compiler_0": "",
-        "envelopDetector_0": ""
+        "envelopDetector_0": "",
+        "lowPassFilter": "",
+        "DCLevelDetector": "",
+        "subtractor_0": ""
       },
       "axi_gpreg": "",
       "clk_wiz_0": "",
-      "vio_0": "",
-      "Pulse_pair": {
-        "util_vector_logic_0": "",
-        "count_woen_0": "",
-        "util_vector_logic_1": "",
-        "xlconstant_0": "",
-        "util_vector_logic_2": "",
-        "count_assist_0": "",
-        "count_assist_1": "",
-        "blk_mem_gen_0": "",
-        "count_assist_2": "",
-        "count_assist_3": "",
-        "Full_counter_0": "",
-        "Full_counter_1": "",
-        "Not_Gate_0": "",
-        "Not_Gate_1": ""
-      },
       "system_ila_0": "",
-      "xlslice_0": ""
+      "attenuatorController_0": ""
     },
     "interface_ports": {
       "ddr": {
@@ -385,70 +370,62 @@
             "value_src": "ip_prop"
           }
         }
+      },
+      "o_data_attenuator": {
+        "direction": "O"
+      },
+      "o_clk_attenuator": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_attenuatorController_0_0_o_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "5000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "o_le_attenuator": {
+        "direction": "O"
       }
     },
     "components": {
       "AMModulate": {
         "ports": {
-          "Din": {
-            "direction": "I",
-            "left": "30",
-            "right": "0"
-          },
           "i_clk": {
             "type": "clk",
             "direction": "I"
           },
           "o_amSignal": {
             "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
-          "o_angle": {
-            "direction": "O",
-            "left": "11",
+            "left": "23",
             "right": "0"
           },
           "i_clk1": {
             "type": "clk",
             "direction": "I"
           },
-          "enable": {
-            "direction": "I"
+          "i_baseband": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
           }
         },
         "components": {
-          "amModulator_0": {
-            "vlnv": "xilinx.com:module_ref:amModulator:1.0",
-            "xci_name": "system_amModulator_0_0",
-            "xci_path": "ip\\system_amModulator_0_0\\system_amModulator_0_0.xci",
-            "inst_hier_path": "AMModulate/amModulator_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "amModulator",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "i_carrier": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_baseband": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "o_amSignal": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "enable": {
-                "direction": "I"
-              }
-            }
-          },
           "angleLUT_0": {
             "vlnv": "xilinx.com:module_ref:angleLUT:1.0",
             "xci_name": "system_angleLUT_0_0",
@@ -521,23 +498,40 @@
               }
             }
           },
-          "xlslice_0": {
-            "vlnv": "xilinx.com:ip:xlslice:1.0",
-            "xci_name": "system_xlslice_0_0",
-            "xci_path": "ip\\system_xlslice_0_0\\system_xlslice_0_0.xci",
-            "inst_hier_path": "AMModulate/xlslice_0",
-            "parameters": {
-              "DIN_FROM": {
-                "value": "30"
+          "xlconstant_0": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "system_xlconstant_0_2",
+            "xci_path": "ip\\system_xlconstant_0_2\\system_xlconstant_0_2.xci",
+            "inst_hier_path": "AMModulate/xlconstant_0"
+          },
+          "amModulator_0": {
+            "vlnv": "xilinx.com:module_ref:amModulator:1.0",
+            "xci_name": "system_amModulator_0_0",
+            "xci_path": "ip\\system_amModulator_0_0\\system_amModulator_0_0.xci",
+            "inst_hier_path": "AMModulate/amModulator_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "amModulator",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "i_carrier": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
               },
-              "DIN_TO": {
-                "value": "19"
+              "i_baseband": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
               },
-              "DIN_WIDTH": {
-                "value": "31"
+              "o_amSignal": {
+                "direction": "O",
+                "left": "23",
+                "right": "0"
               },
-              "DOUT_WIDTH": {
-                "value": "12"
+              "enable": {
+                "direction": "I"
               }
             }
           }
@@ -552,7 +546,6 @@
           "angleLUT_0_o_angle": {
             "ports": [
               "angleLUT_0/o_angle",
-              "o_angle",
               "amModulator_0/i_carrier"
             ]
           },
@@ -562,16 +555,10 @@
               "angleLUT_0/i_clk"
             ]
           },
-          "enable_1": {
+          "i_baseband_1": {
             "ports": [
-              "enable",
-              "amModulator_0/enable"
-            ]
-          },
-          "i2sController_1_out_rght_chnl_data": {
-            "ports": [
-              "Din",
-              "xlslice_0/Din"
+              "i_baseband",
+              "amModulator_0/i_baseband"
             ]
           },
           "i_clk1_1": {
@@ -580,10 +567,10 @@
               "baseBandLUT/i_clk"
             ]
           },
-          "xlslice_0_Dout": {
+          "xlconstant_0_dout": {
             "ports": [
-              "xlslice_0/Dout",
-              "amModulator_0/i_baseband"
+              "xlconstant_0/dout",
+              "amModulator_0/enable"
             ]
           }
         }
@@ -606,6 +593,11 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M01_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M03_AXI": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -2482,7 +2474,7 @@
             "xci_name": "system_sys_ps7_axi_periph_0",
             "parameters": {
               "NUM_MI": {
-                "value": "3"
+                "value": "4"
               }
             },
             "interface_ports": {
@@ -2502,6 +2494,11 @@
                 "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
               },
               "M02_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "M03_AXI": {
                 "mode": "Master",
                 "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
                 "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -2584,6 +2581,22 @@
               "M02_ARESETN": {
                 "type": "rst",
                 "direction": "I"
+              },
+              "M03_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M03_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M03_ARESETN"
+                  }
+                }
+              },
+              "M03_ARESETN": {
+                "type": "rst",
+                "direction": "I"
               }
             },
             "components": {
@@ -2594,7 +2607,7 @@
                 "inst_hier_path": "ProcessorSystem/sys_ps7_axi_periph/xbar",
                 "parameters": {
                   "NUM_MI": {
-                    "value": "3"
+                    "value": "4"
                   },
                   "NUM_SI": {
                     "value": "1"
@@ -2610,7 +2623,8 @@
                     "bridges": [
                       "M00_AXI",
                       "M01_AXI",
-                      "M02_AXI"
+                      "M02_AXI",
+                      "M03_AXI"
                     ]
                   }
                 }
@@ -2883,6 +2897,62 @@
                     ]
                   }
                 }
+              },
+              "m03_couplers": {
+                "interface_ports": {
+                  "M_AXI": {
+                    "mode": "Master",
+                    "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+                  },
+                  "S_AXI": {
+                    "mode": "Slave",
+                    "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+                  }
+                },
+                "ports": {
+                  "M_ACLK": {
+                    "type": "clk",
+                    "direction": "I",
+                    "parameters": {
+                      "ASSOCIATED_BUSIF": {
+                        "value": "M_AXI"
+                      },
+                      "ASSOCIATED_RESET": {
+                        "value": "M_ARESETN"
+                      }
+                    }
+                  },
+                  "M_ARESETN": {
+                    "type": "rst",
+                    "direction": "I"
+                  },
+                  "S_ACLK": {
+                    "type": "clk",
+                    "direction": "I",
+                    "parameters": {
+                      "ASSOCIATED_BUSIF": {
+                        "value": "S_AXI"
+                      },
+                      "ASSOCIATED_RESET": {
+                        "value": "S_ARESETN"
+                      }
+                    }
+                  },
+                  "S_ARESETN": {
+                    "type": "rst",
+                    "direction": "I"
+                  }
+                },
+                "interface_nets": {
+                  "m03_couplers_to_m03_couplers": {
+                    "interface_ports": [
+                      "S_AXI",
+                      "M_AXI"
+                    ]
+                  }
+                }
               }
             },
             "interface_nets": {
@@ -2902,6 +2972,12 @@
                 "interface_ports": [
                   "M02_AXI",
                   "m02_couplers/M_AXI"
+                ]
+              },
+              "m03_couplers_to_sys_ps7_axi_periph": {
+                "interface_ports": [
+                  "M03_AXI",
+                  "m03_couplers/M_AXI"
                 ]
               },
               "s00_couplers_to_xbar": {
@@ -2933,6 +3009,12 @@
                   "xbar/M02_AXI",
                   "m02_couplers/S_AXI"
                 ]
+              },
+              "xbar_to_m03_couplers": {
+                "interface_ports": [
+                  "xbar/M03_AXI",
+                  "m03_couplers/S_AXI"
+                ]
               }
             },
             "nets": {
@@ -2945,9 +3027,11 @@
                   "m00_couplers/M_ACLK",
                   "m01_couplers/M_ACLK",
                   "m02_couplers/M_ACLK",
+                  "m03_couplers/M_ACLK",
                   "m00_couplers/S_ACLK",
                   "m01_couplers/S_ACLK",
-                  "m02_couplers/S_ACLK"
+                  "m02_couplers/S_ACLK",
+                  "m03_couplers/S_ACLK"
                 ]
               },
               "sys_ps7_axi_periph_ARESETN_net": {
@@ -2959,9 +3043,11 @@
                   "m00_couplers/M_ARESETN",
                   "m01_couplers/M_ARESETN",
                   "m02_couplers/M_ARESETN",
+                  "m03_couplers/M_ARESETN",
                   "m00_couplers/S_ARESETN",
                   "m01_couplers/S_ARESETN",
-                  "m02_couplers/S_ARESETN"
+                  "m02_couplers/S_ARESETN",
+                  "m03_couplers/S_ARESETN"
                 ]
               }
             }
@@ -2979,6 +3065,12 @@
           }
         },
         "interface_nets": {
+          "Conn1": {
+            "interface_ports": [
+              "M03_AXI",
+              "sys_ps7_axi_periph/M03_AXI"
+            ]
+          },
           "sys_ps7_DDR": {
             "interface_ports": [
               "ddr",
@@ -3088,7 +3180,8 @@
               "sys_ps7_axi_periph/M00_ACLK",
               "sys_ps7_axi_periph/M01_ACLK",
               "sys_ps7_axi_periph/M02_ACLK",
-              "sys_rstgen/slowest_sync_clk"
+              "sys_rstgen/slowest_sync_clk",
+              "sys_ps7_axi_periph/M03_ACLK"
             ]
           },
           "sys_cpu_resetn": {
@@ -3100,7 +3193,8 @@
               "sys_ps7_axi_periph/S00_ARESETN",
               "sys_ps7_axi_periph/M00_ARESETN",
               "sys_ps7_axi_periph/M01_ARESETN",
-              "sys_ps7_axi_periph/M02_ARESETN"
+              "sys_ps7_axi_periph/M02_ARESETN",
+              "sys_ps7_axi_periph/M03_ARESETN"
             ]
           },
           "sys_ps7_FCLK_RESET0_N": {
@@ -3207,7 +3301,7 @@
           },
           "i_Channel_1_I_Value": {
             "direction": "I",
-            "left": "11",
+            "left": "23",
             "right": "0"
           },
           "rx_clk_in_p": {
@@ -3260,101 +3354,6 @@
           }
         },
         "components": {
-          "dataPackager_0": {
-            "vlnv": "xilinx.com:module_ref:dataPackager:1.0",
-            "xci_name": "system_dataPackager_0_0",
-            "xci_path": "ip\\system_dataPackager_0_0\\system_dataPackager_0_0.xci",
-            "inst_hier_path": "LVDSIF/dataPackager_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "dataPackager",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "i_clk": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "system_selectio_wiz_0_0_clk_out",
-                    "value_src": "default_prop"
-                  }
-                }
-              },
-              "i_data": {
-                "direction": "I",
-                "left": "13",
-                "right": "0",
-                "parameters": {
-                  "LAYERED_METADATA": {
-                    "value": "undef",
-                    "value_src": "default_prop"
-                  }
-                }
-              },
-              "o_data": {
-                "direction": "O",
-                "left": "13",
-                "right": "0"
-              },
-              "o_Channel_1_I_Value": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "o_Channel_1_Q_Value": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "o_Channel_2_I_Value": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "o_Channel_2_Q_Value": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "o_Channel_1_I_Valid": {
-                "direction": "O"
-              },
-              "o_Channel_1_Q_Valid": {
-                "direction": "O"
-              },
-              "o_Channel_2_I_Valid": {
-                "direction": "O"
-              },
-              "o_Channel_2_Q_Valid": {
-                "direction": "O"
-              },
-              "i_Channel_1_I_Value": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_Channel_1_Q_Value": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_Channel_2_I_Value": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_Channel_2_Q_Value": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              }
-            }
-          },
           "selectio_wiz_0": {
             "vlnv": "xilinx.com:ip:selectio_wiz:5.1",
             "xci_name": "system_selectio_wiz_0_0",
@@ -3528,6 +3527,101 @@
                 "value": "1"
               }
             }
+          },
+          "dataPackager_0": {
+            "vlnv": "xilinx.com:module_ref:dataPackager:1.0",
+            "xci_name": "system_dataPackager_0_0",
+            "xci_path": "ip\\system_dataPackager_0_0\\system_dataPackager_0_0.xci",
+            "inst_hier_path": "LVDSIF/dataPackager_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "dataPackager",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "i_clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "system_selectio_wiz_0_0_clk_out",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "i_data": {
+                "direction": "I",
+                "left": "13",
+                "right": "0",
+                "parameters": {
+                  "LAYERED_METADATA": {
+                    "value": "undef",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "o_data": {
+                "direction": "O",
+                "left": "13",
+                "right": "0"
+              },
+              "o_Channel_1_I_Value": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_Channel_1_Q_Value": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_Channel_2_I_Value": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_Channel_2_Q_Value": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_Channel_1_I_Valid": {
+                "direction": "O"
+              },
+              "o_Channel_1_Q_Valid": {
+                "direction": "O"
+              },
+              "o_Channel_2_I_Valid": {
+                "direction": "O"
+              },
+              "o_Channel_2_Q_Valid": {
+                "direction": "O"
+              },
+              "i_Channel_1_I_Value": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_Channel_1_Q_Value": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_Channel_2_I_Value": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_Channel_2_Q_Value": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              }
+            }
           }
         },
         "nets": {
@@ -3541,12 +3635,7 @@
             "ports": [
               "dataPackager_0/o_Channel_1_I_Valid",
               "o_Channel_1_I_Valid"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              }
-            }
+            ]
           },
           "dataPackager_0_o_Channel_1_I_Value": {
             "ports": [
@@ -3732,7 +3821,7 @@
           },
           "in_aud_data": {
             "direction": "I",
-            "left": "31",
+            "left": "11",
             "right": "0"
           },
           "sda_o_0": {
@@ -3998,11 +4087,6 @@
             "type": "clk",
             "direction": "I"
           },
-          "m_axis_data_tdata": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
           "i_data_valid": {
             "direction": "I"
           },
@@ -4015,129 +4099,24 @@
             "direction": "I",
             "left": "11",
             "right": "0"
+          },
+          "o_data1": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "o_data2": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "o_data3": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
           }
         },
         "components": {
-          "decimation_0": {
-            "vlnv": "xilinx.com:module_ref:decimation:1.0",
-            "xci_name": "system_decimation_0_0",
-            "xci_path": "ip\\system_decimation_0_0\\system_decimation_0_0.xci",
-            "inst_hier_path": "AMDemodulate/decimation_0",
-            "reference_info": {
-              "ref_type": "hdl",
-              "ref_name": "decimation",
-              "boundary_crc": "0x0"
-            },
-            "ports": {
-              "i_clk": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "FREQ_HZ": {
-                    "value": "100000000",
-                    "value_src": "ip_prop"
-                  },
-                  "CLK_DOMAIN": {
-                    "value": "system_selectio_wiz_0_0_clk_out",
-                    "value_src": "default_prop"
-                  }
-                }
-              },
-              "i_data": {
-                "direction": "I",
-                "left": "11",
-                "right": "0"
-              },
-              "i_data_valid": {
-                "direction": "I"
-              },
-              "o_data": {
-                "direction": "O",
-                "left": "11",
-                "right": "0"
-              },
-              "o_data_valid": {
-                "direction": "O"
-              }
-            }
-          },
-          "fir_compiler_0": {
-            "vlnv": "xilinx.com:ip:fir_compiler:7.2",
-            "xci_name": "system_fir_compiler_0_0",
-            "xci_path": "ip\\system_fir_compiler_0_0\\system_fir_compiler_0_0.xci",
-            "inst_hier_path": "AMDemodulate/fir_compiler_0",
-            "parameters": {
-              "BestPrecision": {
-                "value": "true"
-              },
-              "Clock_Frequency": {
-                "value": "122.88"
-              },
-              "CoefficientVector": {
-                "value": "0.000487710741391075,-0.000508816950674201,-0.00104822484168360,-0.00192567674621829,-0.00308323970114223,-0.00443010163862952,-0.00582447341555451,-0.00707649402825221,-0.00796555883241129,-0.00826954258707117,-0.00780125435344659,-0.00644951853980462,-0.00421300112942214,-0.00122591042538750,0.00223547606579511,0.00576862676704503,0.00888271032574615,0.0110594111974403,0.0118276605630954,0.0108448187271138,0.00797186782368044,0.00332940581420623,-0.00267449907766213,-0.00935498796127952,-0.0158012250426092,-0.0209654687235344,-0.0237830537530012,-0.0233074586014071,-0.0188447670348683,-0.0100693683690272,0.00289822965588207,0.0194612840081002,0.0385767175862738,0.0588407067818272,0.0786207273681262,0.0962306544355398,0.110104990377869,0.118979410862409,0.122032201280881,0.118979410862409,0.110104990377869,0.0962306544355398,0.0786207273681262,0.0588407067818272,0.0385767175862738,0.0194612840081002,0.00289822965588207,-0.0100693683690272,-0.0188447670348683,-0.0233074586014071,-0.0237830537530012,-0.0209654687235344,-0.0158012250426092,-0.00935498796127952,-0.00267449907766213,0.00332940581420623,0.00797186782368044,0.0108448187271138,0.0118276605630954,0.0110594111974403,0.00888271032574615,0.00576862676704503,0.00223547606579511,-0.00122591042538750,-0.00421300112942214,-0.00644951853980462,-0.00780125435344659,-0.00826954258707117,-0.00796555883241129,-0.00707649402825221,-0.00582447341555451,-0.00443010163862952,-0.00308323970114223,-0.00192567674621829,-0.00104822484168360,-0.000508816950674201,0.000487710741391075"
-              },
-              "Coefficient_Fractional_Bits": {
-                "value": "18"
-              },
-              "Coefficient_Sets": {
-                "value": "1"
-              },
-              "Coefficient_Sign": {
-                "value": "Signed"
-              },
-              "Coefficient_Structure": {
-                "value": "Inferred"
-              },
-              "Coefficient_Width": {
-                "value": "16"
-              },
-              "ColumnConfig": {
-                "value": "1"
-              },
-              "Data_Fractional_Bits": {
-                "value": "0"
-              },
-              "Data_Sign": {
-                "value": "Signed"
-              },
-              "Data_Width": {
-                "value": "12"
-              },
-              "Decimation_Rate": {
-                "value": "8"
-              },
-              "Filter_Architecture": {
-                "value": "Systolic_Multiply_Accumulate"
-              },
-              "Filter_Type": {
-                "value": "Decimation"
-              },
-              "Interpolation_Rate": {
-                "value": "1"
-              },
-              "Number_Channels": {
-                "value": "1"
-              },
-              "Output_Rounding_Mode": {
-                "value": "Full_Precision"
-              },
-              "Output_Width": {
-                "value": "31"
-              },
-              "Quantization": {
-                "value": "Quantize_Only"
-              },
-              "RateSpecification": {
-                "value": "Frequency_Specification"
-              },
-              "Sample_Frequency": {
-                "value": "0.384"
-              },
-              "Zero_Pack_Factor": {
-                "value": "1"
-              }
-            }
-          },
           "envelopDetector_0": {
             "vlnv": "xilinx.com:module_ref:envelopDetector:1.0",
             "xci_name": "system_envelopDetector_0_0",
@@ -4180,42 +4159,177 @@
                 "direction": "O"
               }
             }
+          },
+          "lowPassFilter": {
+            "vlnv": "xilinx.com:module_ref:average:1.0",
+            "xci_name": "system_average_0_0",
+            "xci_path": "ip\\system_average_0_0\\system_average_0_0.xci",
+            "inst_hier_path": "AMDemodulate/lowPassFilter",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "average",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "i_clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "system_selectio_wiz_0_0_clk_out",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "i_data": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_data_valid": {
+                "direction": "I"
+              },
+              "o_data": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_data_valid": {
+                "direction": "O"
+              }
+            }
+          },
+          "DCLevelDetector": {
+            "vlnv": "xilinx.com:module_ref:average:1.0",
+            "xci_name": "system_average_0_1",
+            "xci_path": "ip\\system_average_0_1\\system_average_0_1.xci",
+            "inst_hier_path": "AMDemodulate/DCLevelDetector",
+            "parameters": {
+              "numSamples": {
+                "value": "32768"
+              }
+            },
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "average",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "i_clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "system_selectio_wiz_0_0_clk_out",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "i_data": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_data_valid": {
+                "direction": "I"
+              },
+              "o_data": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              },
+              "o_data_valid": {
+                "direction": "O"
+              }
+            }
+          },
+          "subtractor_0": {
+            "vlnv": "xilinx.com:module_ref:subtractor:1.0",
+            "xci_name": "system_subtractor_0_0",
+            "xci_path": "ip\\system_subtractor_0_0\\system_subtractor_0_0.xci",
+            "inst_hier_path": "AMDemodulate/subtractor_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "subtractor",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "i_clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "system_selectio_wiz_0_0_clk_out",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "i_data1": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "i_data2": {
+                "direction": "I",
+                "left": "11",
+                "right": "0"
+              },
+              "o_data": {
+                "direction": "O",
+                "left": "11",
+                "right": "0"
+              }
+            }
           }
         },
         "nets": {
+          "DCLevelDetector_o_data": {
+            "ports": [
+              "DCLevelDetector/o_data",
+              "subtractor_0/i_data2",
+              "o_data2"
+            ]
+          },
           "LVDSIF_clk_out": {
             "ports": [
               "aclk",
-              "decimation_0/i_clk",
-              "fir_compiler_0/aclk",
-              "envelopDetector_0/i_clk"
+              "envelopDetector_0/i_clk",
+              "lowPassFilter/i_clk",
+              "DCLevelDetector/i_clk",
+              "subtractor_0/i_clk"
+            ]
+          },
+          "average_0_o_data": {
+            "ports": [
+              "lowPassFilter/o_data",
+              "o_data1",
+              "DCLevelDetector/i_data",
+              "subtractor_0/i_data1"
             ]
           },
           "envelopDetector_0_o_data": {
             "ports": [
               "envelopDetector_0/o_data",
               "o_data",
-              "fir_compiler_0/s_axis_data_tdata"
+              "lowPassFilter/i_data"
             ]
           },
           "envelopDetector_0_o_data_valid": {
             "ports": [
               "envelopDetector_0/o_data_valid",
-              "fir_compiler_0/s_axis_data_tvalid"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              },
-              "MARK_DEBUG": {
-                "value": "true"
-              }
-            }
-          },
-          "fir_compiler_0_m_axis_data_tdata": {
-            "ports": [
-              "fir_compiler_0/m_axis_data_tdata",
-              "m_axis_data_tdata"
+              "lowPassFilter/i_data_valid"
             ]
           },
           "i_data_1": {
@@ -4233,12 +4347,19 @@
             "ports": [
               "i_data_valid",
               "envelopDetector_0/i_data_valid"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              }
-            }
+            ]
+          },
+          "lowPassFilter_o_data_valid": {
+            "ports": [
+              "lowPassFilter/o_data_valid",
+              "DCLevelDetector/i_data_valid"
+            ]
+          },
+          "subtractor_0_o_data": {
+            "ports": [
+              "subtractor_0/o_data",
+              "o_data3"
+            ]
           }
         }
       },
@@ -4330,292 +4451,6 @@
           }
         }
       },
-      "vio_0": {
-        "vlnv": "xilinx.com:ip:vio:3.0",
-        "xci_name": "system_vio_0_0",
-        "xci_path": "ip\\system_vio_0_0\\system_vio_0_0.xci",
-        "inst_hier_path": "vio_0",
-        "parameters": {
-          "C_NUM_PROBE_IN": {
-            "value": "0"
-          },
-          "C_NUM_PROBE_OUT": {
-            "value": "2"
-          }
-        }
-      },
-      "Pulse_pair": {
-        "ports": {
-          "sys_cpu_clk_out": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "douta": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          }
-        },
-        "components": {
-          "util_vector_logic_0": {
-            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-            "xci_name": "system_util_vector_logic_0_0",
-            "xci_path": "ip\\system_util_vector_logic_0_0\\system_util_vector_logic_0_0.xci",
-            "inst_hier_path": "Pulse_pair/util_vector_logic_0",
-            "parameters": {
-              "C_SIZE": {
-                "value": "1"
-              }
-            }
-          },
-          "count_woen_0": {
-            "vlnv": "xilinx.com:user:count_woen:1.0",
-            "xci_name": "system_count_woen_0_0",
-            "xci_path": "ip\\system_count_woen_0_0\\system_count_woen_0_0.xci",
-            "inst_hier_path": "Pulse_pair/count_woen_0"
-          },
-          "util_vector_logic_1": {
-            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-            "xci_name": "system_util_vector_logic_0_1",
-            "xci_path": "ip\\system_util_vector_logic_0_1\\system_util_vector_logic_0_1.xci",
-            "inst_hier_path": "Pulse_pair/util_vector_logic_1",
-            "parameters": {
-              "C_SIZE": {
-                "value": "1"
-              }
-            }
-          },
-          "xlconstant_0": {
-            "vlnv": "xilinx.com:ip:xlconstant:1.1",
-            "xci_name": "system_xlconstant_0_1",
-            "xci_path": "ip\\system_xlconstant_0_1\\system_xlconstant_0_1.xci",
-            "inst_hier_path": "Pulse_pair/xlconstant_0",
-            "parameters": {
-              "CONST_VAL": {
-                "value": "0"
-              }
-            }
-          },
-          "util_vector_logic_2": {
-            "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-            "xci_name": "system_util_vector_logic_0_2",
-            "xci_path": "ip\\system_util_vector_logic_0_2\\system_util_vector_logic_0_2.xci",
-            "inst_hier_path": "Pulse_pair/util_vector_logic_2",
-            "parameters": {
-              "C_SIZE": {
-                "value": "1"
-              }
-            }
-          },
-          "count_assist_0": {
-            "vlnv": "xilinx.com:user:count_assist:1.0",
-            "xci_name": "system_count_assist_0_0",
-            "xci_path": "ip\\system_count_assist_0_0\\system_count_assist_0_0.xci",
-            "inst_hier_path": "Pulse_pair/count_assist_0",
-            "parameters": {
-              "target": {
-                "value": "1199"
-              }
-            }
-          },
-          "count_assist_1": {
-            "vlnv": "xilinx.com:user:count_assist:1.0",
-            "xci_name": "system_count_assist_0_1",
-            "xci_path": "ip\\system_count_assist_0_1\\system_count_assist_0_1.xci",
-            "inst_hier_path": "Pulse_pair/count_assist_1",
-            "parameters": {
-              "target": {
-                "value": "700"
-              }
-            }
-          },
-          "blk_mem_gen_0": {
-            "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-            "xci_name": "system_blk_mem_gen_0_0",
-            "xci_path": "ip\\system_blk_mem_gen_0_0\\system_blk_mem_gen_0_0.xci",
-            "inst_hier_path": "Pulse_pair/blk_mem_gen_0",
-            "parameters": {
-              "Coe_File": {
-                "value": "../../../../../../../../../../Zak/DME_Pulse_pair_cos/Co-eff files/test4_cosine1909kg.coe"
-              },
-              "Enable_32bit_Address": {
-                "value": "false"
-              },
-              "Enable_A": {
-                "value": "Always_Enabled"
-              },
-              "Load_Init_File": {
-                "value": "true"
-              },
-              "Memory_Type": {
-                "value": "Single_Port_ROM"
-              },
-              "Port_A_Write_Rate": {
-                "value": "0"
-              },
-              "Register_PortA_Output_of_Memory_Primitives": {
-                "value": "true"
-              },
-              "Use_RSTA_Pin": {
-                "value": "false"
-              },
-              "Write_Width_A": {
-                "value": "16"
-              },
-              "use_bram_block": {
-                "value": "Stand_Alone"
-              }
-            }
-          },
-          "count_assist_2": {
-            "vlnv": "xilinx.com:user:count_assist:1.0",
-            "xci_name": "system_count_assist_0_2",
-            "xci_path": "ip\\system_count_assist_0_2\\system_count_assist_0_2.xci",
-            "inst_hier_path": "Pulse_pair/count_assist_2",
-            "parameters": {
-              "target": {
-                "value": "8399"
-              }
-            }
-          },
-          "count_assist_3": {
-            "vlnv": "xilinx.com:user:count_assist:1.0",
-            "xci_name": "system_count_assist_1_0",
-            "xci_path": "ip\\system_count_assist_1_0\\system_count_assist_1_0.xci",
-            "inst_hier_path": "Pulse_pair/count_assist_3",
-            "parameters": {
-              "target": {
-                "value": "1900"
-              }
-            }
-          },
-          "Full_counter_0": {
-            "vlnv": "xilinx.com:user:Full_counter:1.0",
-            "xci_name": "system_Full_counter_0_0",
-            "xci_path": "ip\\system_Full_counter_0_0\\system_Full_counter_0_0.xci",
-            "inst_hier_path": "Pulse_pair/Full_counter_0"
-          },
-          "Full_counter_1": {
-            "vlnv": "xilinx.com:user:Full_counter:1.0",
-            "xci_name": "system_Full_counter_0_1",
-            "xci_path": "ip\\system_Full_counter_0_1\\system_Full_counter_0_1.xci",
-            "inst_hier_path": "Pulse_pair/Full_counter_1"
-          },
-          "Not_Gate_0": {
-            "vlnv": "xilinx.com:user:Not_Gate:1.0",
-            "xci_name": "system_Not_Gate_0_0",
-            "xci_path": "ip\\system_Not_Gate_0_0\\system_Not_Gate_0_0.xci",
-            "inst_hier_path": "Pulse_pair/Not_Gate_0"
-          },
-          "Not_Gate_1": {
-            "vlnv": "xilinx.com:user:Not_Gate:1.0",
-            "xci_name": "system_Not_Gate_0_1",
-            "xci_path": "ip\\system_Not_Gate_0_1\\system_Not_Gate_0_1.xci",
-            "inst_hier_path": "Pulse_pair/Not_Gate_1"
-          }
-        },
-        "nets": {
-          "Full_counter_0_counts": {
-            "ports": [
-              "Full_counter_0/counts",
-              "count_assist_0/a",
-              "count_assist_1/a"
-            ]
-          },
-          "Full_counter_0_counts1": {
-            "ports": [
-              "Full_counter_1/counts",
-              "count_assist_2/a",
-              "count_assist_3/a"
-            ]
-          },
-          "Not_Gate_0_y": {
-            "ports": [
-              "Not_Gate_0/y",
-              "Full_counter_0/rst"
-            ]
-          },
-          "Not_Gate_0_y1": {
-            "ports": [
-              "Not_Gate_1/y",
-              "Full_counter_1/rst"
-            ]
-          },
-          "count_assist_0_rstensw": {
-            "ports": [
-              "count_assist_0/rstensw",
-              "Not_Gate_0/a",
-              "Full_counter_0/en",
-              "util_vector_logic_0/Op2"
-            ]
-          },
-          "count_assist_0_rstensw1": {
-            "ports": [
-              "count_assist_2/rstensw",
-              "Not_Gate_1/a",
-              "Full_counter_1/en",
-              "util_vector_logic_2/Op2"
-            ]
-          },
-          "count_assist_1_rstensw": {
-            "ports": [
-              "count_assist_1/rstensw",
-              "util_vector_logic_0/Op1"
-            ]
-          },
-          "count_assist_1_rstensw1": {
-            "ports": [
-              "count_assist_3/rstensw",
-              "util_vector_logic_2/Op1"
-            ]
-          },
-          "count_woen_0_counts": {
-            "ports": [
-              "count_woen_0/counts",
-              "blk_mem_gen_0/addra"
-            ]
-          },
-          "i_Channel_1_I_Value_1": {
-            "ports": [
-              "blk_mem_gen_0/douta",
-              "douta"
-            ]
-          },
-          "sys_cpu_clk": {
-            "ports": [
-              "sys_cpu_clk_out",
-              "Full_counter_0/clk",
-              "Full_counter_1/clk",
-              "blk_mem_gen_0/clka",
-              "count_woen_0/clk"
-            ]
-          },
-          "util_vector_logic_0_Res": {
-            "ports": [
-              "util_vector_logic_0/Res",
-              "util_vector_logic_1/Op1"
-            ]
-          },
-          "util_vector_logic_1_Res": {
-            "ports": [
-              "util_vector_logic_1/Res",
-              "count_woen_0/en"
-            ]
-          },
-          "util_vector_logic_2_Res": {
-            "ports": [
-              "util_vector_logic_2/Res",
-              "util_vector_logic_1/Op2"
-            ]
-          },
-          "xlconstant_0_dout": {
-            "ports": [
-              "xlconstant_0/dout",
-              "count_woen_0/rst"
-            ]
-          }
-        }
-      },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
         "xci_name": "system_system_ila_0_0",
@@ -4629,29 +4464,24 @@
             "value": "NATIVE"
           },
           "C_NUM_OF_PROBES": {
-            "value": "3"
+            "value": "5"
           }
         }
       },
-      "xlslice_0": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "system_xlslice_0_1",
-        "xci_path": "ip\\system_xlslice_0_1\\system_xlslice_0_1.xci",
-        "inst_hier_path": "xlslice_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "11"
-          },
-          "DIN_WIDTH": {
-            "value": "16"
-          },
-          "DOUT_WIDTH": {
-            "value": "12"
-          }
-        }
+      "attenuatorController_0": {
+        "vlnv": "xilinx.com:user:attenuatorController:1.0",
+        "xci_name": "system_attenuatorController_0_0",
+        "xci_path": "ip\\system_attenuatorController_0_0\\system_attenuatorController_0_0.xci",
+        "inst_hier_path": "attenuatorController_0"
       }
     },
     "interface_nets": {
+      "ProcessorSystem_M03_AXI": {
+        "interface_ports": [
+          "attenuatorController_0/S00_AXI",
+          "ProcessorSystem/M03_AXI"
+        ]
+      },
       "sys_ps7_DDR": {
         "interface_ports": [
           "ddr",
@@ -4681,7 +4511,33 @@
       "AMDemodulate_o_data": {
         "ports": [
           "AMDemodulate/o_data",
-          "system_ila_0/probe2"
+          "system_ila_0/probe2",
+          "I2SSystem/in_aud_data"
+        ]
+      },
+      "AMDemodulate_o_data1": {
+        "ports": [
+          "AMDemodulate/o_data1",
+          "system_ila_0/probe1"
+        ]
+      },
+      "AMDemodulate_o_data2": {
+        "ports": [
+          "AMDemodulate/o_data2",
+          "system_ila_0/probe3"
+        ]
+      },
+      "AMDemodulate_o_data3": {
+        "ports": [
+          "AMDemodulate/o_data3",
+          "system_ila_0/probe4",
+          "AMModulate/i_baseband"
+        ]
+      },
+      "AMModulate_o_amSignal": {
+        "ports": [
+          "AMModulate/o_amSignal",
+          "LVDSIF/i_Channel_1_I_Value"
         ]
       },
       "I2SSystem_scl_o_0": {
@@ -4718,15 +4574,7 @@
         "ports": [
           "LVDSIF/o_Channel_1_I_Valid",
           "AMDemodulate/i_data_valid"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+        ]
       },
       "LVDSIF_o_Channel_1_I_Value": {
         "ports": [
@@ -4773,10 +4621,22 @@
           "I2SSystem/s_axi_aresetn1"
         ]
       },
-      "Pulse_pair_douta": {
+      "attenuatorController_0_o_clk": {
         "ports": [
-          "Pulse_pair/douta",
-          "xlslice_0/Din"
+          "attenuatorController_0/o_clk",
+          "o_clk_attenuator"
+        ]
+      },
+      "attenuatorController_0_o_data": {
+        "ports": [
+          "attenuatorController_0/o_data",
+          "o_data_attenuator"
+        ]
+      },
+      "attenuatorController_0_o_le": {
+        "ports": [
+          "attenuatorController_0/o_le",
+          "o_le_attenuator"
         ]
       },
       "axi_gpreg_up_gp_out_0": {
@@ -4822,13 +4682,6 @@
           "AMModulate/i_clk1"
         ]
       },
-      "fir_compiler_0_m_axis_data_tdata": {
-        "ports": [
-          "AMDemodulate/m_axis_data_tdata",
-          "I2SSystem/in_aud_data",
-          "system_ila_0/probe1"
-        ]
-      },
       "gp_in_0_1": {
         "ports": [
           "gp_in_0",
@@ -4869,12 +4722,6 @@
         "ports": [
           "I2SSystem/o_sda_0",
           "o_sda"
-        ]
-      },
-      "i2sController_1_out_rght_chnl_data": {
-        "ports": [
-          "I2SSystem/out_rght_chnl_data",
-          "AMModulate/Din"
         ]
       },
       "i_sda_0_1": {
@@ -4998,16 +4845,16 @@
           "I2SSystem/sys_cpu_clk_out",
           "axi_gpreg/s_axi_aclk",
           "clk_wiz_0/clk_in1",
-          "vio_0/clk",
-          "Pulse_pair/sys_cpu_clk_out",
-          "system_ila_0/clk"
+          "system_ila_0/clk",
+          "attenuatorController_0/s00_axi_aclk"
         ]
       },
       "sys_cpu_resetn": {
         "ports": [
           "ProcessorSystem/S00_ARESETN",
           "I2SSystem/i_reset_n",
-          "axi_gpreg/s_axi_aresetn"
+          "axi_gpreg/s_axi_aresetn",
+          "attenuatorController_0/s00_axi_aresetn"
         ]
       },
       "sys_ps7_GPIO_O": {
@@ -5081,18 +4928,6 @@
           "ProcessorSystem/spi1_csn_0_o",
           "spi1_csn_0_o"
         ]
-      },
-      "vio_0_probe_out1": {
-        "ports": [
-          "vio_0/probe_out1",
-          "AMModulate/enable"
-        ]
-      },
-      "xlslice_0_Dout": {
-        "ports": [
-          "xlslice_0/Dout",
-          "LVDSIF/i_Channel_1_I_Value"
-        ]
       }
     },
     "addressing": {
@@ -5100,6 +4935,11 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_attenuatorController_0_S00_AXI_reg": {
+                "address_block": "/attenuatorController_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C00000",
+                "range": "64K"
+              },
               "SEG_axi_gpio_0_Reg": {
                 "address_block": "/ProcessorSystem/axi_gpio_0/S_AXI/Reg",
                 "offset": "0x41210000",

@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Fri Mar  3 17:03:33 2023
-//Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+//Date        : Mon Mar  6 08:44:59 2023
+//Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
 //Purpose     : IP block netlist
@@ -43,6 +43,9 @@ module system_wrapper
     gt_ref_clk_1,
     i_sda,
     o_bit_clk,
+    o_clk_attenuator,
+    o_data_attenuator,
+    o_le_attenuator,
     o_lrc,
     o_mclk,
     o_sda,
@@ -116,6 +119,9 @@ module system_wrapper
   input gt_ref_clk_1;
   input i_sda;
   output o_bit_clk;
+  output o_clk_attenuator;
+  output o_data_attenuator;
+  output o_le_attenuator;
   output o_lrc;
   output o_mclk;
   output o_sda;
@@ -190,6 +196,9 @@ module system_wrapper
   wire gt_ref_clk_1;
   wire i_sda;
   wire o_bit_clk;
+  wire o_clk_attenuator;
+  wire o_data_attenuator;
+  wire o_le_attenuator;
   wire o_lrc;
   wire o_mclk;
   wire o_sda;
@@ -265,6 +274,9 @@ module system_wrapper
         .gt_ref_clk_1(gt_ref_clk_1),
         .i_sda(i_sda),
         .o_bit_clk(o_bit_clk),
+        .o_clk_attenuator(o_clk_attenuator),
+        .o_data_attenuator(o_data_attenuator),
+        .o_le_attenuator(o_le_attenuator),
         .o_lrc(o_lrc),
         .o_mclk(o_mclk),
         .o_sda(o_sda),
