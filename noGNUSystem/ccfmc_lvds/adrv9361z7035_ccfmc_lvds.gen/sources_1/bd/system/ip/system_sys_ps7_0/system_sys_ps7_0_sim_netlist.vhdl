@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Mon Mar  6 08:51:52 2023
+-- Date        : Tue Mar  7 22:53:15 2023
 -- Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/git/vimanic/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_ps7_0/system_sys_ps7_0_sim_netlist.vhdl
@@ -817,7 +817,7 @@ entity system_sys_ps7_0_processing_system7_v5_5_processing_system7 is
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of system_sys_ps7_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5_5_processing_system7";
   attribute POWER : string;
-  attribute POWER of system_sys_ps7_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={29} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS18} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={1} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>";
+  attribute POWER of system_sys_ps7_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={29} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS18} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of system_sys_ps7_0_processing_system7_v5_5_processing_system7 : entity is 0;
 end system_sys_ps7_0_processing_system7_v5_5_processing_system7;
@@ -1420,6 +1420,9 @@ architecture STRUCTURE of system_sys_ps7_0_processing_system7_v5_5_processing_sy
   signal PS7_i_n_324 : STD_LOGIC;
   signal PS7_i_n_325 : STD_LOGIC;
   signal PS7_i_n_326 : STD_LOGIC;
+  signal PS7_i_n_330 : STD_LOGIC;
+  signal PS7_i_n_331 : STD_LOGIC;
+  signal PS7_i_n_332 : STD_LOGIC;
   signal PS7_i_n_333 : STD_LOGIC;
   signal PS7_i_n_334 : STD_LOGIC;
   signal PS7_i_n_335 : STD_LOGIC;
@@ -1680,6 +1683,7 @@ architecture STRUCTURE of system_sys_ps7_0_processing_system7_v5_5_processing_sy
   signal PS7_i_n_706 : STD_LOGIC;
   signal PS7_i_n_707 : STD_LOGIC;
   signal PS7_i_n_709 : STD_LOGIC;
+  signal PS7_i_n_71 : STD_LOGIC;
   signal PS7_i_n_713 : STD_LOGIC;
   signal PS7_i_n_714 : STD_LOGIC;
   signal PS7_i_n_715 : STD_LOGIC;
@@ -1688,7 +1692,9 @@ architecture STRUCTURE of system_sys_ps7_0_processing_system7_v5_5_processing_sy
   signal PS7_i_n_718 : STD_LOGIC;
   signal PS7_i_n_719 : STD_LOGIC;
   signal PS7_i_n_720 : STD_LOGIC;
+  signal PS7_i_n_73 : STD_LOGIC;
   signal PS7_i_n_749 : STD_LOGIC;
+  signal PS7_i_n_75 : STD_LOGIC;
   signal PS7_i_n_750 : STD_LOGIC;
   signal PS7_i_n_752 : STD_LOGIC;
   signal PS7_i_n_753 : STD_LOGIC;
@@ -2427,6 +2433,16 @@ begin
   SDIO1_DATA_T(1) <= \<const0>\;
   SDIO1_DATA_T(0) <= \<const0>\;
   SDIO1_LED <= \<const0>\;
+  SPI1_MISO_O <= \<const0>\;
+  SPI1_MISO_T <= \<const0>\;
+  SPI1_MOSI_O <= \<const0>\;
+  SPI1_MOSI_T <= \<const0>\;
+  SPI1_SCLK_O <= \<const0>\;
+  SPI1_SCLK_T <= \<const0>\;
+  SPI1_SS1_O <= \<const0>\;
+  SPI1_SS2_O <= \<const0>\;
+  SPI1_SS_O <= \<const0>\;
+  SPI1_SS_T <= \<const0>\;
   S_AXI_ACP_ARESETN <= \<const0>\;
   S_AXI_ACP_ARREADY <= \<const0>\;
   S_AXI_ACP_AWREADY <= \<const0>\;
@@ -3843,19 +3859,19 @@ PS7_i: unisim.vcomponents.PS7
       EMIOSPI0SSON(1) => SPI0_SS1_O,
       EMIOSPI0SSON(0) => SPI0_SS_O,
       EMIOSPI0STN => SPI0_MISO_T_n,
-      EMIOSPI1MI => SPI1_MISO_I,
-      EMIOSPI1MO => SPI1_MOSI_O,
+      EMIOSPI1MI => '0',
+      EMIOSPI1MO => PS7_i_n_71,
       EMIOSPI1MOTN => SPI1_MOSI_T_n,
-      EMIOSPI1SCLKI => SPI1_SCLK_I,
-      EMIOSPI1SCLKO => SPI1_SCLK_O,
+      EMIOSPI1SCLKI => '0',
+      EMIOSPI1SCLKO => PS7_i_n_73,
       EMIOSPI1SCLKTN => SPI1_SCLK_T_n,
-      EMIOSPI1SI => SPI1_MOSI_I,
-      EMIOSPI1SO => SPI1_MISO_O,
-      EMIOSPI1SSIN => SPI1_SS_I,
+      EMIOSPI1SI => '0',
+      EMIOSPI1SO => PS7_i_n_75,
+      EMIOSPI1SSIN => '0',
       EMIOSPI1SSNTN => SPI1_SS_T_n,
-      EMIOSPI1SSON(2) => SPI1_SS2_O,
-      EMIOSPI1SSON(1) => SPI1_SS1_O,
-      EMIOSPI1SSON(0) => SPI1_SS_O,
+      EMIOSPI1SSON(2) => PS7_i_n_330,
+      EMIOSPI1SSON(1) => PS7_i_n_331,
+      EMIOSPI1SSON(0) => PS7_i_n_332,
       EMIOSPI1STN => SPI1_MISO_T_n,
       EMIOSRAMINTIN => '0',
       EMIOTRACECLK => '0',
@@ -5126,38 +5142,6 @@ SPI0_SS_T_INST_0: unisim.vcomponents.LUT1
       I0 => SPI0_SS_T_n,
       O => SPI0_SS_T
     );
-SPI1_MISO_T_INST_0: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => SPI1_MISO_T_n,
-      O => SPI1_MISO_T
-    );
-SPI1_MOSI_T_INST_0: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => SPI1_MOSI_T_n,
-      O => SPI1_MOSI_T
-    );
-SPI1_SCLK_T_INST_0: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => SPI1_SCLK_T_n,
-      O => SPI1_SCLK_T
-    );
-SPI1_SS_T_INST_0: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => SPI1_SS_T_n,
-      O => SPI1_SS_T
-    );
 \buffer_fclk_clk_0.FCLK_CLK_0_BUFG\: unisim.vcomponents.BUFG
      port map (
       I => FCLK_CLK_unbuffered(0),
@@ -5959,20 +5943,6 @@ entity system_sys_ps7_0 is
     SPI0_SS1_O : out STD_LOGIC;
     SPI0_SS2_O : out STD_LOGIC;
     SPI0_SS_T : out STD_LOGIC;
-    SPI1_SCLK_I : in STD_LOGIC;
-    SPI1_SCLK_O : out STD_LOGIC;
-    SPI1_SCLK_T : out STD_LOGIC;
-    SPI1_MOSI_I : in STD_LOGIC;
-    SPI1_MOSI_O : out STD_LOGIC;
-    SPI1_MOSI_T : out STD_LOGIC;
-    SPI1_MISO_I : in STD_LOGIC;
-    SPI1_MISO_O : out STD_LOGIC;
-    SPI1_MISO_T : out STD_LOGIC;
-    SPI1_SS_I : in STD_LOGIC;
-    SPI1_SS_O : out STD_LOGIC;
-    SPI1_SS1_O : out STD_LOGIC;
-    SPI1_SS2_O : out STD_LOGIC;
-    SPI1_SS_T : out STD_LOGIC;
     M_AXI_GP0_ARVALID : out STD_LOGIC;
     M_AXI_GP0_AWVALID : out STD_LOGIC;
     M_AXI_GP0_BREADY : out STD_LOGIC;
@@ -6168,6 +6138,16 @@ architecture STRUCTURE of system_sys_ps7_0 is
   signal NLW_inst_SDIO1_CMD_O_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_SDIO1_CMD_T_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_SDIO1_LED_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_MISO_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_MISO_T_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_MOSI_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_MOSI_T_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SCLK_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SCLK_T_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SS1_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SS2_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SS_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_SPI1_SS_T_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_ACP_ARESETN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_ACP_ARREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_ACP_AWREADY_UNCONNECTED : STD_LOGIC;
@@ -6441,7 +6421,7 @@ architecture STRUCTURE of system_sys_ps7_0 is
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of inst : label is "system_sys_ps7_0.hwdef";
   attribute POWER : string;
-  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={29} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS18} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={1} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>";
+  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={533.333333} readRate={0.5} writeRate={0.5} /><IO interface={GPIO_Bank_1} ioStandard={LVCMOS18} bidis={29} ioBank={Vcco_p1} clockFreq={1} usageRate={0.5} /><IO interface={GPIO_Bank_0} ioStandard={LVCMOS18} bidis={10} ioBank={Vcco_p0} clockFreq={1} usageRate={0.5} /><IO interface={SPI} ioStandard={} bidis={0} ioBank={} clockFreq={166.666672} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1333.333} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={1000.000} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100} usageRate={0.5} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of inst : label is 0;
   attribute X_INTERFACE_INFO : string;
@@ -6458,7 +6438,7 @@ architecture STRUCTURE of system_sys_ps7_0 is
   attribute X_INTERFACE_INFO of DDR_WEB : signal is "xilinx.com:interface:ddrx:1.0 DDR WE_N";
   attribute X_INTERFACE_INFO of FCLK_CLK0 : signal is "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of FCLK_CLK0 : signal is "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of FCLK_CLK0 : signal is "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_RESET0_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST";
   attribute X_INTERFACE_PARAMETER of FCLK_RESET0_N : signal is "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_RESET1_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET1_N RST";
@@ -6497,20 +6477,6 @@ architecture STRUCTURE of system_sys_ps7_0 is
   attribute X_INTERFACE_INFO of SPI0_SS_I : signal is "xilinx.com:interface:spi:1.0 SPI_0 SS_I";
   attribute X_INTERFACE_INFO of SPI0_SS_O : signal is "xilinx.com:interface:spi:1.0 SPI_0 SS_O";
   attribute X_INTERFACE_INFO of SPI0_SS_T : signal is "xilinx.com:interface:spi:1.0 SPI_0 SS_T";
-  attribute X_INTERFACE_INFO of SPI1_MISO_I : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO1_I";
-  attribute X_INTERFACE_INFO of SPI1_MISO_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO1_O";
-  attribute X_INTERFACE_INFO of SPI1_MISO_T : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO1_T";
-  attribute X_INTERFACE_INFO of SPI1_MOSI_I : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO0_I";
-  attribute X_INTERFACE_INFO of SPI1_MOSI_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO0_O";
-  attribute X_INTERFACE_INFO of SPI1_MOSI_T : signal is "xilinx.com:interface:spi:1.0 SPI_1 IO0_T";
-  attribute X_INTERFACE_INFO of SPI1_SCLK_I : signal is "xilinx.com:interface:spi:1.0 SPI_1 SCK_I";
-  attribute X_INTERFACE_INFO of SPI1_SCLK_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 SCK_O";
-  attribute X_INTERFACE_INFO of SPI1_SCLK_T : signal is "xilinx.com:interface:spi:1.0 SPI_1 SCK_T";
-  attribute X_INTERFACE_INFO of SPI1_SS1_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 SS1_O";
-  attribute X_INTERFACE_INFO of SPI1_SS2_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 SS2_O";
-  attribute X_INTERFACE_INFO of SPI1_SS_I : signal is "xilinx.com:interface:spi:1.0 SPI_1 SS_I";
-  attribute X_INTERFACE_INFO of SPI1_SS_O : signal is "xilinx.com:interface:spi:1.0 SPI_1 SS_O";
-  attribute X_INTERFACE_INFO of SPI1_SS_T : signal is "xilinx.com:interface:spi:1.0 SPI_1 SS_T";
   attribute X_INTERFACE_INFO of DDR_Addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_INFO of DDR_BankAddr : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
   attribute X_INTERFACE_INFO of DDR_DM : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
@@ -6900,20 +6866,20 @@ inst: entity work.system_sys_ps7_0_processing_system7_v5_5_processing_system7
       SPI0_SS_I => SPI0_SS_I,
       SPI0_SS_O => SPI0_SS_O,
       SPI0_SS_T => SPI0_SS_T,
-      SPI1_MISO_I => SPI1_MISO_I,
-      SPI1_MISO_O => SPI1_MISO_O,
-      SPI1_MISO_T => SPI1_MISO_T,
-      SPI1_MOSI_I => SPI1_MOSI_I,
-      SPI1_MOSI_O => SPI1_MOSI_O,
-      SPI1_MOSI_T => SPI1_MOSI_T,
-      SPI1_SCLK_I => SPI1_SCLK_I,
-      SPI1_SCLK_O => SPI1_SCLK_O,
-      SPI1_SCLK_T => SPI1_SCLK_T,
-      SPI1_SS1_O => SPI1_SS1_O,
-      SPI1_SS2_O => SPI1_SS2_O,
-      SPI1_SS_I => SPI1_SS_I,
-      SPI1_SS_O => SPI1_SS_O,
-      SPI1_SS_T => SPI1_SS_T,
+      SPI1_MISO_I => '0',
+      SPI1_MISO_O => NLW_inst_SPI1_MISO_O_UNCONNECTED,
+      SPI1_MISO_T => NLW_inst_SPI1_MISO_T_UNCONNECTED,
+      SPI1_MOSI_I => '0',
+      SPI1_MOSI_O => NLW_inst_SPI1_MOSI_O_UNCONNECTED,
+      SPI1_MOSI_T => NLW_inst_SPI1_MOSI_T_UNCONNECTED,
+      SPI1_SCLK_I => '0',
+      SPI1_SCLK_O => NLW_inst_SPI1_SCLK_O_UNCONNECTED,
+      SPI1_SCLK_T => NLW_inst_SPI1_SCLK_T_UNCONNECTED,
+      SPI1_SS1_O => NLW_inst_SPI1_SS1_O_UNCONNECTED,
+      SPI1_SS2_O => NLW_inst_SPI1_SS2_O_UNCONNECTED,
+      SPI1_SS_I => '0',
+      SPI1_SS_O => NLW_inst_SPI1_SS_O_UNCONNECTED,
+      SPI1_SS_T => NLW_inst_SPI1_SS_T_UNCONNECTED,
       SRAM_INTIN => '0',
       S_AXI_ACP_ACLK => '0',
       S_AXI_ACP_ARADDR(31 downto 0) => B"00000000000000000000000000000000",

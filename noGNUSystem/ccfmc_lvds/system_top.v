@@ -61,20 +61,7 @@ module system_top (
   inout           fixed_io_ps_clk,
   inout           fixed_io_ps_porb,
   inout           fixed_io_ps_srstb,
-
-
-  /*inout   [20:0]  gpio_bd,
-
-
-  input           clk_0_p,
-  input           clk_0_n,
-  input           clk_1_p,
-  input           clk_1_n,
-  output  [53:0]  gp_out,
-  input   [53:0]  gp_in,*/
-
-
-
+  //lvds to 9361
   input           rx_clk_in_p,
   input           rx_clk_in_n,
   input           rx_frame_in_p,
@@ -104,7 +91,7 @@ module system_top (
   inout           gpio_en_agc,
   inout   [ 3:0]  gpio_ctl,
   inout   [ 7:0]  gpio_status,
-
+  //9361 spi
   output          spi_csn,
   output          spi_clk,
   output          spi_mosi,
@@ -126,18 +113,9 @@ module system_top (
   wire            spi_mosi_s;
   wire            spi_miso_s;
   wire            sys_cpu_clk;
-  wire            clk_0;
-  wire            clk_1;
-  wire            gt_ref_clk_1;
-  wire            gt_ref_clk_0;
-  wire    [63:0]  gp_out_s;
-  wire    [63:0]  gp_in_s;
   wire    [63:0]  gpio_i;
   wire    [63:0]  gpio_o;
   wire    [63:0]  gpio_t;
-  wire            tdd_sync_i;
-  wire            tdd_sync_o;
-  wire            tdd_sync_t;
 
   // assignments
 
@@ -262,8 +240,7 @@ IOBUF IIC_0_sda_iobuf
  
 
   system_wrapper i_system_wrapper (
-    .clk_0 (clk_0),
-    .clk_1 (clk_1),
+    
     .ddr_addr (ddr_addr),
     .ddr_ba (ddr_ba),
     .ddr_cas_n (ddr_cas_n),
@@ -285,10 +262,7 @@ IOBUF IIC_0_sda_iobuf
     .fixed_io_ps_clk (fixed_io_ps_clk),
     .fixed_io_ps_porb (fixed_io_ps_porb),
     .fixed_io_ps_srstb (fixed_io_ps_srstb),
-    .gp_in_0 (gp_in_s[31:0]),
-    .gp_in_1 (gp_in_s[63:32]),
-    .gp_out_0 (gp_out_s[31:0]),
-    .gp_out_1 (gp_out_s[63:32]),
+    
     .gpio_i (gpio_i),
     .gpio_o (gpio_o),
     .gpio_t (gpio_t),
@@ -307,15 +281,6 @@ IOBUF IIC_0_sda_iobuf
     .spi0_sdi_i (spi_miso_s),
     .spi0_sdo_i (1'b0),
     .spi0_sdo_o (spi_mosi_s),
-    .spi1_clk_i (1'b0),
-    .spi1_clk_o (),
-    .spi1_csn_0_o (),
-    .spi1_csn_1_o (),
-    .spi1_csn_2_o (),
-    .spi1_csn_i (1'b1),
-    .spi1_sdi_i (1'b0),
-    .spi1_sdo_i (1'b0),
-    .spi1_sdo_o (),
     .sys_cpu_clk_out (sys_cpu_clk),
     .tx_clk_out_n (tx_clk_out_n),
     .tx_clk_out_p (tx_clk_out_p),

@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Mon Mar  6 08:44:59 2023
+//Date        : Tue Mar  7 22:51:19 2023
 //Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
@@ -10,9 +10,7 @@
 `timescale 1 ps / 1 ps
 
 module system_wrapper
-   (clk_0,
-    clk_1,
-    ddr_addr,
+   (ddr_addr,
     ddr_ba,
     ddr_cas_n,
     ddr_ck_n,
@@ -33,14 +31,9 @@ module system_wrapper
     fixed_io_ps_clk,
     fixed_io_ps_porb,
     fixed_io_ps_srstb,
-    gp_in_0,
-    gp_in_1,
-    gp_out_0,
-    gp_out_1,
     gpio_i,
     gpio_o,
     gpio_t,
-    gt_ref_clk_1,
     i_sda,
     o_bit_clk,
     o_clk_attenuator,
@@ -70,15 +63,6 @@ module system_wrapper
     spi0_sdi_i,
     spi0_sdo_i,
     spi0_sdo_o,
-    spi1_clk_i,
-    spi1_clk_o,
-    spi1_csn_0_o,
-    spi1_csn_1_o,
-    spi1_csn_2_o,
-    spi1_csn_i,
-    spi1_sdi_i,
-    spi1_sdo_i,
-    spi1_sdo_o,
     sys_cpu_clk_out,
     tx_clk_out_n,
     tx_clk_out_p,
@@ -86,8 +70,6 @@ module system_wrapper
     tx_data_out_p,
     tx_frame_out_n,
     tx_frame_out_p);
-  input clk_0;
-  input clk_1;
   inout [14:0]ddr_addr;
   inout [2:0]ddr_ba;
   inout ddr_cas_n;
@@ -109,14 +91,9 @@ module system_wrapper
   inout fixed_io_ps_clk;
   inout fixed_io_ps_porb;
   inout fixed_io_ps_srstb;
-  input [31:0]gp_in_0;
-  input [31:0]gp_in_1;
-  output [31:0]gp_out_0;
-  output [31:0]gp_out_1;
   input [63:0]gpio_i;
   output [63:0]gpio_o;
   output [63:0]gpio_t;
-  input gt_ref_clk_1;
   input i_sda;
   output o_bit_clk;
   output o_clk_attenuator;
@@ -146,15 +123,6 @@ module system_wrapper
   input spi0_sdi_i;
   input spi0_sdo_i;
   output spi0_sdo_o;
-  input spi1_clk_i;
-  output spi1_clk_o;
-  output spi1_csn_0_o;
-  output spi1_csn_1_o;
-  output spi1_csn_2_o;
-  input spi1_csn_i;
-  input spi1_sdi_i;
-  input spi1_sdo_i;
-  output spi1_sdo_o;
   output sys_cpu_clk_out;
   output tx_clk_out_n;
   output tx_clk_out_p;
@@ -163,8 +131,6 @@ module system_wrapper
   output [0:0]tx_frame_out_n;
   output [0:0]tx_frame_out_p;
 
-  wire clk_0;
-  wire clk_1;
   wire [14:0]ddr_addr;
   wire [2:0]ddr_ba;
   wire ddr_cas_n;
@@ -186,14 +152,9 @@ module system_wrapper
   wire fixed_io_ps_clk;
   wire fixed_io_ps_porb;
   wire fixed_io_ps_srstb;
-  wire [31:0]gp_in_0;
-  wire [31:0]gp_in_1;
-  wire [31:0]gp_out_0;
-  wire [31:0]gp_out_1;
   wire [63:0]gpio_i;
   wire [63:0]gpio_o;
   wire [63:0]gpio_t;
-  wire gt_ref_clk_1;
   wire i_sda;
   wire o_bit_clk;
   wire o_clk_attenuator;
@@ -223,15 +184,6 @@ module system_wrapper
   wire spi0_sdi_i;
   wire spi0_sdo_i;
   wire spi0_sdo_o;
-  wire spi1_clk_i;
-  wire spi1_clk_o;
-  wire spi1_csn_0_o;
-  wire spi1_csn_1_o;
-  wire spi1_csn_2_o;
-  wire spi1_csn_i;
-  wire spi1_sdi_i;
-  wire spi1_sdo_i;
-  wire spi1_sdo_o;
   wire sys_cpu_clk_out;
   wire tx_clk_out_n;
   wire tx_clk_out_p;
@@ -241,9 +193,7 @@ module system_wrapper
   wire [0:0]tx_frame_out_p;
 
   system system_i
-       (.clk_0(clk_0),
-        .clk_1(clk_1),
-        .ddr_addr(ddr_addr),
+       (.ddr_addr(ddr_addr),
         .ddr_ba(ddr_ba),
         .ddr_cas_n(ddr_cas_n),
         .ddr_ck_n(ddr_ck_n),
@@ -264,14 +214,9 @@ module system_wrapper
         .fixed_io_ps_clk(fixed_io_ps_clk),
         .fixed_io_ps_porb(fixed_io_ps_porb),
         .fixed_io_ps_srstb(fixed_io_ps_srstb),
-        .gp_in_0(gp_in_0),
-        .gp_in_1(gp_in_1),
-        .gp_out_0(gp_out_0),
-        .gp_out_1(gp_out_1),
         .gpio_i(gpio_i),
         .gpio_o(gpio_o),
         .gpio_t(gpio_t),
-        .gt_ref_clk_1(gt_ref_clk_1),
         .i_sda(i_sda),
         .o_bit_clk(o_bit_clk),
         .o_clk_attenuator(o_clk_attenuator),
@@ -301,15 +246,6 @@ module system_wrapper
         .spi0_sdi_i(spi0_sdi_i),
         .spi0_sdo_i(spi0_sdo_i),
         .spi0_sdo_o(spi0_sdo_o),
-        .spi1_clk_i(spi1_clk_i),
-        .spi1_clk_o(spi1_clk_o),
-        .spi1_csn_0_o(spi1_csn_0_o),
-        .spi1_csn_1_o(spi1_csn_1_o),
-        .spi1_csn_2_o(spi1_csn_2_o),
-        .spi1_csn_i(spi1_csn_i),
-        .spi1_sdi_i(spi1_sdi_i),
-        .spi1_sdo_i(spi1_sdo_i),
-        .spi1_sdo_o(spi1_sdo_o),
         .sys_cpu_clk_out(sys_cpu_clk_out),
         .tx_clk_out_n(tx_clk_out_n),
         .tx_clk_out_p(tx_clk_out_p),

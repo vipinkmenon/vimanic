@@ -58,18 +58,21 @@
 module system_amModulator_0_0 (
   i_carrier,
   i_baseband,
+  i_modulation_index,
   o_amSignal,
   enable
 );
 
 input wire [11 : 0] i_carrier;
 input wire [11 : 0] i_baseband;
-output wire [23 : 0] o_amSignal;
+input wire [15 : 0] i_modulation_index;
+output wire [11 : 0] o_amSignal;
 input wire enable;
 
   amModulator inst (
     .i_carrier(i_carrier),
     .i_baseband(i_baseband),
+    .i_modulation_index(i_modulation_index),
     .o_amSignal(o_amSignal),
     .enable(enable)
   );

@@ -304,9 +304,9 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000158[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000158[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000158[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -314,7 +314,7 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. ==> 0XF8000158[13:8] = 0x00000006U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000600U
     // .. 
-    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000603U),
+    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000601U),
     // .. .. START: TRACE CLOCK
     // .. .. FINISH: TRACE CLOCK
     // .. .. CLKACT = 0x1
@@ -368,9 +368,9 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. .. SPI0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[14:14] = 0x00000001U
     // .. ..     ==> MASK : 0x00004000U    VAL : 0x00004000U
-    // .. .. SPI1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[15:15] = 0x00000001U
-    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00008000U
+    // .. .. SPI1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[15:15] = 0x00000000U
+    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00000000U
     // .. .. CAN0_CPU_1XCLKACT = 0x0
     // .. .. ==> 0XF800012C[16:16] = 0x00000000U
     // .. ..     ==> MASK : 0x00010000U    VAL : 0x00000000U
@@ -399,7 +399,7 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01ECC40DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01EC440DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
@@ -4150,9 +4150,9 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000158[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000158[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000158[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -4160,7 +4160,7 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. ==> 0XF8000158[13:8] = 0x00000006U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000600U
     // .. 
-    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000603U),
+    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000601U),
     // .. .. START: TRACE CLOCK
     // .. .. FINISH: TRACE CLOCK
     // .. .. CLKACT = 0x1
@@ -4214,9 +4214,9 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. .. SPI0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[14:14] = 0x00000001U
     // .. ..     ==> MASK : 0x00004000U    VAL : 0x00004000U
-    // .. .. SPI1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[15:15] = 0x00000001U
-    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00008000U
+    // .. .. SPI1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[15:15] = 0x00000000U
+    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00000000U
     // .. .. CAN0_CPU_1XCLKACT = 0x0
     // .. .. ==> 0XF800012C[16:16] = 0x00000000U
     // .. ..     ==> MASK : 0x00010000U    VAL : 0x00000000U
@@ -4245,7 +4245,7 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01ECC40DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01EC440DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
@@ -8149,9 +8149,9 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. CLKACT0 = 0x1
     // .. ==> 0XF8000158[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
-    // .. CLKACT1 = 0x1
-    // .. ==> 0XF8000158[1:1] = 0x00000001U
-    // ..     ==> MASK : 0x00000002U    VAL : 0x00000002U
+    // .. CLKACT1 = 0x0
+    // .. ==> 0XF8000158[1:1] = 0x00000000U
+    // ..     ==> MASK : 0x00000002U    VAL : 0x00000000U
     // .. SRCSEL = 0x0
     // .. ==> 0XF8000158[5:4] = 0x00000000U
     // ..     ==> MASK : 0x00000030U    VAL : 0x00000000U
@@ -8159,7 +8159,7 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. ==> 0XF8000158[13:8] = 0x00000006U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000600U
     // .. 
-    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000603U),
+    EMIT_MASKWRITE(0XF8000158, 0x00003F33U ,0x00000601U),
     // .. .. START: TRACE CLOCK
     // .. .. FINISH: TRACE CLOCK
     // .. .. CLKACT = 0x1
@@ -8213,9 +8213,9 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. .. SPI0_CPU_1XCLKACT = 0x1
     // .. .. ==> 0XF800012C[14:14] = 0x00000001U
     // .. ..     ==> MASK : 0x00004000U    VAL : 0x00004000U
-    // .. .. SPI1_CPU_1XCLKACT = 0x1
-    // .. .. ==> 0XF800012C[15:15] = 0x00000001U
-    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00008000U
+    // .. .. SPI1_CPU_1XCLKACT = 0x0
+    // .. .. ==> 0XF800012C[15:15] = 0x00000000U
+    // .. ..     ==> MASK : 0x00008000U    VAL : 0x00000000U
     // .. .. CAN0_CPU_1XCLKACT = 0x0
     // .. .. ==> 0XF800012C[16:16] = 0x00000000U
     // .. ..     ==> MASK : 0x00010000U    VAL : 0x00000000U
@@ -8244,7 +8244,7 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. .. ==> 0XF800012C[24:24] = 0x00000001U
     // .. ..     ==> MASK : 0x01000000U    VAL : 0x01000000U
     // .. .. 
-    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01ECC40DU),
+    EMIT_MASKWRITE(0XF800012C, 0x01FFCCCDU ,0x01EC440DU),
     // .. FINISH: CLOCK CONTROL SLCR REGISTERS
     // .. START: THIS SHOULD BE BLANK
     // .. FINISH: THIS SHOULD BE BLANK
