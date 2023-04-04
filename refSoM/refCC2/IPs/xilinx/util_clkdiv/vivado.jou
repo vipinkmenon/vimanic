@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 12 06:17:34 2022
+# Process ID: 6480
+# Current directory: D:/analog/hdl-hdl_2019_r2/library/xilinx/util_clkdiv
+# Command line: vivado.exe -mode batch -source util_clkdiv_ip.tcl
+# Log file: D:/analog/hdl-hdl_2019_r2/library/xilinx/util_clkdiv/vivado.log
+# Journal file: D:/analog/hdl-hdl_2019_r2/library/xilinx/util_clkdiv\vivado.jou
+#-----------------------------------------------------------
+source util_clkdiv_ip.tcl

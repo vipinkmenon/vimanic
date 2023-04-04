@@ -1,0 +1,82 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][11]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][2]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[10]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[12]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][4]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[4]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[5]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[8]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][10]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][1]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[13]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][5]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[11]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[2]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][6]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[9]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[6]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][3]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[3]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[11]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[10]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][9]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[9]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][0]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][8]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[7]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][7]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[8]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[2]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[11]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[6]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][30]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[4]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][27]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][26]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][25]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[9]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][29]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[5]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][13]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[3]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][32]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][28]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][35]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][24]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][34]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[8]/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[10]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[6]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][18]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][16]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][31]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][15]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][23]_srl8_srlopt/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[7]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][17]_srl8/D|
+| clk_out3_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][33]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[3]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[4]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[5]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][14]_srl8_srlopt/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[2]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[8]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[9]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][22]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[7]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[10]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][20]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[11]/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][19]_srl8_srlopt/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |  i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][21]_srl8/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/shifted_data_in_reg[7][12]_srl8_srlopt/D|
+| clk_out2_system_clk_wiz_0_0 |                   rx_clk |i_system_wrapper/system_i/system_ila_0/inst/ila_lib/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

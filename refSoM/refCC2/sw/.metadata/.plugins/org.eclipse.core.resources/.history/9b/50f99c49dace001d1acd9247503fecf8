@@ -1,0 +1,19 @@
+#ifndef ATTENUATOR_H       /* prevent circular inclusions */
+#define ATTENUATOR_H       /**< by using protection macros */
+
+
+#include "xil_types.h"
+
+typedef struct attenuator{
+	u32 BaseAddress;
+	float attVal1=31.75;
+	float attVal2=31.75;
+	float attVal3=31.75;
+}attenuator;
+
+
+void initAttenuator(attenuator *attn, u32 baseAddr);
+void writeAttenuator(attenuator *attn,int attenuatorNo,float attValue);
+
+
+#endif

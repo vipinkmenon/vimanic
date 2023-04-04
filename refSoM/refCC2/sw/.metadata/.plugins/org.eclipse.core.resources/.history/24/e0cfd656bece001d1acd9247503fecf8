@@ -1,0 +1,14 @@
+#ifndef ATTENUATOR_H       /* prevent circular inclusions */
+#define ATTENUATOR_H       /**< by using protection macros */
+
+
+typedef struct attenuator{
+	UINTPTR BaseAddress;
+}attenuator;
+
+
+void initAttenuator(attenuator *attn, UINTPTR baseAddr);
+void writeAttenuator(int attenuatorNo,int attValue);
+
+
+#endif

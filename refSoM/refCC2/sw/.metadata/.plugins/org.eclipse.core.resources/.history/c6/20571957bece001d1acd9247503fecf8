@@ -1,0 +1,6 @@
+#include "attenuator.h"
+#include "xil_io.h"
+
+void initAttenuator(attenuator *attn, UINTPTR baseAddr){
+	attr->BaseAddress = baseAddr;
+}

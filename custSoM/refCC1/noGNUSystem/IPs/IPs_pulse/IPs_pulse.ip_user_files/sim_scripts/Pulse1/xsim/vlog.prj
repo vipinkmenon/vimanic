@@ -1,0 +1,21 @@
+verilog xil_defaultlib --include "E:/Vivado/2021.1/data/xilinx_vip/include" --include "../../../../IPs_pulse.gen/sources_1/bd/Pulse1/ipshared/ec67/hdl" --include "../../../../IPs_pulse.gen/sources_1/bd/Pulse1/ipshared/f42d/hdl" \
+"../../../bd/Pulse1/ip/Pulse1_And_gate_0_0/sim/Pulse1_And_gate_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_Full_count_0_0/sim/Pulse1_Full_count_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_Not_gate_0_0/sim/Pulse1_Not_gate_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_counter_assist_0_0/sim/Pulse1_counter_assist_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_processing_system7_0_0/sim/Pulse1_processing_system7_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_counter_assist_0_1/sim/Pulse1_counter_assist_0_1.v" \
+"../../../bd/Pulse1/sim/Pulse1.v" \
+"../../../bd/Pulse1/ip/Pulse1_And_gate_0_1/sim/Pulse1_And_gate_0_1.v" \
+"../../../bd/Pulse1/ip/Pulse1_Full_count_0_1/sim/Pulse1_Full_count_0_1.v" \
+"../../../bd/Pulse1/ip/Pulse1_Not_gate_0_1/sim/Pulse1_Not_gate_0_1.v" \
+"../../../bd/Pulse1/ip/Pulse1_counter_assist_0_2/sim/Pulse1_counter_assist_0_2.v" \
+"../../../bd/Pulse1/ip/Pulse1_counter_assist_1_0/sim/Pulse1_counter_assist_1_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_count_woen_0_0/sim/Pulse1_count_woen_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_And_gate_0_2/sim/Pulse1_And_gate_0_2.v" \
+"../../../bd/Pulse1/ip/Pulse1_xlconstant_0_0/sim/Pulse1_xlconstant_0_0.v" \
+"../../../bd/Pulse1/ip/Pulse1_blk_mem_gen_0_0/sim/Pulse1_blk_mem_gen_0_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

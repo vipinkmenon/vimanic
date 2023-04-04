@@ -1,0 +1,13 @@
+
+
+
+
+
+
+
+
+
+float getRSSI(&myRSSI){
+	int adcIn = Xil_In32(myRSSI->baseAddr);
+	return (adcIn*3.3)/(2**16-1);
+}

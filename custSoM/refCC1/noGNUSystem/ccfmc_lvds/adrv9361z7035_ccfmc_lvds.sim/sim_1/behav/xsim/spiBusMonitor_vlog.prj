@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/8c62/hdl" --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/ef1d" --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/1ddd/hdl/verilog" --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/b2d0/hdl/verilog" --include "../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/bd/system/ipshared/c923" --include "D:/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../adrv9361z7035_ccfmc_lvds.srcs/sources_1/new/spiBusMonitor.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Mar  8 16:48:33 2023
+# Process ID: 30316
+# Current directory: E:/Projects/adrvSoM/vimanic/noGNUSystemReference/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/impl_1
+# Command line: vivado.exe -log system_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source system_top.tcl -notrace
+# Log file: E:/Projects/adrvSoM/vimanic/noGNUSystemReference/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/impl_1/system_top.vdi
+# Journal file: E:/Projects/adrvSoM/vimanic/noGNUSystemReference/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source system_top.tcl -notrace

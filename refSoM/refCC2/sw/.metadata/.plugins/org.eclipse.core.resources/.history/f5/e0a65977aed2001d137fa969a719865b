@@ -1,0 +1,19 @@
+#ifndef AMMODULATOR_H       /* prevent circular inclusions */
+#define AMMODULATOR_H       /**< by using protection macros */
+
+
+#include "xil_types.h"
+
+typedef struct amModulator{
+	u32 BaseBandBaseAddress;
+	u32 modulatorBaseAddress;
+}amModulator;
+
+
+
+
+void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr, u32 modulatorBandBaseAddr);
+void generateAM(amModulator *modulator,float modulationIndex,int basebandFrequency);
+
+
+#endif

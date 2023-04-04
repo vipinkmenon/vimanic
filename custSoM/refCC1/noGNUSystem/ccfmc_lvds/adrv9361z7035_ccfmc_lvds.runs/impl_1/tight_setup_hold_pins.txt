@@ -1,0 +1,17 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[4]/D|
+|               clk_fpga_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[10]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[3]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[6]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[9]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[2]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[8]/D|
+|               clk_fpga_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[13]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[1]/D|
+|               clk_fpga_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[11]/D|
+|               clk_fpga_0 |                   rx_clk |                                     i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[12]/D|
+|               clk_fpga_0 |                   rx_clk |                                      i_system_wrapper/system_i/LVDSIF/dataPackager_0/inst/o_data_reg[5]/D|
+|               clk_fpga_0 |                   rx_clk |                                         i_system_wrapper/system_i/AMModulate/basebandGen/inst/reset_reg/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

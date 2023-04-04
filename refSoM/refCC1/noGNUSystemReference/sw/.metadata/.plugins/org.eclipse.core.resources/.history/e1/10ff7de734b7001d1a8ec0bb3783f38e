@@ -1,0 +1,27 @@
+/**
+ * @enum xil_spi_type
+ * @brief Xilinx platform architecture sections
+ */
+#ifndef SPI_TYPE
+#define SPI_TYPE
+
+
+
+
+
+
+
+enum xil_spi_type {
+	/** Programmable Logic */
+	SPI_PL,
+	/** Processing System */
+	SPI_PS,
+	/** SPI Engine */
+	SPI_ENGINE
+} xil_spi_type;
+
+
+
+
+
+#endif

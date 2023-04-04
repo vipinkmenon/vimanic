@@ -1,0 +1,23 @@
+#include "amModulator.h"
+#include "xil_io.h"
+
+
+
+
+
+
+void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr, u32 modulatorBandBaseAddr){
+	modulator->BaseBandBaseAddress = baseBandBaseAddr;
+	modulator->modulatorBaseAddress = modulatorBandBaseAddr;
+}
+
+
+void startAMModulator(amModulator *modulator){
+	Xil_Out32(modulator->modulatorBaseAddress+8,1);
+}
+
+
+
+void stopAMModulator(amModulator *modulator){
+	Xil_Out32(modulator->modulatorBaseAddress+8,0);
+}

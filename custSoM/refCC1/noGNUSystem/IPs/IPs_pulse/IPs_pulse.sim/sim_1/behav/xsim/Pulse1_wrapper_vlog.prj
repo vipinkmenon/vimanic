@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../IPs_pulse.gen/sources_1/bd/Pulse1/ipshared/ec67/hdl" --include "../../../../IPs_pulse.gen/sources_1/bd/Pulse1/ipshared/f42d/hdl" --include "E:/Vivado/2021.1/data/xilinx_vip/include" \
+"../../../../IPs_pulse.srcs/sources_1/new/And_gate.v" \
+"../../../../IPs_pulse.srcs/sources_1/new/Full_count.v" \
+"../../../../IPs_pulse.srcs/sources_1/new/Not_gate.v" \
+"../../../../IPs_pulse.srcs/sources_1/new/counter_assist.v" \
+"../../../../IPs_pulse.srcs/sources_1/new/count_woen.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_And_gate_0_0/sim/Pulse1_And_gate_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_Full_count_0_0/sim/Pulse1_Full_count_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_Not_gate_0_0/sim/Pulse1_Not_gate_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_counter_assist_0_0/sim/Pulse1_counter_assist_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_processing_system7_0_0/sim/Pulse1_processing_system7_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_counter_assist_0_1/sim/Pulse1_counter_assist_0_1.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/sim/Pulse1.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_And_gate_0_1/sim/Pulse1_And_gate_0_1.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_Full_count_0_1/sim/Pulse1_Full_count_0_1.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_Not_gate_0_1/sim/Pulse1_Not_gate_0_1.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_counter_assist_0_2/sim/Pulse1_counter_assist_0_2.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_counter_assist_1_0/sim/Pulse1_counter_assist_1_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_count_woen_0_0/sim/Pulse1_count_woen_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_And_gate_0_2/sim/Pulse1_And_gate_0_2.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_xlconstant_0_0/sim/Pulse1_xlconstant_0_0.v" \
+"../../../../IPs_pulse.ip_user_files/bd/Pulse1/ip/Pulse1_blk_mem_gen_0_0/sim/Pulse1_blk_mem_gen_0_0.v" \
+"../../../../IPs_pulse.srcs/sources_1/imports/hdl/Pulse1_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

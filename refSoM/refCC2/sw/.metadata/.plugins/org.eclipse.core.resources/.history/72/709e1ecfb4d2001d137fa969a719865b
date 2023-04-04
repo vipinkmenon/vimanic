@@ -1,0 +1,35 @@
+#include "amModulator.h"
+#include "xil_io.h"
+
+
+
+
+
+
+void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr, u32 modulatorBandBaseAddr){
+	modulator->BaseBandBaseAddress = baseBandBaseAddr;
+	modulator->modulatorBaseAddress = modulatorBandBaseAddr;
+}
+
+
+int generateAM(amModulator *modulator,float modulationIndex,int basebandFrequency){
+	int clkDivValue;
+	if(basebandFrequency < 1  || basebandFrequency > 20000){
+		print("Error: Baseband frequency should be between 1Hz and 20000Hz\n\r");
+		return -1;
+	}
+	clkDivValue = 122880000/(basebandFrequency*1024);//1024 samples per cycle
+	Xil_Out32(modulator->BaseBandBaseAddress,clkDivValue);
+	return 0;
+}
+
+
+void startAMModulator(amModulator *modulator){
+	Xil_Out32(modulator->modulatorBaseAddress+8,1);
+}
+
+
+
+void stopAMModulator(amModulator *modulator){
+	Xil_Out32(modulator->modulatorBaseAddress+8,0);
+}

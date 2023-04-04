@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Mar  2 11:22:09 2023
+# Process ID: 14192
+# Current directory: E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_Not_Gate_0_0_synth_1
+# Command line: vivado.exe -log system_Not_Gate_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_Not_Gate_0_0.tcl
+# Log file: E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_Not_Gate_0_0_synth_1/system_Not_Gate_0_0.vds
+# Journal file: E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_Not_Gate_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source system_Not_Gate_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Projects/customDSPBringup/noGNUSystem/IPs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2021.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.cache/ip 
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_Not_Gate_0_0, cache-ID = c45a32482cc67c0c.
+INFO: [Common 17-206] Exiting Vivado at Thu Mar  2 11:22:14 2023...

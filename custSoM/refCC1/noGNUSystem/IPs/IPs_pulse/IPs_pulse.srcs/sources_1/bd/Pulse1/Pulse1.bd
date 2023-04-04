@@ -1,0 +1,655 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x251355CE251355CE",
+      "device": "xc7z035ifbg676-2L",
+      "gen_directory": "../../../../IPs_pulse.gen/sources_1/bd/Pulse1",
+      "name": "Pulse1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "And_gate_0": "",
+      "Full_count_0": "",
+      "Not_gate_0": "",
+      "counter_assist_0": "",
+      "processing_system7_0": "",
+      "counter_assist_1": "",
+      "And_gate_1": "",
+      "Full_count_1": "",
+      "Not_gate_1": "",
+      "counter_assist_2": "",
+      "counter_assist_3": "",
+      "count_woen_0": "",
+      "And_gate_2": "",
+      "xlconstant_0": "",
+      "blk_mem_gen_0": ""
+    },
+    "ports": {
+      "Pulse1": {
+        "direction": "O"
+      },
+      "Pulse": {
+        "direction": "O"
+      },
+      "pulse75": {
+        "direction": "O"
+      },
+      "counts": {
+        "direction": "O",
+        "left": "12",
+        "right": "0"
+      },
+      "Cosine": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      }
+    },
+    "components": {
+      "And_gate_0": {
+        "vlnv": "xilinx.com:module_ref:And_gate:1.0",
+        "xci_name": "Pulse1_And_gate_0_0",
+        "xci_path": "ip\\Pulse1_And_gate_0_0\\Pulse1_And_gate_0_0.xci",
+        "inst_hier_path": "And_gate_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "And_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "b": {
+            "direction": "I"
+          },
+          "y": {
+            "direction": "O"
+          }
+        }
+      },
+      "Full_count_0": {
+        "vlnv": "xilinx.com:module_ref:Full_count:1.0",
+        "xci_name": "Pulse1_Full_count_0_0",
+        "xci_path": "ip\\Pulse1_Full_count_0_0\\Pulse1_Full_count_0_0.xci",
+        "inst_hier_path": "Full_count_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Full_count",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Pulse1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "counts": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "Not_gate_0": {
+        "vlnv": "xilinx.com:module_ref:Not_gate:1.0",
+        "xci_name": "Pulse1_Not_gate_0_0",
+        "xci_path": "ip\\Pulse1_Not_gate_0_0\\Pulse1_Not_gate_0_0.xci",
+        "inst_hier_path": "Not_gate_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Not_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "y": {
+            "direction": "O"
+          }
+        }
+      },
+      "counter_assist_0": {
+        "vlnv": "xilinx.com:module_ref:counter_assist:1.0",
+        "xci_name": "Pulse1_counter_assist_0_0",
+        "xci_path": "ip\\Pulse1_counter_assist_0_0\\Pulse1_counter_assist_0_0.xci",
+        "inst_hier_path": "counter_assist_0",
+        "parameters": {
+          "target": {
+            "value": "1199"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter_assist",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "rstensw": {
+            "direction": "O"
+          }
+        }
+      },
+      "processing_system7_0": {
+        "vlnv": "xilinx.com:ip:processing_system7:5.5",
+        "xci_name": "Pulse1_processing_system7_0_0",
+        "xci_path": "ip\\Pulse1_processing_system7_0_0\\Pulse1_processing_system7_0_0.xci",
+        "inst_hier_path": "processing_system7_0",
+        "parameters": {
+          "PCW_ACT_APU_PERIPHERAL_FREQMHZ": {
+            "value": "666.666687"
+          },
+          "PCW_ACT_CAN_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_DCI_PERIPHERAL_FREQMHZ": {
+            "value": "10.158730"
+          },
+          "PCW_ACT_ENET0_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_ENET1_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
+            "value": "100.000000"
+          },
+          "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_PCAP_PERIPHERAL_FREQMHZ": {
+            "value": "200.000000"
+          },
+          "PCW_ACT_QSPI_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_SDIO_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_SMC_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_SPI_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_TPIU_PERIPHERAL_FREQMHZ": {
+            "value": "200.000000"
+          },
+          "PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_ACT_UART_PERIPHERAL_FREQMHZ": {
+            "value": "10.000000"
+          },
+          "PCW_ACT_WDT_PERIPHERAL_FREQMHZ": {
+            "value": "111.111115"
+          },
+          "PCW_CLK0_FREQ": {
+            "value": "100000000"
+          },
+          "PCW_CLK1_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_CLK2_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_CLK3_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_EN_DDR": {
+            "value": "0"
+          },
+          "PCW_EN_RST0_PORT": {
+            "value": "0"
+          },
+          "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
+            "value": "100"
+          },
+          "PCW_FPGA_FCLK0_ENABLE": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_ACT_DDR_FREQ_MHZ": {
+            "value": "533.333374"
+          },
+          "PCW_UIPARAM_DDR_ENABLE": {
+            "value": "0"
+          },
+          "PCW_USE_M_AXI_GP0": {
+            "value": "0"
+          }
+        }
+      },
+      "counter_assist_1": {
+        "vlnv": "xilinx.com:module_ref:counter_assist:1.0",
+        "xci_name": "Pulse1_counter_assist_0_1",
+        "xci_path": "ip\\Pulse1_counter_assist_0_1\\Pulse1_counter_assist_0_1.xci",
+        "inst_hier_path": "counter_assist_1",
+        "parameters": {
+          "target": {
+            "value": "700"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter_assist",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "rstensw": {
+            "direction": "O"
+          }
+        }
+      },
+      "And_gate_1": {
+        "vlnv": "xilinx.com:module_ref:And_gate:1.0",
+        "xci_name": "Pulse1_And_gate_0_1",
+        "xci_path": "ip\\Pulse1_And_gate_0_1\\Pulse1_And_gate_0_1.xci",
+        "inst_hier_path": "And_gate_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "And_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "b": {
+            "direction": "I"
+          },
+          "y": {
+            "direction": "O"
+          }
+        }
+      },
+      "Full_count_1": {
+        "vlnv": "xilinx.com:module_ref:Full_count:1.0",
+        "xci_name": "Pulse1_Full_count_0_1",
+        "xci_path": "ip\\Pulse1_Full_count_0_1\\Pulse1_Full_count_0_1.xci",
+        "inst_hier_path": "Full_count_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Full_count",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Pulse1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "counts": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "Not_gate_1": {
+        "vlnv": "xilinx.com:module_ref:Not_gate:1.0",
+        "xci_name": "Pulse1_Not_gate_0_1",
+        "xci_path": "ip\\Pulse1_Not_gate_0_1\\Pulse1_Not_gate_0_1.xci",
+        "inst_hier_path": "Not_gate_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Not_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "y": {
+            "direction": "O"
+          }
+        }
+      },
+      "counter_assist_2": {
+        "vlnv": "xilinx.com:module_ref:counter_assist:1.0",
+        "xci_name": "Pulse1_counter_assist_0_2",
+        "xci_path": "ip\\Pulse1_counter_assist_0_2\\Pulse1_counter_assist_0_2.xci",
+        "inst_hier_path": "counter_assist_2",
+        "parameters": {
+          "target": {
+            "value": "8399"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter_assist",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "rstensw": {
+            "direction": "O"
+          }
+        }
+      },
+      "counter_assist_3": {
+        "vlnv": "xilinx.com:module_ref:counter_assist:1.0",
+        "xci_name": "Pulse1_counter_assist_1_0",
+        "xci_path": "ip\\Pulse1_counter_assist_1_0\\Pulse1_counter_assist_1_0.xci",
+        "inst_hier_path": "counter_assist_3",
+        "parameters": {
+          "target": {
+            "value": "1900"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter_assist",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "rstensw": {
+            "direction": "O"
+          }
+        }
+      },
+      "count_woen_0": {
+        "vlnv": "xilinx.com:module_ref:count_woen:1.0",
+        "xci_name": "Pulse1_count_woen_0_0",
+        "xci_path": "ip\\Pulse1_count_woen_0_0\\Pulse1_count_woen_0_0.xci",
+        "inst_hier_path": "count_woen_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "count_woen",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "Pulse1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "counts": {
+            "direction": "O",
+            "left": "12",
+            "right": "0"
+          }
+        }
+      },
+      "And_gate_2": {
+        "vlnv": "xilinx.com:module_ref:And_gate:1.0",
+        "xci_name": "Pulse1_And_gate_0_2",
+        "xci_path": "ip\\Pulse1_And_gate_0_2\\Pulse1_And_gate_0_2.xci",
+        "inst_hier_path": "And_gate_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "And_gate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I"
+          },
+          "b": {
+            "direction": "I"
+          },
+          "y": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "Pulse1_xlconstant_0_0",
+        "xci_path": "ip\\Pulse1_xlconstant_0_0\\Pulse1_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "Pulse1_blk_mem_gen_0_0",
+        "xci_path": "ip\\Pulse1_blk_mem_gen_0_0\\Pulse1_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../../../Cosine.txt.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Single_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      }
+    },
+    "nets": {
+      "And_gate_0_y": {
+        "ports": [
+          "And_gate_0/y",
+          "Pulse",
+          "And_gate_2/a"
+        ]
+      },
+      "And_gate_0_y1": {
+        "ports": [
+          "And_gate_1/y",
+          "Pulse1",
+          "And_gate_2/b"
+        ]
+      },
+      "And_gate_2_y": {
+        "ports": [
+          "And_gate_2/y",
+          "count_woen_0/en",
+          "pulse75"
+        ]
+      },
+      "Full_count_0_counts": {
+        "ports": [
+          "Full_count_0/counts",
+          "counter_assist_0/a",
+          "counter_assist_1/a"
+        ]
+      },
+      "Full_count_0_counts1": {
+        "ports": [
+          "Full_count_1/counts",
+          "counter_assist_2/a",
+          "counter_assist_3/a"
+        ]
+      },
+      "Not_gate_0_y": {
+        "ports": [
+          "Not_gate_0/y",
+          "Full_count_0/rst"
+        ]
+      },
+      "Not_gate_0_y1": {
+        "ports": [
+          "Not_gate_1/y",
+          "Full_count_1/rst"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "Cosine"
+        ]
+      },
+      "count_woen_0_counts": {
+        "ports": [
+          "count_woen_0/counts",
+          "counts",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "counter_assist_0_rstensw": {
+        "ports": [
+          "counter_assist_0/rstensw",
+          "Full_count_0/en",
+          "Not_gate_0/a",
+          "And_gate_0/b"
+        ]
+      },
+      "counter_assist_0_rstensw1": {
+        "ports": [
+          "counter_assist_2/rstensw",
+          "Full_count_1/en",
+          "Not_gate_1/a",
+          "And_gate_1/b"
+        ]
+      },
+      "counter_assist_1_rstensw": {
+        "ports": [
+          "counter_assist_1/rstensw",
+          "And_gate_0/a"
+        ]
+      },
+      "counter_assist_1_rstensw1": {
+        "ports": [
+          "counter_assist_3/rstensw",
+          "And_gate_1/a"
+        ]
+      },
+      "processing_system7_0_FCLK_CLK0": {
+        "ports": [
+          "processing_system7_0/FCLK_CLK0",
+          "Full_count_0/clk",
+          "Full_count_1/clk",
+          "count_woen_0/clk",
+          "blk_mem_gen_0/clka"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "count_woen_0/rst"
+        ]
+      }
+    }
+  }
+}

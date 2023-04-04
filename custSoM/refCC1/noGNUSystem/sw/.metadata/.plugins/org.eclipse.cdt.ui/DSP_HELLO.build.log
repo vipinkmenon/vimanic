@@ -1,0 +1,10 @@
+07:06:12 **** Incremental Build of configuration Debug for project DSP_HELLO ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+
+07:06:12 Build Finished (took 286ms)
+

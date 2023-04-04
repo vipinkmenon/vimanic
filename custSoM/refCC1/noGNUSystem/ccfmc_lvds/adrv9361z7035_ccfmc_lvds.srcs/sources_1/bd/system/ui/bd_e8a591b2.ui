@@ -1,0 +1,75 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.371127",
+   "Default View_TopLeft":"-1439,-11",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port ddr -pg 1 -lvl 3 -x 810 -y 750 -defaultsOSRD
+preplace port fixed_io -pg 1 -lvl 3 -x 810 -y 770 -defaultsOSRD
+preplace port M00_AXI -pg 1 -lvl 3 -x 810 -y 130 -defaultsOSRD
+preplace port M01_AXI -pg 1 -lvl 3 -x 810 -y 150 -defaultsOSRD
+preplace port port-id_spi0_clk_i -pg 1 -lvl 0 -x -10 -y 550 -defaultsOSRD
+preplace port port-id_spi0_clk_o -pg 1 -lvl 3 -x 810 -y 830 -defaultsOSRD
+preplace port port-id_spi0_sdo_i -pg 1 -lvl 0 -x -10 -y 570 -defaultsOSRD
+preplace port port-id_spi0_sdo_o -pg 1 -lvl 3 -x 810 -y 870 -defaultsOSRD
+preplace port port-id_spi0_sdi_i -pg 1 -lvl 0 -x -10 -y 590 -defaultsOSRD
+preplace port port-id_spi0_csn_i -pg 1 -lvl 0 -x -10 -y 610 -defaultsOSRD
+preplace port port-id_spi0_csn_0_o -pg 1 -lvl 3 -x 810 -y 930 -defaultsOSRD
+preplace port port-id_spi0_csn_1_o -pg 1 -lvl 3 -x 810 -y 950 -defaultsOSRD
+preplace port port-id_spi0_csn_2_o -pg 1 -lvl 3 -x 810 -y 970 -defaultsOSRD
+preplace port port-id_spi1_clk_i -pg 1 -lvl 0 -x -10 -y 1330 -defaultsOSRD
+preplace port port-id_spi1_clk_o -pg 1 -lvl 3 -x 810 -y 1030 -defaultsOSRD
+preplace port port-id_spi1_sdo_i -pg 1 -lvl 0 -x -10 -y 1350 -defaultsOSRD
+preplace port port-id_spi1_sdo_o -pg 1 -lvl 3 -x 810 -y 1070 -defaultsOSRD
+preplace port port-id_spi1_sdi_i -pg 1 -lvl 0 -x -10 -y 1370 -defaultsOSRD
+preplace port port-id_spi1_csn_i -pg 1 -lvl 0 -x -10 -y 1390 -defaultsOSRD
+preplace port port-id_spi1_csn_0_o -pg 1 -lvl 3 -x 810 -y 1130 -defaultsOSRD
+preplace port port-id_spi1_csn_1_o -pg 1 -lvl 3 -x 810 -y 1150 -defaultsOSRD
+preplace port port-id_spi1_csn_2_o -pg 1 -lvl 3 -x 810 -y 1170 -defaultsOSRD
+preplace port port-id_sys_cpu_clk_out -pg 1 -lvl 3 -x 810 -y 310 -defaultsOSRD
+preplace portBus gpio_i -pg 1 -lvl 0 -x -10 -y 530 -defaultsOSRD
+preplace portBus gpio_o -pg 1 -lvl 3 -x 810 -y 710 -defaultsOSRD
+preplace portBus gpio_t -pg 1 -lvl 3 -x 810 -y 730 -defaultsOSRD
+preplace portBus S00_ARESETN -pg 1 -lvl 3 -x 810 -y 330 -defaultsOSRD
+preplace portBus gpio_io_o -pg 1 -lvl 3 -x 810 -y 240 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 2 -x 650 -y 230 -defaultsOSRD
+preplace inst sys_ps7 -pg 1 -lvl 1 -x 240 -y 970 -defaultsOSRD
+preplace inst sys_ps7_axi_periph -pg 1 -lvl 1 -x 240 -y 150 -defaultsOSRD
+preplace inst sys_rstgen -pg 1 -lvl 1 -x 240 -y 410 -defaultsOSRD
+preplace netloc axi_gpio_0_gpio_io_o 1 2 1 NJ 240
+preplace netloc gpio_i_1 1 0 2 NJ 530 480
+preplace netloc spi0_clk_i_1 1 0 2 NJ 550 470
+preplace netloc spi0_csn_i_1 1 0 2 NJ 610 440
+preplace netloc spi0_sdi_i_1 1 0 2 NJ 590 450
+preplace netloc spi0_sdo_i_1 1 0 2 NJ 570 460
+preplace netloc spi1_clk_i_1 1 0 2 10J 1340 480
+preplace netloc spi1_csn_i_1 1 0 2 NJ 1390 450
+preplace netloc spi1_sdi_i_1 1 0 2 NJ 1370 460
+preplace netloc spi1_sdo_i_1 1 0 2 NJ 1350 470
+preplace netloc sys_cpu_clk 1 0 3 30 510 500 310 NJ
+preplace netloc sys_cpu_resetn 1 0 3 40 310 440 330 NJ
+preplace netloc sys_ps7_FCLK_RESET0_N 1 0 2 40 580 490
+preplace netloc sys_ps7_GPIO_O 1 1 2 NJ 710 NJ
+preplace netloc sys_ps7_GPIO_T 1 1 2 NJ 730 NJ
+preplace netloc sys_ps7_SPI0_MOSI_O 1 1 2 NJ 870 NJ
+preplace netloc sys_ps7_SPI0_SCLK_O 1 1 2 NJ 830 NJ
+preplace netloc sys_ps7_SPI0_SS1_O 1 1 2 NJ 950 NJ
+preplace netloc sys_ps7_SPI0_SS2_O 1 1 2 NJ 970 NJ
+preplace netloc sys_ps7_SPI0_SS_O 1 1 2 NJ 930 NJ
+preplace netloc sys_ps7_SPI1_MOSI_O 1 1 2 NJ 1070 NJ
+preplace netloc sys_ps7_SPI1_SCLK_O 1 1 2 NJ 1030 NJ
+preplace netloc sys_ps7_SPI1_SS1_O 1 1 2 NJ 1150 NJ
+preplace netloc sys_ps7_SPI1_SS2_O 1 1 2 NJ 1170 NJ
+preplace netloc sys_ps7_SPI1_SS_O 1 1 2 NJ 1130 NJ
+preplace netloc sys_ps7_DDR 1 1 2 NJ 750 NJ
+preplace netloc sys_ps7_FIXED_IO 1 1 2 NJ 770 NJ
+preplace netloc sys_ps7_M_AXI_GP0 1 0 2 20 1330 440
+preplace netloc sys_ps7_axi_periph_M00_AXI 1 1 2 NJ 130 NJ
+preplace netloc sys_ps7_axi_periph_M01_AXI 1 1 2 NJ 150 NJ
+preplace netloc sys_ps7_axi_periph_M02_AXI 1 1 1 500 170n
+levelinfo -pg 1 -10 240 650 810
+pagesize -pg 1 -db -bbox -sgen -140 -10 990 1410
+"
+}
+

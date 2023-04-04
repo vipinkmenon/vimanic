@@ -1,0 +1,56 @@
+#include "xil_io.h"
+#include "spiSniffer.h"
+
+
+void analyzePackets(int numLocations){
+	u32 data;
+	char op;
+	int len;
+	int byteLen;
+	short address;
+	int locationsProcessed=0;
+	while(locationsProcessed < numLocations){
+		data = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR+locationsProcessed);//Read the control word
+		//xil_printf("\n\rControl Word:%0x\n\r",data);
+		locationsProcessed += 4;
+		op = (data>>31)&0x1;
+		len = ((data>>28)&0x7)+1;//0 represents len of 1
+		byteLen = len;
+		address = (data>>16)&0x3FF;
+		xil_printf("\n\rOperation\tLen\tAddress\n\r");
+		xil_printf("%0x\t\t%0x\t%0x\n\r",op,len,address);
+		if(op==0){//read operation
+			xil_printf("Received Data:");
+			while(byteLen > 0){
+				data = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR+locationsProcessed);
+				locationsProcessed += 4;
+				xil_printf("%0x",(data&0xFFFF));//lower 16 bits are miso
+				byteLen = byteLen-2;
+			}
+		}
+		else{//write operation
+			xil_printf("Transmitted Data:");
+			while(byteLen > 0){
+				data = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR+locationsProcessed);
+				locationsProcessed += 4;
+				xil_printf("%0x",((data>>16)&0xFFFF));//upper 16 bits are mosi
+				byteLen = byteLen-2;
+			}
+		}
+		if(len%2==0){
+			data = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR+locationsProcessed);//dummy read since each operation stores one extra location in bram
+			locationsProcessed += 4;
+		}
+	}
+}
+
+
+void dumpMemory(int numLocations){
+	int addr=0;
+	int data;
+	while(addr <= numLocations){
+		data = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR+addr);
+		xil_printf("%0x\n\r",data);
+		addr = addr+4;
+	}
+}

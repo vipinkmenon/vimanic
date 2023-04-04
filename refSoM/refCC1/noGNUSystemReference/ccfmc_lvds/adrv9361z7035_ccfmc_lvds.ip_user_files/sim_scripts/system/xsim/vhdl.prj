@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/sim/system_sys_rstgen_0.vhd" \
+"../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_0/sim/system_axi_gpio_0_0.vhd" \
+"../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_iic_0_0/sim/system_axi_iic_0_0.vhd" \
+"../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_fir_compiler_0_0/sim/system_fir_compiler_0_0.vhd" \
+
+nosort

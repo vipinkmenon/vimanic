@@ -1,0 +1,25 @@
+#ifndef AMMODULATOR_H       /* prevent circular inclusions */
+#define AMMODULATOR_H       /**< by using protection macros */
+
+
+#include "xil_types.h"
+
+
+#define ModumlatorClk 122880000 //In Hz for sampling freq of 30720000
+
+
+typedef struct amModulator{
+	u32 BaseBandBaseAddress;
+	u32 modulatorBaseAddress;
+}amModulator;
+
+
+
+
+void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr, u32 modulatorBandBaseAddr);
+int generateAM(amModulator *modulator,float modulationIndex,int basebandFrequency);
+void startAMModulator(amModulator *modulator);
+void stopAMModulator(amModulator *modulator);
+
+
+#endif

@@ -1,0 +1,42 @@
+Time resolution is 1 ps
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.M_AXI_GP0.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP0 : Port is ENABLED.
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.M_AXI_GP1.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_GP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP0 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_GP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_HP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP0 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_HP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP1 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_HP2.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP2 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_HP3.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP3 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.S_AXI_ACP.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_ACP : Port is DISABLED.
+Note: axi_iic configured for SDA inertial delay of 0 clocks.
+Time: 0 ps  Iteration: 0  Process: /system_top/i_system_wrapper/system_i/I2SSystem/axi_iic_0/U0/X_IIC/FILTER_I/line__5051  File: /wrk/ci/prod/2021.1/sw/continuous/3932/packages/customer/vivado/data/ip/xilinx/axi_iic_v2_1/hdl/axi_iic_v2_1_vh_rfs.vhd
+Note: axi_iic configured for SCL inertial delay of 0 clocks.
+Time: 0 ps  Iteration: 0  Process: /system_top/i_system_wrapper/system_i/I2SSystem/axi_iic_0/U0/X_IIC/FILTER_I/line__5025  File: /wrk/ci/prod/2021.1/sw/continuous/3932/packages/customer/vivado/data/ip/xilinx/axi_iic_v2_1/hdl/axi_iic_v2_1_vh_rfs.vhd
+                   0 else checking line ......x
+WARNING: 5 ns system_top.i_system_wrapper.system_i.ProcessorSystem.sys_ps7.inst.M_AXI_GP0.master.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks

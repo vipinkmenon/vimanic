@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"Pulse1": {
+			"proto_instances": {
+			}
+		}
+	}
+}

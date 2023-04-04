@@ -1,0 +1,16 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sat Mar 25 15:17:08 2023
+| Host         : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z035ifbg676-2L
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_audio_codec_i2c_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_audio_codec_i2c_0_0 (xilinx.com:user:audio_codec_i2c:1.0) from (Rev. 16) to (Rev. 17)
+

@@ -1,0 +1,19 @@
+/*
+ * spiSniffer.h
+ *
+ *  Created on: 22-Oct-2022
+ *      Author: Dell
+ */
+
+#ifndef SRC_SPISNIFFER_H_
+#define SRC_SPISNIFFER_H_
+
+#include "xparameters.h"
+
+#define totalMemoryLoc 0x77FC
+
+void analyzePackets(int numLocations);
+
+
+
+#endif /* SRC_SPISNIFFER_H_ */

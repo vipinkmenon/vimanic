@@ -1,0 +1,1 @@
+-wto "e4b5916d595744c1991806779294c972" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "spiBusMonitor_behav" "xil_defaultlib.spiBusMonitor" "xil_defaultlib.glbl" -log "elaborate.log" 

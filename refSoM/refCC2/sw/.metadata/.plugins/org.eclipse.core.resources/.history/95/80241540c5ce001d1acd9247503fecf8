@@ -1,0 +1,34 @@
+#include "rssiCalc.h"
+#include "xil_io.h"
+
+void initRSSI(rssi *myrssi, u32 baseAddr){
+	myrssi->BaseAddress = baseAddr;
+}
+
+
+
+
+float getRSSI(rssi *myrssi){
+	int adcIn;
+	adcIn = Xil_In32(myrssi->BaseAddress);
+	return (adcIn*3.3)/((1<<16)-1);
+}
+
+
+
+int findClosestIndex(float num,float *floatArray,int arraySize){
+	int i;
+	int index=0;
+	float diff;
+	float prevDiff  = 10000.0;
+	for(i=0;i<arraySize;i++){
+		if(floatArray[i] > num)
+			diff = floatArray[i]-num;
+		else
+			diff = num-floatArray[i];
+
+		if(diff < prevDiff)
+			index = i;
+	}
+	return index;
+}

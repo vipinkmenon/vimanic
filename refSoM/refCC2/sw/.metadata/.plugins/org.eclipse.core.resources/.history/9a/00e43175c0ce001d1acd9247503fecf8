@@ -1,0 +1,16 @@
+#include "rssiCalc.h"
+#include "xil_io.h"
+
+
+void initRSSI(rssi *myrssi, u32 baseAddr){
+	myrssi->BaseAddress = baseAddr;
+}
+
+
+
+
+float getRSSI(rssi *myrssi){
+	int adcIn;
+	adcIn = Xil_In32(myrssi->BaseAddress);
+	return (adcIn*3.3)/(2**16-1);
+}

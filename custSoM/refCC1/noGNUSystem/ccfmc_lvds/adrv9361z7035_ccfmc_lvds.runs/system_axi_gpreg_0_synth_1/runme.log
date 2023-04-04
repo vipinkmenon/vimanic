@@ -1,0 +1,388 @@
+
+*** Running vivado
+    with args -log system_axi_gpreg_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_gpreg_0.tcl
+
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source system_axi_gpreg_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Projects/customDSPBringup/noGNUSystem/IPs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2021.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.cache/ip 
+Command: synth_design -top system_axi_gpreg_0 -part xc7z030fbg484-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Device 21-403] Loading part xc7z030fbg484-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4496
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1362.852 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_axi_gpreg_0' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/synth/system_axi_gpreg_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg.v:38]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg_io' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_io.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg_io' (1#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_io.v:38]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg_io__parameterized0' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_io.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg_io__parameterized0' (1#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_io.v:38]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg_clock_mon' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [E:/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (2#1) [E:/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6157] synthesizing module 'up_clock_mon' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/up_clock_mon.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'up_clock_mon' (3#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/up_clock_mon.v:38]
+INFO: [Synth 8-6157] synthesizing module 'ad_rst' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/ad_rst.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'ad_rst' (4#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/ad_rst.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg_clock_mon' (5#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg_clock_mon__parameterized0' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg_clock_mon__parameterized0' (5#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6157] synthesizing module 'axi_gpreg_clock_mon__parameterized1' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg_clock_mon__parameterized1' (5#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg_clock_mon.v:38]
+INFO: [Synth 8-6157] synthesizing module 'up_axi' [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/up_axi.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'up_axi' (6#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/common/up_axi.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'axi_gpreg' (7#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ipshared/070b/axi_gpreg.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpreg_0' (8#1) [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/synth/system_axi_gpreg_0.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1362.852 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1362.852 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1362.852 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1362.852 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc] for cell 'inst'
+Finished Parsing XDC File [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc] for cell 'inst'
+Parsing XDC File [E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_axi_gpreg_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_axi_gpreg_0_synth_1/dont_touch.xdc]
+Parsing XDC File [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc] for cell 'inst'
+Finished Parsing XDC File [e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc] for cell 'inst'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1416.344 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1416.543 ; gain = 0.199
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030fbg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_d_rst_reg/rst_async_d2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_d_rst_reg/rst_sync_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_d_rst_reg/rst_sync_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_d_rst_reg/rst_sync_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/xilinx/common/ad_rst_constr.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_axi_gpreg_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_i. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_count_running_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 3).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/d_count_run_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/d_count_run_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/d_count_run_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/d_count_run_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/d_count_run_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/d_count_run_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/d_count_run_m1_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/d_count_run_m2_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/d_count_run_m3_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 4).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[0].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[1].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+Applied set_property ASYNC_REG = true for inst/\g_clock_mon[2].i_gpreg_clock_mon /i_clock_mon/up_d_count_reg. (constraint file  e:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpreg_0/system_axi_gpreg_0_constr.xdc, line 5).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    5 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 18    
+	               14 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 67    
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 14    
+	   3 Input   32 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 29    
+	   3 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1416.543 ; gain = 53.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     3|
+|2     |CARRY4 |    39|
+|3     |LUT1   |     7|
+|4     |LUT2   |   114|
+|5     |LUT3   |    11|
+|6     |LUT4   |    59|
+|7     |LUT5   |    82|
+|8     |LUT6   |   240|
+|9     |FDCE   |   346|
+|10    |FDPE   |    76|
+|11    |FDRE   |   403|
+|12    |FDSE   |     5|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1419.133 ; gain = 2.590
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1419.133 ; gain = 56.281
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1419.133 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1439.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: a8a464f4
+INFO: [Common 17-83] Releasing license: Synthesis
+39 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1439.832 ; gain = 76.980
+INFO: [Common 17-1381] The checkpoint 'E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_axi_gpreg_0_synth_1/system_axi_gpreg_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_axi_gpreg_0, cache-ID = 11cfa2ec49ff604a
+INFO: [Coretcl 2-1174] Renamed 13 cell refs.
+INFO: [Common 17-1381] The checkpoint 'E:/Projects/customDSPBringup/noGNUSystem/ccfmc_lvds/adrv9361z7035_ccfmc_lvds.runs/system_axi_gpreg_0_synth_1/system_axi_gpreg_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_axi_gpreg_0_utilization_synth.rpt -pb system_axi_gpreg_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  1 17:03:27 2023...

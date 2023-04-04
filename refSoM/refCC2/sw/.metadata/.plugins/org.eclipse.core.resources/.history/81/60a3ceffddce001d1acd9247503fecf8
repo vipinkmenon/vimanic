@@ -1,0 +1,30 @@
+#include "attenuator.h"
+#include "xil_io.h"
+#include "sleep.h"
+
+void initAttenuator(attenuator *attn, u32 baseAddr){
+	attn->BaseAddress = baseAddr;
+	attn->attVal[0] = 31.75;
+	attn->attVal[1] = 31.75;
+	attn->attVal[2] = 31.75;
+}
+
+
+
+int writeAttenuator(attenuator *attn,int attenuatorNo,float attValue){
+	if(attenuatorNo < 1 || attenuatorNo > 3){
+		print("Error: Wrong attenuator number\n\r");
+		return -1;
+	}
+	if(attValue < 0 || attenuatorNo > 31.75){
+		print("Error: Wrong attenuation value. Should be between 0 to 31.75\n\r");
+		return -1;
+	}
+	Xil_Out32(attn->BaseAddress+4,attenuatorNo);
+	Xil_Out32(attn->BaseAddress+8,(attValue*4));
+	Xil_Out32(attn->BaseAddress,1); //start
+	usleep(100);
+	Xil_Out32(attn->BaseAddress,0); //stop
+	attn->attVal[attenuatorNo-1] = attValue;
+	return 0;
+}

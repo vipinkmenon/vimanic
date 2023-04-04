@@ -1,0 +1,3423 @@
+!SESSION 2023-03-08 11:35:34.092 -----------------------------------------------
+eclipse.buildId=2021.1
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+This is a continuation of log file E:\Projects\adrvSoM\vimanic\noGNUSystemReference\sw\.metadata\.bak_0.log
+Created Time: 2023-03-08 11:39:53.353
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.353
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.355
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Result: [null, {"device": "7z035i",
+"family": "zynq",
+"timestamp": "Tue Feb 28 10:38:54 2023",
+"vivado_version": "2021.1",
+"part": "xc7z035ifbg676-2L",
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.443
+!MESSAGE XSCT Command: [::hsi::utils::get_ps_config_params -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.448
+!MESSAGE XSCT command with result: [::hsi::utils::get_ps_config_params -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Result: [null, {"PCW_APU_PERIPHERAL_FREQMHZ": "666.666666",
+"PCW_DDR_HPRLPR_QUEUE_PARTITION": "HPR(0)/LPR(32)",
+"PCW_DDR_HPR_TO_CRITICAL_PRIORITY_LEVEL": "15",
+"PCW_DDR_LPR_TO_CRITICAL_PRIORITY_LEVEL": "2",
+"PCW_DDR_PORT0_HPR_ENABLE": "0",
+"PCW_DDR_PORT1_HPR_ENABLE": "0",
+"PCW_DDR_PORT2_HPR_ENABLE": "0",
+"PCW_DDR_PORT3_HPR_ENABLE": "0",
+"PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL": "2",
+"PCW_FPGA0_PERIPHERAL_FREQMHZ": "100.0",
+"PCW_UIPARAM_DDR_BUS_WIDTH": "32 Bit",
+"PCW_UIPARAM_DDR_FREQ_MHZ": "533.333333",
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.449
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.476
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Result: [null, {"I2SSystem_axi_iic_0": {"GIE": {"description": "Global Interrupt Enable Register",
+"address_offset": "0x1c",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"GIE": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Global Interrupt Enable
+0 - All Interrupts disabled; no interrupt (even if unmasked in IER) possible from AXI IIC core
+1 - Unmasked AXI IIC core interrupts are passed to processor
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810524,
+},
+"ISR": {"description": "Interrupt Status Register",
+"address_offset": "0x020",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"int0": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt0 - Arbitration Lost
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int1": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt1 - Transmit Error/Slave Transmit Complete
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int2": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt2 - Transmit FIFO Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int3": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt3 - Recieve FIFO FULL
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int4": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt4 - IIC Bus is Not Busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int5": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt5 - Addressed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int6": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt6 - Not Addessed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int7": {"access": "read-write",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt7 - Transmit FIFO Half Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810528,
+},
+"IER": {"description": "Interrupt Enable Register",
+"address_offset": "0x028",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"int0": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt0 - Arbitration Lost
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int1": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt1 - Transmit Error/Slave Transmit Complete
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int2": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt2 - Transmit FIFO Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int3": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt3 - Recieve FIFO FULL
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int4": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt4 - IIC Bus is Not Busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int5": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt5 - Addressed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int6": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt6 - Not Addessed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int7": {"access": "read-write",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt7 - Transmit FIFO Half Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810536,
+},
+"SOFTR": {"description": "Soft Reset Register",
+"address_offset": "0x040",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"RKEY": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Reset Key - Firmware must write a value of 0xA to this field to
+            cause a soft reset of the Interrupt registers of AXI IIC controller.
+            Writing any other value results in an AXI transaction
+            acknowledgement with SLVERR and no reset occurs.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810560,
+},
+"CR": {"description": "Control Register",
+"address_offset": "0x100",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"EN": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit must be set before any other CR bits have any effect
+0 - resets and disables the AXI IIC controller but not the registers or FIFOs
+1 - enables the AXI IIC controller
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Reset": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit must be set to flush the FIFO if either (a) arbitration is lost or (b) if a transmit error occurs
+0 - transmit FIFO normal operation
+1 - resets the transmit FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"MSMS": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When this bit is changed from 0 to 1, the
+AXI IIC bus interface generates a START condition in master mode. When
+this bit is cleared, a STOP condition is generated and the AXI IIC bus
+interface switches to slave mode. When this bit is cleared by the
+hardware, because arbitration for the bus has been lost, a STOP
+condition is not generated
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit selects the direction of master/slave transfers.
+0 - selects an AXI IIC receive
+1 - selects an AXI IIC transmit
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TXAK": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit specifies the value driven onto
+the sda line during acknowledge cycles for both master and slave recievers.
+0 - acknowledge
+1 - not-acknowledge
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RSTA": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Writing a 1 to this bit generates a repeated START 
+condition on the bus if the AXI IIC bus interface is the current bus
+master. Attempting a repeated START at the wrong time, if the bus is
+owned by another master, results in a loss of arbitration. This bit is reset
+when the repeated start occurs. This bit must be set prior to writing the
+new address to the TX_FIFO or DTR
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"GC_EN": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Setting this bit High allows the AXI IIC to respond to a general call address.
+0 - General Call Disabled
+1 - General Call Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810752,
+},
+"SR": {"description": "Status Register",
+"address_offset": "0x104",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"ABGC": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set to 1 when another master has issued a general call and
+the general call enable bit is set to 1, CR(6) = 1.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"AAS": {"access": "read-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When the address on the IIC bus matches the slave address in the Address register (ADR), the IIC bus interface
+is being addressed as a slave and switches to slave mode. If 10-bit addressing is selected this device only responds to a 10-bit
+address or general call if enabled. This bit is cleared when a stop
+condition is detected or a repeated start occurs.
+0 - indicates not being addressed as a slave
+1 - indicates being addressed as a slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"BB": {"access": "read-only",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit indicates the status of the IIC bus. This bit is set
+when a START condition is detected and cleared when a STOP
+condition is detected.
+0 - indicates the bus is idle
+1 - indicates the bus is busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"ARW": {"access": "read-only",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When the IIC bus interface has been addressed as a slave (AAS is set), 
+this bit indicates the value of the read/write bit sent by the master.
+This bit is only valid when a complete transfer has occurred and
+no other transfers have been initiated.
+0 - indicates master writing to slave
+1 - indicates master reading from slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Full": {"access": "read-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set High when the transmit FIFO is full.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Full": {"access": "read-only",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set High when the receive FIFO is full.
+This bit is set only when all 16 locations in the FIFO are full,
+regardless of the compare value field of the RX_FIFO_PIRQ register.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This is set High when the receive FIFO is empty.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This is set High when the transmit FIFO is empty.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810756,
+},
+"TX_FIFO": {"description": "Transmit FIFO Register",
+"address_offset": "0x108",
+"access": "write-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"D7_D0": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "If the dynamic stop bit is used and the AXI IIC is a master receiver,
+the value is the number of bytes to receive.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Start": {"access": "write-only",
+"bit_offset": "8",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The dynamic start bit can be used to send a start or repeated start sequence on the
+IIC bus. A start sequence is generated if the MSMS = 0, a
+repeated start sequence is generated if the MSMS = 1.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Stop": {"access": "write-only",
+"bit_offset": "9",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The dynamic stop bit can be used to send an IIC stop
+sequence on the IIC bus after the last byte has been transmitted or received.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810760,
+},
+"RX_FIFO": {"description": "Recieve FIFO Register",
+"address_offset": "0x10C",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"D7_D0": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "IIC Receive Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810764,
+},
+"ADR": {"description": "Slave Address Register",
+"address_offset": "0x110",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Slave_Address": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "7",
+"desc": "Address used by the IIC bus interface when in slave mode.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810768,
+},
+"TX_FIFO_OCY": {"description": "Transmit FIFO Occupency Register",
+"address_offset": "0x114",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Occupancy_Value": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 indicates that
+10 locations are full in the FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810772,
+},
+"RX_FIFO_OCY": {"description": "Recieve FIFO Occupency Register",
+"address_offset": "0x118",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Occupancy_Value": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 indicates that
+10 locations are full in the FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810776,
+},
+"TEN_ADR": {"description": "Slave Ten Bit Address Register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"MSB_of_Slave_Address": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "3",
+"desc": "Three MSBs of the 10-bit address used by the AXI IIC bus interface when in slave mode.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810780,
+},
+"RX_FIFO_PIRQ": {"description": "Recieve FIFO Programmable Depth Interrupt Register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Compare_Value": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 implies that when
+10 locations in the receive FIFO are filled, the receive FIFO
+interrupt is set.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810784,
+},
+"GPO": {"description": "General Purpose Output Register",
+"address_offset": "0x124",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"General_Purpose_Outputs": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The LSB (Bit[0]) is the first bit populated
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810788,
+},
+"TSUSTA": {"description": "Timing Parameter TSUSTA Register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUSTA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Setup time for a repeated START condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810792,
+},
+"TSUSTO": {"description": "Timing Parameter TSUSTO Register",
+"address_offset": "0x12C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUSTO": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Setup time for a repeated STOP condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810796,
+},
+"THDSTA": {"description": "Timing Parameter THDSTA Register",
+"address_offset": "0x130",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THDSTA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Hold time for a repeated START condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810800,
+},
+"TSUDAT": {"description": "Timing Parameter TSUDAT Register",
+"address_offset": "0x134",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUDAT": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Data Setup time
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810804,
+},
+"TBUF": {"description": "Timing Parameter TBUF Register",
+"address_offset": "0x138",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TBUF": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Bus free time between a STOP and START condition
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810808,
+},
+"THIGH": {"description": "Timing Parameter THIGH Register",
+"address_offset": "0x13C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THIGH": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "High Period of the scl clock.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810812,
+},
+"TLOW": {"description": "Timing Parameter TLOW Register",
+"address_offset": "0x140",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TLOW": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Low Period of scl clock.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810816,
+},
+"THDDAT": {"description": "Timing Parameter THDDAT Register",
+"address_offset": "0x144",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THDDAT": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Data Hold time
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810820,
+},
+},
+"ProcessorSystem_axi_gpio_0": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "1",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681728,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "1",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681732,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681736,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681740,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682012,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682024,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682016,
+},
+},
+"axi_gpreg": {},
+"ps7_afi_0": {},
+"ps7_afi_1": {},
+"ps7_afi_2": {},
+"ps7_afi_3": {},
+"ps7_coresight_comp_0": {},
+"ps7_ddr_0": {},
+"ps7_ddrc_0": {},
+"ps7_dev_cfg_0": {},
+"ps7_dma_ns": {},
+"ps7_dma_s": {},
+"ps7_globaltimer_0": {},
+"ps7_gpio_0": {},
+"ps7_gpv_0": {},
+"ps7_intc_dist_0": {},
+"ps7_iop_bus_config_0": {},
+"ps7_l2cachec_0": {},
+"ps7_ocmc_0": {},
+"ps7_pl310_0": {},
+"ps7_pmu_0": {},
+"ps7_qspi_0": {},
+"ps7_qspi_linear_0": {},
+"ps7_ram_0": {},
+"ps7_ram_1": {},
+"ps7_scuc_0": {},
+"ps7_scugic_0": {},
+"ps7_scutimer_0": {},
+"ps7_scuwdt_0": {},
+"ps7_sd_0": {},
+"ps7_slcr_0": {},
+"ps7_spi_0": {},
+"ps7_spi_1": {},
+"ps7_uart_1": {},
+"ps7_xadc_0": {},
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.478
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.489
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Result: [null, {"axi_gpreg_s_axi": {"name": "axi_gpreg",
+"base": "0x41200000",
+"high": "0x4120FFFF",
+"size": "65536",
+"slaveintf": "s_axi",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ProcessorSystem_axi_gpio_0_S_AXI": {"name": "ProcessorSystem_axi_gpio_0",
+"base": "0x41210000",
+"high": "0x4121FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"I2SSystem_axi_iic_0_S_AXI": {"name": "I2SSystem_axi_iic_0",
+"base": "0x41600000",
+"high": "0x4160FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_0": {"name": "ps7_afi_0",
+"base": "0xF8008000",
+"high": "0xF8008FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_1": {"name": "ps7_afi_1",
+"base": "0xF8009000",
+"high": "0xF8009FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_2": {"name": "ps7_afi_2",
+"base": "0xF800A000",
+"high": "0xF800AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_3": {"name": "ps7_afi_3",
+"base": "0xF800B000",
+"high": "0xF800BFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_coresight_comp_0": {"name": "ps7_coresight_comp_0",
+"base": "0xF8800000",
+"high": "0xF88FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddrc_0": {"name": "ps7_ddrc_0",
+"base": "0xF8006000",
+"high": "0xF8006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dev_cfg_0": {"name": "ps7_dev_cfg_0",
+"base": "0xF8007000",
+"high": "0xF80070FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_ns": {"name": "ps7_dma_ns",
+"base": "0xF8004000",
+"high": "0xF8004FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_s": {"name": "ps7_dma_s",
+"base": "0xF8003000",
+"high": "0xF8003FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_globaltimer_0": {"name": "ps7_globaltimer_0",
+"base": "0xF8F00200",
+"high": "0xF8F002FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpio_0": {"name": "ps7_gpio_0",
+"base": "0xE000A000",
+"high": "0xE000AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpv_0": {"name": "ps7_gpv_0",
+"base": "0xF8900000",
+"high": "0xF89FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_intc_dist_0": {"name": "ps7_intc_dist_0",
+"base": "0xF8F01000",
+"high": "0xF8F01FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_iop_bus_config_0": {"name": "ps7_iop_bus_config_0",
+"base": "0xE0200000",
+"high": "0xE0200FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_l2cachec_0": {"name": "ps7_l2cachec_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ocmc_0": {"name": "ps7_ocmc_0",
+"base": "0xF800C000",
+"high": "0xF800CFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pl310_0": {"name": "ps7_pl310_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pmu_0": {"name": "ps7_pmu_0",
+"base": "0xF8893000",
+"high": "0xF8893FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_qspi_0": {"name": "ps7_qspi_0",
+"base": "0xE000D000",
+"high": "0xE000DFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_qspi_linear_0": {"name": "ps7_qspi_linear_0",
+"base": "0xFC000000",
+"high": "0xFCFFFFFF",
+"size": "16777216",
+"slaveintf": "",
+"type": "FLASH",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuc_0": {"name": "ps7_scuc_0",
+"base": "0xF8F00000",
+"high": "0xF8F000FC",
+"size": "253",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scugic_0": {"name": "ps7_scugic_0",
+"base": "0xF8F00100",
+"high": "0xF8F001FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scutimer_0": {"name": "ps7_scutimer_0",
+"base": "0xF8F00600",
+"high": "0xF8F0061F",
+"size": "32",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuwdt_0": {"name": "ps7_scuwdt_0",
+"base": "0xF8F00620",
+"high": "0xF8F006FF",
+"size": "224",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_sd_0": {"name": "ps7_sd_0",
+"base": "0xE0100000",
+"high": "0xE0100FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_slcr_0": {"name": "ps7_slcr_0",
+"base": "0xF8000000",
+"high": "0xF8000FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_spi_0": {"name": "ps7_spi_0",
+"base": "0xE0006000",
+"high": "0xE0006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_spi_1": {"name": "ps7_spi_1",
+"base": "0xE0007000",
+"high": "0xE0007FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_uart_1": {"name": "ps7_uart_1",
+"base": "0xE0001000",
+"high": "0xE0001FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_xadc_0": {"name": "ps7_xadc_0",
+"base": "0xF8007100",
+"high": "0xF8007120",
+"size": "33",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddr_0": {"name": "ps7_ddr_0",
+"base": "0x00100000",
+"high": "0x3FFFFFFF",
+"size": "1072693248",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_0": {"name": "ps7_ram_0",
+"base": "0x00000000",
+"high": "0x0002FFFF",
+"size": "196608",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_1": {"name": "ps7_ram_1",
+"base": "0xFFFF0000",
+"high": "0xFFFFFDFF",
+"size": "65024",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.490
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_ENABLED], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.492
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_ENABLED], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.492
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.493
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_EVENT_COUNTERS], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.500
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_LATENCY_COUNTERS], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.501
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_LATENCY_COUNTERS], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.502
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.504
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_DEBUG_COUNTER_WIDTH], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.504
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_FREQ], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.506
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_FREQ], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.506
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_CPU_CLK_FREQ_HZ], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.508
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0 C_CPU_CLK_FREQ_HZ], Result: [null, 666666687]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.508
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.511
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa], Result: [null, {"ps7_cortexa9_0": {"bscan": "",
+"index": "0",
+},
+"ps7_cortexa9_1": {"bscan": "",
+"index": "1",
+},
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.531
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.559
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1], Result: [null, {"I2SSystem_axi_iic_0": {"GIE": {"description": "Global Interrupt Enable Register",
+"address_offset": "0x1c",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"GIE": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Global Interrupt Enable
+0 - All Interrupts disabled; no interrupt (even if unmasked in IER) possible from AXI IIC core
+1 - Unmasked AXI IIC core interrupts are passed to processor
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810524,
+},
+"ISR": {"description": "Interrupt Status Register",
+"address_offset": "0x020",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"int0": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt0 - Arbitration Lost
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int1": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt1 - Transmit Error/Slave Transmit Complete
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int2": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt2 - Transmit FIFO Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int3": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt3 - Recieve FIFO FULL
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int4": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt4 - IIC Bus is Not Busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int5": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt5 - Addressed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int6": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt6 - Not Addessed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int7": {"access": "read-write",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt7 - Transmit FIFO Half Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810528,
+},
+"IER": {"description": "Interrupt Enable Register",
+"address_offset": "0x028",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"int0": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt0 - Arbitration Lost
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int1": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt1 - Transmit Error/Slave Transmit Complete
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int2": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt2 - Transmit FIFO Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int3": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt3 - Recieve FIFO FULL
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int4": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt4 - IIC Bus is Not Busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int5": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt5 - Addressed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int6": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt6 - Not Addessed As Slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"int7": {"access": "read-write",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Interrupt7 - Transmit FIFO Half Empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810536,
+},
+"SOFTR": {"description": "Soft Reset Register",
+"address_offset": "0x040",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"RKEY": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Reset Key - Firmware must write a value of 0xA to this field to
+            cause a soft reset of the Interrupt registers of AXI IIC controller.
+            Writing any other value results in an AXI transaction
+            acknowledgement with SLVERR and no reset occurs.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810560,
+},
+"CR": {"description": "Control Register",
+"address_offset": "0x100",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"EN": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit must be set before any other CR bits have any effect
+0 - resets and disables the AXI IIC controller but not the registers or FIFOs
+1 - enables the AXI IIC controller
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Reset": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit must be set to flush the FIFO if either (a) arbitration is lost or (b) if a transmit error occurs
+0 - transmit FIFO normal operation
+1 - resets the transmit FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"MSMS": {"access": "read-write",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When this bit is changed from 0 to 1, the
+AXI IIC bus interface generates a START condition in master mode. When
+this bit is cleared, a STOP condition is generated and the AXI IIC bus
+interface switches to slave mode. When this bit is cleared by the
+hardware, because arbitration for the bus has been lost, a STOP
+condition is not generated
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX": {"access": "read-write",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit selects the direction of master/slave transfers.
+0 - selects an AXI IIC receive
+1 - selects an AXI IIC transmit
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TXAK": {"access": "read-write",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit specifies the value driven onto
+the sda line during acknowledge cycles for both master and slave recievers.
+0 - acknowledge
+1 - not-acknowledge
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RSTA": {"access": "read-write",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Writing a 1 to this bit generates a repeated START 
+condition on the bus if the AXI IIC bus interface is the current bus
+master. Attempting a repeated START at the wrong time, if the bus is
+owned by another master, results in a loss of arbitration. This bit is reset
+when the repeated start occurs. This bit must be set prior to writing the
+new address to the TX_FIFO or DTR
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"GC_EN": {"access": "read-write",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Setting this bit High allows the AXI IIC to respond to a general call address.
+0 - General Call Disabled
+1 - General Call Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810752,
+},
+"SR": {"description": "Status Register",
+"address_offset": "0x104",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"ABGC": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set to 1 when another master has issued a general call and
+the general call enable bit is set to 1, CR(6) = 1.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"AAS": {"access": "read-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When the address on the IIC bus matches the slave address in the Address register (ADR), the IIC bus interface
+is being addressed as a slave and switches to slave mode. If 10-bit addressing is selected this device only responds to a 10-bit
+address or general call if enabled. This bit is cleared when a stop
+condition is detected or a repeated start occurs.
+0 - indicates not being addressed as a slave
+1 - indicates being addressed as a slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"BB": {"access": "read-only",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit indicates the status of the IIC bus. This bit is set
+when a START condition is detected and cleared when a STOP
+condition is detected.
+0 - indicates the bus is idle
+1 - indicates the bus is busy
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"ARW": {"access": "read-only",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "When the IIC bus interface has been addressed as a slave (AAS is set), 
+this bit indicates the value of the read/write bit sent by the master.
+This bit is only valid when a complete transfer has occurred and
+no other transfers have been initiated.
+0 - indicates master writing to slave
+1 - indicates master reading from slave
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Full": {"access": "read-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set High when the transmit FIFO is full.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Full": {"access": "read-only",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This bit is set High when the receive FIFO is full.
+This bit is set only when all 16 locations in the FIFO are full,
+regardless of the compare value field of the RX_FIFO_PIRQ register.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This is set High when the receive FIFO is empty.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "This is set High when the transmit FIFO is empty.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810756,
+},
+"TX_FIFO": {"description": "Transmit FIFO Register",
+"address_offset": "0x108",
+"access": "write-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"D7_D0": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "If the dynamic stop bit is used and the AXI IIC is a master receiver,
+the value is the number of bytes to receive.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Start": {"access": "write-only",
+"bit_offset": "8",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The dynamic start bit can be used to send a start or repeated start sequence on the
+IIC bus. A start sequence is generated if the MSMS = 0, a
+repeated start sequence is generated if the MSMS = 1.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Stop": {"access": "write-only",
+"bit_offset": "9",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The dynamic stop bit can be used to send an IIC stop
+sequence on the IIC bus after the last byte has been transmitted or received.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810760,
+},
+"RX_FIFO": {"description": "Recieve FIFO Register",
+"address_offset": "0x10C",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"D7_D0": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "IIC Receive Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810764,
+},
+"ADR": {"description": "Slave Address Register",
+"address_offset": "0x110",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Slave_Address": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "7",
+"desc": "Address used by the IIC bus interface when in slave mode.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810768,
+},
+"TX_FIFO_OCY": {"description": "Transmit FIFO Occupency Register",
+"address_offset": "0x114",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Occupancy_Value": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 indicates that
+10 locations are full in the FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810772,
+},
+"RX_FIFO_OCY": {"description": "Recieve FIFO Occupency Register",
+"address_offset": "0x118",
+"access": "read-only",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Occupancy_Value": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 indicates that
+10 locations are full in the FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810776,
+},
+"TEN_ADR": {"description": "Slave Ten Bit Address Register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"MSB_of_Slave_Address": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "3",
+"desc": "Three MSBs of the 10-bit address used by the AXI IIC bus interface when in slave mode.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810780,
+},
+"RX_FIFO_PIRQ": {"description": "Recieve FIFO Programmable Depth Interrupt Register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Compare_Value": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "4",
+"desc": "Bit[3] is the MSB. A binary value of 1001 implies that when
+10 locations in the receive FIFO are filled, the receive FIFO
+interrupt is set.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810784,
+},
+"GPO": {"description": "General Purpose Output Register",
+"address_offset": "0x124",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"General_Purpose_Outputs": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "The LSB (Bit[0]) is the first bit populated
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810788,
+},
+"TSUSTA": {"description": "Timing Parameter TSUSTA Register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUSTA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Setup time for a repeated START condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810792,
+},
+"TSUSTO": {"description": "Timing Parameter TSUSTO Register",
+"address_offset": "0x12C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUSTO": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Setup time for a repeated STOP condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810796,
+},
+"THDSTA": {"description": "Timing Parameter THDSTA Register",
+"address_offset": "0x130",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THDSTA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Hold time for a repeated START condition.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810800,
+},
+"TSUDAT": {"description": "Timing Parameter TSUDAT Register",
+"address_offset": "0x134",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TSUDAT": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Data Setup time
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810804,
+},
+"TBUF": {"description": "Timing Parameter TBUF Register",
+"address_offset": "0x138",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TBUF": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Bus free time between a STOP and START condition
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810808,
+},
+"THIGH": {"description": "Timing Parameter THIGH Register",
+"address_offset": "0x13C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THIGH": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "High Period of the scl clock.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810812,
+},
+"TLOW": {"description": "Timing Parameter TLOW Register",
+"address_offset": "0x140",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"TLOW": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Low Period of scl clock.
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810816,
+},
+"THDDAT": {"description": "Timing Parameter THDDAT Register",
+"address_offset": "0x144",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"THDDAT": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "Data Hold time
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1096810820,
+},
+},
+"ProcessorSystem_axi_gpio_0": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "1",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681728,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "1",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681732,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681736,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681740,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682012,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682024,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682016,
+},
+},
+"axi_gpreg": {},
+"ps7_afi_0": {},
+"ps7_afi_1": {},
+"ps7_afi_2": {},
+"ps7_afi_3": {},
+"ps7_coresight_comp_0": {},
+"ps7_ddr_0": {},
+"ps7_ddrc_0": {},
+"ps7_dev_cfg_0": {},
+"ps7_dma_ns": {},
+"ps7_dma_s": {},
+"ps7_globaltimer_0": {},
+"ps7_gpio_0": {},
+"ps7_gpv_0": {},
+"ps7_intc_dist_0": {},
+"ps7_iop_bus_config_0": {},
+"ps7_l2cachec_0": {},
+"ps7_ocmc_0": {},
+"ps7_pl310_0": {},
+"ps7_pmu_0": {},
+"ps7_qspi_0": {},
+"ps7_qspi_linear_0": {},
+"ps7_ram_0": {},
+"ps7_ram_1": {},
+"ps7_scuc_0": {},
+"ps7_scugic_0": {},
+"ps7_scutimer_0": {},
+"ps7_scuwdt_0": {},
+"ps7_sd_0": {},
+"ps7_slcr_0": {},
+"ps7_spi_0": {},
+"ps7_spi_1": {},
+"ps7_uart_1": {},
+"ps7_xadc_0": {},
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.561
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.572
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1], Result: [null, {"axi_gpreg_s_axi": {"name": "axi_gpreg",
+"base": "0x41200000",
+"high": "0x4120FFFF",
+"size": "65536",
+"slaveintf": "s_axi",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ProcessorSystem_axi_gpio_0_S_AXI": {"name": "ProcessorSystem_axi_gpio_0",
+"base": "0x41210000",
+"high": "0x4121FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"I2SSystem_axi_iic_0_S_AXI": {"name": "I2SSystem_axi_iic_0",
+"base": "0x41600000",
+"high": "0x4160FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_0": {"name": "ps7_afi_0",
+"base": "0xF8008000",
+"high": "0xF8008FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_1": {"name": "ps7_afi_1",
+"base": "0xF8009000",
+"high": "0xF8009FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_2": {"name": "ps7_afi_2",
+"base": "0xF800A000",
+"high": "0xF800AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_3": {"name": "ps7_afi_3",
+"base": "0xF800B000",
+"high": "0xF800BFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_coresight_comp_0": {"name": "ps7_coresight_comp_0",
+"base": "0xF8800000",
+"high": "0xF88FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddrc_0": {"name": "ps7_ddrc_0",
+"base": "0xF8006000",
+"high": "0xF8006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dev_cfg_0": {"name": "ps7_dev_cfg_0",
+"base": "0xF8007000",
+"high": "0xF80070FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_ns": {"name": "ps7_dma_ns",
+"base": "0xF8004000",
+"high": "0xF8004FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_s": {"name": "ps7_dma_s",
+"base": "0xF8003000",
+"high": "0xF8003FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_globaltimer_0": {"name": "ps7_globaltimer_0",
+"base": "0xF8F00200",
+"high": "0xF8F002FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpio_0": {"name": "ps7_gpio_0",
+"base": "0xE000A000",
+"high": "0xE000AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpv_0": {"name": "ps7_gpv_0",
+"base": "0xF8900000",
+"high": "0xF89FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_intc_dist_0": {"name": "ps7_intc_dist_0",
+"base": "0xF8F01000",
+"high": "0xF8F01FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_iop_bus_config_0": {"name": "ps7_iop_bus_config_0",
+"base": "0xE0200000",
+"high": "0xE0200FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_l2cachec_0": {"name": "ps7_l2cachec_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ocmc_0": {"name": "ps7_ocmc_0",
+"base": "0xF800C000",
+"high": "0xF800CFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pl310_0": {"name": "ps7_pl310_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pmu_0": {"name": "ps7_pmu_0",
+"base": "0xF8893000",
+"high": "0xF8893FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_qspi_0": {"name": "ps7_qspi_0",
+"base": "0xE000D000",
+"high": "0xE000DFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_qspi_linear_0": {"name": "ps7_qspi_linear_0",
+"base": "0xFC000000",
+"high": "0xFCFFFFFF",
+"size": "16777216",
+"slaveintf": "",
+"type": "FLASH",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuc_0": {"name": "ps7_scuc_0",
+"base": "0xF8F00000",
+"high": "0xF8F000FC",
+"size": "253",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scugic_0": {"name": "ps7_scugic_0",
+"base": "0xF8F00100",
+"high": "0xF8F001FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scutimer_0": {"name": "ps7_scutimer_0",
+"base": "0xF8F00600",
+"high": "0xF8F0061F",
+"size": "32",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuwdt_0": {"name": "ps7_scuwdt_0",
+"base": "0xF8F00620",
+"high": "0xF8F006FF",
+"size": "224",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_sd_0": {"name": "ps7_sd_0",
+"base": "0xE0100000",
+"high": "0xE0100FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_slcr_0": {"name": "ps7_slcr_0",
+"base": "0xF8000000",
+"high": "0xF8000FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_spi_0": {"name": "ps7_spi_0",
+"base": "0xE0006000",
+"high": "0xE0006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_spi_1": {"name": "ps7_spi_1",
+"base": "0xE0007000",
+"high": "0xE0007FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_uart_1": {"name": "ps7_uart_1",
+"base": "0xE0001000",
+"high": "0xE0001FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_xadc_0": {"name": "ps7_xadc_0",
+"base": "0xF8007100",
+"high": "0xF8007120",
+"size": "33",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddr_0": {"name": "ps7_ddr_0",
+"base": "0x00100000",
+"high": "0x3FFFFFFF",
+"size": "1072693248",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_0": {"name": "ps7_ram_0",
+"base": "0x00000000",
+"high": "0x0002FFFF",
+"size": "196608",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_1": {"name": "ps7_ram_1",
+"base": "0xFFFF0000",
+"high": "0xFFFFFDFF",
+"size": "65024",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.573
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_ENABLED], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.574
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_ENABLED], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.575
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_EVENT_COUNTERS], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.576
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_EVENT_COUNTERS], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.577
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_LATENCY_COUNTERS], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.593
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_LATENCY_COUNTERS], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.594
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_COUNTER_WIDTH], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.595
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_DEBUG_COUNTER_WIDTH], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.595
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_FREQ], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.596
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_FREQ], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.596
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_CPU_CLK_FREQ_HZ], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.597
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_1 C_CPU_CLK_FREQ_HZ], Result: [null, 666666687]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.599
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.600
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa ps7_cortexa9_0], Result: [null, I2SSystem_axi_iic_0 ProcessorSystem_axi_gpio_0 axi_gpreg ps7_afi_0 ps7_afi_1 ps7_afi_2 ps7_afi_3 ps7_coresight_comp_0 ps7_ddr_0 ps7_ddrc_0 ps7_dev_cfg_0 ps7_dma_ns ps7_dma_s ps7_globaltimer_0 ps7_gpio_0 ps7_gpv_0 ps7_intc_dist_0 ps7_iop_bus_config_0 ps7_l2cachec_0 ps7_ocmc_0 ps7_pl310_0 ps7_pmu_0 ps7_qspi_0 ps7_qspi_linear_0 ps7_ram_0 ps7_ram_1 ps7_scuc_0 ps7_scugic_0 ps7_scutimer_0 ps7_scuwdt_0 ps7_sd_0 ps7_slcr_0 ps7_spi_0 ps7_spi_1 ps7_uart_1 ps7_xadc_0]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.624
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_files_on_hw E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa bit], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.625
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_files_on_hw E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa bit], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.628
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.631
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#3]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.632
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.675
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.676
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.681
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.681
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.695
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.699
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.701
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#3]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.701
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.715
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.716
+!MESSAGE XSCT Command: [proc fetch_device_jtag_ctx { node_id } {
+foreach t [jtag ta -ta] {
+if {[dict get $t node_id] == $node_id} {
+return [dict get $t target_ctx]
+}
+}
+error cannot find a jtag device with node id $node_id}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.717
+!MESSAGE XSCT command with result: [proc fetch_device_jtag_ctx { node_id } {
+foreach t [jtag ta -ta] {
+if {[dict get $t node_id] == $node_id} {
+return [dict get $t target_ctx]
+}
+}
+error cannot find a jtag device with node id $node_id}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.717
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.722
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.722
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.737
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.737
+!MESSAGE XSCT Command: [fetch_device_jtag_ctx 2], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.739
+!MESSAGE XSCT command with result: [fetch_device_jtag_ctx 2], Result: [null, jsn-JTAG-HS3-210299AFB95F-4ba00477-0]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.740
+!MESSAGE XSCT Command: [fetch_device_jtag_ctx 3], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.741
+!MESSAGE XSCT command with result: [fetch_device_jtag_ctx 3], Result: [null, jsn-JTAG-HS3-210299AFB95F-23732093-0]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.749
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.795
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.795
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.797
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.798
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.799
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#3]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.799
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.804
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.805
+!MESSAGE XSCT Command: [version -server], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.806
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2021.1]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.806
+!MESSAGE XSCT Command: [version], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.807
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2021.1
+SW Build 1933 on 2021-06-09-14:19:58
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.808
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.814
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.814
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.828
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.829
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.834
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.834
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.848
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.851
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.856
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.856
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.871
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.872
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.877
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.877
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.891
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.891
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.896
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.896
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.910
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.911
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.915
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent JTAG-HS3 210299AFB95F]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.916
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.930
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z035 (idcode 23732093 irlen 6 fpga)]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.930
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent JTAG-HS3 210299AFB95F" && level == 0}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.945
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent JTAG-HS3 210299AFB95F" && level == 0}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.946
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.947
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.947
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.954
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:53.954
+!MESSAGE XSCT Command: [loadhw -hw E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.037
+!MESSAGE XSCT command with result: [loadhw -hw E:/Projects/adrvSoM/vimanic/analogDriverTest2021/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, system_top_0]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.037
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.038
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.038
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.045
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.046
+!MESSAGE XSCT Command: [stop], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.102
+!MESSAGE XSCT command with result: [stop], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.102
+!MESSAGE XSCT Command: [source E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw/DriverTest/_ide/psinit/ps7_init.tcl], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.119
+!MESSAGE XSCT command with result: [source E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw/DriverTest/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.119
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.307
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.307
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.313
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.313
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.330
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.330
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.390
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.391
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.397
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.398
+!MESSAGE XSCT Command: [dow E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw/DriverTest/Debug/DriverTest.elf], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.888
+!MESSAGE XSCT command with result: [dow E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw/DriverTest/Debug/DriverTest.elf], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.889
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:54.889
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:55.000
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:55.029
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:55.029
+!MESSAGE XSCT Command: [con], Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:39:55.047
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-5: Launching SystemDebugger_DriverTest_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:50:00.801
+!MESSAGE XSCT Command: [disconnect tcfchan#3], Thread: Thread-131
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 11:50:00.805
+!MESSAGE XSCT command with result: [disconnect tcfchan#3], Result: [null, ]. Thread: Thread-131
+!SESSION 2023-03-08 16:44:59.330 -----------------------------------------------
+eclipse.buildId=2021.1
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2023-03-08 16:45:31.341
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:34.719
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:34.719
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:34.719
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:34.751
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:34.751
+!MESSAGE XSCT Command: [setws E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw], Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:36.901
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:36.901
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:36.902
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:36.902
+!MESSAGE XSCT command with result: [setws E:/Projects/adrvSoM/vimanic/noGNUSystemReference/sw], Result: [null, ]. Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-03-08 16:45:36.909
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, E:/Vitis/2021.1/data]. Thread: Worker-5: Initializing s/w repositories
