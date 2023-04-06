@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Apr  4 10:57:58 2023
-| Host         : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+| Date         : Tue Apr  4 21:28:00 2023
+| Host         : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_top_utilization_synth.rpt -pb system_top_utilization_synth.pb
 | Design       : system_top
 | Device       : 7z035ifbg676-2L
@@ -168,30 +168,27 @@ Table of Contents
 +---------------------------------+------+
 | system_xbar_0                   |    1 |
 | system_vio_1_0                  |    1 |
-| system_system_ila_0_2           |    1 |
 | system_sys_rstgen_0             |    1 |
 | system_sys_ps7_0                |    1 |
+| system_subtractor_0_0           |    1 |
 | system_selectio_wiz_0_0         |    1 |
+| system_mux_0_0                  |    1 |
 | system_levelShift_0_0           |    1 |
 | system_i2sController_1_0        |    1 |
-| system_freqSynth_0_0            |    1 |
-| system_fir_compiler_0_0         |    1 |
 | system_envelopDetector_0_0      |    1 |
-| system_decimation_0_0           |    1 |
 | system_dataPackager_0_0         |    1 |
 | system_dataGen_0_0              |    1 |
 | system_clk_wiz_0_0              |    1 |
+| system_axi_gpio_1_0             |    1 |
 | system_axi_gpio_0_5             |    1 |
-| system_axi_gpio_0_4             |    1 |
-| system_axi_gpio_0_3             |    1 |
 | system_axi_gpio_0_2             |    1 |
 | system_axi_gpio_0_1             |    1 |
-| system_axi_gpio_0_0             |    1 |
+| system_average_0_1              |    1 |
+| system_average_0_0              |    1 |
 | system_auto_pc_0                |    1 |
 | system_audio_codec_i2c_0_0      |    1 |
 | system_attenuatorController_0_0 |    1 |
-| system_angleLUT_0_0             |    1 |
-| system_amModulator_0_0          |    1 |
+| system_amModulator_0_1          |    1 |
 +---------------------------------+------+
 
 

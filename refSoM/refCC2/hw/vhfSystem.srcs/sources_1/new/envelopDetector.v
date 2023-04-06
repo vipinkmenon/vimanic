@@ -52,12 +52,12 @@ begin
     if(rectDataValid)
     begin
         o_data_valid <= 1'b1;
-        if(rectData > o_data & (rectData-o_data < 1000))
+        if(rectData > o_data & (rectData-o_data < 50))
             o_data <= rectData;
         else if(rectData > o_data)
-            o_data <= o_data+1000;
-        else if(o_data > 10)
-            o_data <= o_data-10;
+            o_data <= o_data+50;
+        /*else if(o_data > 10)
+            o_data <= o_data-10;*/
         else if(o_data != 0)
             o_data <= o_data-1;
     end

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/synth_1/system_top.tcl"
+  variable script "C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/synth_1/system_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,9 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 2
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {Vivado 12-1790}  -string {{Evaluation} {features} {should} {NOT} {be} {used} {in} {production} {systems.}}  -new_severity {WARNING} 
 set_msg_config  -id {Designutils 20-3303}  -string {{HDPYFinalizeIO}}  -new_severity {INFO} 
 set_msg_config  -id {Place 30-73}  -string {{axi_spi}}  -new_severity {WARNING} 
@@ -92,64 +91,50 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir E:/Projects/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
-set_property parent.project_path E:/Projects/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
+set_property webtalk.parent_dir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
+set_property parent.project_path C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths e:/Projects/refSoM/refCC2/IPs [current_project]
+set_property ip_repo_paths c:/git/vimanic/refSoM/refCC2/IPs [current_project]
 update_ip_catalog
-set_property ip_output_repo e:/Projects/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
+set_property ip_output_repo c:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  E:/Projects/refSoM/refCC2/IPs/common/ad_adl5904_rst.v
-  E:/Projects/refSoM/refCC2/IPs/common/ad_iobuf.v
-  E:/Projects/refSoM/refCC2/hw/vhfSystem.gen/sources_1/bd/system/hdl/system_wrapper.v
-  E:/Projects/refSoM/refCC2/hw/system_top.v
+  C:/git/vimanic/refSoM/refCC2/IPs/common/ad_adl5904_rst.v
+  C:/git/vimanic/refSoM/refCC2/IPs/common/ad_iobuf.v
+  C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.gen/sources_1/bd/system/hdl/system_wrapper.v
+  C:/git/vimanic/refSoM/refCC2/hw/system_top.v
 }
-add_files E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/system.bd
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_3/system_axi_gpio_0_3_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_3/system_axi_gpio_0_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_3/system_axi_gpio_0_3.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_4/system_axi_gpio_0_4_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_4/system_axi_gpio_0_4_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_4/system_axi_gpio_0_4.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_ps7_0/system_sys_ps7_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_0/system_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_fir_compiler_0_0/constraints/fir_compiler_v7_2.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_fir_compiler_0_0/system_fir_compiler_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_vio_1_0/system_vio_1_0.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_vio_1_0/system_vio_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5_board.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5.xdc]
-set_property used_in_synthesis false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/bd_0/ip/ip_0/bd_1439_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/bd_0/bd_1439_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_system_ila_0_2/system_system_ila_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/system_ooc.xdc]
+add_files C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/system.bd
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_ps7_0/system_sys_ps7_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_sys_rstgen_0/system_sys_rstgen_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_selectio_wiz_0_0/system_selectio_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_1/system_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_2/system_axi_gpio_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_vio_1_0/system_vio_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_vio_1_0/system_vio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_0_5/system_axi_gpio_0_5.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_1_0/system_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_1_0/system_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_axi_gpio_1_0/system_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/system_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -160,14 +145,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc
-set_property used_in_implementation false [get_files E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc]
+read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc
+set_property used_in_implementation false [get_files C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc]
 
-read_xdc E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc
-set_property used_in_implementation false [get_files E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc]
+read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc
+set_property used_in_implementation false [get_files C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc]
 
-read_xdc E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc
-set_property used_in_implementation false [get_files E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc]
+read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc
+set_property used_in_implementation false [get_files C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

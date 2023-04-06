@@ -6,9 +6,8 @@
 
 
 
-void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr, u32 modulatorBandBaseAddr){
-	modulator->BaseBandBaseAddress = baseBandBaseAddr;
-	modulator->modulatorBaseAddress = modulatorBandBaseAddr;
+void initAmModulator(amModulator *modulator, u32 BaseAddr){
+	modulator->BaseAddress = BaseAddr;
 }
 
 
@@ -30,18 +29,18 @@ int generateAM(amModulator *modulator,float modulationIndex,int basebandFrequenc
 
 	//xil_printf("%0x\n\r",fixedModulationIndex);
 
-	Xil_Out32(modulator->BaseBandBaseAddress,clkDivValue);
-	Xil_Out32(modulator->modulatorBaseAddress,fixedModulationIndex);
+	Xil_Out32(modulator->BaseAddress+CLK_DIV_REG,clkDivValue);
+	Xil_Out32(modulator->BaseAddress+MOD_INDEX_REG,fixedModulationIndex);
 	return 0;
 }
 
 
 void startAMModulator(amModulator *modulator){
-	Xil_Out32(modulator->modulatorBaseAddress+8,1);
+	Xil_Out32(modulator->BaseAddress+CONTROL_REG,1);
 }
 
 
 
 void stopAMModulator(amModulator *modulator){
-	Xil_Out32(modulator->modulatorBaseAddress+8,0);
+	Xil_Out32(modulator->BaseAddress+CONTROL_REG,0);
 }

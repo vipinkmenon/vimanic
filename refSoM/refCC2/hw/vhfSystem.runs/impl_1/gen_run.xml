@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z035ifbg676-2L" LaunchTime="1680585942">
+<GenRun Id="impl_1" LaunchPart="xc7z035ifbg676-2L" LaunchTime="1680623766">
   <File Type="ROUTE-PWR" Name="system_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="system_top.tcl"/>
   <File Type="BITSTR-MMI" Name="system_top.mmi"/>
@@ -77,34 +77,6 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/angleLUT.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/amModulator.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/clockGen.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/freqSynth.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/dataPackager.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -147,14 +119,28 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/decimation.v">
+    <File Path="$PSRCDIR/sources_1/new/envelopDetector.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/envelopDetector.v">
+    <File Path="$PSRCDIR/sources_1/new/average.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/subtractor.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -191,6 +177,46 @@
     </File>
     <File Path="$PPRDIR/system_top.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/decimation.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/angleLUT.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/amModulator.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clockGen.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/freqSynth.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -233,7 +259,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -244,19 +272,19 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_sys_ps7_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_envelopDetector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_decimation_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_angleLUT_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_vio_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_freqSynth_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_system_ila_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_3"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_4"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_sys_ps7_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_average_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_levelShift_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_average_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_vio_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_i2sController_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_envelopDetector_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_subtractor_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_mux_0_0"/>
 </GenRun>

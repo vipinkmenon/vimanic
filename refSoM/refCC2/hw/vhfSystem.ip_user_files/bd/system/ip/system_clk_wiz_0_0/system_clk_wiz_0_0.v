@@ -56,9 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1__12.29017______0.000______50.0______455.129____318.151
-// clk_out2__128.12500______0.000______50.0______287.104____318.151
-// clk_out3___5.00488______0.000______50.0______535.299____318.151
+// clk_out1__12.28800______0.000______50.0______360.948____301.601
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -67,14 +65,12 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "system_clk_wiz_0_0,clk_wiz_v6_0_8_0_0,{component_name=system_clk_wiz_0_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "system_clk_wiz_0_0,clk_wiz_v6_0_8_0_0,{component_name=system_clk_wiz_0_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module system_clk_wiz_0_0 
  (
   // Clock out ports
   output        clk_out1,
-  output        clk_out2,
-  output        clk_out3,
  // Clock in ports
   input         clk_in1
  );
@@ -83,8 +79,6 @@ module system_clk_wiz_0_0
   (
   // Clock out ports  
   .clk_out1(clk_out1),
-  .clk_out2(clk_out2),
-  .clk_out3(clk_out3),
  // Clock in ports
   .clk_in1(clk_in1)
   );

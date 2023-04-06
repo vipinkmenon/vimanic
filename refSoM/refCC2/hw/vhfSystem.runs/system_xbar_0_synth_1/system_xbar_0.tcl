@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.tcl"
+  variable script "C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "system_xbar_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {Vivado 12-1790}  -string {{Evaluation} {features} {should} {NOT} {be} {used} {in} {production} {systems.}}  -new_severity {WARNING} 
 set_msg_config  -id {Designutils 20-3303}  -string {{HDPYFinalizeIO}}  -new_severity {INFO} 
@@ -92,19 +93,19 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir E:/Projects/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
-set_property parent.project_path E:/Projects/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
+set_property webtalk.parent_dir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
+set_property parent.project_path C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths e:/Projects/refSoM/refCC2/IPs [current_project]
+set_property ip_repo_paths c:/git/vimanic/refSoM/refCC2/IPs [current_project]
 update_ip_catalog
-set_property ip_output_repo e:/Projects/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
+set_property ip_output_repo c:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet E:/Projects/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.xci
-set_property used_in_implementation false [get_files -all e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
+read_ip -quiet C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.xci
+set_property used_in_implementation false [get_files -all c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -120,7 +121,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1 -new_name system_xbar_0 -ip [get_ips system_xbar_0]]
+set cached_ip [config_ip_cache -export -no_bom  -dir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1 -new_name system_xbar_0 -ip [get_ips system_xbar_0]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cached_ip eq {} } {
@@ -175,32 +176,32 @@ create_report "system_xbar_0_synth_1_synth_report_utilization_0" "report_utiliza
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.dcp e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
+  file copy -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.dcp c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
+  write_verilog -force -mode synth_stub c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
+  write_vhdl -force -mode synth_stub c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
+  write_verilog -force -mode funcsim c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -210,47 +211,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.dcp e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
+  file copy -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0.dcp c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_stub.v e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
+  file rename -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_stub.v c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_stub.vhdl e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
+  file rename -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_stub.vhdl c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.v e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
+  file rename -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.v c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force E:/Projects/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.vhdl e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+  file rename -force C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/system_xbar_0_synth_1/system_xbar_0_sim_netlist.vhdl c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir E:/Projects/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0]} {
+if {[file isdir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0]} {
   catch { 
-    file copy -force e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v E:/Projects/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0
+    file copy -force c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0
   }
 }
 
-if {[file isdir E:/Projects/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0]} {
+if {[file isdir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0]} {
   catch { 
-    file copy -force e:/Projects/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl E:/Projects/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0
+    file copy -force c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.ip_user_files/ip/system_xbar_0
   }
 }
 file delete __synthesis_is_running__

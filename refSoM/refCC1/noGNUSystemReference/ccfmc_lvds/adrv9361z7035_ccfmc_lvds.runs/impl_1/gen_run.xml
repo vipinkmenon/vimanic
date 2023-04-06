@@ -17,6 +17,7 @@
   <File Type="BITSTR-MMI" Name="system_top.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="system_top_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="system_top.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="system_top_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="system_top.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -48,7 +49,6 @@
   <File Type="PHYSOPT-DCP" Name="system_top_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="system_top_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="system_top_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="system_top_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="system_top_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="system_top_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="system_top.pdi"/>
@@ -168,7 +168,7 @@
     <File Path="$PSRCDIR/sources_1/imports/Desktop/loopBack.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="C:/Users/Dell/OneDrive - vimanic.com/Desktop/loopBack.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Users/Dell/OneDrive - vimanic.com/Desktop/loopBack.v"/>
         <Attr Name="ImportTime" Val="1666761357"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -229,22 +229,23 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="system_sys_ps7_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_iic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_levelShift_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_sys_rstgen_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_iic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_i2sController_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_selectio_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_angleLUT_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_envelopDetector_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_fir_compiler_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_decimation_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_vio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_vio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_angleLUT_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_system_ila_0_0"/>

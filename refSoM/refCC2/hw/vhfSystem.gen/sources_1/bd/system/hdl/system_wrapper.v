@@ -79,15 +79,6 @@ module system_wrapper
     spi0_sdi_i,
     spi0_sdo_i,
     spi0_sdo_o,
-    spi1_clk_i,
-    spi1_clk_o,
-    spi1_csn_0_o,
-    spi1_csn_1_o,
-    spi1_csn_2_o,
-    spi1_csn_i,
-    spi1_sdi_i,
-    spi1_sdo_i,
-    spi1_sdo_o,
     sys_cpu_clk_out,
     tx_clk_out_n,
     tx_clk_out_p,
@@ -145,15 +136,6 @@ module system_wrapper
   input spi0_sdi_i;
   input spi0_sdo_i;
   output spi0_sdo_o;
-  input spi1_clk_i;
-  output spi1_clk_o;
-  output spi1_csn_0_o;
-  output spi1_csn_1_o;
-  output spi1_csn_2_o;
-  input spi1_csn_i;
-  input spi1_sdi_i;
-  input spi1_sdo_i;
-  output spi1_sdo_o;
   output sys_cpu_clk_out;
   output tx_clk_out_n;
   output tx_clk_out_p;
@@ -232,15 +214,6 @@ module system_wrapper
   wire spi0_sdi_i;
   wire spi0_sdo_i;
   wire spi0_sdo_o;
-  wire spi1_clk_i;
-  wire spi1_clk_o;
-  wire spi1_csn_0_o;
-  wire spi1_csn_1_o;
-  wire spi1_csn_2_o;
-  wire spi1_csn_i;
-  wire spi1_sdi_i;
-  wire spi1_sdo_i;
-  wire spi1_sdo_o;
   wire sys_cpu_clk_out;
   wire tx_clk_out_n;
   wire tx_clk_out_p;
@@ -315,15 +288,6 @@ module system_wrapper
         .spi0_sdi_i(spi0_sdi_i),
         .spi0_sdo_i(spi0_sdo_i),
         .spi0_sdo_o(spi0_sdo_o),
-        .spi1_clk_i(spi1_clk_i),
-        .spi1_clk_o(spi1_clk_o),
-        .spi1_csn_0_o(spi1_csn_0_o),
-        .spi1_csn_1_o(spi1_csn_1_o),
-        .spi1_csn_2_o(spi1_csn_2_o),
-        .spi1_csn_i(spi1_csn_i),
-        .spi1_sdi_i(spi1_sdi_i),
-        .spi1_sdo_i(spi1_sdo_i),
-        .spi1_sdo_o(spi1_sdo_o),
         .sys_cpu_clk_out(sys_cpu_clk_out),
         .tx_clk_out_n(tx_clk_out_n),
         .tx_clk_out_p(tx_clk_out_p),

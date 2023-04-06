@@ -6821,3 +6821,24 @@ con
 
 12:46:24 INFO  : Launch script is exported to file 'E:\Projects\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
 12:48:13 INFO  : Disconnected from the channel tcfchan#42.
+19:20:45 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\git\vimanic\refSoM\refCC2\sw\temp_xsdb_launch_script.tcl
+19:20:51 INFO  : XSCT server has started successfully.
+19:20:51 INFO  : plnx-install-location is set to ''
+19:20:51 INFO  : Successfully done setting XSCT server connection channel  
+19:20:51 INFO  : Successfully done setting workspace for the tool. 
+19:20:54 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+19:20:54 INFO  : Platform repository initialization has completed.
+19:20:55 INFO  : Registering command handlers for Vitis TCF services
+19:21:00 INFO  : Successfully done query RDI_DATADIR 
+20:20:30 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+20:20:30 ERROR : Failed to get platform details for the project 'vhfSystemSoftware'. Cannot sync application flags.
+20:20:56 INFO  : Hardware specification for platform project 'system_top' is updated.
+20:21:08 ERROR : Error from executing command 'removePlatformRepo': ERROR: No valid directory exists at given path.
+20:21:22 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+20:21:22 ERROR : Failed to get platform details for the project 'vhfSystemSoftware'. Cannot sync application flags.
+20:23:12 INFO  : Hardware specification for platform project 'system_top' is updated.
+20:23:18 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+20:23:18 ERROR : Failed to get platform details for the project 'vhfSystemSoftware'. Cannot sync application flags.

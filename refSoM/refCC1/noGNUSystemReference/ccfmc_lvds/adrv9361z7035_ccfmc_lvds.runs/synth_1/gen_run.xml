@@ -117,7 +117,7 @@
     <File Path="$PSRCDIR/sources_1/imports/Desktop/loopBack.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="C:/Users/Dell/OneDrive - vimanic.com/Desktop/loopBack.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Users/Dell/OneDrive - vimanic.com/Desktop/loopBack.v"/>
         <Attr Name="ImportTime" Val="1666761357"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -172,20 +172,20 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="system_sys_ps7_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_axi_iic_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_levelShift_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_sys_rstgen_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_axi_iic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_i2sController_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_selectio_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_angleLUT_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_envelopDetector_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_fir_compiler_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_decimation_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_vio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_vio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_angleLUT_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_system_ila_0_0"/>

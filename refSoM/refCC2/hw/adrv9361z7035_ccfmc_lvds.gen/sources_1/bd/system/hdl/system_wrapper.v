@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-//Date        : Tue Apr  4 10:55:29 2023
-//Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+//Date        : Tue Apr  4 21:25:44 2023
+//Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
 //Purpose     : IP block netlist
@@ -70,15 +70,6 @@ module system_wrapper
     spi0_sdi_i,
     spi0_sdo_i,
     spi0_sdo_o,
-    spi1_clk_i,
-    spi1_clk_o,
-    spi1_csn_0_o,
-    spi1_csn_1_o,
-    spi1_csn_2_o,
-    spi1_csn_i,
-    spi1_sdi_i,
-    spi1_sdo_i,
-    spi1_sdo_o,
     ssm_scl_i_1,
     ssm_scl_o_1,
     ssm_scl_t_1,
@@ -152,15 +143,6 @@ module system_wrapper
   input spi0_sdi_i;
   input spi0_sdo_i;
   output spi0_sdo_o;
-  input spi1_clk_i;
-  output spi1_clk_o;
-  output spi1_csn_0_o;
-  output spi1_csn_1_o;
-  output spi1_csn_2_o;
-  input spi1_csn_i;
-  input spi1_sdi_i;
-  input spi1_sdo_i;
-  output spi1_sdo_o;
   input ssm_scl_i_1;
   output [0:0]ssm_scl_o_1;
   output ssm_scl_t_1;
@@ -235,15 +217,6 @@ module system_wrapper
   wire spi0_sdi_i;
   wire spi0_sdo_i;
   wire spi0_sdo_o;
-  wire spi1_clk_i;
-  wire spi1_clk_o;
-  wire spi1_csn_0_o;
-  wire spi1_csn_1_o;
-  wire spi1_csn_2_o;
-  wire spi1_csn_i;
-  wire spi1_sdi_i;
-  wire spi1_sdo_i;
-  wire spi1_sdo_o;
   wire ssm_scl_i_1;
   wire [0:0]ssm_scl_o_1;
   wire ssm_scl_t_1;
@@ -319,15 +292,6 @@ module system_wrapper
         .spi0_sdi_i(spi0_sdi_i),
         .spi0_sdo_i(spi0_sdo_i),
         .spi0_sdo_o(spi0_sdo_o),
-        .spi1_clk_i(spi1_clk_i),
-        .spi1_clk_o(spi1_clk_o),
-        .spi1_csn_0_o(spi1_csn_0_o),
-        .spi1_csn_1_o(spi1_csn_1_o),
-        .spi1_csn_2_o(spi1_csn_2_o),
-        .spi1_csn_i(spi1_csn_i),
-        .spi1_sdi_i(spi1_sdi_i),
-        .spi1_sdo_i(spi1_sdo_i),
-        .spi1_sdo_o(spi1_sdo_o),
         .ssm_scl_i_1(ssm_scl_i_1),
         .ssm_scl_o_1(ssm_scl_o_1),
         .ssm_scl_t_1(ssm_scl_t_1),

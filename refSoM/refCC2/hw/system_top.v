@@ -147,25 +147,7 @@ module system_top (
   assign spi_miso_s = (~spi_csn_s[0] & spi_miso);
 
   // loopback signals
-
-  //assign gp_out[53:0] = gp_out_s[53:0];
   assign gp_in_s[63:54] = gp_out_s[63:54];
-  //assign gp_in_s[53:0] = gp_in[53:0];
-
-  // instantiations
-
- /* IBUFDS i_ibufds_clk_0 (
-    .I (clk_0_p),
-    .IB (clk_0_n),
-    .O (clk_0));
-
-  IBUFDS i_ibufds_clk_1 (
-    .I (clk_1_p),
-    .IB (clk_1_n),
-    .O (clk_1));*/
-
-  // board gpio - 31-0
-
   assign gpio_i[31:21] = gpio_o[31:21];
 
   ad_iobuf #(.DATA_WIDTH(21)) i_iobuf_bd (
@@ -299,15 +281,6 @@ IOBUF amp2_sda_iobuf
     .spi0_sdi_i (spi_miso_s),
     .spi0_sdo_i (1'b0),
     .spi0_sdo_o (spi_mosi_s),
-    .spi1_clk_i (1'b0),
-    .spi1_clk_o (),
-    .spi1_csn_0_o (),
-    .spi1_csn_1_o (),
-    .spi1_csn_2_o (),
-    .spi1_csn_i (1'b1),
-    .spi1_sdi_i (1'b0),
-    .spi1_sdo_i (1'b0),
-    .spi1_sdo_o (),
     .sys_cpu_clk_out (sys_cpu_clk),
     .tx_clk_out_n (tx_clk_out_n),
     .tx_clk_out_p (tx_clk_out_p),

@@ -324,3 +324,12 @@ timestamp=[2023-04-04 12:42:40], mode=BUILD, duration=0:00:02.636, duration_ms=2
 timestamp=[2023-04-04 12:42:58], mode=BUILD, duration=0:00:16.223, duration_ms=16223, data={name=vhfSystemSoftware_system, configuration=Debug, clean_build=false}
 timestamp=[2023-04-04 12:45:54], mode=BUILD, duration=0:00:02.594, duration_ms=2594, data={name=vhfSystemSoftware, configuration=Debug, clean_build=false}
 timestamp=[2023-04-04 12:46:13], mode=BUILD, duration=0:00:16.175, duration_ms=16175, data={name=vhfSystemSoftware_system, configuration=Debug, clean_build=false}
+timestamp=[2023-04-04 19:20:50], mode=WORKBENCH_START, duration=0:00:13.169, duration_ms=13169, data={}
+timestamp=[2023-04-04 19:20:52], mode=WORKBENCH_UI_INIT, duration=0:00:02.236, duration_ms=2236, data={editors_count=20, platform_editors_count=7, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,system_top,vhfSystemSoftware,vhfSystemSoftware_system}
+timestamp=[2023-04-04 19:20:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.088, duration_ms=88, data={}
+timestamp=[2023-04-04 20:20:30], mode=PLATFORM_GENERATION, duration=0:00:07.291, duration_ms=7291, data={name=system_top}
+timestamp=[2023-04-04 20:21:09], mode=PLATFORM_GENERATION, duration=0:00:03.459, duration_ms=3459, data={name=system_top}
+timestamp=[2023-04-04 20:21:09], mode=BUILD, duration=0:00:00.245, duration_ms=245, data={name=vhfSystemSoftware, configuration=Debug, clean_build=true}
+timestamp=[2023-04-04 20:21:09], mode=BUILD, duration=0:00:00.182, duration_ms=182, data={name=vhfSystemSoftware_system, configuration=Debug, clean_build=true}
+timestamp=[2023-04-04 20:21:22], mode=PLATFORM_GENERATION, duration=0:00:03.516, duration_ms=3516, data={name=system_top}
+timestamp=[2023-04-04 20:23:18], mode=PLATFORM_GENERATION, duration=0:00:02.852, duration_ms=2852, data={name=system_top}
