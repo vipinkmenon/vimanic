@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Tue Apr  4 14:54:45 2023
+// Date        : Tue Apr  4 21:12:03 2023
 // Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_envelopDetector_0_0/system_envelopDetector_0_0_sim_netlist.v
@@ -60,7 +60,6 @@ module system_envelopDetector_0_0_envelopDetector
   wire i_data_valid;
   wire [11:1]o_data0;
   wire [11:0]o_data00_in;
-  wire [11:2]o_data01_in;
   wire o_data2_carry__0_i_1_n_0;
   wire o_data2_carry__0_i_2_n_0;
   wire o_data2_carry__0_i_3_n_0;
@@ -112,19 +111,16 @@ module system_envelopDetector_0_0_envelopDetector
   wire o_data3_carry_n_2;
   wire o_data3_carry_n_3;
   wire o_data3_carry_n_4;
+  wire o_data3_carry_n_5;
+  wire o_data3_carry_n_6;
   wire \o_data[0]_i_1_n_0 ;
   wire \o_data[0]_i_2_n_0 ;
   wire \o_data[10]_i_1_n_0 ;
   wire \o_data[10]_i_2_n_0 ;
-  wire \o_data[11]_i_10_n_0 ;
-  wire \o_data[11]_i_15_n_0 ;
-  wire \o_data[11]_i_16_n_0 ;
-  wire \o_data[11]_i_17_n_0 ;
-  wire \o_data[11]_i_18_n_0 ;
-  wire \o_data[11]_i_19_n_0 ;
+  wire \o_data[11]_i_12_n_0 ;
+  wire \o_data[11]_i_13_n_0 ;
+  wire \o_data[11]_i_14_n_0 ;
   wire \o_data[11]_i_1_n_0 ;
-  wire \o_data[11]_i_20_n_0 ;
-  wire \o_data[11]_i_21_n_0 ;
   wire \o_data[11]_i_2_n_0 ;
   wire \o_data[11]_i_3_n_0 ;
   wire \o_data[11]_i_4_n_0 ;
@@ -132,7 +128,6 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[11]_i_6_n_0 ;
   wire \o_data[11]_i_7_n_0 ;
   wire \o_data[11]_i_8_n_0 ;
-  wire \o_data[11]_i_9_n_0 ;
   wire \o_data[1]_i_1_n_0 ;
   wire \o_data[1]_i_2_n_0 ;
   wire \o_data[2]_i_1_n_0 ;
@@ -140,7 +135,6 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[3]_i_1_n_0 ;
   wire \o_data[3]_i_2_n_0 ;
   wire \o_data[3]_i_4_n_0 ;
-  wire \o_data[3]_i_5_n_0 ;
   wire \o_data[4]_i_1_n_0 ;
   wire \o_data[4]_i_2_n_0 ;
   wire \o_data[4]_i_4_n_0 ;
@@ -149,16 +143,12 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[4]_i_7_n_0 ;
   wire \o_data[5]_i_1_n_0 ;
   wire \o_data[5]_i_2_n_0 ;
-  wire \o_data[5]_i_4_n_0 ;
-  wire \o_data[5]_i_5_n_0 ;
   wire \o_data[6]_i_1_n_0 ;
   wire \o_data[6]_i_2_n_0 ;
   wire \o_data[7]_i_1_n_0 ;
   wire \o_data[7]_i_2_n_0 ;
   wire \o_data[7]_i_4_n_0 ;
   wire \o_data[7]_i_5_n_0 ;
-  wire \o_data[7]_i_6_n_0 ;
-  wire \o_data[7]_i_7_n_0 ;
   wire \o_data[8]_i_1_n_0 ;
   wire \o_data[8]_i_2_n_0 ;
   wire \o_data[8]_i_4_n_0 ;
@@ -167,17 +157,12 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data[8]_i_7_n_0 ;
   wire \o_data[9]_i_1_n_0 ;
   wire \o_data[9]_i_2_n_0 ;
-  wire \o_data[9]_i_4_n_0 ;
-  wire \o_data[9]_i_5_n_0 ;
-  wire \o_data[9]_i_6_n_0 ;
-  wire \o_data[9]_i_7_n_0 ;
+  wire \o_data_reg[11]_i_10_n_1 ;
+  wire \o_data_reg[11]_i_10_n_2 ;
+  wire \o_data_reg[11]_i_10_n_3 ;
+  wire \o_data_reg[11]_i_11_n_2 ;
   wire \o_data_reg[11]_i_11_n_3 ;
-  wire \o_data_reg[11]_i_12_n_3 ;
-  wire \o_data_reg[11]_i_13_n_2 ;
-  wire \o_data_reg[11]_i_13_n_3 ;
-  wire \o_data_reg[11]_i_14_n_1 ;
-  wire \o_data_reg[11]_i_14_n_2 ;
-  wire \o_data_reg[11]_i_14_n_3 ;
+  wire \o_data_reg[11]_i_9_n_3 ;
   wire \o_data_reg[3]_i_3_n_0 ;
   wire \o_data_reg[3]_i_3_n_1 ;
   wire \o_data_reg[3]_i_3_n_2 ;
@@ -186,10 +171,6 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data_reg[4]_i_3_n_1 ;
   wire \o_data_reg[4]_i_3_n_2 ;
   wire \o_data_reg[4]_i_3_n_3 ;
-  wire \o_data_reg[5]_i_3_n_0 ;
-  wire \o_data_reg[5]_i_3_n_1 ;
-  wire \o_data_reg[5]_i_3_n_2 ;
-  wire \o_data_reg[5]_i_3_n_3 ;
   wire \o_data_reg[7]_i_3_n_0 ;
   wire \o_data_reg[7]_i_3_n_1 ;
   wire \o_data_reg[7]_i_3_n_2 ;
@@ -198,10 +179,6 @@ module system_envelopDetector_0_0_envelopDetector
   wire \o_data_reg[8]_i_3_n_1 ;
   wire \o_data_reg[8]_i_3_n_2 ;
   wire \o_data_reg[8]_i_3_n_3 ;
-  wire \o_data_reg[9]_i_3_n_0 ;
-  wire \o_data_reg[9]_i_3_n_1 ;
-  wire \o_data_reg[9]_i_3_n_2 ;
-  wire \o_data_reg[9]_i_3_n_3 ;
   wire o_data_valid;
   wire [11:0]rectData;
   wire rectData0_n_100;
@@ -244,14 +221,12 @@ module system_envelopDetector_0_0_envelopDetector
   wire [3:0]NLW_o_data2_carry_O_UNCONNECTED;
   wire [3:2]NLW_o_data2_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_o_data2_carry__0_O_UNCONNECTED;
-  wire [2:0]NLW_o_data3_carry_O_UNCONNECTED;
-  wire [3:1]\NLW_o_data_reg[11]_i_11_CO_UNCONNECTED ;
-  wire [3:0]\NLW_o_data_reg[11]_i_11_O_UNCONNECTED ;
-  wire [3:1]\NLW_o_data_reg[11]_i_12_CO_UNCONNECTED ;
-  wire [3:2]\NLW_o_data_reg[11]_i_12_O_UNCONNECTED ;
-  wire [3:2]\NLW_o_data_reg[11]_i_13_CO_UNCONNECTED ;
-  wire [3:3]\NLW_o_data_reg[11]_i_13_O_UNCONNECTED ;
-  wire [3:3]\NLW_o_data_reg[11]_i_14_CO_UNCONNECTED ;
+  wire [0:0]NLW_o_data3_carry_O_UNCONNECTED;
+  wire [3:3]\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED ;
+  wire [3:2]\NLW_o_data_reg[11]_i_11_CO_UNCONNECTED ;
+  wire [3:3]\NLW_o_data_reg[11]_i_11_O_UNCONNECTED ;
+  wire [3:1]\NLW_o_data_reg[11]_i_9_CO_UNCONNECTED ;
+  wire [3:0]\NLW_o_data_reg[11]_i_9_O_UNCONNECTED ;
   wire NLW_rectData0_CARRYCASCOUT_UNCONNECTED;
   wire NLW_rectData0_MULTSIGNOUT_UNCONNECTED;
   wire NLW_rectData0_OVERFLOW_UNCONNECTED;
@@ -381,7 +356,7 @@ module system_envelopDetector_0_0_envelopDetector
         .CO({o_data3_carry_n_0,o_data3_carry_n_1,o_data3_carry_n_2,o_data3_carry_n_3}),
         .CYINIT(1'b1),
         .DI(rectData[3:0]),
-        .O({o_data3_carry_n_4,NLW_o_data3_carry_O_UNCONNECTED[2:0]}),
+        .O({o_data3_carry_n_4,o_data3_carry_n_5,o_data3_carry_n_6,NLW_o_data3_carry_O_UNCONNECTED[0]}),
         .S({o_data3_carry_i_1_n_0,o_data3_carry_i_2_n_0,o_data3_carry_i_3_n_0,o_data3_carry_i_4_n_0}));
   CARRY4 o_data3_carry__0
        (.CI(o_data3_carry_n_0),
@@ -470,7 +445,7 @@ module system_envelopDetector_0_0_envelopDetector
         .I1(Q[0]),
         .O(o_data3_carry_i_4_n_0));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[0]_i_1 
        (.I0(rectData[0]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -479,16 +454,15 @@ module system_envelopDetector_0_0_envelopDetector
         .I4(\o_data[0]_i_2_n_0 ),
         .O(\o_data[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'h9D98)) 
+  LUT3 #(
+    .INIT(8'h8B)) 
     \o_data[0]_i_2 
-       (.I0(o_data2_carry__0_n_2),
-        .I1(Q[0]),
-        .I2(\o_data[11]_i_4_n_0 ),
-        .I3(o_data00_in[0]),
+       (.I0(o_data00_in[0]),
+        .I1(o_data2_carry__0_n_2),
+        .I2(Q[0]),
         .O(\o_data[0]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[10]_i_1 
        (.I0(rectData[10]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -496,60 +470,41 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[10]_i_2_n_0 ),
         .O(\o_data[10]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[10]_i_2 
-       (.I0(o_data01_in[10]),
+       (.I0(o_data00_in[10]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[10]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[10]),
         .O(\o_data[10]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAAAAAAA8AAAAAAAA)) 
     \o_data[11]_i_1 
        (.I0(rectDataValid),
-        .I1(\o_data[11]_i_3_n_0 ),
-        .I2(Q[1]),
-        .I3(o_data2_carry__0_n_2),
-        .I4(Q[3]),
+        .I1(Q[3]),
+        .I2(Q[6]),
+        .I3(Q[4]),
+        .I4(\o_data[11]_i_3_n_0 ),
         .I5(\o_data[11]_i_4_n_0 ),
         .O(\o_data[11]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \o_data[11]_i_10 
-       (.I0(Q[8]),
-        .I1(Q[7]),
-        .I2(Q[10]),
-        .I3(Q[9]),
-        .O(\o_data[11]_i_10_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \o_data[11]_i_15 
+    \o_data[11]_i_12 
        (.I0(Q[11]),
-        .O(\o_data[11]_i_15_n_0 ));
+        .O(\o_data[11]_i_12_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \o_data[11]_i_16 
+    \o_data[11]_i_13 
        (.I0(Q[10]),
-        .O(\o_data[11]_i_16_n_0 ));
+        .O(\o_data[11]_i_13_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \o_data[11]_i_17 
+    \o_data[11]_i_14 
        (.I0(Q[9]),
-        .O(\o_data[11]_i_17_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[11]_i_18 
-       (.I0(Q[11]),
-        .O(\o_data[11]_i_18_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[11]_i_19 
-       (.I0(Q[10]),
-        .O(\o_data[11]_i_19_n_0 ));
+        .O(\o_data[11]_i_14_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[11]_i_2 
        (.I0(rectData[11]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -557,75 +512,60 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[11]_i_8_n_0 ),
         .O(\o_data[11]_i_2_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[11]_i_20 
-       (.I0(Q[9]),
-        .O(\o_data[11]_i_20_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[11]_i_21 
-       (.I0(Q[8]),
-        .O(\o_data[11]_i_21_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \o_data[11]_i_3 
-       (.I0(Q[0]),
-        .I1(Q[2]),
-        .O(\o_data[11]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000005777)) 
-    \o_data[11]_i_4 
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[1]),
-        .I3(Q[0]),
-        .I4(\o_data[11]_i_9_n_0 ),
-        .I5(\o_data[11]_i_10_n_0 ),
-        .O(\o_data[11]_i_4_n_0 ));
-  LUT4 #(
-    .INIT(16'h1FFF)) 
-    \o_data[11]_i_5 
-       (.I0(o_data3_carry__0_n_7),
-        .I1(o_data3_carry_n_4),
-        .I2(o_data3_carry__0_n_6),
-        .I3(o_data3_carry__0_n_5),
-        .O(\o_data[11]_i_5_n_0 ));
-  LUT3 #(
-    .INIT(8'h7F)) 
-    \o_data[11]_i_6 
-       (.I0(o_data3_carry__1_n_7),
-        .I1(o_data3_carry__0_n_4),
-        .I2(o_data3_carry__1_n_6),
-        .O(\o_data[11]_i_6_n_0 ));
-  LUT4 #(
-    .INIT(16'hEFFF)) 
-    \o_data[11]_i_7 
-       (.I0(o_data3_carry__1_n_5),
-        .I1(o_data3_carry__1_n_4),
-        .I2(o_data2_carry__0_n_2),
-        .I3(\o_data_reg[11]_i_11_n_3 ),
-        .O(\o_data[11]_i_7_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \o_data[11]_i_8 
-       (.I0(o_data01_in[11]),
-        .I1(o_data2_carry__0_n_2),
-        .I2(o_data0[11]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[11]),
-        .O(\o_data[11]_i_8_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \o_data[11]_i_9 
-       (.I0(Q[5]),
-        .I1(Q[4]),
-        .I2(Q[11]),
-        .I3(Q[6]),
-        .O(\o_data[11]_i_9_n_0 ));
+    \o_data[11]_i_3 
+       (.I0(Q[11]),
+        .I1(Q[0]),
+        .I2(o_data2_carry__0_n_2),
+        .I3(Q[10]),
+        .O(\o_data[11]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \o_data[11]_i_4 
+       (.I0(Q[2]),
+        .I1(Q[1]),
+        .I2(Q[5]),
+        .I3(Q[9]),
+        .I4(Q[7]),
+        .I5(Q[8]),
+        .O(\o_data[11]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'h7777777F)) 
+    \o_data[11]_i_5 
+       (.I0(o_data3_carry__0_n_7),
+        .I1(o_data3_carry__0_n_6),
+        .I2(o_data3_carry_n_6),
+        .I3(o_data3_carry_n_4),
+        .I4(o_data3_carry_n_5),
+        .O(\o_data[11]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFD)) 
+    \o_data[11]_i_6 
+       (.I0(o_data2_carry__0_n_2),
+        .I1(o_data3_carry__0_n_4),
+        .I2(o_data3_carry__0_n_5),
+        .I3(o_data3_carry__1_n_7),
+        .O(\o_data[11]_i_6_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFD)) 
+    \o_data[11]_i_7 
+       (.I0(\o_data_reg[11]_i_9_n_3 ),
+        .I1(o_data3_carry__1_n_4),
+        .I2(o_data3_carry__1_n_6),
+        .I3(o_data3_carry__1_n_5),
+        .O(\o_data[11]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \o_data[11]_i_8 
+       (.I0(o_data00_in[11]),
+        .I1(o_data2_carry__0_n_2),
+        .I2(o_data0[11]),
+        .O(\o_data[11]_i_8_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFB0008)) 
     \o_data[1]_i_1 
        (.I0(rectData[1]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -633,17 +573,15 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[1]_i_2_n_0 ),
         .O(\o_data[1]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[1]_i_2 
-       (.I0(Q[1]),
+       (.I0(o_data00_in[1]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[1]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[1]),
         .O(\o_data[1]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[2]_i_1 
        (.I0(rectData[2]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -651,17 +589,16 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[2]_i_2_n_0 ),
         .O(\o_data[2]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[2]_i_2 
-       (.I0(o_data01_in[2]),
+       (.I0(o_data00_in[2]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[2]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[2]),
         .O(\o_data[2]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[3]_i_1 
        (.I0(rectData[3]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -669,27 +606,21 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[3]_i_2_n_0 ),
         .O(\o_data[3]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[3]_i_2 
-       (.I0(o_data01_in[3]),
+       (.I0(o_data00_in[3]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[3]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[3]),
         .O(\o_data[3]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \o_data[3]_i_4 
-       (.I0(Q[2]),
-        .O(\o_data[3]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[3]_i_5 
        (.I0(Q[1]),
-        .O(\o_data[3]_i_5_n_0 ));
+        .O(\o_data[3]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[4]_i_1 
        (.I0(rectData[4]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -697,14 +628,13 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[4]_i_2_n_0 ),
         .O(\o_data[4]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[4]_i_2 
-       (.I0(o_data01_in[4]),
+       (.I0(o_data00_in[4]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[4]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[4]),
         .O(\o_data[4]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -727,7 +657,7 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(Q[1]),
         .O(\o_data[4]_i_7_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[5]_i_1 
        (.I0(rectData[5]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -735,27 +665,16 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[5]_i_2_n_0 ),
         .O(\o_data[5]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[5]_i_2 
-       (.I0(o_data01_in[5]),
+       (.I0(o_data00_in[5]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[5]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[5]),
         .O(\o_data[5]_i_2_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[5]_i_4 
-       (.I0(Q[5]),
-        .O(\o_data[5]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[5]_i_5 
-       (.I0(Q[3]),
-        .O(\o_data[5]_i_5_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[6]_i_1 
        (.I0(rectData[6]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -763,17 +682,16 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[6]_i_2_n_0 ),
         .O(\o_data[6]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[6]_i_2 
-       (.I0(o_data01_in[6]),
+       (.I0(o_data00_in[6]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[6]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[6]),
         .O(\o_data[6]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[7]_i_1 
        (.I0(rectData[7]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -781,37 +699,26 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[7]_i_2_n_0 ),
         .O(\o_data[7]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[7]_i_2 
-       (.I0(o_data01_in[7]),
+       (.I0(o_data00_in[7]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[7]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[7]),
         .O(\o_data[7]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \o_data[7]_i_4 
-       (.I0(Q[7]),
+       (.I0(Q[5]),
         .O(\o_data[7]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \o_data[7]_i_5 
-       (.I0(Q[6]),
-        .O(\o_data[7]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[7]_i_6 
-       (.I0(Q[5]),
-        .O(\o_data[7]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[7]_i_7 
        (.I0(Q[4]),
-        .O(\o_data[7]_i_7_n_0 ));
+        .O(\o_data[7]_i_5_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[8]_i_1 
        (.I0(rectData[8]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -819,14 +726,13 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[8]_i_2_n_0 ),
         .O(\o_data[8]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[8]_i_2 
-       (.I0(o_data01_in[8]),
+       (.I0(o_data00_in[8]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[8]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[8]),
         .O(\o_data[8]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -849,7 +755,7 @@ module system_envelopDetector_0_0_envelopDetector
        (.I0(Q[5]),
         .O(\o_data[8]_i_7_n_0 ));
   LUT5 #(
-    .INIT(32'hFFAB00A8)) 
+    .INIT(32'hFFFB0008)) 
     \o_data[9]_i_1 
        (.I0(rectData[9]),
         .I1(\o_data[11]_i_5_n_0 ),
@@ -857,35 +763,14 @@ module system_envelopDetector_0_0_envelopDetector
         .I3(\o_data[11]_i_7_n_0 ),
         .I4(\o_data[9]_i_2_n_0 ),
         .O(\o_data[9]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \o_data[9]_i_2 
-       (.I0(o_data01_in[9]),
+       (.I0(o_data00_in[9]),
         .I1(o_data2_carry__0_n_2),
         .I2(o_data0[9]),
-        .I3(\o_data[11]_i_4_n_0 ),
-        .I4(o_data00_in[9]),
         .O(\o_data[9]_i_2_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_4 
-       (.I0(Q[9]),
-        .O(\o_data[9]_i_4_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_5 
-       (.I0(Q[8]),
-        .O(\o_data[9]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_6 
-       (.I0(Q[7]),
-        .O(\o_data[9]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_data[9]_i_7 
-       (.I0(Q[6]),
-        .O(\o_data[9]_i_7_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[0] 
@@ -910,37 +795,29 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[11]_i_2_n_0 ),
         .Q(Q[11]),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \o_data_reg[11]_i_10 
+       (.CI(\o_data_reg[7]_i_3_n_0 ),
+        .CO({\NLW_o_data_reg[11]_i_10_CO_UNCONNECTED [3],\o_data_reg[11]_i_10_n_1 ,\o_data_reg[11]_i_10_n_2 ,\o_data_reg[11]_i_10_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(o_data00_in[11:8]),
+        .S(Q[11:8]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \o_data_reg[11]_i_11 
-       (.CI(o_data3_carry__1_n_0),
-        .CO({\NLW_o_data_reg[11]_i_11_CO_UNCONNECTED [3:1],\o_data_reg[11]_i_11_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(\NLW_o_data_reg[11]_i_11_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,1'b0,1'b1}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[11]_i_12 
-       (.CI(\o_data_reg[9]_i_3_n_0 ),
-        .CO({\NLW_o_data_reg[11]_i_12_CO_UNCONNECTED [3:1],\o_data_reg[11]_i_12_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_o_data_reg[11]_i_12_O_UNCONNECTED [3:2],o_data01_in[11:10]}),
-        .S({1'b0,1'b0,Q[11:10]}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[11]_i_13 
        (.CI(\o_data_reg[8]_i_3_n_0 ),
-        .CO({\NLW_o_data_reg[11]_i_13_CO_UNCONNECTED [3:2],\o_data_reg[11]_i_13_n_2 ,\o_data_reg[11]_i_13_n_3 }),
+        .CO({\NLW_o_data_reg[11]_i_11_CO_UNCONNECTED [3:2],\o_data_reg[11]_i_11_n_2 ,\o_data_reg[11]_i_11_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,Q[10:9]}),
-        .O({\NLW_o_data_reg[11]_i_13_O_UNCONNECTED [3],o_data0[11:9]}),
-        .S({1'b0,\o_data[11]_i_15_n_0 ,\o_data[11]_i_16_n_0 ,\o_data[11]_i_17_n_0 }));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[11]_i_14 
-       (.CI(\o_data_reg[7]_i_3_n_0 ),
-        .CO({\NLW_o_data_reg[11]_i_14_CO_UNCONNECTED [3],\o_data_reg[11]_i_14_n_1 ,\o_data_reg[11]_i_14_n_2 ,\o_data_reg[11]_i_14_n_3 }),
+        .O({\NLW_o_data_reg[11]_i_11_O_UNCONNECTED [3],o_data0[11:9]}),
+        .S({1'b0,\o_data[11]_i_12_n_0 ,\o_data[11]_i_13_n_0 ,\o_data[11]_i_14_n_0 }));
+  CARRY4 \o_data_reg[11]_i_9 
+       (.CI(o_data3_carry__1_n_0),
+        .CO({\NLW_o_data_reg[11]_i_9_CO_UNCONNECTED [3:1],\o_data_reg[11]_i_9_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,Q[10:8]}),
-        .O(o_data00_in[11:8]),
-        .S({\o_data[11]_i_18_n_0 ,\o_data[11]_i_19_n_0 ,\o_data[11]_i_20_n_0 ,\o_data[11]_i_21_n_0 }));
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(\NLW_o_data_reg[11]_i_9_O_UNCONNECTED [3:0]),
+        .S({1'b0,1'b0,1'b0,1'b1}));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[1] 
@@ -970,9 +847,9 @@ module system_envelopDetector_0_0_envelopDetector
        (.CI(1'b0),
         .CO({\o_data_reg[3]_i_3_n_0 ,\o_data_reg[3]_i_3_n_1 ,\o_data_reg[3]_i_3_n_2 ,\o_data_reg[3]_i_3_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,Q[2:1],1'b0}),
+        .DI({1'b0,1'b0,Q[1],1'b0}),
         .O(o_data00_in[3:0]),
-        .S({Q[3],\o_data[3]_i_4_n_0 ,\o_data[3]_i_5_n_0 ,Q[0]}));
+        .S({Q[3:2],\o_data[3]_i_4_n_0 ,Q[0]}));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[4] 
@@ -997,14 +874,6 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[5]_i_1_n_0 ),
         .Q(Q[5]),
         .R(1'b0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[5]_i_3 
-       (.CI(1'b0),
-        .CO({\o_data_reg[5]_i_3_n_0 ,\o_data_reg[5]_i_3_n_1 ,\o_data_reg[5]_i_3_n_2 ,\o_data_reg[5]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({Q[5],1'b0,Q[3],1'b0}),
-        .O(o_data01_in[5:2]),
-        .S({\o_data[5]_i_4_n_0 ,Q[4],\o_data[5]_i_5_n_0 ,Q[2]}));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[6] 
@@ -1026,9 +895,9 @@ module system_envelopDetector_0_0_envelopDetector
        (.CI(\o_data_reg[3]_i_3_n_0 ),
         .CO({\o_data_reg[7]_i_3_n_0 ,\o_data_reg[7]_i_3_n_1 ,\o_data_reg[7]_i_3_n_2 ,\o_data_reg[7]_i_3_n_3 }),
         .CYINIT(1'b0),
-        .DI(Q[7:4]),
+        .DI({1'b0,1'b0,Q[5:4]}),
         .O(o_data00_in[7:4]),
-        .S({\o_data[7]_i_4_n_0 ,\o_data[7]_i_5_n_0 ,\o_data[7]_i_6_n_0 ,\o_data[7]_i_7_n_0 }));
+        .S({Q[7:6],\o_data[7]_i_4_n_0 ,\o_data[7]_i_5_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \o_data_reg[8] 
@@ -1053,14 +922,6 @@ module system_envelopDetector_0_0_envelopDetector
         .D(\o_data[9]_i_1_n_0 ),
         .Q(Q[9]),
         .R(1'b0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \o_data_reg[9]_i_3 
-       (.CI(\o_data_reg[5]_i_3_n_0 ),
-        .CO({\o_data_reg[9]_i_3_n_0 ,\o_data_reg[9]_i_3_n_1 ,\o_data_reg[9]_i_3_n_2 ,\o_data_reg[9]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI(Q[9:6]),
-        .O(o_data01_in[9:6]),
-        .S({\o_data[9]_i_4_n_0 ,\o_data[9]_i_5_n_0 ,\o_data[9]_i_6_n_0 ,\o_data[9]_i_7_n_0 }));
   FDRE o_data_valid_reg
        (.C(i_clk),
         .CE(1'b1),

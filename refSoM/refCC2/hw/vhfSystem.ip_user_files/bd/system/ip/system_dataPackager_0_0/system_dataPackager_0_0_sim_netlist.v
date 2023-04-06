@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Tue Apr  4 14:55:32 2023
-// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_dataPackager_0_0/system_dataPackager_0_0_sim_netlist.v
+// Date        : Thu Mar 23 12:09:32 2023
+// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top system_dataPackager_0_0 -prefix
+//               system_dataPackager_0_0_ system_dataPackager_0_0_sim_netlist.v
 // Design      : system_dataPackager_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,76 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_dataPackager_0_0,dataPackager,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "dataPackager,Vivado 2021.1" *) 
-(* NotValidForBitStream *)
-module system_dataPackager_0_0
-   (i_clk,
-    i_data,
-    o_data,
-    o_Channel_1_I_Value,
-    o_Channel_1_Q_Value,
-    o_Channel_2_I_Value,
-    o_Channel_2_Q_Value,
-    o_Channel_1_I_Valid,
-    o_Channel_1_Q_Valid,
-    o_Channel_2_I_Valid,
-    o_Channel_2_Q_Valid,
-    i_Channel_1_I_Value,
-    i_Channel_1_Q_Value,
-    i_Channel_2_I_Value,
-    i_Channel_2_Q_Value);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *) input i_clk;
-  input [13:0]i_data;
-  output [13:0]o_data;
-  output [11:0]o_Channel_1_I_Value;
-  output [11:0]o_Channel_1_Q_Value;
-  output [11:0]o_Channel_2_I_Value;
-  output [11:0]o_Channel_2_Q_Value;
-  output o_Channel_1_I_Valid;
-  output o_Channel_1_Q_Valid;
-  output o_Channel_2_I_Valid;
-  output o_Channel_2_Q_Valid;
-  input [11:0]i_Channel_1_I_Value;
-  input [11:0]i_Channel_1_Q_Value;
-  input [11:0]i_Channel_2_I_Value;
-  input [11:0]i_Channel_2_Q_Value;
-
-  wire [11:0]i_Channel_1_I_Value;
-  wire [11:0]i_Channel_1_Q_Value;
-  wire [11:0]i_Channel_2_I_Value;
-  wire [11:0]i_Channel_2_Q_Value;
-  wire i_clk;
-  wire [13:0]i_data;
-  wire o_Channel_1_I_Valid;
-  wire [11:0]o_Channel_1_I_Value;
-  wire o_Channel_1_Q_Valid;
-  wire [11:0]o_Channel_1_Q_Value;
-  wire o_Channel_2_I_Valid;
-  wire [11:0]o_Channel_2_I_Value;
-  wire o_Channel_2_Q_Valid;
-  wire [11:0]o_Channel_2_Q_Value;
-  wire [13:0]o_data;
-
-  system_dataPackager_0_0_dataPackager inst
-       (.i_Channel_1_I_Value(i_Channel_1_I_Value),
-        .i_Channel_1_Q_Value(i_Channel_1_Q_Value),
-        .i_Channel_2_I_Value(i_Channel_2_I_Value),
-        .i_Channel_2_Q_Value(i_Channel_2_Q_Value),
-        .i_clk(i_clk),
-        .i_data(i_data),
-        .o_Channel_1_I_Valid(o_Channel_1_I_Valid),
-        .o_Channel_1_I_Value(o_Channel_1_I_Value),
-        .o_Channel_1_Q_Valid(o_Channel_1_Q_Valid),
-        .o_Channel_1_Q_Value(o_Channel_1_Q_Value),
-        .o_Channel_2_I_Valid(o_Channel_2_I_Valid),
-        .o_Channel_2_I_Value(o_Channel_2_I_Value),
-        .o_Channel_2_Q_Valid(o_Channel_2_Q_Valid),
-        .o_Channel_2_Q_Value(o_Channel_2_Q_Value),
-        .o_data(o_data));
-endmodule
-
-(* ORIG_REF_NAME = "dataPackager" *) 
 module system_dataPackager_0_0_dataPackager
    (o_data,
     o_Channel_1_I_Value,
@@ -875,6 +805,75 @@ module system_dataPackager_0_0_dataPackager
         .D(\o_data[9]_i_1_n_0 ),
         .Q(o_data[9]),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_dataPackager_0_0,dataPackager,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "dataPackager,Vivado 2021.1" *) 
+(* NotValidForBitStream *)
+module system_dataPackager_0_0
+   (i_clk,
+    i_data,
+    o_data,
+    o_Channel_1_I_Value,
+    o_Channel_1_Q_Value,
+    o_Channel_2_I_Value,
+    o_Channel_2_Q_Value,
+    o_Channel_1_I_Valid,
+    o_Channel_1_Q_Valid,
+    o_Channel_2_I_Valid,
+    o_Channel_2_Q_Valid,
+    i_Channel_1_I_Value,
+    i_Channel_1_Q_Value,
+    i_Channel_2_I_Value,
+    i_Channel_2_Q_Value);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_selectio_wiz_0_0_clk_out, INSERT_VIP 0" *) input i_clk;
+  input [13:0]i_data;
+  output [13:0]o_data;
+  output [11:0]o_Channel_1_I_Value;
+  output [11:0]o_Channel_1_Q_Value;
+  output [11:0]o_Channel_2_I_Value;
+  output [11:0]o_Channel_2_Q_Value;
+  output o_Channel_1_I_Valid;
+  output o_Channel_1_Q_Valid;
+  output o_Channel_2_I_Valid;
+  output o_Channel_2_Q_Valid;
+  input [11:0]i_Channel_1_I_Value;
+  input [11:0]i_Channel_1_Q_Value;
+  input [11:0]i_Channel_2_I_Value;
+  input [11:0]i_Channel_2_Q_Value;
+
+  wire [11:0]i_Channel_1_I_Value;
+  wire [11:0]i_Channel_1_Q_Value;
+  wire [11:0]i_Channel_2_I_Value;
+  wire [11:0]i_Channel_2_Q_Value;
+  wire i_clk;
+  wire [13:0]i_data;
+  wire o_Channel_1_I_Valid;
+  wire [11:0]o_Channel_1_I_Value;
+  wire o_Channel_1_Q_Valid;
+  wire [11:0]o_Channel_1_Q_Value;
+  wire o_Channel_2_I_Valid;
+  wire [11:0]o_Channel_2_I_Value;
+  wire o_Channel_2_Q_Valid;
+  wire [11:0]o_Channel_2_Q_Value;
+  wire [13:0]o_data;
+
+  system_dataPackager_0_0_dataPackager inst
+       (.i_Channel_1_I_Value(i_Channel_1_I_Value),
+        .i_Channel_1_Q_Value(i_Channel_1_Q_Value),
+        .i_Channel_2_I_Value(i_Channel_2_I_Value),
+        .i_Channel_2_Q_Value(i_Channel_2_Q_Value),
+        .i_clk(i_clk),
+        .i_data(i_data),
+        .o_Channel_1_I_Valid(o_Channel_1_I_Valid),
+        .o_Channel_1_I_Value(o_Channel_1_I_Value),
+        .o_Channel_1_Q_Valid(o_Channel_1_Q_Valid),
+        .o_Channel_1_Q_Value(o_Channel_1_Q_Value),
+        .o_Channel_2_I_Valid(o_Channel_2_I_Valid),
+        .o_Channel_2_I_Value(o_Channel_2_I_Value),
+        .o_Channel_2_Q_Valid(o_Channel_2_Q_Valid),
+        .o_Channel_2_Q_Value(o_Channel_2_Q_Value),
+        .o_data(o_data));
 endmodule
 `ifndef GLBL
 `define GLBL

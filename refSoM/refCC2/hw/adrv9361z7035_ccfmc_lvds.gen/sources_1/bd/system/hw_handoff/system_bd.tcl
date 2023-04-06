@@ -1643,6 +1643,19 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: system_ila_0, and set properties
+  set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
+  set_property -dict [ list \
+   CONFIG.C_BRAM_CNT {4.5} \
+   CONFIG.C_DATA_DEPTH {32768} \
+   CONFIG.C_MON_TYPE {NATIVE} \
+   CONFIG.C_NUM_OF_PROBES {5} \
+   CONFIG.C_PROBE0_TYPE {0} \
+   CONFIG.C_PROBE1_TYPE {0} \
+   CONFIG.C_PROBE2_TYPE {0} \
+   CONFIG.C_PROBE3_TYPE {0} \
+ ] $system_ila_0
+
   # Create instance: vio_1, and set properties
   set vio_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 vio_1 ]
   set_property -dict [ list \
@@ -1684,9 +1697,10 @@ proc create_root_design { parentCell } {
   connect_bd_net -net I2SSystem_o_sda_1 [get_bd_ports o_audio_sdat_out0] [get_bd_pins I2SSystem/o_sda_1]
   connect_bd_net -net I2SSystem_ssm_scl_t_1 [get_bd_ports ssm_scl_t_1] [get_bd_pins I2SSystem/ssm_scl_t_1]
   connect_bd_net -net I2SSystem_ssm_sda_t_1 [get_bd_ports ssm_sda_t_1] [get_bd_pins I2SSystem/ssm_sda_t_1]
-  connect_bd_net -net LVDSIF_clk_out [get_bd_pins AMDemodulate/aclk] [get_bd_pins LVDSIF/clk_out] [get_bd_pins amModulator_0/i_rf_clk]
+  connect_bd_net -net LVDSIF_clk_out [get_bd_pins AMDemodulate/aclk] [get_bd_pins LVDSIF/clk_out] [get_bd_pins amModulator_0/i_rf_clk] [get_bd_pins system_ila_0/clk]
   connect_bd_net -net LVDSIF_o_Channel_1_I_Valid [get_bd_pins AMDemodulate/i_data_valid] [get_bd_pins LVDSIF/o_Channel_1_I_Valid]
-  connect_bd_net -net LVDSIF_o_Channel_1_I_Value [get_bd_pins AMDemodulate/i_data] [get_bd_pins LVDSIF/o_Channel_1_I_Value] [get_bd_pins mux_0/in1]
+  connect_bd_net -net LVDSIF_o_Channel_1_I_Value [get_bd_pins AMDemodulate/i_data] [get_bd_pins LVDSIF/o_Channel_1_I_Value] [get_bd_pins mux_0/in1] [get_bd_pins system_ila_0/probe2]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets LVDSIF_o_Channel_1_I_Value]
   connect_bd_net -net LVDSIF_tx_data_out_n [get_bd_ports tx_data_out_n] [get_bd_pins LVDSIF/tx_data_out_n]
   connect_bd_net -net LVDSIF_tx_data_out_p [get_bd_ports tx_data_out_p] [get_bd_pins LVDSIF/tx_data_out_p]
   connect_bd_net -net LVDSIF_tx_frame_out_n [get_bd_ports tx_frame_out_n] [get_bd_pins LVDSIF/tx_frame_out_n]
@@ -1695,23 +1709,27 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ProcessorSystem_scl_t [get_bd_ports scl_t] [get_bd_pins ProcessorSystem/scl_t]
   connect_bd_net -net ProcessorSystem_sda_o [get_bd_ports sda_o] [get_bd_pins ProcessorSystem/sda_o]
   connect_bd_net -net ProcessorSystem_sda_t [get_bd_ports sda_t] [get_bd_pins ProcessorSystem/sda_t]
-  connect_bd_net -net amModulator_0_o_amSignal [get_bd_pins amModulator_0/o_amSignal] [get_bd_pins mux_0/in0]
+  connect_bd_net -net amModulator_0_o_amSignal [get_bd_pins amModulator_0/o_amSignal] [get_bd_pins mux_0/in0] [get_bd_pins system_ila_0/probe0]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets amModulator_0_o_amSignal]
   connect_bd_net -net attenuatorController_0_o_clk [get_bd_ports o_clk_attenuator] [get_bd_pins attenuatorController_0/o_clk]
   connect_bd_net -net attenuatorController_0_o_data [get_bd_ports o_data_attenuator] [get_bd_pins attenuatorController_0/o_data]
   connect_bd_net -net attenuatorController_0_o_le_1 [get_bd_ports o_le_1] [get_bd_pins attenuatorController_0/o_le_1]
   connect_bd_net -net attenuatorController_0_o_le_2 [get_bd_ports o_le_2] [get_bd_pins attenuatorController_0/o_le_2]
   connect_bd_net -net attenuatorController_0_o_le_3 [get_bd_ports o_le_3] [get_bd_pins attenuatorController_0/o_le_3]
   connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_ports pa_mute] [get_bd_pins axi_gpio_0/gpio_io_o]
-  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_pins LVDS_LoopBack/gpio_io_o] [get_bd_pins mux_0/control]
+  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_pins LVDS_LoopBack/gpio_io_o] [get_bd_pins mux_0/control] [get_bd_pins system_ila_0/probe4]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets axi_gpio_1_gpio_io_o]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports o_audio_mclk] [get_bd_pins I2SSystem/o_audio_mclk]
-  connect_bd_net -net fir_compiler_0_m_axis_data_tdata [get_bd_pins AMDemodulate/m_axis_data_tdata] [get_bd_pins I2SSystem/in_aud_data]
+  connect_bd_net -net fir_compiler_0_m_axis_data_tdata [get_bd_pins AMDemodulate/m_axis_data_tdata] [get_bd_pins I2SSystem/in_aud_data] [get_bd_pins system_ila_0/probe1]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets fir_compiler_0_m_axis_data_tdata]
   connect_bd_net -net gpio_i_1 [get_bd_ports gpio_i] [get_bd_pins ProcessorSystem/gpio_i]
   connect_bd_net -net i2sController_1_out_rght_chnl_data [get_bd_pins I2SSystem/out_rght_chnl_data] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net i_bit_clk_0_1 [get_bd_ports i_audio_bit_clk] [get_bd_pins I2SSystem/i_bit_clk_0]
   connect_bd_net -net i_i2c_rd_data_0_1 [get_bd_ports ssm_sda_i_1] [get_bd_pins I2SSystem/i_i2c_rd_data_0]
   connect_bd_net -net i_lrc_0_1 [get_bd_ports i_audio_lrc] [get_bd_pins I2SSystem/i_lrc_0]
   connect_bd_net -net i_sda_0_1 [get_bd_ports i_audio_sdat_in0] [get_bd_pins I2SSystem/i_sda_1]
-  connect_bd_net -net mux_0_out [get_bd_pins LVDSIF/i_Channel_1_I_Value] [get_bd_pins mux_0/out]
+  connect_bd_net -net mux_0_out [get_bd_pins LVDSIF/i_Channel_1_I_Value] [get_bd_pins mux_0/out] [get_bd_pins system_ila_0/probe3]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets mux_0_out]
   connect_bd_net -net rx_clk_in_n_1 [get_bd_ports rx_clk_in_n] [get_bd_pins LVDSIF/rx_clk_in_n]
   connect_bd_net -net rx_clk_in_p_1 [get_bd_ports rx_clk_in_p] [get_bd_pins LVDSIF/rx_clk_in_p]
   connect_bd_net -net rx_data_in_n_1 [get_bd_ports rx_data_in_n] [get_bd_pins LVDSIF/rx_data_in_n]

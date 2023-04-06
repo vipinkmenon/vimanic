@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Tue Apr  4 14:54:40 2023
-// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_i2sController_1_0/system_i2sController_1_0_sim_netlist.v
+// Date        : Thu Mar 23 12:08:57 2023
+// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top system_i2sController_1_0 -prefix
+//               system_i2sController_1_0_ system_i2sController_1_0_sim_netlist.v
 // Design      : system_i2sController_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,54 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_i2sController_1_0,i2sController,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "i2sController,Vivado 2021.1" *) 
-(* NotValidForBitStream *)
-module system_i2sController_1_0
-   (i_clk,
-    i_reset_n,
-    i_mclk,
-    o_bit_clk,
-    o_lrc,
-    o_sda,
-    i_sda,
-    in_aud_data,
-    out_lft_chnl_data,
-    out_rght_chnl_data);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, INSERT_VIP 0" *) input i_clk;
-  input i_reset_n;
-  input i_mclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 o_bit_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME o_bit_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_i2sController_1_0_o_bit_clk, INSERT_VIP 0" *) output o_bit_clk;
-  output o_lrc;
-  output o_sda;
-  input i_sda;
-  input [31:0]in_aud_data;
-  output [30:0]out_lft_chnl_data;
-  output [30:0]out_rght_chnl_data;
-
-  wire i_mclk;
-  wire i_reset_n;
-  wire i_sda;
-  wire [31:0]in_aud_data;
-  wire o_bit_clk;
-  wire o_lrc;
-  wire o_sda;
-  wire [30:0]out_lft_chnl_data;
-  wire [30:0]out_rght_chnl_data;
-
-  system_i2sController_1_0_i2sController inst
-       (.i_mclk(i_mclk),
-        .i_reset_n(i_reset_n),
-        .i_sda(i_sda),
-        .in_aud_data(in_aud_data[31:1]),
-        .o_bit_clk_reg_0(o_bit_clk),
-        .o_lrc_reg(o_lrc),
-        .o_sda(o_sda),
-        .out_lft_chnl_data(out_lft_chnl_data),
-        .out_rght_chnl_data(out_rght_chnl_data));
-endmodule
-
-(* ORIG_REF_NAME = "i2sController" *) 
 module system_i2sController_1_0_i2sController
    (o_lrc_reg,
     o_bit_clk_reg_0,
@@ -584,7 +536,6 @@ module system_i2sController_1_0_i2sController
         .rightChannelDataValid_reg_0(o_lrc_reg));
 endmodule
 
-(* ORIG_REF_NAME = "parallelToSerial" *) 
 module system_i2sController_1_0_parallelToSerial
    (o_lrc_reg_0,
     o_sda,
@@ -2588,7 +2539,6 @@ module system_i2sController_1_0_parallelToSerial
         .Q(o_lrc_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "serialToParallel" *) 
 module system_i2sController_1_0_serialToParallel
    (out_lft_chnl_data,
     out_rght_chnl_data,
@@ -3649,6 +3599,53 @@ module system_i2sController_1_0_serialToParallel
         .D(rightChannelDataValid_i_1_n_0),
         .Q(rightChannelDataValid),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_i2sController_1_0,i2sController,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "i2sController,Vivado 2021.1" *) 
+(* NotValidForBitStream *)
+module system_i2sController_1_0
+   (i_clk,
+    i_reset_n,
+    i_mclk,
+    o_bit_clk,
+    o_lrc,
+    o_sda,
+    i_sda,
+    in_aud_data,
+    out_lft_chnl_data,
+    out_rght_chnl_data);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK0, INSERT_VIP 0" *) input i_clk;
+  input i_reset_n;
+  input i_mclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 o_bit_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME o_bit_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_i2sController_1_0_o_bit_clk, INSERT_VIP 0" *) output o_bit_clk;
+  output o_lrc;
+  output o_sda;
+  input i_sda;
+  input [31:0]in_aud_data;
+  output [30:0]out_lft_chnl_data;
+  output [30:0]out_rght_chnl_data;
+
+  wire i_mclk;
+  wire i_reset_n;
+  wire i_sda;
+  wire [31:0]in_aud_data;
+  wire o_bit_clk;
+  wire o_lrc;
+  wire o_sda;
+  wire [30:0]out_lft_chnl_data;
+  wire [30:0]out_rght_chnl_data;
+
+  system_i2sController_1_0_i2sController inst
+       (.i_mclk(i_mclk),
+        .i_reset_n(i_reset_n),
+        .i_sda(i_sda),
+        .in_aud_data(in_aud_data[31:1]),
+        .o_bit_clk_reg_0(o_bit_clk),
+        .o_lrc_reg(o_lrc),
+        .o_sda(o_sda),
+        .out_lft_chnl_data(out_lft_chnl_data),
+        .out_rght_chnl_data(out_rght_chnl_data));
 endmodule
 `ifndef GLBL
 `define GLBL

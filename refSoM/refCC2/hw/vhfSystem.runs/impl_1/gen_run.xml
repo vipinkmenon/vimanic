@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z035ifbg676-2L" LaunchTime="1680623766">
+<GenRun Id="impl_1" LaunchPart="xc7z035ifbg676-2L" LaunchTime="1680766369">
   <File Type="ROUTE-PWR" Name="system_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="system_top.tcl"/>
   <File Type="BITSTR-MMI" Name="system_top.mmi"/>
@@ -84,6 +84,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/dataGen.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/parallelToSerial.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -106,13 +113,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/levelShift.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/dataGen.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -198,14 +198,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/amModulator.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/clockGen.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -259,9 +251,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -275,16 +265,13 @@
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_5"/>
   <BlockFileSet Type="BlockSrcs" Name="system_sys_ps7_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_dataPackager_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_average_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_gpio_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_levelShift_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_average_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_vio_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_i2sController_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_average_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_envelopDetector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_subtractor_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_mux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_subtractor_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_amModulator_0_1"/>
 </GenRun>

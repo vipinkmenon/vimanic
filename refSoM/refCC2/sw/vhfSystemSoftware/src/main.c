@@ -77,8 +77,8 @@
 #define IIC_ADAU_BASE_ADDR 0x34
 #define IIC_SSM_BASE_ADDR 0x31
 #define RSSI_BASEADDR 0x41220000
-#define BASEBAND_GPIO_BASEADDR 0x41240000
-#define AmModulator_GPIO_BASEADDR 0x41230000
+#define AM_MODULATOR_BASEADDR 0x43C20000
+#define LVDS_LoopBack_BASEADDR 0x41210000
 
 #ifdef XILINX_PLATFORM
 struct xil_spi_init_param xil_spi_param = {
@@ -634,8 +634,16 @@ int main(void)
 //
 
 #endif
-    initAmModulator(&myModulator, BASEBAND_GPIO_BASEADDR, AmModulator_GPIO_BASEADDR);
+    //Xil_Out32(LVDS_LoopBack_BASEADDR,0); //1 for lvds loop back 0 to disable loopback
+    initAmModulator(&myModulator,AM_MODULATOR_BASEADDR);
+    generateAM(&myModulator,0.85,1000);
+    setBaseBandSource(&myModulator,Internal);
     startAMModulator(&myModulator);
-    generateAM(&myModulator,0.99,5000);
+    u32 ctrlReg = Xil_In32(myModulator.BaseAddress+CONTROL_REG);
+    xil_printf("Control Reg %x\n\r",ctrlReg);
+    ctrlReg = Xil_In32(myModulator.BaseAddress+MOD_INDEX_REG);
+    xil_printf("Modulation Index Reg%x\n\r",ctrlReg);
+    ctrlReg = Xil_In32(myModulator.BaseAddress+CLK_DIV_REG);
+    xil_printf("Clock Div Reg%x\n\r",ctrlReg);
     return 0;
 }

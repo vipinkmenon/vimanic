@@ -17,10 +17,13 @@ typedef struct amModulator{
 }amModulator;
 
 
+enum BB_SRC {Internal,External};
+
 
 
 void initAmModulator(amModulator *modulator, u32 baseBandBaseAddr);
 int generateAM(amModulator *modulator,float modulationIndex,int basebandFrequency);
+void setBaseBandSource(amModulator *modulator,int BB_SRC);
 void startAMModulator(amModulator *modulator);
 void stopAMModulator(amModulator *modulator);
 

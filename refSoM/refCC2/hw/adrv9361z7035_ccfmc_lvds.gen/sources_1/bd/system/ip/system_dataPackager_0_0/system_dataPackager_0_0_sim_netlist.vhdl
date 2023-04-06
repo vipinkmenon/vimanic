@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Tue Apr  4 14:55:32 2023
--- Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_dataPackager_0_0/system_dataPackager_0_0_sim_netlist.vhdl
+-- Date        : Thu Mar 23 12:09:32 2023
+-- Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_dataPackager_0_0 -prefix
+--               system_dataPackager_0_0_ system_dataPackager_0_0_sim_netlist.vhdl
 -- Design      : system_dataPackager_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -32,8 +32,6 @@ entity system_dataPackager_0_0_dataPackager is
     i_Channel_2_I_Value : in STD_LOGIC_VECTOR ( 11 downto 0 );
     i_Channel_1_I_Value : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_dataPackager_0_0_dataPackager : entity is "dataPackager";
 end system_dataPackager_0_0_dataPackager;
 
 architecture STRUCTURE of system_dataPackager_0_0_dataPackager is

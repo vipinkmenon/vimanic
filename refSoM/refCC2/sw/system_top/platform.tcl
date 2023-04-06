@@ -25,3 +25,4 @@ platform active {system_top}
 platform config -updatehw {C:/git/vimanic/refSoM/refCC2/sw/system_top.xsa}
 platform clean
 platform config -updatehw {C:/git/vimanic/refSoM/refCC2/sw/system_top.xsa}
+platform generate -domains zynq_fsbl 

@@ -44,9 +44,9 @@
         "dataGen_0": "",
         "axi_gpio_0": "",
         "Audio_Amplifier_I2C": "",
+        "clk_wiz_0": "",
         "i2sController_1": "",
-        "levelShift_0": "",
-        "clk_wiz_0": ""
+        "levelShift_0": ""
       },
       "AMDemodulate": {
         "envelopDetector_0": "",
@@ -60,9 +60,10 @@
       "vio_1": "",
       "axi_gpio_0": "",
       "xlslice_0": "",
-      "amModulator_0": "",
+      "LVDS_LoopBack": "",
       "mux_0": "",
-      "LVDS_LoopBack": ""
+      "system_ila_0": "",
+      "amModulator_0": ""
     },
     "interface_ports": {
       "ddr": {
@@ -3774,7 +3775,12 @@
             "ports": [
               "i_Channel_1_I_Value",
               "dataPackager_0/i_Channel_1_I_Value"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "dataPackager_0_o_Channel_1_I_Valid": {
             "ports": [
@@ -3786,7 +3792,12 @@
             "ports": [
               "dataPackager_0/o_Channel_1_I_Value",
               "o_Channel_1_I_Value"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "dataPackager_0_o_data": {
             "ports": [
@@ -4134,6 +4145,71 @@
             "xci_path": "ip\\system_audio_codec_i2c_0_0\\system_audio_codec_i2c_0_0.xci",
             "inst_hier_path": "I2SSystem/Audio_Amplifier_I2C"
           },
+          "clk_wiz_0": {
+            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+            "xci_name": "system_clk_wiz_0_0",
+            "xci_path": "ip\\system_clk_wiz_0_0\\system_clk_wiz_0_0.xci",
+            "inst_hier_path": "I2SSystem/clk_wiz_0",
+            "parameters": {
+              "CLKOUT1_JITTER": {
+                "value": "360.948"
+              },
+              "CLKOUT1_PHASE_ERROR": {
+                "value": "301.601"
+              },
+              "CLKOUT1_REQUESTED_OUT_FREQ": {
+                "value": "12.288"
+              },
+              "CLKOUT2_JITTER": {
+                "value": "287.104"
+              },
+              "CLKOUT2_PHASE_ERROR": {
+                "value": "318.151"
+              },
+              "CLKOUT2_REQUESTED_OUT_FREQ": {
+                "value": "128"
+              },
+              "CLKOUT2_USED": {
+                "value": "false"
+              },
+              "CLKOUT3_JITTER": {
+                "value": "535.299"
+              },
+              "CLKOUT3_PHASE_ERROR": {
+                "value": "318.151"
+              },
+              "CLKOUT3_REQUESTED_OUT_FREQ": {
+                "value": "5"
+              },
+              "CLKOUT3_USED": {
+                "value": "false"
+              },
+              "MMCM_CLKFBOUT_MULT_F": {
+                "value": "48.000"
+              },
+              "MMCM_CLKOUT0_DIVIDE_F": {
+                "value": "78.125"
+              },
+              "MMCM_CLKOUT1_DIVIDE": {
+                "value": "1"
+              },
+              "MMCM_CLKOUT2_DIVIDE": {
+                "value": "1"
+              },
+              "MMCM_DIVCLK_DIVIDE": {
+                "value": "5"
+              },
+              "NUM_OUT_CLKS": {
+                "value": "1"
+              },
+              "USE_LOCKED": {
+                "value": "false"
+              },
+              "USE_RESET": {
+                "value": "false"
+              }
+            }
+          },
           "i2sController_1": {
             "vlnv": "xilinx.com:module_ref:i2sController:1.0",
             "xci_name": "system_i2sController_1_0",
@@ -4241,71 +4317,6 @@
                 "right": "0"
               }
             }
-          },
-          "clk_wiz_0": {
-            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-            "xci_name": "system_clk_wiz_0_0",
-            "xci_path": "ip\\system_clk_wiz_0_0\\system_clk_wiz_0_0.xci",
-            "inst_hier_path": "I2SSystem/clk_wiz_0",
-            "parameters": {
-              "CLKOUT1_JITTER": {
-                "value": "360.948"
-              },
-              "CLKOUT1_PHASE_ERROR": {
-                "value": "301.601"
-              },
-              "CLKOUT1_REQUESTED_OUT_FREQ": {
-                "value": "12.288"
-              },
-              "CLKOUT2_JITTER": {
-                "value": "287.104"
-              },
-              "CLKOUT2_PHASE_ERROR": {
-                "value": "318.151"
-              },
-              "CLKOUT2_REQUESTED_OUT_FREQ": {
-                "value": "128"
-              },
-              "CLKOUT2_USED": {
-                "value": "false"
-              },
-              "CLKOUT3_JITTER": {
-                "value": "535.299"
-              },
-              "CLKOUT3_PHASE_ERROR": {
-                "value": "318.151"
-              },
-              "CLKOUT3_REQUESTED_OUT_FREQ": {
-                "value": "5"
-              },
-              "CLKOUT3_USED": {
-                "value": "false"
-              },
-              "MMCM_CLKFBOUT_MULT_F": {
-                "value": "48.000"
-              },
-              "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "78.125"
-              },
-              "MMCM_CLKOUT1_DIVIDE": {
-                "value": "1"
-              },
-              "MMCM_CLKOUT2_DIVIDE": {
-                "value": "1"
-              },
-              "MMCM_DIVCLK_DIVIDE": {
-                "value": "5"
-              },
-              "NUM_OUT_CLKS": {
-                "value": "1"
-              },
-              "USE_LOCKED": {
-                "value": "false"
-              },
-              "USE_RESET": {
-                "value": "false"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -4402,7 +4413,12 @@
             "ports": [
               "in_aud_data",
               "levelShift_0/i_data"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "levelShift_0_o_data": {
             "ports": [
@@ -4416,8 +4432,8 @@
               "dataGen_0/i_clk",
               "axi_gpio_0/s_axi_aclk",
               "Audio_Amplifier_I2C/s00_axi_aclk",
-              "i2sController_1/i_clk",
-              "clk_wiz_0/clk_in1"
+              "clk_wiz_0/clk_in1",
+              "i2sController_1/i_clk"
             ]
           },
           "sys_cpu_resetn": {
@@ -4669,7 +4685,12 @@
             "ports": [
               "i_data",
               "envelopDetector_0/i_data"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "i_data_valid_1": {
             "ports": [
@@ -4694,7 +4715,12 @@
             "ports": [
               "subtractor_0/o_data",
               "m_axis_data_tdata"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           }
         }
       },
@@ -4777,11 +4803,19 @@
           }
         }
       },
-      "amModulator_0": {
-        "vlnv": "xilinx.com:user:amModulator:1.0",
-        "xci_name": "system_amModulator_0_1",
-        "xci_path": "ip\\system_amModulator_0_1\\system_amModulator_0_1.xci",
-        "inst_hier_path": "amModulator_0"
+      "LVDS_LoopBack": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "system_axi_gpio_1_0",
+        "xci_path": "ip\\system_axi_gpio_1_0\\system_axi_gpio_1_0.xci",
+        "inst_hier_path": "LVDS_LoopBack",
+        "parameters": {
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "1"
+          }
+        }
       },
       "mux_0": {
         "vlnv": "xilinx.com:module_ref:mux:1.0",
@@ -4814,19 +4848,40 @@
           }
         }
       },
-      "LVDS_LoopBack": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "system_axi_gpio_1_0",
-        "xci_path": "ip\\system_axi_gpio_1_0\\system_axi_gpio_1_0.xci",
-        "inst_hier_path": "LVDS_LoopBack",
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "system_system_ila_0_0",
+        "xci_path": "ip\\system_system_ila_0_0\\system_system_ila_0_0.xci",
+        "inst_hier_path": "system_ila_0",
         "parameters": {
-          "C_ALL_OUTPUTS": {
-            "value": "1"
+          "C_DATA_DEPTH": {
+            "value": "32768"
           },
-          "C_GPIO_WIDTH": {
-            "value": "1"
+          "C_MON_TYPE": {
+            "value": "NATIVE"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "5"
+          },
+          "C_PROBE0_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_TYPE": {
+            "value": "0"
           }
         }
+      },
+      "amModulator_0": {
+        "vlnv": "xilinx.com:user:amModulator:1.0",
+        "xci_name": "system_amModulator_0_1",
+        "xci_path": "ip\\system_amModulator_0_1\\system_amModulator_0_1.xci",
+        "inst_hier_path": "amModulator_0"
       }
     },
     "interface_nets": {
@@ -4926,6 +4981,7 @@
         "ports": [
           "LVDSIF/clk_out",
           "AMDemodulate/aclk",
+          "system_ila_0/clk",
           "amModulator_0/i_rf_clk"
         ]
       },
@@ -4939,8 +4995,17 @@
         "ports": [
           "LVDSIF/o_Channel_1_I_Value",
           "AMDemodulate/i_data",
-          "mux_0/in1"
-        ]
+          "mux_0/in1",
+          "system_ila_0/probe2"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "LVDSIF_tx_data_out_n": {
         "ports": [
@@ -4993,8 +5058,17 @@
       "amModulator_0_o_amSignal": {
         "ports": [
           "amModulator_0/o_amSignal",
-          "mux_0/in0"
-        ]
+          "mux_0/in0",
+          "system_ila_0/probe0"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "attenuatorController_0_o_clk": {
         "ports": [
@@ -5035,8 +5109,17 @@
       "axi_gpio_1_gpio_io_o": {
         "ports": [
           "LVDS_LoopBack/gpio_io_o",
-          "mux_0/control"
-        ]
+          "mux_0/control",
+          "system_ila_0/probe4"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "clk_wiz_0_clk_out1": {
         "ports": [
@@ -5047,8 +5130,17 @@
       "fir_compiler_0_m_axis_data_tdata": {
         "ports": [
           "AMDemodulate/m_axis_data_tdata",
-          "I2SSystem/in_aud_data"
-        ]
+          "I2SSystem/in_aud_data",
+          "system_ila_0/probe1"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "gpio_i_1": {
         "ports": [
@@ -5089,8 +5181,17 @@
       "mux_0_out": {
         "ports": [
           "mux_0/out",
-          "LVDSIF/i_Channel_1_I_Value"
-        ]
+          "LVDSIF/i_Channel_1_I_Value",
+          "system_ila_0/probe3"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "rx_clk_in_n_1": {
         "ports": [
@@ -5185,8 +5286,8 @@
           "RSSI_IF/s_axi_aclk",
           "vio_1/clk",
           "axi_gpio_0/s_axi_aclk",
-          "amModulator_0/s00_axi_aclk",
-          "LVDS_LoopBack/s_axi_aclk"
+          "LVDS_LoopBack/s_axi_aclk",
+          "amModulator_0/s00_axi_aclk"
         ]
       },
       "sys_cpu_resetn": {
@@ -5196,8 +5297,8 @@
           "attenuatorController_0/s00_axi_aresetn",
           "RSSI_IF/s_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "amModulator_0/s00_axi_aresetn",
-          "LVDS_LoopBack/s_axi_aresetn"
+          "LVDS_LoopBack/s_axi_aresetn",
+          "amModulator_0/s00_axi_aresetn"
         ]
       },
       "sys_ps7_GPIO_O": {

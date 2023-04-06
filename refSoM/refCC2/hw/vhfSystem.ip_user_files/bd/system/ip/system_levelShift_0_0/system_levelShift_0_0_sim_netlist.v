@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Tue Apr  4 14:55:31 2023
-// Host        : DESKTOP-CR2PTM3 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/git/vimanic/refSoM/refCC2/hw/adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system/ip/system_levelShift_0_0/system_levelShift_0_0_sim_netlist.v
+// Date        : Thu Mar 23 12:10:04 2023
+// Host        : DESKTOP-3UI6ATS running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top system_levelShift_0_0 -prefix
+//               system_levelShift_0_0_ system_levelShift_0_0_sim_netlist.v
 // Design      : system_levelShift_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,32 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_levelShift_0_0,levelShift,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "levelShift,Vivado 2021.1" *) 
-(* NotValidForBitStream *)
-module system_levelShift_0_0
-   (i_data,
-    o_data);
-  input [31:0]i_data;
-  output [31:0]o_data;
-
-  wire \<const0> ;
-  wire [31:0]i_data;
-  wire [31:10]\^o_data ;
-
-  assign o_data[31:10] = \^o_data [31:10];
-  assign o_data[9:3] = i_data[6:0];
-  assign o_data[2] = \<const0> ;
-  assign o_data[1] = \<const0> ;
-  assign o_data[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  system_levelShift_0_0_levelShift inst
-       (.i_data(i_data[27:7]),
-        .o_data(\^o_data ));
-endmodule
-
-(* ORIG_REF_NAME = "levelShift" *) 
 module system_levelShift_0_0_levelShift
    (o_data,
     i_data);
@@ -166,6 +140,31 @@ module system_levelShift_0_0_levelShift
     \o_data[30]_INST_0_i_1 
        (.I0(i_data[20]),
         .O(\o_data[30]_INST_0_i_1_n_0 ));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_levelShift_0_0,levelShift,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "levelShift,Vivado 2021.1" *) 
+(* NotValidForBitStream *)
+module system_levelShift_0_0
+   (i_data,
+    o_data);
+  input [31:0]i_data;
+  output [31:0]o_data;
+
+  wire \<const0> ;
+  wire [31:0]i_data;
+  wire [31:10]\^o_data ;
+
+  assign o_data[31:10] = \^o_data [31:10];
+  assign o_data[9:3] = i_data[6:0];
+  assign o_data[2] = \<const0> ;
+  assign o_data[1] = \<const0> ;
+  assign o_data[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  system_levelShift_0_0_levelShift inst
+       (.i_data(i_data[27:7]),
+        .o_data(\^o_data ));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -1,18 +1,58 @@
-20:23:15 **** Build of project system_top ****
-buildplatform.bat 56591 system_top  
-XSDB Server Channel: tcfchan#4
-Failed to generate the platform.
-Reason: Error: Qemu arguments File given  E:/Vitis/2021.1/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt do not exist
-    invoked from within
-"::tcf::eval -progress {apply {{msg} {puts $msg}}} {tcf_send_command tcfchan#0 xsdb eval s es {{platform active system_top; platform generate }}}"
-    (procedure "::tcf::send_command" line 4)
-    invoked from within
-"tcf send_command $::xsdb::curchan xsdb eval s es [list "platform active $PLATFORM_NAME; platform generate $target"]"
-    invoked from within
-"if { $iswindows == 1 } {    
+Nothing to build in platform 'system_top'
 
-    set XSDB_PORT [lindex $argv 0]
-    set PLATFORM_NAME [lindex $argv 1]
-    set arglen [llength $argv]
-    set lastind..."
-    (file "C:/Xilinx/Vitis/2021.1\scripts\vitis\util\buildplatform.tcl" line 11)
+13:12:16 **** Incremental Build of configuration Debug for project vhfSystemSoftware ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IE:/Projects/refSoM/refCC2/sw/system_top/export/system_top/sw/system_top/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:499:41: warning: passing argument 2 of 'ad9361_get_rx_lo_freq' from incompatible pointer type [-Wincompatible-pointer-types]
+  499 |  ret = ad9361_get_rx_lo_freq(ad9361_phy,&bw);
+      |                                         ^~~
+      |                                         |
+      |                                         uint32_t * {aka long unsigned int *}
+In file included from ../src/main.c:52:
+../src/ad9361_api.h:405:69: note: expected 'uint64_t *' {aka 'long long unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  405 | int32_t ad9361_get_rx_lo_freq (struct ad9361_rf_phy *phy, uint64_t *lo_freq_hz);
+      |                                                           ~~~~~~~~~~^~~~~~~~~~
+../src/main.c:516:41: warning: passing argument 2 of 'ad9361_get_tx_lo_freq' from incompatible pointer type [-Wincompatible-pointer-types]
+  516 |  ret = ad9361_get_tx_lo_freq(ad9361_phy,&bw);
+      |                                         ^~~
+      |                                         |
+      |                                         uint32_t * {aka long unsigned int *}
+In file included from ../src/main.c:52:
+../src/ad9361_api.h:484:69: note: expected 'uint64_t *' {aka 'long long unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  484 | int32_t ad9361_get_tx_lo_freq (struct ad9361_rf_phy *phy, uint64_t *lo_freq_hz);
+      |                                                           ~~~~~~~~~~^~~~~~~~~~
+../src/main.c:494:6: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+  494 |  int ret;
+      |      ^~~
+../src/main.c:457:10: warning: unused variable 'status' [-Wunused-variable]
+  457 |  int32_t status;
+      |          ^~~~~~
+../src/main.c:455:5: warning: variable 'TxData' set but not used [-Wunused-but-set-variable]
+  455 |  u8 TxData[3];
+      |     ^~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: vhfSystemSoftware.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LE:/Projects/refSoM/refCC2/sw/system_top/export/system_top/sw/system_top/standalone_ps7_cortexa9_0/bsplib/lib -o "vhfSystemSoftware.elf"  ./src/ad9361.o ./src/ad9361_api.o ./src/ad9361_conv.o ./src/ad9361_util.o ./src/amModulator.o ./src/attenuator.o ./src/audioAmplifier.o ./src/delay.o ./src/gpio.o ./src/main.o ./src/rssiCalc.o ./src/sigmaDSP.o ./src/spi.o ./src/util.o ./src/xilinx_gpio.o ./src/xilinx_spi.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vhfSystemSoftware.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size vhfSystemSoftware.elf  |tee "vhfSystemSoftware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 216022	   9462	  26864	 252348	  3d9bc	vhfSystemSoftware.elf
+'Finished building: vhfSystemSoftware.elf.size'
+' '
+13:12:21 **** Incremental Build of configuration Debug for project vhfSystemSoftware_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 62730 E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/system_top.xpfm standalone_ps7_cortexa9_0 E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware_system/Debug/system.bif
+sdcard_gen --xpfm E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/system_top.xpfm --sys_config system_top --bif E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware_system/Debug/system.bif --no_bitstream --elf E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf,ps7_cortexa9_0
+Running E:/Vitis/2021.1/bin/bootgen  -image E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

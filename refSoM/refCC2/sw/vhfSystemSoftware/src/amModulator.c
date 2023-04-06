@@ -29,18 +29,29 @@ int generateAM(amModulator *modulator,float modulationIndex,int basebandFrequenc
 
 	//xil_printf("%0x\n\r",fixedModulationIndex);
 
-	Xil_Out32(modulator->BaseAddress+CLK_DIV_REG,clkDivValue);
-	Xil_Out32(modulator->BaseAddress+MOD_INDEX_REG,fixedModulationIndex);
+	Xil_Out32(modulator->BaseAddress+CLK_DIV_REG,clkDivValue);//set the frequency of base band
+	Xil_Out32(modulator->BaseAddress+MOD_INDEX_REG,fixedModulationIndex);//set the modulation index
 	return 0;
 }
 
 
+void setBaseBandSource(amModulator *modulator,int BB_SRC){
+	u32 ctrlReg = Xil_In32(modulator->BaseAddress+CONTROL_REG);
+	if(BB_SRC == Internal)
+		Xil_Out32(modulator->BaseAddress+CONTROL_REG,ctrlReg|2);
+	else if(BB_SRC == External)
+		Xil_Out32(modulator->BaseAddress+CONTROL_REG,ctrlReg&1);
+
+}
+
 void startAMModulator(amModulator *modulator){
-	Xil_Out32(modulator->BaseAddress+CONTROL_REG,1);
+	u32 ctrlReg = Xil_In32(modulator->BaseAddress+CONTROL_REG);
+	Xil_Out32(modulator->BaseAddress+CONTROL_REG,ctrlReg|1);
 }
 
 
 
 void stopAMModulator(amModulator *modulator){
-	Xil_Out32(modulator->BaseAddress+CONTROL_REG,0);
+	u32 ctrlReg = Xil_In32(modulator->BaseAddress+CONTROL_REG);
+	Xil_Out32(modulator->BaseAddress+CONTROL_REG,ctrlReg&0xFFFFFFFE);
 }

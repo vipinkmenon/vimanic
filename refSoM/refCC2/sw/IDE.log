@@ -6842,3 +6842,779 @@ Reason: No Platforms Found.
 20:23:12 INFO  : Hardware specification for platform project 'system_top' is updated.
 20:23:18 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
 20:23:18 ERROR : Failed to get platform details for the project 'vhfSystemSoftware'. Cannot sync application flags.
+11:44:30 INFO  : Launching XSCT server: xsct.bat -n  -interactive E:\Projects\git\vimanic\refSoM\refCC2\sw\temp_xsdb_launch_script.tcl
+11:44:37 INFO  : Platform repository initialization has completed.
+11:44:37 INFO  : Registering command handlers for Vitis TCF services
+11:44:46 INFO  : XSCT server has started successfully.
+11:44:46 INFO  : Successfully done setting XSCT server connection channel  
+11:44:46 INFO  : plnx-install-location is set to ''
+11:44:50 INFO  : Successfully done setting workspace for the tool. 
+11:44:50 INFO  : Successfully done query RDI_DATADIR 
+11:48:49 INFO  : Result from executing command 'getProjects': system_top
+11:48:49 INFO  : Result from executing command 'getPlatforms': system_top|E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/system_top.xpfm
+11:48:50 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+11:52:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+11:52:51 INFO  : 'fpga -state' command is executed.
+11:52:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:52:51 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+11:52:51 INFO  : 'jtag frequency' command is executed.
+11:52:51 INFO  : Context for 'APU' is selected.
+11:52:51 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+11:52:51 INFO  : 'configparams force-mem-access 1' command is executed.
+11:52:51 INFO  : Context for 'APU' is selected.
+11:52:51 INFO  : 'stop' command is executed.
+11:52:51 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+11:52:52 INFO  : 'ps7_init' command is executed.
+11:52:52 INFO  : 'ps7_post_config' command is executed.
+11:52:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:52:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:52 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:52:52 INFO  : 'configparams force-mem-access 0' command is executed.
+11:52:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:52:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:52 INFO  : 'con' command is executed.
+11:52:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:52:52 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+11:56:09 INFO  : Disconnected from the channel tcfchan#3.
+11:56:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+11:56:10 INFO  : 'fpga -state' command is executed.
+11:56:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:56:11 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+11:56:11 INFO  : 'jtag frequency' command is executed.
+11:56:11 INFO  : Context for 'APU' is selected.
+11:56:11 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+11:56:11 INFO  : 'configparams force-mem-access 1' command is executed.
+11:56:11 INFO  : Context for 'APU' is selected.
+11:56:11 INFO  : 'stop' command is executed.
+11:56:11 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+11:56:11 INFO  : 'ps7_init' command is executed.
+11:56:11 INFO  : 'ps7_post_config' command is executed.
+11:56:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:56:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:56:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:56:11 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:56:11 INFO  : 'configparams force-mem-access 0' command is executed.
+11:56:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:56:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:56:12 INFO  : 'con' command is executed.
+11:56:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:56:12 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+11:58:55 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+11:59:18 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+11:59:42 INFO  : Disconnected from the channel tcfchan#4.
+11:59:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+11:59:43 INFO  : 'fpga -state' command is executed.
+11:59:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:59:43 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+11:59:43 INFO  : 'jtag frequency' command is executed.
+11:59:43 INFO  : Context for 'APU' is selected.
+11:59:43 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+11:59:43 INFO  : 'configparams force-mem-access 1' command is executed.
+11:59:43 INFO  : Context for 'APU' is selected.
+11:59:43 INFO  : 'stop' command is executed.
+11:59:43 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+11:59:44 INFO  : 'ps7_init' command is executed.
+11:59:44 INFO  : 'ps7_post_config' command is executed.
+11:59:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:59:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:59:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:59:44 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:59:44 INFO  : 'configparams force-mem-access 0' command is executed.
+11:59:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:59:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:59:44 INFO  : 'con' command is executed.
+11:59:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:59:44 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:02:24 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:02:54 INFO  : Disconnected from the channel tcfchan#6.
+12:02:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:02:55 INFO  : 'fpga -state' command is executed.
+12:02:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:02:55 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:02:55 INFO  : 'jtag frequency' command is executed.
+12:02:55 INFO  : Context for 'APU' is selected.
+12:02:55 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:02:55 INFO  : 'configparams force-mem-access 1' command is executed.
+12:02:55 INFO  : Context for 'APU' is selected.
+12:02:55 INFO  : 'stop' command is executed.
+12:02:55 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:02:55 INFO  : 'ps7_init' command is executed.
+12:02:55 INFO  : 'ps7_post_config' command is executed.
+12:02:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:02:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:56 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:02:56 INFO  : 'configparams force-mem-access 0' command is executed.
+12:02:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:02:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:56 INFO  : 'con' command is executed.
+12:02:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:02:56 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:11:16 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:12:51 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:13:15 INFO  : Disconnected from the channel tcfchan#8.
+12:13:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:13:16 INFO  : 'fpga -state' command is executed.
+12:13:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:13:16 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:13:16 INFO  : 'jtag frequency' command is executed.
+12:13:17 INFO  : Context for 'APU' is selected.
+12:13:17 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:13:17 INFO  : 'configparams force-mem-access 1' command is executed.
+12:13:17 INFO  : Context for 'APU' is selected.
+12:13:17 INFO  : 'stop' command is executed.
+12:13:17 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:13:17 INFO  : 'ps7_init' command is executed.
+12:13:17 INFO  : 'ps7_post_config' command is executed.
+12:13:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:13:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:17 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:13:17 INFO  : 'configparams force-mem-access 0' command is executed.
+12:13:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:13:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:17 INFO  : 'con' command is executed.
+12:13:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:13:17 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:14:20 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:14:45 INFO  : Disconnected from the channel tcfchan#11.
+12:14:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:14:46 INFO  : 'fpga -state' command is executed.
+12:14:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:14:47 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:14:47 INFO  : 'jtag frequency' command is executed.
+12:14:47 INFO  : Context for 'APU' is selected.
+12:14:47 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:14:47 INFO  : 'configparams force-mem-access 1' command is executed.
+12:14:47 INFO  : Context for 'APU' is selected.
+12:14:47 INFO  : 'stop' command is executed.
+12:14:47 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:14:47 INFO  : 'ps7_init' command is executed.
+12:14:47 INFO  : 'ps7_post_config' command is executed.
+12:14:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:14:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:14:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:14:47 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:14:47 INFO  : 'configparams force-mem-access 0' command is executed.
+12:14:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:14:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:14:48 INFO  : 'con' command is executed.
+12:14:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:14:48 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:23:11 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:25:02 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:25:34 INFO  : Disconnected from the channel tcfchan#13.
+12:25:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:25:36 INFO  : 'fpga -state' command is executed.
+12:25:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:25:36 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:25:36 INFO  : 'jtag frequency' command is executed.
+12:25:36 INFO  : Context for 'APU' is selected.
+12:25:36 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:25:36 INFO  : 'configparams force-mem-access 1' command is executed.
+12:25:36 INFO  : Context for 'APU' is selected.
+12:25:36 INFO  : 'stop' command is executed.
+12:25:36 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:25:36 INFO  : 'ps7_init' command is executed.
+12:25:36 INFO  : 'ps7_post_config' command is executed.
+12:25:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:25:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:25:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:25:37 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:25:37 INFO  : 'configparams force-mem-access 0' command is executed.
+12:25:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:25:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:25:37 INFO  : 'con' command is executed.
+12:25:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:25:37 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:27:33 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:28:01 INFO  : Disconnected from the channel tcfchan#15.
+12:28:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:28:02 INFO  : 'fpga -state' command is executed.
+12:28:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:28:02 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:28:02 INFO  : 'jtag frequency' command is executed.
+12:28:02 INFO  : Context for 'APU' is selected.
+12:28:02 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:28:02 INFO  : 'configparams force-mem-access 1' command is executed.
+12:28:02 INFO  : Context for 'APU' is selected.
+12:28:02 INFO  : 'stop' command is executed.
+12:28:02 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:28:02 INFO  : 'ps7_init' command is executed.
+12:28:02 INFO  : 'ps7_post_config' command is executed.
+12:28:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:28:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:03 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:28:03 INFO  : 'configparams force-mem-access 0' command is executed.
+12:28:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:28:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:28:03 INFO  : 'con' command is executed.
+12:28:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:28:03 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:28:38 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:29:02 INFO  : Disconnected from the channel tcfchan#17.
+12:29:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:29:03 INFO  : 'fpga -state' command is executed.
+12:29:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:29:04 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:29:04 INFO  : 'jtag frequency' command is executed.
+12:29:04 INFO  : Context for 'APU' is selected.
+12:29:04 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:29:04 INFO  : 'configparams force-mem-access 1' command is executed.
+12:29:04 INFO  : Context for 'APU' is selected.
+12:29:04 INFO  : 'stop' command is executed.
+12:29:04 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:29:04 INFO  : 'ps7_init' command is executed.
+12:29:04 INFO  : 'ps7_post_config' command is executed.
+12:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:29:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:29:04 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:29:04 INFO  : 'configparams force-mem-access 0' command is executed.
+12:29:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:29:04 INFO  : 'con' command is executed.
+12:29:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:29:04 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:30:46 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:31:12 INFO  : Disconnected from the channel tcfchan#19.
+12:31:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:31:13 INFO  : 'fpga -state' command is executed.
+12:31:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:31:13 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:31:13 INFO  : 'jtag frequency' command is executed.
+12:31:13 INFO  : Context for 'APU' is selected.
+12:31:13 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:31:13 INFO  : 'configparams force-mem-access 1' command is executed.
+12:31:13 INFO  : Context for 'APU' is selected.
+12:31:13 INFO  : 'stop' command is executed.
+12:31:13 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:31:14 INFO  : 'ps7_init' command is executed.
+12:31:14 INFO  : 'ps7_post_config' command is executed.
+12:31:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:31:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:31:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:31:14 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:31:14 INFO  : 'configparams force-mem-access 0' command is executed.
+12:31:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:31:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:31:14 INFO  : 'con' command is executed.
+12:31:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:31:14 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:33:53 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:34:36 INFO  : Disconnected from the channel tcfchan#21.
+12:34:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:34:37 INFO  : 'fpga -state' command is executed.
+12:34:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:37 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:34:37 INFO  : 'jtag frequency' command is executed.
+12:34:37 INFO  : Context for 'APU' is selected.
+12:34:37 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:34:37 INFO  : 'configparams force-mem-access 1' command is executed.
+12:34:37 INFO  : Context for 'APU' is selected.
+12:34:37 INFO  : 'stop' command is executed.
+12:34:37 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:34:37 INFO  : 'ps7_init' command is executed.
+12:34:37 INFO  : 'ps7_post_config' command is executed.
+12:34:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:34:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:34:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:34:38 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:34:38 INFO  : 'configparams force-mem-access 0' command is executed.
+12:34:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:34:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:34:38 INFO  : 'con' command is executed.
+12:34:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:34:38 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:34:59 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:35:28 INFO  : Disconnected from the channel tcfchan#23.
+12:35:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:35:29 INFO  : 'fpga -state' command is executed.
+12:35:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:35:29 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:35:29 INFO  : 'jtag frequency' command is executed.
+12:35:29 INFO  : Context for 'APU' is selected.
+12:35:29 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:35:29 INFO  : 'configparams force-mem-access 1' command is executed.
+12:35:29 INFO  : Context for 'APU' is selected.
+12:35:29 INFO  : 'stop' command is executed.
+12:35:29 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:35:29 INFO  : 'ps7_init' command is executed.
+12:35:29 INFO  : 'ps7_post_config' command is executed.
+12:35:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:35:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:30 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:35:30 INFO  : 'configparams force-mem-access 0' command is executed.
+12:35:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:35:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:30 INFO  : 'con' command is executed.
+12:35:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:35:30 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+12:37:06 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+12:37:30 INFO  : Disconnected from the channel tcfchan#25.
+12:37:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+12:37:31 INFO  : 'fpga -state' command is executed.
+12:37:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:37:31 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+12:37:31 INFO  : 'jtag frequency' command is executed.
+12:37:31 INFO  : Context for 'APU' is selected.
+12:37:31 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+12:37:31 INFO  : 'configparams force-mem-access 1' command is executed.
+12:37:31 INFO  : Context for 'APU' is selected.
+12:37:31 INFO  : 'stop' command is executed.
+12:37:31 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+12:37:31 INFO  : 'ps7_init' command is executed.
+12:37:31 INFO  : 'ps7_post_config' command is executed.
+12:37:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:37:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:37:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:37:32 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:37:32 INFO  : 'configparams force-mem-access 0' command is executed.
+12:37:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:37:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:37:32 INFO  : 'con' command is executed.
+12:37:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:37:32 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+13:02:40 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+13:08:45 INFO  : Disconnected from the channel tcfchan#27.
+13:08:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+13:08:46 INFO  : 'fpga -state' command is executed.
+13:08:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:08:46 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+13:08:46 INFO  : 'jtag frequency' command is executed.
+13:08:46 INFO  : Context for 'APU' is selected.
+13:08:46 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+13:08:46 INFO  : 'configparams force-mem-access 1' command is executed.
+13:08:46 INFO  : Context for 'APU' is selected.
+13:08:46 INFO  : 'stop' command is executed.
+13:08:46 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+13:08:46 INFO  : 'ps7_init' command is executed.
+13:08:46 INFO  : 'ps7_post_config' command is executed.
+13:08:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:08:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:08:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:08:47 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:08:47 INFO  : 'configparams force-mem-access 0' command is executed.
+13:08:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:08:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:08:47 INFO  : 'con' command is executed.
+13:08:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:08:47 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+13:09:56 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+13:10:27 INFO  : Disconnected from the channel tcfchan#29.
+13:10:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+13:10:28 INFO  : 'fpga -state' command is executed.
+13:10:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:10:29 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+13:10:29 INFO  : 'jtag frequency' command is executed.
+13:10:29 INFO  : Context for 'APU' is selected.
+13:10:29 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+13:10:29 INFO  : 'configparams force-mem-access 1' command is executed.
+13:10:29 INFO  : Context for 'APU' is selected.
+13:10:29 INFO  : 'stop' command is executed.
+13:10:29 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+13:10:29 INFO  : 'ps7_init' command is executed.
+13:10:29 INFO  : 'ps7_post_config' command is executed.
+13:10:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:10:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:10:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:10:29 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:10:29 INFO  : 'configparams force-mem-access 0' command is executed.
+13:10:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:10:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:10:29 INFO  : 'con' command is executed.
+13:10:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:10:29 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+13:10:57 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+13:11:23 INFO  : Disconnected from the channel tcfchan#31.
+13:11:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+13:11:24 INFO  : 'fpga -state' command is executed.
+13:11:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:11:24 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+13:11:24 INFO  : 'jtag frequency' command is executed.
+13:11:24 INFO  : Context for 'APU' is selected.
+13:11:24 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+13:11:24 INFO  : 'configparams force-mem-access 1' command is executed.
+13:11:24 INFO  : Context for 'APU' is selected.
+13:11:24 INFO  : 'stop' command is executed.
+13:11:24 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+13:11:24 INFO  : 'ps7_init' command is executed.
+13:11:24 INFO  : 'ps7_post_config' command is executed.
+13:11:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:11:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:11:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:11:25 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:11:25 INFO  : 'configparams force-mem-access 0' command is executed.
+13:11:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:11:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:11:25 INFO  : 'con' command is executed.
+13:11:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:11:25 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'
+13:12:16 INFO  : Checking for BSP changes to sync application flags for project 'vhfSystemSoftware'...
+13:12:40 INFO  : Disconnected from the channel tcfchan#33.
+13:12:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299AFB95F" && level==0 && jtag_device_ctx=="jsn-JTAG-HS3-210299AFB95F-23732093-0"}' command is executed.
+13:12:41 INFO  : 'fpga -state' command is executed.
+13:12:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:12:41 INFO  : Jtag cable 'Digilent JTAG-HS3 210299AFB95F' is selected.
+13:12:41 INFO  : 'jtag frequency' command is executed.
+13:12:41 INFO  : Context for 'APU' is selected.
+13:12:41 INFO  : Hardware design and registers information is loaded from 'E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa'.
+13:12:41 INFO  : 'configparams force-mem-access 1' command is executed.
+13:12:41 INFO  : Context for 'APU' is selected.
+13:12:41 INFO  : 'stop' command is executed.
+13:12:41 INFO  : Sourcing of 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl' is done.
+13:12:41 INFO  : 'ps7_init' command is executed.
+13:12:41 INFO  : 'ps7_post_config' command is executed.
+13:12:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:12:42 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:12:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:12:42 INFO  : The application 'E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:12:42 INFO  : 'configparams force-mem-access 0' command is executed.
+13:12:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw E:/Projects/refSoM/refCC2/sw/system_top/export/system_top/hw/system_top.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow E:/Projects/git/vimanic/refSoM/refCC2/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:12:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:12:42 INFO  : 'con' command is executed.
+13:12:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:12:42 INFO  : Launch script is exported to file 'E:\Projects\git\vimanic\refSoM\refCC2\sw\vhfSystemSoftware_system\_ide\scripts\debugger_vhfsystemsoftware-default.tcl'

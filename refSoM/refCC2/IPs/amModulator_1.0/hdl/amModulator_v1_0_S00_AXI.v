@@ -425,8 +425,9 @@
 // Add user logic here
 wire [11:0] carrierSig;
 wire [11:0] baseBandInt;
+wire [11:0] baseBandSig;
 
-assign baseBandSig = slv_reg0[1] ? baseBandIn : baseBandInt;
+assign baseBandSig = ~slv_reg0[1] ? baseBandIn : baseBandInt;
 
 freqSynth FS(
 .i_clk(i_rf_clk),

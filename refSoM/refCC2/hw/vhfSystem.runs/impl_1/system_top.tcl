@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/impl_1/system_top.tcl"
+  variable script "E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/impl_1/system_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -135,31 +135,33 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z035ifbg676-2L
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
-  set_property parent.project_path C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
-  set_property ip_repo_paths c:/git/vimanic/refSoM/refCC2/IPs [current_project]
+  set_property webtalk.parent_dir E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/wt [current_project]
+  set_property parent.project_path E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.xpr [current_project]
+  set_property ip_repo_paths E:/Projects/git/vimanic/refSoM/refCC2/IPs [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
+  set_property ip_output_repo E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/synth_1/system_top.dcp
+  add_files -quiet E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.runs/synth_1/system_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/system.bd
+  add_files E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/bd/system/system.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc
-  read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc
-  read_xdc C:/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc
+  read_xdc E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr.xdc
+  read_xdc E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/adrv9361z7035_constr_lvds.xdc
+  read_xdc E:/Projects/git/vimanic/refSoM/refCC2/hw/vhfSystem.srcs/sources_1/constraints/ccfmc_constr.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
