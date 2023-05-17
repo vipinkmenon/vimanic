@@ -1,0 +1,43 @@
+Nothing to build in platform 'system_top'
+
+12:45:10 **** Incremental Build of configuration Debug for project vhfSystemSoftware ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IE:/Projects/custSoM/custCC/sw/system_top/export/system_top/sw/system_top/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:707:8: warning: unused variable 'temp' [-Wunused-variable]
+  707 |  float temp;
+      |        ^~~~
+../src/main.c:695:6: warning: unused variable 'prevDeltaAttn' [-Wunused-variable]
+  695 |  int prevDeltaAttn;
+      |      ^~~~~~~~~~~~~
+../src/main.c:693:6: warning: unused variable 'prevAttn' [-Wunused-variable]
+  693 |  int prevAttn=0;
+      |      ^~~~~~~~
+../src/main.c:465:10: warning: unused variable 'Status' [-Wunused-variable]
+  465 |  int32_t Status;
+      |          ^~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: vhfSystemSoftware.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LE:/Projects/custSoM/custCC/sw/system_top/export/system_top/sw/system_top/standalone_ps7_cortexa9_0/bsplib/lib -o "vhfSystemSoftware.elf"  ./src/ad9361.o ./src/ad9361_api.o ./src/ad9361_conv.o ./src/ad9361_util.o ./src/ads118.o ./src/amModulator.o ./src/attenuator.o ./src/audioAmplifier.o ./src/delay.o ./src/gpio.o ./src/main.o ./src/rssiCalc.o ./src/sigmaDSP.o ./src/spi.o ./src/util.o ./src/xilinx_gpio.o ./src/xilinx_spi.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vhfSystemSoftware.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size vhfSystemSoftware.elf  |tee "vhfSystemSoftware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 209342	   9422	  26832	 245596	  3bf5c	vhfSystemSoftware.elf
+'Finished building: vhfSystemSoftware.elf.size'
+' '
+12:45:15 **** Incremental Build of configuration Debug for project vhfSystemSoftware_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50452 E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm standalone_ps7_cortexa9_0 E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif
+sdcard_gen --xpfm E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm --sys_config system_top --bif E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif --no_bitstream --elf E:/Projects/custSoM/custCC/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf,ps7_cortexa9_0
+Running E:/Vitis/2021.1/bin/bootgen  -image E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

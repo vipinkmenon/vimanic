@@ -1,0 +1,63 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.717936",
+   "Default View_TopLeft":"-756,-39",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port ddr -pg 1 -lvl 3 -x 920 -y 750 -defaultsOSRD
+preplace port fixed_io -pg 1 -lvl 3 -x 920 -y 770 -defaultsOSRD
+preplace port M00_AXI -pg 1 -lvl 3 -x 920 -y 130 -defaultsOSRD
+preplace port M01_AXI -pg 1 -lvl 3 -x 920 -y 150 -defaultsOSRD
+preplace port M03_AXI -pg 1 -lvl 3 -x 920 -y 170 -defaultsOSRD
+preplace port M04_AXI -pg 1 -lvl 3 -x 920 -y 190 -defaultsOSRD
+preplace port M05_AXI -pg 1 -lvl 3 -x 920 -y 210 -defaultsOSRD
+preplace port M06_AXI -pg 1 -lvl 3 -x 920 -y 230 -defaultsOSRD
+preplace port port-id_spi0_clk_i -pg 1 -lvl 0 -x -50 -y 550 -defaultsOSRD
+preplace port port-id_spi0_clk_o -pg 1 -lvl 3 -x 920 -y 830 -defaultsOSRD
+preplace port port-id_spi0_sdo_i -pg 1 -lvl 0 -x -50 -y 570 -defaultsOSRD
+preplace port port-id_spi0_sdo_o -pg 1 -lvl 3 -x 920 -y 870 -defaultsOSRD
+preplace port port-id_spi0_sdi_i -pg 1 -lvl 0 -x -50 -y 590 -defaultsOSRD
+preplace port port-id_spi0_csn_i -pg 1 -lvl 0 -x -50 -y 610 -defaultsOSRD
+preplace port port-id_spi0_csn_0_o -pg 1 -lvl 3 -x 920 -y 930 -defaultsOSRD
+preplace port port-id_spi0_csn_1_o -pg 1 -lvl 3 -x 920 -y 950 -defaultsOSRD
+preplace port port-id_spi0_csn_2_o -pg 1 -lvl 3 -x 920 -y 970 -defaultsOSRD
+preplace port port-id_sys_cpu_clk_out -pg 1 -lvl 3 -x 920 -y 310 -defaultsOSRD
+preplace portBus gpio_i -pg 1 -lvl 0 -x -50 -y 530 -defaultsOSRD
+preplace portBus gpio_o -pg 1 -lvl 3 -x 920 -y 710 -defaultsOSRD
+preplace portBus gpio_t -pg 1 -lvl 3 -x 920 -y 730 -defaultsOSRD
+preplace portBus S00_ARESETN -pg 1 -lvl 3 -x 920 -y 330 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 2 -x 740 -y 230 -defaultsOSRD
+preplace inst sys_ps7 -pg 1 -lvl 1 -x 240 -y 970 -defaultsOSRD
+preplace inst sys_ps7_axi_periph -pg 1 -lvl 1 -x 240 -y 150 -defaultsOSRD
+preplace inst sys_rstgen -pg 1 -lvl 1 -x 240 -y 490 -defaultsOSRD
+preplace netloc gpio_i_1 1 0 2 10J 600 450
+preplace netloc spi0_clk_i_1 1 0 2 0J 590 500
+preplace netloc spi0_csn_i_1 1 0 2 -30J 650 440
+preplace netloc spi0_sdi_i_1 1 0 2 -20J 630 470
+preplace netloc spi0_sdo_i_1 1 0 2 -10J 610 480
+preplace netloc sys_cpu_clk 1 0 3 20 620 550 310 NJ
+preplace netloc sys_cpu_resetn 1 0 3 40 390 440 330 NJ
+preplace netloc sys_ps7_FCLK_RESET0_N 1 0 2 40 660 460
+preplace netloc sys_ps7_GPIO_O 1 1 2 510J 710 NJ
+preplace netloc sys_ps7_GPIO_T 1 1 2 520J 730 NJ
+preplace netloc sys_ps7_SPI0_MOSI_O 1 1 2 570J 870 NJ
+preplace netloc sys_ps7_SPI0_SCLK_O 1 1 2 560J 830 NJ
+preplace netloc sys_ps7_SPI0_SS1_O 1 1 2 590J 950 NJ
+preplace netloc sys_ps7_SPI0_SS2_O 1 1 2 600J 970 NJ
+preplace netloc sys_ps7_SPI0_SS_O 1 1 2 580J 930 NJ
+preplace netloc Conn1 1 1 2 450J 130 880J
+preplace netloc Conn2 1 1 2 460J 120 870J
+preplace netloc sys_ps7_DDR 1 1 2 530J 750 NJ
+preplace netloc sys_ps7_FIXED_IO 1 1 2 540J 770 NJ
+preplace netloc sys_ps7_M_AXI_GP0 1 0 2 30 640 490
+preplace netloc sys_ps7_axi_periph_M00_AXI 1 1 2 NJ 90 900J
+preplace netloc sys_ps7_axi_periph_M01_AXI 1 1 2 NJ 110 890J
+preplace netloc sys_ps7_axi_periph_M02_AXI 1 1 1 440 130n
+preplace netloc sys_ps7_axi_periph_M04_AXI 1 1 2 550J 140 860J
+preplace netloc Conn3 1 1 2 560J 150 850J
+levelinfo -pg 1 -50 240 740 920
+pagesize -pg 1 -db -bbox -sgen -180 -90 1100 1990
+"
+}
+0

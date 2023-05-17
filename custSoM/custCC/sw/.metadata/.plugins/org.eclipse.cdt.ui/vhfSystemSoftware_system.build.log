@@ -1,0 +1,9 @@
+12:45:15 **** Incremental Build of configuration Debug for project vhfSystemSoftware_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50452 E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm standalone_ps7_cortexa9_0 E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif
+sdcard_gen --xpfm E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm --sys_config system_top --bif E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif --no_bitstream --elf E:/Projects/custSoM/custCC/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf,ps7_cortexa9_0
+Running E:/Vitis/2021.1/bin/bootgen  -image E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:45:21 Build Finished (took 6s.407ms)
+
