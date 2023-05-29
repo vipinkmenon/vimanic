@@ -67,25 +67,25 @@
 #include "amModulator.h"
 #include "xspips.h"
 #include "ads118.h"
+#include "arinc.h"
 
 
 /******************************************************************************/
 /************************ Variables Definitions *******************************/
 /******************************************************************************/
 
-
-//#define AD9361Config
+#define AD9361Config
 //#define AudioConfig
-
-#define ATTN_BASEADDR  0x43C00000
+#define ATTConfig
 #define IIC_ADAU_BASE_ADDR 0x34
 #define IIC_SSM_BASE_ADDR 0x31
 #define AM_MODULATOR_BASEADDR 0x43C20000
 #define C0_BASEADDR 0x41200000
+#define ARIC_EMU_BASEADDR 0x41210000
 
 
-#define RECV_MODE 1
-#define RECV_SELF_TEST 5
+#define RX_MODE 1
+#define RX_SELF_TEST 5
 #define TX_MODE 2
 
 #ifdef XILINX_PLATFORM
@@ -161,7 +161,7 @@ AD9361_InitParam default_init_param = {
 	0,		//rx_rf_port_input_select *** adi,rx-rf-port-input-select
 	0,		//tx_rf_port_input_select *** adi,tx-rf-port-input-select
 	/* TX Attenuation Control */
-	10000,	//tx_attenuation_mdB *** adi,tx-attenuation-mdB
+	0,	//tx_attenuation_mdB *** adi,tx-attenuation-mdB
 	0,		//update_tx_gain_in_alert_enable *** adi,update-tx-gain-in-alert-enable
 	/* Reference Clock Control */
 	0,		//xo_disable_use_ext_refclk_enable *** adi,xo-disable-use-ext-refclk-enable
@@ -463,122 +463,56 @@ dsp myDSP;
 int main(void)
 {
 	int32_t Status;
+
 #ifdef AD9361Config
-	#ifdef XILINX_PLATFORM
-		Xil_ICacheEnable();
-		Xil_DCacheEnable();
-		default_init_param.spi_param.extra = &xil_spi_param;
-		default_init_param.spi_param.platform_ops = &xil_platform_ops;
-	#endif
+	Xil_ICacheEnable();
+	Xil_DCacheEnable();
+	default_init_param.spi_param.extra = &xil_spi_param;
+	default_init_param.spi_param.platform_ops = &xil_platform_ops;
+	default_init_param.gpio_resetb.number = GPIO_RESET_PIN;
+	default_init_param.gpio_sync.number = -1;
+	default_init_param.gpio_cal_sw1.number = -1;
+	default_init_param.gpio_cal_sw2.number = -1;
 
 //	status = XGpio_Initialize(&IICGPIO,XPAR_AXI_GPIO_0_DEVICE_ID);
 //	if(status != XST_SUCCESS){
 //		print("gpio failed\n\r");
 //		return XST_FAILURE;
 //	}
-
-
-	// NOTE: The user has to choose the GPIO numbers according to desired
-	// carrier board.
-
-	default_init_param.gpio_resetb.number = GPIO_RESET_PIN;
-	default_init_param.gpio_sync.number = -1;
-	default_init_param.gpio_cal_sw1.number = -1;
-	default_init_param.gpio_cal_sw2.number = -1;
-
-	if (AD9364_DEVICE)
-		default_init_param.dev_sel = ID_AD9364;
-	if (AD9363A_DEVICE)
-		default_init_param.dev_sel = ID_AD9363A;
-
-	#if defined FMCOMMS5 || defined ADI_RF_SOM || defined ADI_RF_SOM_CMOS
-		default_init_param.xo_disable_use_ext_refclk_enable = 1;
-	#endif
-
+	default_init_param.xo_disable_use_ext_refclk_enable = 1;
 	ad9361_init(&ad9361_phy, &default_init_param);
-
 	ad9361_set_tx_fir_config(ad9361_phy, tx_fir_config);
 	ad9361_set_rx_fir_config(ad9361_phy, rx_fir_config);
-
-
 	int ret;
 	uint32_t bw;
-
-	ret = ad9361_set_rx_lo_freq(ad9361_phy,125180000);
-
+	ret = ad9361_set_rx_lo_freq(ad9361_phy,125000000);
 	ret = ad9361_get_rx_lo_freq(ad9361_phy,&bw);
-
 	xil_printf("RX LO Frequency %0d  LO %0u\n\r",bw);
-
 	//ret = ad9361_set_rx_sampling_freq(ad9361_phy,768000);
-
 	ret = ad9361_get_rx_sampling_freq(ad9361_phy,&bw);
-
 	xil_printf("RX Sampling Frequency %0u\n\r",bw);
-
 	ret = ad9361_get_rx_rf_bandwidth(ad9361_phy,&bw);
-
 	xil_printf("RX band width %0u\n\r",bw);
-
-
-	ret = ad9361_set_tx_lo_freq(ad9361_phy,125180000);
-
+	ret = ad9361_set_tx_lo_freq(ad9361_phy,125000000);
 	ret = ad9361_get_tx_lo_freq(ad9361_phy,&bw);
-
 	xil_printf("TX LO Frequency %0d  LO %0u\n\r",bw);
-
 	ret = ad9361_get_tx_sampling_freq(ad9361_phy,&bw);
-
 	xil_printf("TX Sampling Frequency %0u\n\r",bw);
-
 	ret = ad9361_get_tx_rf_bandwidth(ad9361_phy,&bw);
-
 	xil_printf("TX band width %0u\n\r",bw);
-
-
-	//xil_printf("Return %0x \n\r",ret);
-
-	//xil_printf("Return %0d  bandwidth %0u\n\r",ret,bw);
-
-
-	#ifdef XILINX_PLATFORM
-		Xil_DCacheDisable();
-		Xil_ICacheDisable();
-	#endif
-
+	Xil_DCacheDisable();
+	Xil_ICacheDisable();
 #endif
 
 
 #ifdef ATTConfig
-
-	u32 attnNumber;
-	float attnValue;
-	float rssiValue;
-	initAttenuator(&myAttn,ATTN_BASEADDR);
-	int attn;
-	int deltaAttn;
-	while(1){
-//		print("\n\rEnter attenuator no:");
-//		scanf("%u",&attnNumber);
-//		print("\n\rEnter attenuation value:");
-//		scanf("%f",&attnValue);
-//		writeAttenuator(&myAttn,attnNumber,attnValue);
-		initRSSI(&myrssi,RSSI_BASEADDR);
-		rssiValue = getRSSI(&myrssi);
-		attn = getAttn(rssiValue);
-		printf("RSSI:%f  Attenuation:-%d dB\n\r",rssiValue,attn);
-		printf("Attenuation values %f %f %f\n\r",myAttn.attVal[0],myAttn.attVal[1],myAttn.attVal[2]);
-		deltaAttn = -(65-attn)-40;//65 system gain. -40 required att input of fpga. attn is coming as +ve
-		if(deltaAttn != 0)
-			 configAttenuators(&myAttn,deltaAttn);
-		sleep(5);
-	}
+	initAttenuator(&myAttn,&gpio);
 #endif
 
 
 
 #ifdef AudioConfig
-
+	print("Initalizing AM Modulator\n\r");
     initAmModulator(&myModulator,AM_MODULATOR_BASEADDR);
     //generateAM(&myModulator,0.85,1000);
     setBaseBandSource(&myModulator,External);
@@ -589,17 +523,12 @@ int main(void)
 //    xil_printf("Modulation Index Reg%x\n\r",ctrlReg);
 //    ctrlReg = Xil_In32(myModulator.BaseAddress+CLK_DIV_REG);
 //    xil_printf("Clock Div Reg%x\n\r",ctrlReg);
-
+    print("Initalizing Audio Amplifier\n\r");
 	Status = initAmplifier(&myAmp2,0x43C10000,IIC_SSM_BASE_ADDR);
-
 	if(Status != 0){
 		print("Amplifier initialization failed\n\r");
 	return -1;
 	}
-
-
-
-
     // Reset adau and I2C Controllers
 	Xil_Out32(0x41230000,0);
 	sleep(1);
@@ -608,38 +537,37 @@ int main(void)
 
 //	Enable audio amplifier
 	enableAmplifier(&myAmp2);
-
-
+	print("Initializing Audio Codec\n\r");
 	Status = initDSP(&myDSP,XPAR_I2SSYSTEM_AXI_IIC_0_BASEADDR,IIC_ADAU_BASE_ADDR);
 	if(Status != 0){
 		print("ADAU initialization failed\n\r");
 	return -1;
 	}
 
-//Program ADAU
+	//Program ADAU
 	writeRegister(&myDSP,CORE_REGISTER_R0_ADDR, CORE_REGISTER_R0_SIZE, DSP_core_register_R0_data);
 	//Status = writeVerify(&myDSP,CORE_REGISTER_R0_ADDR, CORE_REGISTER_R0_SIZE, CORE_REGISTER_R0_SIZE, DSP_core_register_R0_data);
-////////////////////
-    print("Done1\n\r");
+	////////////////////
+    print("Wrote core register\n\r");
    // sleep(2);
 
     writeMemory(&myDSP,PROGRAM_ADDR, PROGRAM_SIZE, DSP_program_data, PROGRAM_REGSIZE);
 	//Status = memoryVerify(&myDSP,PROGRAM_ADDR, PROGRAM_SIZE, PROGRAM_REGSIZE, DSP_program_data);
-	print("Done2\n\r");
+	print("Wrote DSP program Data\n\r");
 //////////////////////
 	sleep(1);
 	writeMemory(&myDSP,PARAMETER_ADDR, PARAMETER_SIZE, DSP_parameter_data, PARAMETER_REGSIZE);
     //Status = memoryVerify(&myDSP,PARAMETER_ADDR, PARAMETER_SIZE, PARAMETER_REGSIZE, DSP_parameter_data);
-	print("Done3\n\r");
+	print("Wrote DSP parameters\n\r");
 	sleep(1);
 	writeRegister(&myDSP,HARDWARE_CONF_ADDR, 12,DSP_hardware_conf_data);
    // Status = writeVerify(&myDSP,HARDWARE_CONF_ADDR, 24,24,DSP_hardware_conf_data);
-	print("Don4\n\r");
+	print("Wrote core registers\n\r");
 	sleep(1);
 //////////////
     writeRegister(&myDSP,CORE_REGISTER_R4_ADDR, CORE_REGISTER_R4_SIZE, DSP_core_register_R4_data);
 	//Status = writeVerify(&myDSP,CORE_REGISTER_R4_ADDR, CORE_REGISTER_R4_SIZE,CORE_REGISTER_R4_SIZE,DSP_core_register_R4_data);
-    xil_printf("Done\n\r");
+    xil_printf("Codec configuration complete\n\r");
 
 //	u8 txData[2];
 //	u8 rxData[2];
@@ -660,14 +588,14 @@ int main(void)
 
 ////
 //////#else
-	int gain;
-	while(1){
-		print("\n\rEnter gain:");
-		scanf("%d",&gain);
-		xil_printf("%d\n\r",gain);
-		setLeftChannelGain(&myAmp2,gain);
-		setRightChannelGain(&myAmp2,gain);
-	}
+//	int gain;
+//	while(1){
+//		print("\n\rEnter gain:");
+//		scanf("%d",&gain);
+//		xil_printf("%d\n\r",gain);
+//		setLeftChannelGain(&myAmp2,gain);
+//		setRightChannelGain(&myAmp2,gain);
+//	}
 
 
 #endif
@@ -681,46 +609,116 @@ int main(void)
 //	}
 
 
-	print("Hello\n\r");
-
-	//Control signals
-	Xil_Out32(C0_BASEADDR,RECV_MODE);
-
-
-	u16 rdData;
-	float rssi;
-	int attn;
-	int prevAttn=0;
-	int deltaAttn;
-	int prevDeltaAttn;
-	initADS118(&gpio);
-	initAttenuator(&myAttn,&gpio);
-//	unsigned int attnNumber;
-//	float attnValue;
-//	while(1){
-//		print("\n\rEnter attenuator no:");
-//		scanf("%u",&attnNumber);
-//		print("\n\rEnter attenuation value:");
-//		scanf("%f",&attnValue);
-//		writeAttenuator(&myAttn,attnNumber,attnValue);
+//	print("Hello\n\r");
+//
+//	//Control signals
+	Xil_Out32(C0_BASEADDR,RX_MODE);
+//
+//
+//	u16 rdData;
+//	float rssi;
+//	int attn;
+//	int prevAttn=0;
+//	int deltaAttn;
+//	int prevDeltaAttn;
+//	initADS118(&gpio);
+//	initAttenuator(&myAttn,&gpio);
+////	unsigned int attnNumber;
+////	float attnValue;
+////	while(1){
+////		print("\n\rEnter attenuator no:");
+////		scanf("%u",&attnNumber);
+////		print("\n\rEnter attenuation value:");
+////		scanf("%f",&attnValue);
+////		writeAttenuator(&myAttn,attnNumber,attnValue);
+////	}
+//	float temp;
+////	rdData =  readADS(&gpio,RSSIChannel);
+////	rssi = rdData*Res;
+////	attn = getAttn(rssi);
+////	deltaAttn = -(70-attn)-40;
+////	prevDeltaAttn = deltaAttn;
+//	while(1)
+//	{
+//		rdData =  readADS(&gpio,RSSIChannel);
+//		rssi = rdData*Res;
+//		attn = getAttn(rssi);
+//		deltaAttn = -(70-attn)-40;
+//		printf("Att values %f %f %f\n\r",myAttn.attVal[0],myAttn.attVal[1],myAttn.attVal[2]);
+//		printf("RSSI:%f Attenuation:-%d dB Config Attenuation %d\n\r",rssi,attn,-1*deltaAttn);
+//		configAttenuators(&myAttn,deltaAttn);
+//		//sleep(2);
 //	}
-	float temp;
-//	rdData =  readADS(&gpio,RSSIChannel);
-//	rssi = rdData*Res;
-//	attn = getAttn(rssi);
-//	deltaAttn = -(70-attn)-40;
-//	prevDeltaAttn = deltaAttn;
-	while(1)
-	{
-		rdData =  readADS(&gpio,RSSIChannel);
-		rssi = rdData*Res;
-		attn = getAttn(rssi);
-		deltaAttn = -(70-attn)-40;
-		printf("Att values %f %f %f\n\r",myAttn.attVal[0],myAttn.attVal[1],myAttn.attVal[2]);
-		printf("RSSI:%f Attenuation:-%d dB Config Attenuation %d\n\r",rssi,attn,-1*deltaAttn);
-		configAttenuators(&myAttn,deltaAttn);
-		//sleep(2);
-	}
+
+
+
+    print("Initalizing AM Modulator\n\r");
+    initAmModulator(&myModulator,AM_MODULATOR_BASEADDR);
+    generateAM(&myModulator,0.75,2000);//0.25-modulation index, 2000 internal baseband frequency
+    setBaseBandSource(&myModulator,Internal);//External-> Uses audio input as baseband, Internal -> Internal baseband
+    //setBaseBandGain(&myModulator,1);//Baseband gain
+    startAMModulator(&myModulator);//Enable modulator
+   // stopAMModulator(&myModulator);
+
+
+
+    u32 arincData;
+    float freq;
+    float currFreq;
+    uint64_t txFreq;
+    float attnValue;
+    //Set initial freq to 100Mhz
+    ad9361_set_rx_lo_freq(ad9361_phy,125000000);
+    ad9361_set_tx_lo_freq(ad9361_phy,125000000);
+    //ad9361_get_tx_lo_freq(ad9361_phy,&txFreq);
+    //printf("TX LO Frequency %0f MHz \n\r",txFreq/1000000.0);
+
+
+    while(1){
+//    	arincData = Xil_In32(ARIC_EMU_BASEADDR);
+//    	//xil_printf("%0x\n\r",arincData);
+//    	freq = ((arincData & mask_0_001)>>10)*0.001 + ((arincData & mask_0_002)>>11)*0.002 + ((arincData & mask_0_004)>>12)*0.004 + ((arincData & mask_0_008)>>13)*0.008 + ((arincData & mask_0_01)>>14)*0.01 + ((arincData & mask_0_02)>>15)*0.02 + ((arincData & mask_0_04)>>16)*0.04 + ((arincData & mask_0_08)>>17)*0.08 + ((arincData & mask_0_1)>>18)*0.1 + ((arincData & mask_0_2)>>19)*0.2 + ((arincData & mask_0_4)>>20)*0.4 + ((arincData & mask_0_8)>>21)*0.8 + ((arincData & mask_1)>>22)*1  + ((arincData & mask_2)>>23)*2 + ((arincData&mask_4)>>24)*4 + ((arincData & mask_8)>>25)*8 + ((arincData & mask_10)>>26)*10 + ((arincData & mask_20)>>27)*20 + ((arincData & mask_40)>>28)*40;
+//    	if(freq >= 18 && freq <= 37){
+//    		if(freq != currFreq){
+//    			printf("Requested Frequency %f MHz\n\r",freq+100);
+    	printf("Enter TX LO Frequency: ");
+    	scanf("%f",&freq);
+    	ad9361_set_tx_lo_freq(ad9361_phy,(100000000+freq*1000000));//Function to set LO frequency
+
+
+    	printf("Enter RX LO Frequency: ");
+    	scanf("%f",&freq);
+    	ad9361_set_rx_lo_freq(ad9361_phy,(100000000+freq*1000000));//Function to set LO frequency
+
+    	ad9361_get_tx_lo_freq(ad9361_phy,&txFreq);
+    	//print("\n\r");
+    	printf("\n\rTX LO Frequency %0f MHz",txFreq/1000000.0);
+    	ad9361_get_rx_lo_freq(ad9361_phy,&txFreq);
+    	//print("\n\r");
+    	printf("\n\rRX LO Frequency %0f MHz",txFreq/1000000.0);
+    	ret = ad9361_get_tx_sampling_freq(ad9361_phy,&bw);
+    	xil_printf("\n\rTX Sampling Frequency %0u\n\r",bw);
+
+
+
+
+    	//currFreq = freq;
+//    		}
+//    	}
+//    	else
+//    		print("Error Frequency out of range\n\r");
+
+
+    	//print("Enter attenuation value:");
+    	//scanf("%f",&attnValue);
+    	//riteAttenuator(&myAttn,3,attnValue);
+
+//    	sleep(2);
+    }
+
+
+
+
     return 0;
 }
 

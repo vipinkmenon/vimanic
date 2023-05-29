@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD56A3EB05C3FCB5B",
+      "boundary_crc": "0xD56A3EB05A391617",
       "device": "xc7z030fbg484-2",
       "gen_directory": "../../../../adrv9361z7035_ccfmc_lvds.gen/sources_1/bd/system",
       "name": "system",
@@ -58,9 +58,11 @@
       "xlconstant_0": "",
       "axi_gpio_0": "",
       "xlslice_0": "",
-      "amModulator_0": "",
       "axi_gpio_1": "",
-      "system_ila_0": ""
+      "system_ila_0": "",
+      "Arinc_Emulator": "",
+      "vio_0": "",
+      "amModulator_0": ""
     },
     "interface_ports": {
       "ddr": {
@@ -229,7 +231,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "1e+08",
             "value_src": "user_prop"
           },
           "PHASE": {
@@ -3454,6 +3456,26 @@
           "clk_out": {
             "type": "clk",
             "direction": "O"
+          },
+          "o_Channel_1_Q_Value": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "ctrl": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "i_Channel_1_I_Value1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "i_Channel_1_Q_Value": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
           }
         },
         "components": {
@@ -3728,13 +3750,6 @@
           }
         },
         "nets": {
-          "amModulator_0_o_amSignal": {
-            "ports": [
-              "i_Channel_1_I_Value",
-              "dataPackager_0/i_Channel_1_I_Value",
-              "dataPackager_0/i_Channel_1_Q_Value"
-            ]
-          },
           "dataPackager_0_o_Channel_1_I_Valid": {
             "ports": [
               "dataPackager_0/o_Channel_1_I_Valid",
@@ -3747,10 +3762,28 @@
               "o_Channel_1_I_Value"
             ]
           },
+          "dataPackager_0_o_Channel_1_Q_Value": {
+            "ports": [
+              "dataPackager_0/o_Channel_1_Q_Value",
+              "o_Channel_1_Q_Value"
+            ]
+          },
           "dataPackager_0_o_data": {
             "ports": [
               "dataPackager_0/o_data",
               "selectio_wiz_0/data_out_from_device"
+            ]
+          },
+          "i_Channel_1_I_Value1_1": {
+            "ports": [
+              "i_Channel_1_I_Value1",
+              "dataPackager_0/i_Channel_1_I_Value"
+            ]
+          },
+          "i_Channel_1_Q_Value_1": {
+            "ports": [
+              "i_Channel_1_Q_Value",
+              "dataPackager_0/i_Channel_1_Q_Value"
             ]
           },
           "rx_clk_in_n_1": {
@@ -4085,7 +4118,7 @@
                 "direction": "I",
                 "parameters": {
                   "FREQ_HZ": {
-                    "value": "100000000",
+                    "value": "1e+08",
                     "value_src": "user_prop"
                   },
                   "CLK_DOMAIN": {
@@ -4201,7 +4234,12 @@
             "ports": [
               "axi_iic_0/scl_t",
               "scl_t_0"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "axi_iic_0_sda_o": {
             "ports": [
@@ -4213,7 +4251,12 @@
             "ports": [
               "axi_iic_0/sda_t",
               "sda_t_0"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "clk_wiz_0_clk_out1": {
             "ports": [
@@ -4244,13 +4287,23 @@
             "ports": [
               "i2sController_1/out_lft_chnl_data",
               "out_lft_chnl_data"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "i_bit_clk_0_1": {
             "ports": [
               "i_bit_clk_0",
               "i2sController_1/i_bit_clk"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "i_i2c_rd_data_0_1": {
             "ports": [
@@ -4262,13 +4315,26 @@
             "ports": [
               "i_lrc_0",
               "i2sController_1/i_lrc"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "i_sda_0_1": {
             "ports": [
               "i_sda_0",
               "i2sController_1/i_sda"
-            ]
+            ],
+            "hdl_attributes": {
+              "DEBUG": {
+                "value": "true"
+              },
+              "MARK_DEBUG": {
+                "value": "true"
+              }
+            }
           },
           "in_aud_data_1": {
             "ports": [
@@ -4337,7 +4403,12 @@
             "left": "11",
             "right": "0"
           },
-          "o_data1": {
+          "sum": {
+            "direction": "O",
+            "left": "39",
+            "right": "0"
+          },
+          "o_data4": {
             "direction": "O",
             "left": "11",
             "right": "0"
@@ -4347,19 +4418,14 @@
             "left": "11",
             "right": "0"
           },
+          "o_data1": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
           "o_data3": {
             "direction": "O",
             "left": "11",
-            "right": "0"
-          },
-          "o_data4": {
-            "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
-          "sum": {
-            "direction": "O",
-            "left": "39",
             "right": "0"
           }
         },
@@ -4626,9 +4692,9 @@
             "ports": [
               "lowPassFilter/o_data",
               "subtractor_0/i_data1",
-              "o_data1",
               "DCLevelDetector/i_data",
-              "average_0/i_data"
+              "average_0/i_data",
+              "o_data1"
             ]
           },
           "average_0_o_data1": {
@@ -4646,8 +4712,8 @@
           "envelopDetector_0_o_data": {
             "ports": [
               "envelopDetector_0/o_data",
-              "o_data3",
-              "lowPassFilter/i_data"
+              "lowPassFilter/i_data",
+              "o_data3"
             ]
           },
           "envelopDetector_0_o_data_valid": {
@@ -4731,12 +4797,6 @@
           }
         }
       },
-      "amModulator_0": {
-        "vlnv": "xilinx.com:user:amModulator:1.0",
-        "xci_name": "system_amModulator_0_1",
-        "xci_path": "ip\\system_amModulator_0_1\\system_amModulator_0_1.xci",
-        "inst_hier_path": "amModulator_0"
-      },
       "axi_gpio_1": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "system_axi_gpio_1_0",
@@ -4747,7 +4807,7 @@
             "value": "1"
           },
           "C_DOUT_DEFAULT": {
-            "value": "0x00000005"
+            "value": "0x00000007"
           },
           "C_GPIO_WIDTH": {
             "value": "3"
@@ -4756,20 +4816,81 @@
       },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "system_system_ila_0_0",
-        "xci_path": "ip\\system_system_ila_0_0\\system_system_ila_0_0.xci",
+        "xci_name": "system_system_ila_0_1",
+        "xci_path": "ip\\system_system_ila_0_1\\system_system_ila_0_1.xci",
         "inst_hier_path": "system_ila_0",
         "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "32768"
+          },
           "C_MON_TYPE": {
             "value": "NATIVE"
           },
           "C_NUM_OF_PROBES": {
-            "value": "1"
+            "value": "2"
           },
           "C_PROBE0_TYPE": {
             "value": "0"
+          },
+          "C_PROBE1_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE2_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE3_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE4_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE5_TYPE": {
+            "value": "0"
           }
         }
+      },
+      "Arinc_Emulator": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "system_axi_gpio_2_0",
+        "xci_path": "ip\\system_axi_gpio_2_0\\system_axi_gpio_2_0.xci",
+        "inst_hier_path": "Arinc_Emulator",
+        "parameters": {
+          "C_ALL_INPUTS": {
+            "value": "1"
+          }
+        }
+      },
+      "vio_0": {
+        "vlnv": "xilinx.com:ip:vio:3.0",
+        "xci_name": "system_vio_0_0",
+        "xci_path": "ip\\system_vio_0_0\\system_vio_0_0.xci",
+        "inst_hier_path": "vio_0",
+        "parameters": {
+          "C_NUM_PROBE_IN": {
+            "value": "0"
+          },
+          "C_NUM_PROBE_OUT": {
+            "value": "2"
+          },
+          "C_PROBE_IN0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE_OUT0_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE_OUT1_INIT_VAL": {
+            "value": "0x2"
+          },
+          "C_PROBE_OUT1_WIDTH": {
+            "value": "2"
+          }
+        }
+      },
+      "amModulator_0": {
+        "vlnv": "xilinx.com:user:amModulator:1.0",
+        "xci_name": "system_amModulator_0_1",
+        "xci_path": "ip\\system_amModulator_0_1\\system_amModulator_0_1.xci",
+        "inst_hier_path": "amModulator_0"
       }
     },
     "interface_nets": {
@@ -4783,6 +4904,12 @@
         "interface_ports": [
           "axi_gpio_1/S_AXI",
           "ProcessorSystem/M02_AXI"
+        ]
+      },
+      "ProcessorSystem_M03_AXI": {
+        "interface_ports": [
+          "ProcessorSystem/M03_AXI",
+          "Arinc_Emulator/S_AXI"
         ]
       },
       "ProcessorSystem_M05_AXI": {
@@ -4833,7 +4960,15 @@
         "ports": [
           "I2SSystem/out_lft_chnl_data",
           "xlslice_0/Din"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "I2SSystem_scl_o_0": {
         "ports": [
@@ -4845,7 +4980,15 @@
         "ports": [
           "I2SSystem/scl_t_0",
           "scl_t"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "I2SSystem_sda_o_0": {
         "ports": [
@@ -4857,12 +5000,21 @@
         "ports": [
           "I2SSystem/sda_t_0",
           "sda_t"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "LVDSIF_clk_out": {
         "ports": [
           "LVDSIF/clk_out",
           "AMDemodulate/aclk",
+          "system_ila_0/clk",
           "amModulator_0/i_rf_clk"
         ]
       },
@@ -4904,8 +5056,29 @@
       },
       "amModulator_0_o_amSignal": {
         "ports": [
-          "amModulator_0/o_amSignal",
           "LVDSIF/i_Channel_1_I_Value"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
+      },
+      "amModulator_0_o_amSignal_i": {
+        "ports": [
+          "amModulator_0/o_amSignal_i",
+          "LVDSIF/i_Channel_1_I_Value1",
+          "system_ila_0/probe0"
+        ]
+      },
+      "amModulator_0_o_amSignal_q": {
+        "ports": [
+          "amModulator_0/o_amSignal_q",
+          "LVDSIF/i_Channel_1_Q_Value",
+          "system_ila_0/probe1"
         ]
       },
       "axi_gpio_0_gpio_io_o": {
@@ -4918,17 +5091,8 @@
       "axi_gpio_1_gpio_io_o": {
         "ports": [
           "axi_gpio_1/gpio_io_o",
-          "F_PA_C",
-          "system_ila_0/probe0"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+          "F_PA_C"
+        ]
       },
       "gpio_i_1": {
         "ports": [
@@ -4958,7 +5122,15 @@
         "ports": [
           "i_audio_bit_clk",
           "I2SSystem/i_bit_clk_0"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "i_i2c_rd_data_0_1": {
         "ports": [
@@ -4970,13 +5142,26 @@
         "ports": [
           "i_audio_lrc",
           "I2SSystem/i_lrc_0"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "i_sda_0_1": {
         "ports": [
           "i_audio_sdat_in0",
           "I2SSystem/i_sda_0"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "in_aud_data_1": {
         "ports": [
@@ -5074,9 +5259,10 @@
           "sys_cpu_clk_out",
           "I2SSystem/sys_cpu_clk_out",
           "axi_gpio_0/s_axi_aclk",
-          "amModulator_0/s00_axi_aclk",
           "axi_gpio_1/s_axi_aclk",
-          "system_ila_0/clk"
+          "Arinc_Emulator/s_axi_aclk",
+          "vio_0/clk",
+          "amModulator_0/s00_axi_aclk"
         ]
       },
       "sys_cpu_resetn": {
@@ -5084,8 +5270,9 @@
           "ProcessorSystem/S00_ARESETN",
           "I2SSystem/i_reset_n",
           "axi_gpio_0/s_axi_aresetn",
-          "amModulator_0/s00_axi_aresetn",
-          "axi_gpio_1/s_axi_aresetn"
+          "axi_gpio_1/s_axi_aresetn",
+          "Arinc_Emulator/s_axi_aresetn",
+          "amModulator_0/s00_axi_aresetn"
         ]
       },
       "sys_ps7_GPIO_O": {
@@ -5130,6 +5317,18 @@
           "spi0_csn_0_o"
         ]
       },
+      "vio_0_probe_out0": {
+        "ports": [
+          "vio_0/probe_out0",
+          "Arinc_Emulator/gpio_io_i"
+        ]
+      },
+      "vio_0_probe_out1": {
+        "ports": [
+          "vio_0/probe_out1",
+          "LVDSIF/ctrl"
+        ]
+      },
       "xlconstant_0_dout": {
         "ports": [
           "xlconstant_0/dout",
@@ -5142,7 +5341,15 @@
         "ports": [
           "xlslice_0/Dout",
           "amModulator_0/baseBandIn"
-        ]
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       }
     },
     "addressing": {
@@ -5150,6 +5357,11 @@
         "address_spaces": {
           "Data": {
             "segments": {
+              "SEG_Arinc_Emulator_Reg": {
+                "address_block": "/Arinc_Emulator/S_AXI/Reg",
+                "offset": "0x41210000",
+                "range": "64K"
+              },
               "SEG_amModulator_0_S00_AXI_reg": {
                 "address_block": "/amModulator_0/S00_AXI/S00_AXI_reg",
                 "offset": "0x43C20000",

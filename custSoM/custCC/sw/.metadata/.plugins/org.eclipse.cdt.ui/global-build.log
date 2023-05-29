@@ -1,6 +1,6 @@
 Nothing to build in platform 'system_top'
 
-12:45:10 **** Incremental Build of configuration Debug for project vhfSystemSoftware ****
+17:12:21 **** Incremental Build of configuration Debug for project vhfSystemSoftware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -10,15 +10,36 @@ make --no-print-directory main-build
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IE:/Projects/custSoM/custCC/sw/system_top/export/system_top/sw/system_top/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 ../src/main.c: In function 'main':
-../src/main.c:707:8: warning: unused variable 'temp' [-Wunused-variable]
-  707 |  float temp;
-      |        ^~~~
-../src/main.c:695:6: warning: unused variable 'prevDeltaAttn' [-Wunused-variable]
-  695 |  int prevDeltaAttn;
-      |      ^~~~~~~~~~~~~
-../src/main.c:693:6: warning: unused variable 'prevAttn' [-Wunused-variable]
-  693 |  int prevAttn=0;
-      |      ^~~~~~~~
+../src/main.c:489:41: warning: passing argument 2 of 'ad9361_get_rx_lo_freq' from incompatible pointer type [-Wincompatible-pointer-types]
+  489 |  ret = ad9361_get_rx_lo_freq(ad9361_phy,&bw);
+      |                                         ^~~
+      |                                         |
+      |                                         uint32_t * {aka long unsigned int *}
+In file included from ../src/main.c:52:
+../src/ad9361_api.h:411:69: note: expected 'uint64_t *' {aka 'long long unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  411 | int32_t ad9361_get_rx_lo_freq (struct ad9361_rf_phy *phy, uint64_t *lo_freq_hz);
+      |                                                           ~~~~~~~~~~^~~~~~~~~~
+../src/main.c:497:41: warning: passing argument 2 of 'ad9361_get_tx_lo_freq' from incompatible pointer type [-Wincompatible-pointer-types]
+  497 |  ret = ad9361_get_tx_lo_freq(ad9361_phy,&bw);
+      |                                         ^~~
+      |                                         |
+      |                                         uint32_t * {aka long unsigned int *}
+In file included from ../src/main.c:52:
+../src/ad9361_api.h:490:69: note: expected 'uint64_t *' {aka 'long long unsigned int *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  490 | int32_t ad9361_get_tx_lo_freq (struct ad9361_rf_phy *phy, uint64_t *lo_freq_hz);
+      |                                                           ~~~~~~~~~~^~~~~~~~~~
+../src/main.c:669:11: warning: unused variable 'attnValue' [-Wunused-variable]
+  669 |     float attnValue;
+      |           ^~~~~~~~~
+../src/main.c:667:11: warning: unused variable 'currFreq' [-Wunused-variable]
+  667 |     float currFreq;
+      |           ^~~~~~~~
+../src/main.c:665:9: warning: unused variable 'arincData' [-Wunused-variable]
+  665 |     u32 arincData;
+      |         ^~~~~~~~~
+../src/main.c:486:6: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+  486 |  int ret;
+      |      ^~~
 ../src/main.c:465:10: warning: unused variable 'Status' [-Wunused-variable]
   465 |  int32_t Status;
       |          ^~~~~~
@@ -32,12 +53,12 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size vhfSystemSoftware.elf  |tee "vhfSystemSoftware.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 209342	   9422	  26832	 245596	  3bf5c	vhfSystemSoftware.elf
+ 220390	   9422	  26832	 256644	  3ea84	vhfSystemSoftware.elf
 'Finished building: vhfSystemSoftware.elf.size'
 ' '
-12:45:15 **** Incremental Build of configuration Debug for project vhfSystemSoftware_system ****
+17:12:25 **** Incremental Build of configuration Debug for project vhfSystemSoftware_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 50452 E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm standalone_ps7_cortexa9_0 E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif
+generate_system_bif.bat 58606 E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm standalone_ps7_cortexa9_0 E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif
 sdcard_gen --xpfm E:/Projects/custSoM/custCC/sw/system_top/export/system_top/system_top.xpfm --sys_config system_top --bif E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/system.bif --no_bitstream --elf E:/Projects/custSoM/custCC/sw/vhfSystemSoftware/Debug/vhfSystemSoftware.elf,ps7_cortexa9_0
 Running E:/Vitis/2021.1/bin/bootgen  -image E:/Projects/custSoM/custCC/sw/vhfSystemSoftware_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

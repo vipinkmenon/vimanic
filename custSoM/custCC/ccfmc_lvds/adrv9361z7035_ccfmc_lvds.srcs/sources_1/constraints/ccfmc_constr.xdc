@@ -47,3 +47,7 @@ set_property PACKAGE_PIN U14 [get_ports ARINC_RDY];
 set_property IOSTANDARD LVCMOS33 [get_ports ARINC_RDY];
 set_property PACKAGE_PIN U15 [get_ports ARINC_RUN];
 set_property IOSTANDARD LVCMOS33 [get_ports ARINC_RUN];
+
+#LE4
+set_property PACKAGE_PIN AB13 [get_ports attn_le_4];
+set_property IOSTANDARD LVCMOS33 [get_ports attn_le_4];

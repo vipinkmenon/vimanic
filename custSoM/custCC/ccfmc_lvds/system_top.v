@@ -107,7 +107,8 @@ module system_top (
   inout           amp_scl,
   inout           amp_sda,
   //Control
-  output [2:0]   F_PA_C
+  output [2:0]    F_PA_C,
+  output          attn_le_4
   //attenuator
   /*output           o_clk_attenuator,
   output           o_data_attenuator,
@@ -183,7 +184,7 @@ module system_top (
 
   // unused gpio - 55:53
 
-  assign gpio_i[55:53] = gpio_o[55:53];
+  assign gpio_i[55:54] = gpio_o[55:54];
 
   // rf & clock-select gpio - 52:51
 
@@ -192,6 +193,15 @@ module system_top (
     .dio_i (gpio_o[51]),
     .dio_o (gpio_i[51]),
     .dio_p (gpio_clksel));     // 51:51
+    
+    
+    
+    
+  ad_iobuf #(.DATA_WIDTH(1)) i_iobuf_le (
+    .dio_t (gpio_t[53]),
+    .dio_i (gpio_o[53]),
+    .dio_o (gpio_i[53]),
+    .dio_p (attn_le_4));     // 51:51
 
   // unused gpio - 50:47
 

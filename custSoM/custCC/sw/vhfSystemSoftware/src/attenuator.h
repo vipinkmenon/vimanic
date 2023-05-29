@@ -10,11 +10,12 @@
 #define le1 25
 #define le2 26
 #define le3 27
+#define le4 107
 
 
 typedef struct attenuator{
 	XGpioPs *gpio;
-	float attVal[3];
+	float attVal[4];
 }attenuator;
 
 

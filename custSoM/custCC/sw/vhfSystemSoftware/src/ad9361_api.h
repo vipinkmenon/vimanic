@@ -45,6 +45,12 @@
 #include "ad9361_util.h"
 #include "gpio.h"
 #include "spi.h"
+#include "gpio_extra.h"
+#include "parameters.h"
+#include "spi.h"
+#include <xil_cache.h>
+#include "spi_extra.h"
+#include "error.h"
 
 /******************************************************************************/
 /*************************** Types Declarations *******************************/
