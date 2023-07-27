@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Sep 30 08:11:52 2022
+# Process ID: 15284
+# Current directory: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/xilinx/util_clkdiv
+# Command line: vivado.exe -mode batch -source util_clkdiv_ip.tcl
+# Log file: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/xilinx/util_clkdiv/vivado.log
+# Journal file: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/xilinx/util_clkdiv\vivado.jou
+#-----------------------------------------------------------
+source util_clkdiv_ip.tcl

@@ -1,0 +1,212 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.718815",
+   "Default View_TopLeft":"1244,-160",
+   "ExpandedHierarchyInLayout":"",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port ddr -pg 1 -lvl 8 -x 4150 -y 2270 -defaultsOSRD
+preplace port fixed_io -pg 1 -lvl 8 -x 4150 -y 2290 -defaultsOSRD
+preplace port port-id_spi0_csn_2_o -pg 1 -lvl 8 -x 4150 -y 2490 -defaultsOSRD
+preplace port port-id_spi0_csn_1_o -pg 1 -lvl 8 -x 4150 -y 2470 -defaultsOSRD
+preplace port port-id_spi0_csn_0_o -pg 1 -lvl 8 -x 4150 -y 2450 -defaultsOSRD
+preplace port port-id_spi0_csn_i -pg 1 -lvl 0 -x -80 -y 2750 -defaultsOSRD
+preplace port port-id_spi0_clk_i -pg 1 -lvl 0 -x -80 -y 2080 -defaultsOSRD
+preplace port port-id_spi0_clk_o -pg 1 -lvl 8 -x 4150 -y 2350 -defaultsOSRD
+preplace port port-id_spi0_sdo_i -pg 1 -lvl 0 -x -80 -y 2100 -defaultsOSRD
+preplace port port-id_spi0_sdo_o -pg 1 -lvl 8 -x 4150 -y 2390 -defaultsOSRD
+preplace port port-id_spi0_sdi_i -pg 1 -lvl 0 -x -80 -y 2120 -defaultsOSRD
+preplace port port-id_txnrx -pg 1 -lvl 8 -x 4150 -y 1150 -defaultsOSRD
+preplace port port-id_up_enable -pg 1 -lvl 0 -x -80 -y 1810 -defaultsOSRD
+preplace port port-id_up_txnrx -pg 1 -lvl 0 -x -80 -y 1830 -defaultsOSRD
+preplace port port-id_gps_pps -pg 1 -lvl 0 -x -80 -y 1590 -defaultsOSRD
+preplace port port-id_rx_clk_in_p -pg 1 -lvl 0 -x -80 -y 1430 -defaultsOSRD
+preplace port port-id_rx_clk_in_n -pg 1 -lvl 0 -x -80 -y 1450 -defaultsOSRD
+preplace port port-id_rx_frame_in_p -pg 1 -lvl 0 -x -80 -y 1470 -defaultsOSRD
+preplace port port-id_rx_frame_in_n -pg 1 -lvl 0 -x -80 -y 1490 -defaultsOSRD
+preplace port port-id_tx_clk_out_p -pg 1 -lvl 8 -x 4150 -y 1440 -defaultsOSRD
+preplace port port-id_tx_clk_out_n -pg 1 -lvl 8 -x 4150 -y 1420 -defaultsOSRD
+preplace port port-id_scl_i -pg 1 -lvl 0 -x -80 -y 450 -defaultsOSRD
+preplace port port-id_scl_o -pg 1 -lvl 8 -x 4150 -y 500 -defaultsOSRD
+preplace port port-id_scl_t -pg 1 -lvl 8 -x 4150 -y 520 -defaultsOSRD
+preplace port port-id_sda_i -pg 1 -lvl 0 -x -80 -y 430 -defaultsOSRD
+preplace port port-id_sda_o -pg 1 -lvl 8 -x 4150 -y 460 -defaultsOSRD
+preplace port port-id_sda_t -pg 1 -lvl 8 -x 4150 -y 480 -defaultsOSRD
+preplace port port-id_ssm_scl_t_1 -pg 1 -lvl 8 -x 4150 -y 540 -defaultsOSRD
+preplace port port-id_ssm_sda_t_1 -pg 1 -lvl 8 -x 4150 -y 560 -defaultsOSRD
+preplace port port-id_o_audio_bit_clk -pg 1 -lvl 8 -x 4150 -y 580 -defaultsOSRD
+preplace port port-id_o_audio_lrc -pg 1 -lvl 8 -x 4150 -y 600 -defaultsOSRD
+preplace port port-id_o_audio_sdat_out0 -pg 1 -lvl 8 -x 4150 -y 620 -defaultsOSRD
+preplace port port-id_i_audio_sdat_in0 -pg 1 -lvl 0 -x -80 -y 470 -defaultsOSRD
+preplace port port-id_i_audio_lrc -pg 1 -lvl 0 -x -80 -y 490 -defaultsOSRD
+preplace port port-id_i_audio_bit_clk -pg 1 -lvl 0 -x -80 -y 510 -defaultsOSRD
+preplace port port-id_ssm_sda_i_1 -pg 1 -lvl 0 -x -80 -y 530 -defaultsOSRD
+preplace port port-id_o_audio_mclk -pg 1 -lvl 0 -x -80 -y 20 -defaultsOSRD
+preplace port port-id_ssm_scl_i_1 -pg 1 -lvl 0 -x -80 -y 40 -defaultsOSRD
+preplace portBus gpio_i -pg 1 -lvl 0 -x -80 -y 2060 -defaultsOSRD
+preplace portBus gpio_o -pg 1 -lvl 8 -x 4150 -y 2230 -defaultsOSRD
+preplace portBus gpio_t -pg 1 -lvl 8 -x 4150 -y 2250 -defaultsOSRD
+preplace portBus rx_data_in_p -pg 1 -lvl 0 -x -80 -y 1510 -defaultsOSRD
+preplace portBus rx_data_in_n -pg 1 -lvl 0 -x -80 -y 1530 -defaultsOSRD
+preplace portBus tx_frame_out_p -pg 1 -lvl 8 -x 4150 -y 1600 -defaultsOSRD
+preplace portBus tx_frame_out_n -pg 1 -lvl 8 -x 4150 -y 1800 -defaultsOSRD
+preplace portBus tx_data_out_p -pg 1 -lvl 8 -x 4150 -y 1500 -defaultsOSRD
+preplace portBus tx_data_out_n -pg 1 -lvl 8 -x 4150 -y 1700 -defaultsOSRD
+preplace portBus ssm_sda_o_1 -pg 1 -lvl 8 -x 4150 -y 2550 -defaultsOSRD
+preplace portBus ssm_scl_o_1 -pg 1 -lvl 8 -x 4150 -y 2530 -defaultsOSRD
+preplace portBus addr -pg 1 -lvl 8 -x 4150 -y 2510 -defaultsOSRD
+preplace portBus aud_reset -pg 1 -lvl 8 -x 4150 -y 310 -defaultsOSRD
+preplace portBus F_PA_C -pg 1 -lvl 8 -x 4150 -y 640 -defaultsOSRD
+preplace inst axi_ad9361 -pg 1 -lvl 3 -x 1720 -y 2190 -defaultsOSRD
+preplace inst sys_ps7 -pg 1 -lvl 3 -x 1720 -y 2980 -defaultsOSRD
+preplace inst sys_rstgen -pg 1 -lvl 1 -x 160 -y 970 -defaultsOSRD
+preplace inst sys_ps7_axi_periph -pg 1 -lvl 2 -x 570 -y 720 -defaultsOSRD
+preplace inst amDemodulator_0 -pg 1 -lvl 2 -x 570 -y 1260 -defaultsOSRD
+preplace inst I2Ssystem -pg 1 -lvl 3 -x 1720 -y -510 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 7 -x 3950 -y 2550 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1720 -y -760 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 2 -x 570 -y 1030 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 2 -x 570 -y 1130 -defaultsOSRD
+preplace inst amModulator_0 -pg 1 -lvl 3 -x 1720 -y 1580 -defaultsOSRD
+preplace inst selectio_wiz_0 -pg 1 -lvl 6 -x 3650 -y 1440 -defaultsOSRD
+preplace inst dataPackager_0 -pg 1 -lvl 5 -x 3270 -y 960 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 5 -x 3270 -y 1470 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 7 -x 3950 -y 1600 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 7 -x 3950 -y 1500 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 7 -x 3950 -y 1700 -defaultsOSRD
+preplace inst xlslice_4 -pg 1 -lvl 7 -x 3950 -y 1800 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1720 -y 1410 -defaultsOSRD
+preplace inst mux_1 -pg 1 -lvl 4 -x 2950 -y 720 -defaultsOSRD
+preplace inst mux_2 -pg 1 -lvl 4 -x 2950 -y 1000 -defaultsOSRD
+preplace inst mux_3 -pg 1 -lvl 4 -x 2950 -y 860 -defaultsOSRD
+preplace inst mux_4 -pg 1 -lvl 4 -x 2950 -y 1140 -defaultsOSRD
+preplace inst xlconstant_3 -pg 1 -lvl 3 -x 1720 -y 1730 -defaultsOSRD
+preplace inst xlslice_5 -pg 1 -lvl 3 -x 1720 -y -1000 -defaultsOSRD
+preplace inst xlslice_6 -pg 1 -lvl 3 -x 1720 -y -900 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 4 -x 2950 -y 1480 -defaultsOSRD
+preplace inst I2Ssystem|axi_iic_0 -pg 1 -lvl 2 -x 2180 -y -510 -defaultsOSRD
+preplace inst I2Ssystem|i2sController_0 -pg 1 -lvl 2 -x 2180 -y -40 -defaultsOSRD
+preplace inst I2Ssystem|audio_amplifier_i2c_0 -pg 1 -lvl 2 -x 2180 -y -300 -defaultsOSRD
+preplace inst I2Ssystem|fir_compiler_0 -pg 1 -lvl 1 -x 1710 -y -90 -defaultsOSRD
+preplace inst I2Ssystem|decimation_0 -pg 1 -lvl 1 -x 1710 -y -430 -defaultsOSRD
+preplace inst I2Ssystem|concat_0 -pg 1 -lvl 1 -x 1710 -y 60 -defaultsOSRD
+preplace netloc I2Ssystem_o_audio_bit_clk 1 3 5 2690J 380 NJ 380 NJ 380 NJ 380 4070J
+preplace netloc I2Ssystem_o_audio_lrc 1 3 5 2680J 390 NJ 390 NJ 390 NJ 390 4060J
+preplace netloc I2Ssystem_o_audio_sdat_out0 1 3 5 2670J 400 NJ 400 NJ 400 NJ 400 4050J
+preplace netloc I2Ssystem_out_lft_chnl_data 1 1 3 350 140 NJ 140 2610
+preplace netloc I2Ssystem_ssm_scl_t_1 1 3 5 2710J 360 NJ 360 NJ 360 NJ 360 4090J
+preplace netloc I2Ssystem_ssm_sda_t_1 1 3 5 2700J 370 NJ 370 NJ 370 NJ 370 4080J
+preplace netloc amDemodulator_0_o_demodulatedOut 1 2 2 800 1240 2650
+preplace netloc amModulator_0_o_amSignal_i 1 3 1 2680 720n
+preplace netloc amModulator_0_o_amSignal_q 1 3 1 2710 1000n
+preplace netloc axi_ad9361_adc_data_i0 1 1 3 370 1360 850J 1290 2620
+preplace netloc axi_ad9361_adc_valid_i0 1 1 3 380 1370 880J 1300 2550
+preplace netloc axi_ad9361_l_clk 1 1 5 350 1420 930 1250 2670 1250 3100 1410 NJ
+preplace netloc axi_ad9361_txnrx 1 3 5 2690J 630 NJ 630 NJ 630 NJ 630 4090J
+preplace netloc axi_gpio_0_gpio_io_o 1 2 6 940 -840 2780 310 NJ 310 NJ 310 NJ 310 NJ
+preplace netloc axi_gpio_1_gpio_io_o 1 2 6 920 640 2610 640 NJ 640 NJ 640 NJ 640 NJ
+preplace netloc axi_iic_0_scl_o 1 3 5 2750J 340 NJ 340 NJ 340 NJ 340 4110J
+preplace netloc axi_iic_0_scl_t 1 3 5 2730J 350 NJ 350 NJ 350 NJ 350 4100J
+preplace netloc axi_iic_0_sda_o 1 3 5 2770J 320 NJ 320 NJ 320 NJ 320 4130J
+preplace netloc axi_iic_0_sda_t 1 3 5 2760J 330 NJ 330 NJ 330 NJ 330 4120J
+preplace netloc dataPackager_0_o_data 1 5 1 3430 960n
+preplace netloc gpio_i_1 1 0 4 -60J 1380 NJ 1380 910J 1310 2540
+preplace netloc gps_pps_1 1 0 3 NJ 1590 NJ 1590 780J
+preplace netloc i_audio_bit_clk_1 1 0 3 -20J -190 NJ -190 NJ
+preplace netloc i_audio_lrc_1 1 0 3 -30J -210 NJ -210 NJ
+preplace netloc i_audio_sdat_in0_1 1 0 3 -40J -230 NJ -230 NJ
+preplace netloc mux_1_o_d 1 4 1 3090 720n
+preplace netloc mux_2_o_d 1 4 1 N 1000
+preplace netloc mux_3_o_d 1 4 1 3080 860n
+preplace netloc mux_4_o_d 1 4 1 3110 960n
+preplace netloc rx_clk_in_n_1 1 0 3 NJ 1450 NJ 1450 840J
+preplace netloc rx_clk_in_p_1 1 0 3 NJ 1430 NJ 1430 850J
+preplace netloc rx_data_in_n_1 1 0 3 NJ 1530 NJ 1530 790J
+preplace netloc rx_data_in_p_1 1 0 3 NJ 1510 NJ 1510 800J
+preplace netloc rx_frame_in_n_1 1 0 3 NJ 1490 NJ 1490 810J
+preplace netloc rx_frame_in_p_1 1 0 3 NJ 1470 NJ 1470 820J
+preplace netloc scl_i_1 1 0 3 -50J -250 NJ -250 NJ
+preplace netloc sda_i_1 1 0 3 -60J -270 NJ -270 NJ
+preplace netloc selectio_wiz_0_clk_to_pins_n 1 6 2 NJ 1420 NJ
+preplace netloc selectio_wiz_0_clk_to_pins_p 1 6 2 NJ 1440 NJ
+preplace netloc selectio_wiz_0_data_out_to_pins_n 1 6 1 3840 1480n
+preplace netloc selectio_wiz_0_data_out_to_pins_p 1 6 1 3850 1460n
+preplace netloc spi0_clk_i_1 1 0 4 -50J 1390 NJ 1390 840J 1260 2590
+preplace netloc spi0_csn_i_1 1 0 4 -40J 2670 NJ 2670 NJ 2670 2550
+preplace netloc spi0_sdi_i_1 1 0 4 -30J 1400 NJ 1400 870J 1270 2600
+preplace netloc spi0_sdo_i_1 1 0 4 -20J 1410 NJ 1410 790J 1280 2570
+preplace netloc ssm_sda_i_1_1 1 0 3 -10J -170 NJ -170 NJ
+preplace netloc sys_200m_clk 1 2 2 970 1320 2580
+preplace netloc sys_cpu_clk 1 0 4 -40 860 330 500 830 3290 2550
+preplace netloc sys_cpu_reset 1 1 1 N 970
+preplace netloc sys_cpu_resetn 1 1 2 340 940 860
+preplace netloc sys_ps7_FCLK_RESET0_N 1 0 4 -10 3300 NJ 3300 NJ 3300 2540
+preplace netloc sys_ps7_GPIO_O 1 3 5 2640J 2230 NJ 2230 NJ 2230 NJ 2230 NJ
+preplace netloc sys_ps7_GPIO_T 1 3 5 2650J 2250 NJ 2250 NJ 2250 NJ 2250 NJ
+preplace netloc sys_ps7_SPI0_MOSI_O 1 3 5 2700J 2390 NJ 2390 NJ 2390 NJ 2390 NJ
+preplace netloc sys_ps7_SPI0_SCLK_O 1 3 5 2690J 2350 NJ 2350 NJ 2350 NJ 2350 NJ
+preplace netloc sys_ps7_SPI0_SS1_O 1 3 5 2750J 2470 NJ 2470 NJ 2470 NJ 2470 NJ
+preplace netloc sys_ps7_SPI0_SS2_O 1 3 5 2770J 2490 NJ 2490 NJ 2490 NJ 2490 NJ
+preplace netloc sys_ps7_SPI0_SS_O 1 3 5 2720J 2450 NJ 2450 NJ 2450 NJ 2450 NJ
+preplace netloc up_enable_1 1 0 3 NJ 1810 NJ 1810 770J
+preplace netloc up_txnrx_1 1 0 3 NJ 1830 NJ 1830 760J
+preplace netloc xlconstant_0_dout 1 7 1 4090J 2510n
+preplace netloc xlconstant_1_dout 1 2 1 920J 1030n
+preplace netloc xlconstant_2_dout 1 5 1 3430 1450n
+preplace netloc xlconstant_3_dout 1 3 1 2700 700n
+preplace netloc xlslice_0_Dout 1 2 1 900J 1130n
+preplace netloc xlslice_1_Dout 1 7 1 NJ 1600
+preplace netloc xlslice_2_Dout 1 7 1 NJ 1500
+preplace netloc xlslice_3_Dout 1 7 1 NJ 1700
+preplace netloc xlslice_4_Dout 1 7 1 NJ 1800
+preplace netloc xlslice_5_Dout 1 3 1 2740 -1000n
+preplace netloc xlslice_6_Dout 1 3 1 2720 -900n
+preplace netloc I2Ssystem_o_d_v 1 3 1 2660 0n
+preplace netloc I2Ssystem_m_axis_data_tdata 1 3 1 2640 20n
+preplace netloc I2Ssystem_o_d 1 3 1 2630 80n
+preplace netloc sys_ps7_DDR 1 3 5 2670J 2270 NJ 2270 NJ 2270 NJ 2270 NJ
+preplace netloc sys_ps7_FIXED_IO 1 3 5 2680J 2290 NJ 2290 NJ 2290 NJ 2290 NJ
+preplace netloc sys_ps7_M_AXI_GP0 1 1 3 360 1350 890J 1330 2560
+preplace netloc sys_ps7_axi_periph_M00_AXI 1 2 1 940 670n
+preplace netloc sys_ps7_axi_periph_M01_AXI 1 2 1 780 -530n
+preplace netloc sys_ps7_axi_periph_M02_AXI 1 2 1 790 -330n
+preplace netloc sys_ps7_axi_periph_M03_AXI 1 2 1 760 -780n
+preplace netloc sys_ps7_axi_periph_M04_AXI 1 2 1 960 750n
+preplace netloc sys_ps7_axi_periph_M05_AXI 1 2 1 950 770n
+preplace netloc I2Ssystem|audio_amplifier_i2c_0_o_i2c_clk 1 2 1 N -330
+preplace netloc I2Ssystem|audio_amplifier_i2c_0_o_i2c_wr_data 1 2 1 N -290
+preplace netloc I2Ssystem|axi_iic_0_scl_o 1 2 1 2380 -550n
+preplace netloc I2Ssystem|axi_iic_0_scl_t 1 2 1 2370 -530n
+preplace netloc I2Ssystem|axi_iic_0_sda_o 1 2 1 N -490
+preplace netloc I2Ssystem|axi_iic_0_sda_t 1 2 1 N -470
+preplace netloc I2Ssystem|i2sController_0_o_bit_clk 1 2 1 N -80
+preplace netloc I2Ssystem|i2sController_0_o_lrc 1 2 1 N -60
+preplace netloc I2Ssystem|i2sController_0_o_sda 1 2 1 N -40
+preplace netloc I2Ssystem|i2sController_0_out_lft_chnl_data 1 2 1 N -20
+preplace netloc I2Ssystem|i_audio_bit_clk_1 1 0 2 NJ -190 1920
+preplace netloc I2Ssystem|i_audio_lrc_1 1 0 2 NJ -210 1930
+preplace netloc I2Ssystem|i_audio_sdat_in0_1 1 0 2 NJ -230 1940
+preplace netloc I2Ssystem|s_axi_aresetn1_1 1 0 2 1450J -500 2010
+preplace netloc I2Ssystem|scl_i_1 1 0 3 NJ -250 1950J -210 2360
+preplace netloc I2Ssystem|sda_i_1 1 0 3 NJ -270 1960J -200 2350
+preplace netloc I2Ssystem|ssm_sda_i_1_1 1 0 2 1470J -260 1970
+preplace netloc I2Ssystem|sys_cpu_clk 1 0 2 1480 -360 2000
+preplace netloc I2Ssystem|sys_cpu_resetn 1 0 2 NJ -290 1990
+preplace netloc I2Ssystem|decimation_0_o_d 1 0 2 1490 -240 1930
+preplace netloc I2Ssystem|decimation_0_o_d_v 1 0 3 1500 -220 1980 -170 2370
+preplace netloc I2Ssystem|fir_compiler_0_m_axis_data_tdata 1 0 3 1510 -200 1910 -160 2350
+preplace netloc I2Ssystem|in_aud_data_1 1 0 1 1460 -420n
+preplace netloc I2Ssystem|concat_0_o_d 1 1 2 1960 80 N
+preplace netloc I2Ssystem|Conn1 1 0 2 NJ -330 N
+preplace netloc I2Ssystem|sys_ps7_axi_periph_M01_AXI 1 0 2 NJ -530 N
+levelinfo -pg 1 -80 160 570 1720 2950 3270 3650 3950 4150
+levelinfo -hier I2Ssystem * 1710 2180 *
+pagesize -pg 1 -db -bbox -sgen -240 -1060 4330 3380
+pagesize -hier I2Ssystem -db -bbox -sgen 1420 -660 2410 120
+"
+}
+{
+   "da_axi4_cnt":"8",
+   "da_clkrst_cnt":"1"
+}

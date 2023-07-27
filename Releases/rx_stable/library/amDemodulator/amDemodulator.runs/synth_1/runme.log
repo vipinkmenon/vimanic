@@ -1,0 +1,227 @@
+
+*** Running vivado
+    with args -log amDemodulator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source amDemodulator.tcl
+
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source amDemodulator.tcl -notrace
+Command: synth_design -top amDemodulator -part xc7z030fbg484-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 39120
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'amDemodulator' [F:/hdl-2021_r1/library/amDemodulator/hdl/amDemodulator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'envelopDetector' [F:/hdl-2021_r1/library/amDemodulator/hdl/envelopDetector.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'envelopDetector' (1#1) [F:/hdl-2021_r1/library/amDemodulator/hdl/envelopDetector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'average' [F:/hdl-2021_r1/library/amDemodulator/hdl/average.v:23]
+	Parameter numSamples bound to: 128 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'average' (2#1) [F:/hdl-2021_r1/library/amDemodulator/hdl/average.v:23]
+INFO: [Synth 8-6157] synthesizing module 'average__parameterized0' [F:/hdl-2021_r1/library/amDemodulator/hdl/average.v:23]
+	Parameter numSamples bound to: 32768 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'average__parameterized0' (2#1) [F:/hdl-2021_r1/library/amDemodulator/hdl/average.v:23]
+INFO: [Synth 8-6157] synthesizing module 'subtractor' [F:/hdl-2021_r1/library/amDemodulator/hdl/subtractor.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'subtractor' (3#1) [F:/hdl-2021_r1/library/amDemodulator/hdl/subtractor.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'amDemodulator' (4#1) [F:/hdl-2021_r1/library/amDemodulator/hdl/amDemodulator.v:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030fbg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z030fbg484-2
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   40 Bit       Adders := 2     
+	   3 Input   13 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 2     
+	   3 Input   12 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 2     
+	               12 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   12 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP nolabel_line16/rectData0, operation Mode is: (A:0xfff)*B.
+DSP Report: operator nolabel_line16/rectData0 is absorbed into DSP nolabel_line16/rectData0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below)
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|envelopDetector | (A:0xfff)*B | 12     | 12     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    27|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |    14|
+|5     |LUT2    |    47|
+|6     |LUT3    |    47|
+|7     |LUT4    |    39|
+|8     |LUT5    |    13|
+|9     |LUT6    |     2|
+|10    |FDRE    |   109|
+|11    |IBUF    |    14|
+|12    |OBUF    |    48|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------------+------------------------+------+
+|      |Instance         |Module                  |Cells |
++------+-----------------+------------------------+------+
+|1     |top              |                        |   362|
+|2     |  DcLevelDetect  |average__parameterized0 |    86|
+|3     |  lowPassFilter  |average                 |    79|
+|4     |  nolabel_line16 |envelopDetector         |   119|
+|5     |  nolabel_line42 |subtractor              |    15|
++------+-----------------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1348.984 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1348.984 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1348.984 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: d1c4fb8d
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1348.984 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'F:/hdl-2021_r1/library/amDemodulator/amDemodulator.runs/synth_1/amDemodulator.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file amDemodulator_utilization_synth.rpt -pb amDemodulator_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  8 16:49:03 2023...
