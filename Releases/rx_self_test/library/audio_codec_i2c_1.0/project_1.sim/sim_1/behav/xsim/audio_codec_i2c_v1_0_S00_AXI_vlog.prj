@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../hdl/clockDivider.v" \
+"../../../../hdl/i2c_master.v" \
+"../../../../hdl/audio_codec_i2c_v1_0_S00_AXI.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

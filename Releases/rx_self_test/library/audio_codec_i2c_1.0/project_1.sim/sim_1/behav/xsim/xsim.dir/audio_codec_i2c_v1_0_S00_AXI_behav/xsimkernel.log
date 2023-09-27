@@ -1,0 +1,7 @@
+Running: xsim.dir/audio_codec_i2c_v1_0_S00_AXI_behav/xsimk.exe -simmode gui -wdb audio_codec_i2c_v1_0_S00_AXI_behav.wdb -simrunnum 0 -socket 52274
+Design successfully loaded
+Design Loading Memory Usage: 6908 KB (Peak: 6908 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 10896 KB (Peak: 10896 KB)
+Simulation CPU Usage: 61 ms

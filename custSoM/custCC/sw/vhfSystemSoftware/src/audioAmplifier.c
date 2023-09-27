@@ -40,47 +40,12 @@ void softreset(amplifier * amp_instance){
 }
 
 
-/*u8 readAmpRegister(amplifier * amp_instance, u8 registerAddress){
-	int Status;
-	u8 TxBuffer[1];
-	u8 RxBuffer[1];
-	TxBuffer[0]  = (registerAddress<<1)&0xFE;
-    Status=XIic_Send(amp_instance->I2C_Controller_Address, amp_instance->Amp_I2C_Address,TxBuffer,1, XIIC_REPEATED_START);// amp_instance->Amp_I2C_Address
-	if(Status == 0)
-		print("I2C Write Error\n\r");
-    Status=XIic_Recv(amp_instance->I2C_Controller_Address, amp_instance->Amp_I2C_Address,RxBuffer,1,XIIC_STOP);//amp_instance->Amp_I2C_Address
-	if(Status == 0)
-		print("I2C Read Error\n\r");
-	return RxBuffer[0];
-}
-
-
-
-u8 getLeftChannelGain(amplifier * amp_instance){
-	u8 gain;
-	gain = readAmpRegister(amp_instance,R0_LC_Gain_Control);
-	if(gain >= 46)
-		return 24;
-	else
-		return  (gain&0x3F)*0.5+1;
-}
-
-
-
-u8 getRightChannelGain(amplifier * amp_instance){
-	u8 gain;
-	gain = readAmpRegister(amp_instance,R1_RC_Gain_Control);
-	if(gain >= 46)
-		return 24;
-	else
-		return  (gain&0x3F)*0.5+1;
-}*/
-
-
 void setLeftChannelGain(amplifier * amp_instance, u8 gain){
 	u8 gainValue;
-	if(gain >= 24)
+	if(gain >= 24){
 		gainValue = 0x3F;
+		xil_printf("Warning. Requested gain is %u. Setting gain to maximum supported value of 24",gain);
+	}
 	else
 		gainValue = (gain-1)*2;
 
@@ -89,8 +54,10 @@ void setLeftChannelGain(amplifier * amp_instance, u8 gain){
 
 void setRightChannelGain(amplifier * amp_instance,u8 gain){
 	u8 gainValue;
-	if(gain >= 24)
+	if(gain >= 24){
 		gainValue = 0x3F;
+		xil_printf("Warning. Requested gain is %u. Setting gain to maximum supported value of 24",gain);
+	}
 	else
 		gainValue = (gain-1)*2;
 

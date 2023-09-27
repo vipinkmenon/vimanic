@@ -28,19 +28,27 @@ void initAttenuator(attenuator *attn, XGpioPs *gpio){
 	XGpioPs_SetDirectionPin(gpio,le3,1);
 	XGpioPs_SetOutputEnablePin(gpio,le4,1);
 	XGpioPs_SetDirectionPin(gpio,le4,1);
+	XGpioPs_SetOutputEnablePin(gpio,PAmute1,1);
+	XGpioPs_SetDirectionPin(gpio,PAmute1,1);
 
 
 	XGpioPs_WritePin(gpio,le1,0);
 	XGpioPs_WritePin(gpio,le2,0);
 	XGpioPs_WritePin(gpio,le3,0);
 	XGpioPs_WritePin(gpio,le4,0);
-
+	XGpioPs_WritePin(gpio,PAmute1,1);
 
 	attn->gpio = gpio;
 	attn->attVal[0] = 31.75;
 	attn->attVal[1] = 31.75;
 	attn->attVal[2] = 31.75;
 	attn->attVal[3] = 31.75;
+
+
+	writeAttenuator(attn,0,31.75);
+	writeAttenuator(attn,1,31.75);
+	writeAttenuator(attn,2,31.75);
+	writeAttenuator(attn,3,21);
 }
 
 
@@ -66,7 +74,6 @@ int writeAttenuator(attenuator *attn,int attenuatorNo,float attValue){
 	if(attenuatorNo < 3)
 		toggle(attn->gpio,le1+attenuatorNo);
 	else{
-		print("Here\n\r");
 		toggle(attn->gpio,le4);
 	}
 
@@ -84,7 +91,6 @@ int configAttenuators(attenuator *attn,int totalAttenuation){
 	attn->attVal[0] = attValue;
 	attn->attVal[1] = attValue;
 	attn->attVal[2] = attValue;
-	attn->attVal[3] = attValue;
 
 	//printf("Att values %f %f %f\n\r",attn->attVal[0],attn->attVal[1],attn->attVal[2]);
 	writeAttenuator(attn,0,attn->attVal[0]);

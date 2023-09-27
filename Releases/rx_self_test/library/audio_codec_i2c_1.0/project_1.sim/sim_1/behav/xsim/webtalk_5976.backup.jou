@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Sep 11 11:53:17 2023
+# Process ID: 5976
+# Current directory: F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim/xsim.dir/audio_codec_i2c_v1_0_S00_AXI_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim/xsim.dir/audio_codec_i2c_v1_0_S00_AXI_behav/webtalk/xsim_webtalk.tcl -notrace

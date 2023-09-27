@@ -1,0 +1,1 @@
+-wto "7f633c8b78bb47e0b5d95f6d2fa0994d" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "audio_codec_i2c_v1_0_S00_AXI_behav" "xil_defaultlib.audio_codec_i2c_v1_0_S00_AXI" "xil_defaultlib.glbl" -log "elaborate.log" 

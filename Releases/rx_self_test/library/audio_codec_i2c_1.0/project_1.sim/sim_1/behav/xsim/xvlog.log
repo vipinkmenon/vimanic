@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/clockDivider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clockDivider
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/audio_codec_i2c_v1_0_S00_AXI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module audio_codec_i2c_v1_0_S00_AXI

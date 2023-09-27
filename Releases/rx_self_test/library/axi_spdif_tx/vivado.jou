@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Sep 30 08:07:02 2022
+# Process ID: 8848
+# Current directory: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/axi_spdif_tx
+# Command line: vivado.exe -mode batch -source axi_spdif_tx_ip.tcl
+# Log file: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/axi_spdif_tx/vivado.log
+# Journal file: D:/Consultancy/Vimanic/analogGit/hdl-2021_r1/library/axi_spdif_tx\vivado.jou
+#-----------------------------------------------------------
+source axi_spdif_tx_ip.tcl

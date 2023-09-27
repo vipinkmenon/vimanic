@@ -3337,7 +3337,7 @@ enum dev_id {
 	ID_AD9363A
 };
 
-struct ad9361_rf_phy {
+typedef struct ad9361_rf_phy {
 	enum dev_id		dev_sel;
 	uint8_t 		id_no;
 	struct spi_desc 	*spi;
@@ -3416,7 +3416,7 @@ struct ad9361_rf_phy {
 	uint32_t				bist_tone_level_dB;
 	uint32_t				bist_tone_mask;
 	bool			bbpll_initialized;
-};
+}ad9361_rf_phy;
 
 struct refclk_scale {
 	struct spi_desc	*spi;

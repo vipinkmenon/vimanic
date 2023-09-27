@@ -8810,3 +8810,9 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-31: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2023-04-06 13:12:42.630
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-31: Launching Debugger_vhfSystemSoftware-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-04-06 17:31:12.941
+!MESSAGE XSCT Command: [disconnect tcfchan#35], Thread: Thread-1459
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-04-06 17:31:12.944
+!MESSAGE XSCT command with result: [disconnect tcfchan#35], Result: [null, ]. Thread: Thread-1459

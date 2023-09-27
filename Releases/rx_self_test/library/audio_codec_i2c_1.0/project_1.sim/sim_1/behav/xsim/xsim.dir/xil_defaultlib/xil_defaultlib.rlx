@@ -1,0 +1,8 @@
+0.7
+2020.2
+Jun 10 2021
+20:04:57
+F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/audio_codec_i2c_v1_0_S00_AXI.v,1694413380,verilog,,,,audio_codec_i2c_v1_0_S00_AXI,,,,,,,,
+F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/clockDivider.v,1675752025,verilog,,F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/i2c_master.v,,clockDivider,,,,,,,,
+F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/i2c_master.v,1694413803,verilog,,F:/hdl-2021_r1/library/audio_codec_i2c_1.0/hdl/audio_codec_i2c_v1_0_S00_AXI.v,,i2c_master,,,,,,,,
+F:/hdl-2021_r1/library/audio_codec_i2c_1.0/project_1.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,,,,,,,
